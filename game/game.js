@@ -12,6 +12,13 @@ export default class Game extends Phaser.Scene {
     //como que var hijo de puta que el cleon nos suspender
   
    this.player= this.add.sprite(300,300,'pigmalion');
+   
+    this.anims.create({
+    key: 'walk',
+    frames: this.anims.generateFrameNumbers('pigmalion', { start: 0, end: 0 }),
+    frameRate: 20,
+    repeat: 1
+  });
 
 
    this.anims.create({
@@ -28,17 +35,27 @@ export default class Game extends Phaser.Scene {
     this.s=this.input.keyboard.addKey('S');
     this.d=this.input.keyboard.addKey('D');
 
+<<<<<<< HEAD
     this.cameras.main.startFollow(this.player);
     const width = 1400;
     const height = 800;
+=======
+      
+    // this.cameras.main.startFollow(this.player);
+    
+>>>>>>> 8905464b9b356b93825624eb93746318f3b58f09
   }
 
   update(time, delta) {
    if(this.w.isDown) this.player.y-=4;
    if(this.a.isDown) this.player.x-=4;
-   if(this.s.isDown) this.player.y+=4;
+   if(this.s.isDown){
+      this.player.y+=4;
+      this.player.anims.play('walk');
+   }
    if(this.d.isDown) this.player.x+=4;
    
+<<<<<<< HEAD
    if(this.player.x < 0)  {     
      this.player.x = width-1;
    }  
@@ -59,5 +76,10 @@ export default class Game extends Phaser.Scene {
     // // }
     // this.console.log('2df');
     // console.log("kshfeiu");
+=======
+  
+  // this.player.anims('standingo_sprite');
+
+>>>>>>> 8905464b9b356b93825624eb93746318f3b58f09
   }
 }
