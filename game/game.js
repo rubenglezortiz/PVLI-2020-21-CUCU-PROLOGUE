@@ -9,7 +9,7 @@ export default class Game extends Phaser.Scene {
 
   create() {
     this.add.text(10, 10, "¡Hola, mundo!", { fontColor: 0xffff00 });
-    //como que var hijo de puta que el cleon nos suspender
+    //como que var hijo de puta que el cleon nos suspender, hay que usar let desgraciado
   
    this.player= this.add.sprite(300,300,'pigmalion');
    
@@ -35,15 +35,9 @@ export default class Game extends Phaser.Scene {
     this.s=this.input.keyboard.addKey('S');
     this.d=this.input.keyboard.addKey('D');
 
-<<<<<<< HEAD
     this.cameras.main.startFollow(this.player);
     const width = 1400;
     const height = 800;
-=======
-      
-    // this.cameras.main.startFollow(this.player);
-    
->>>>>>> 8905464b9b356b93825624eb93746318f3b58f09
   }
 
   update(time, delta) {
@@ -55,7 +49,6 @@ export default class Game extends Phaser.Scene {
    }
    if(this.d.isDown) this.player.x+=4;
    
-<<<<<<< HEAD
    if(this.player.x < 0)  {     
      this.player.x = width-1;
    }  
@@ -76,10 +69,5 @@ export default class Game extends Phaser.Scene {
     // // }
     // this.console.log('2df');
     // console.log("kshfeiu");
-=======
-  
-  // this.player.anims('standingo_sprite');
-
->>>>>>> 8905464b9b356b93825624eb93746318f3b58f09
   }
 }
