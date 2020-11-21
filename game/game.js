@@ -8,6 +8,7 @@ export default class Game extends Phaser.Scene {
 
   create() {
     this.add.text(10, 10, "¡Hola, mundo!", { fontColor: 0xffff00 });
+    //como que var hijo de puta que el cleon nos suspender
    var player= this.add.sprite(300,300,'pigmalion');
 
     this.w= scene.input.keyboard.addKey('W');
