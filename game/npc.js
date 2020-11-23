@@ -1,4 +1,4 @@
-import Dialogo from './Dialogo.js'
+import Dialogo from './dialogo.js'
 
 export default class Npc  {
     
