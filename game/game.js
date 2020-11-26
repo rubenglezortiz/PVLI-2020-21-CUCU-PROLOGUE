@@ -1,3 +1,4 @@
+import {cst} from "../cst"
 export default class Game extends Phaser.Scene {
   constructor() {
     super({ key: "main" });
@@ -64,7 +65,8 @@ else{
 }
 
    if(this.player.x < 0)  {     
-     this.player.x = this.sys.game.canvas.width-1;
+     this.player.x = this.sys.game.canvaAs.width-1;
+     
    }  
    if(this.player.x > 1400)  {    
     this.player.x = 1;

@@ -1,4 +1,4 @@
-import Npc from './npc.js'
+import Npc from './npc.js';
 
 export default class Muneco  {
     
@@ -12,9 +12,9 @@ export default class Muneco  {
   
     create() {
      const  pPersLimit = 100;  
-     let pPersuasion = 0;
-     let pVida = 100;
-     
+     this.pPersuasion = 0;
+     this.pVida = 100;
+      
      //Creación de la variable de tipo NPC, 
      //habrá que pasarle como parámetros rodo lo que necesite NPC
 
