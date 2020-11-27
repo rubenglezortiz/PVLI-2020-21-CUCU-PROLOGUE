@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import Npc from './npc.js';
 
 export default class Muneco  {
@@ -52,13 +51,6 @@ export default class Muneco  {
     update(time, delta) {
       
     }
-=======
-import Npc from "./npc.js";
-
-export default class Muneco {
-  constructor() {
-    super({ key: "muneco" });
->>>>>>> 3473921ea6be6e9b727f37879162f1c4803db9ac
   }
 
   preload() {}
