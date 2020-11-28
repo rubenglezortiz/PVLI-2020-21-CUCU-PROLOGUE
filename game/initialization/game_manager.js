@@ -1,6 +1,8 @@
       
-      import Game from "./game.js";
-      import {sala1} from "./sala1.js";
+      import Sala0 from "../scenes/sala0.js";
+      import {sala1} from "../scenes/sala1.js";
+      import Bootloader from "./bootloader.js";
+
       //import cst from "./cst.js";
       var config = {        
         type: Phaser.AUTO,
@@ -15,7 +17,7 @@
           mode: Phaser.Scale.FIT,
           autoCenter: Phaser.Scale.CENTER_BOTH,
         },
-        scene: [Game,sala1],
+        scene: [Bootloader, Sala0 ,sala1],
         physics: {
           default: "arcade",
           arcade: { debug: false },

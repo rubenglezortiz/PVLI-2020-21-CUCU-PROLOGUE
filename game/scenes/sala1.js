@@ -1,4 +1,4 @@
-import { cst } from "./cst.js";
+import { cst } from "../cst.js";
 
 export class sala1 extends Phaser.Scene{
     constructor(){
