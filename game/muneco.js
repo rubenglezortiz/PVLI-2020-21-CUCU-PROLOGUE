@@ -38,6 +38,5 @@ export default class Muneco extends Phaser.Scene {
     };
   }
 
-  update(time, delta) {
-  }
+  update(time, delta) {}
 }
