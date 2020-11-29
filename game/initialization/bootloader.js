@@ -8,13 +8,13 @@ class Bootloader extends Phaser.Scene {
       this.scene.start("Sala0");
     });
 
-    this.load.spritesheet("pigmalion", "../resources/sprites/pigmalion.png", {
+    this.load.spritesheet("pigmalion", ".../resources/sprites/pigmalion.png", {
       frameWidth: 192,
       frameHeight: 192,
     });
     // spritesheet 384x512
-    this.load.image("background", "../resources/sprites/background.png");
-    this.load.image("objetovacio", "../resources/sprites/objetovacio.png");
+    this.load.image("background", ".../resources/sprites/background.png");
+    this.load.image("objetovacio", ".../resources/sprites/objetovacio.png");
   }
 }
 
