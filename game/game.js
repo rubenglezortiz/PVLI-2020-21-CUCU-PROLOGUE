@@ -1,5 +1,6 @@
 import { cst } from "./cst.js";
 import Shoot from "./shoot.js";
+import Explosion from "./explosion.js";
 
 export default class Game extends Phaser.Scene {
   constructor() {
@@ -41,6 +42,7 @@ export default class Game extends Phaser.Scene {
     this.s = this.input.keyboard.addKey("S");
     this.d = this.input.keyboard.addKey("D");
     this.e = this.input.keyboard.addKey("E");
+    this.r = this.input.keyboard.addKey("R");
   }
 
   update(time, delta) {
@@ -83,7 +85,12 @@ export default class Game extends Phaser.Scene {
     if (this.e.isDown) {
       let xx = this.sys.game.canvas.width;
       let yy = Phaser.Math.Between(0, this.sys.game.canvas.height);
-      this.add.disparo = new Shoot({ scene: this, x: xx, y: yy });
+      this.add.disparo = new disparo({ scene: this, x: xx, y: yy });
+    }
+    if (this.r.isDown) {
+      let xx = (0, this.sys.game.canvas.height);
+      let yy = Phaser.Math.Between(0, this.sys.game.canvas.height);
+      this.add.explosion = new explosion({ scene: this, x: xx, y: yy });
     }
   }
 }

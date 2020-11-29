@@ -1,5 +1,6 @@
 import { cst } from "../cst.js";
 import Pigmalion from "../gameobject/pigmalion.js";
+import Shoot from "../shoot.js";
 
 export default class Sala0 extends Phaser.Scene {
   constructor() {
@@ -12,7 +13,6 @@ export default class Sala0 extends Phaser.Scene {
     let { width, height } = this.sys.game.canvas;
     let edificio = this.physics.add.sprite(0, 175, "objetovacio");
     this.add.image(700, 400, "background");
-
     this.player = new Pigmalion(this, 300, 300, "pigmalion");
     this.player.create();
 
