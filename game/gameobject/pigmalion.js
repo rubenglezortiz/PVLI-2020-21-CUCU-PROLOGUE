@@ -1,4 +1,5 @@
-class Pigmalion extends Phaser.GameObjects.Sprite {
+import Shoot from "../shoot.js";
+export default class Pigmalion extends Phaser.GameObjects.Sprite {
   constructor(scene, x, y, type) {
     super(scene, x, y, type);
     console.log(this);
@@ -14,6 +15,7 @@ class Pigmalion extends Phaser.GameObjects.Sprite {
     this.a = this.scene.input.keyboard.addKey("A");
     this.s = this.scene.input.keyboard.addKey("S");
     this.d = this.scene.input.keyboard.addKey("D");
+    this.e = this.scene.input.keyboard.addKey("E");
     console.log(this.anim);
     this.scene.anims.create({
       key: "walk",
@@ -29,47 +31,43 @@ class Pigmalion extends Phaser.GameObjects.Sprite {
   update() {
     //derecha
     let quietoX = true;
-    let quietoY= true;
+    let quietoY = true;
 
-      if (this.w.isDown) {
-        this.body.setVelocityY(-300);
-        quietoY= false;
-      }
-      else if (this.s.isDown) {
-        this.body.setVelocityY(300);
-        quietoY= false;
-      }
-      else{
-        quietoY= true;
-        this.body.setVelocityY(0);
-      }
-      
-
-      if (this.a.isDown) {
-        this.body.setVelocityX(-300);
-        quietoX = false;
-      }
-      else if (this.d.isDown) {
-        this.body.setVelocityX(300);
-        quietoX = false;
-      }
-      else{
-        quietoX = true;
-        this.body.setVelocityX(0);
-      }
-      
-      //si se está moviendo en cualquier direccion hace la anim
-    if(!(quietoX && quietoY)){
-        this.anims.play("walk", true);
+    if (this.w.isDown) {
+      this.body.setVelocityY(-300);
+      quietoY = false;
+    } else if (this.s.isDown) {
+      this.body.setVelocityY(300);
+      quietoY = false;
+    } else {
+      quietoY = true;
+      this.body.setVelocityY(0);
     }
-    else{
-      this.anims.play("walk", false);
 
+    if (this.a.isDown) {
+      this.body.setVelocityX(-300);
+      quietoX = false;
+    } else if (this.d.isDown) {
+      this.body.setVelocityX(300);
+      quietoX = false;
+    } else {
+      quietoX = true;
+      this.body.setVelocityX(0);
+    }
+    if (this.e.isDown) {
+      let xx = this.scene.sys.game.canvas.width;
+      let yy = Phaser.Math.Between(0, this.scene.sys.game.canvas.height);
+      this.disparo = new Shoot({ scene: this.scene, x: xx, y: yy, type:"shoot" });
+    }
+    //si se está moviendo en cualquier direccion hace la anim
+    if (!(quietoX && quietoY)) {
+      this.anims.play("walk", true);
+    } else {
+      this.anims.play("walk", false);
     }
 
     if (this.x < 0) {
-      this.player.x = this.sys.game.canvas.width - 1;
-
+      this.player.x = this.sys.game.canvas.width - 1; //PARA EL DAILY: EL FALLO ESTÁ CORREGIDO EN LAS LINEAS 59 Y 60 LO DEJO SIN ARREGLAR PARA COMENTARLO
       this.scene.start(cst.SCENES.SALA1);
     }
     if (this.x > 1400) {
@@ -83,5 +81,3 @@ class Pigmalion extends Phaser.GameObjects.Sprite {
     }
   }
 }
-
-export default Pigmalion;

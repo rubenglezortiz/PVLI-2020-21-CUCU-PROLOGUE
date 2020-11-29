@@ -15,6 +15,7 @@ class Bootloader extends Phaser.Scene {
     // spritesheet 384x512
     this.load.image("background", "./././resources/sprites/background.png");
     this.load.image("objetovacio", "./././resources/sprites/objetovacio.png");
+    this.load.image("shoot", "./././resources/sprites/cuadrado.jpg");
   }
 }
 
