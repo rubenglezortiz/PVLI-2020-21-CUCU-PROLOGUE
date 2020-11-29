@@ -1,5 +1,5 @@
-import Sala0 from "../Scenes/sala0.js";
-import { sala1 } from "../Scenes/sala1.js";
+import Sala0 from "../scenes/sala0.js";
+import { sala1 } from "../scenes/sala1.js";
 import Bootloader from "./bootloader.js";
 
 //import cst from "./cst.js";
