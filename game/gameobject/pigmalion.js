@@ -28,26 +28,43 @@ class Pigmalion extends Phaser.GameObjects.Sprite {
 
   update() {
     //derecha
-    if (this.w.isDown || this.a.isDown || this.s.isDown || this.d.isDown) {
+    let quietoX = true;
+    let quietoY= true;
+
       if (this.w.isDown) {
         this.body.setVelocityY(-300);
-        this.anims.play("walk", true);
+        quietoY= false;
       }
+      else if (this.s.isDown) {
+        this.body.setVelocityY(300);
+        quietoY= false;
+      }
+      else{
+        quietoY= true;
+        this.body.setVelocityY(0);
+      }
+      
+
       if (this.a.isDown) {
         this.body.setVelocityX(-300);
-        this.anims.play("walk", true);
+        quietoX = false;
       }
-      if (this.s.isDown) {
-        this.body.setVelocityY(300);
-        this.anims.play("walk", true);
-      }
-      if (this.d.isDown) {
+      else if (this.d.isDown) {
         this.body.setVelocityX(300);
-        this.anims.play("walk", true);
+        quietoX = false;
       }
-    } else {
-      this.body.setVelocity(0, 0);
-      this.scene.player.anims.play("walk", false);
+      else{
+        quietoX = true;
+        this.body.setVelocityX(0);
+      }
+      
+      //si se está moviendo en cualquier direccion hace la anim
+    if(!(quietoX && quietoY)){
+        this.anims.play("walk", true);
+    }
+    else{
+      this.anims.play("walk", false);
+
     }
 
     if (this.x < 0) {
