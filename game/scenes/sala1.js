@@ -3,7 +3,7 @@ import { cst } from "../cst.js";
 export class sala1 extends Phaser.Scene {
   constructor() {
     super({
-      key: cst.SCENES.SALA1,
+      key:"Sala1",
     });
   }
   // init(posx, posy){
