@@ -19,7 +19,7 @@ var config = {
   scene: [Bootloader, Sala0, sala1],
   physics: {
     default: "arcade",
-    arcade: { debug: false },
+    arcade: { debug: true },
   },
 };
 new Phaser.Game(config);
