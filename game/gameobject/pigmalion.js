@@ -9,6 +9,15 @@ export default class Pigmalion extends Phaser.GameObjects.Sprite {
     this.body.immovable = true;
     this.body.setCollideWorldBounds(false);
     //this.anim = type;
+    this.scene.anims.create({
+      key: "walk",
+      frames: this.scene.anims.generateFrameNumbers("pigmalion", {
+        start: 0,
+        end: 12,
+      }),
+      frameRate: 20,
+      repeat: -1,
+    });
   }
 
   create() {
@@ -19,15 +28,7 @@ export default class Pigmalion extends Phaser.GameObjects.Sprite {
     this.e = this.scene.input.keyboard.addKey("E");
     this.r = this.scene.input.keyboard.addKey("R");
     console.log(this.anim);
-    this.scene.anims.create({
-      key: "walk",
-      frames: this.scene.anims.generateFrameNumbers("pigmalion", {
-        start: 0,
-        end: 12,
-      }),
-      frameRate: 20,
-      repeat: -1,
-    });
+    
   }
 
   update() {
