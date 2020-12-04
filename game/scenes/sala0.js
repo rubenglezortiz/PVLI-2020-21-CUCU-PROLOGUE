@@ -18,7 +18,7 @@ export default class Sala0 extends Phaser.Scene {
     let { width, height } = this.sys.game.canvas;
     let edificio = this.physics.add.sprite(0, 175, "objetovacio");
     this.add.image(700, 400, "background");
-    this.player = new Pigmalion(this, thdsis.posx, this.posy, "pigmalion");
+    this.player = new Pigmalion(this, this.posx, this.posy, "pigmalion");
     this.player.create();
     this.lives = 10;
     this.flash = 0;
