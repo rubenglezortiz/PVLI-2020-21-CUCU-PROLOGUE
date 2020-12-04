@@ -16,10 +16,12 @@ export default class Sala0 extends Phaser.Scene {
     this.add.image(700, 400, "background");
     this.player = new Pigmalion(this, 300, 300, "pigmalion");
     this.player.create();
+    this.lives = 10;
+    this.flash = 0;
 
     this.monecoAttacks = this.physics.add.group();
     this.r = this.input.keyboard.addKey("R");
-   
+
     this.physics.add.collider(
       this.player,
       this.monecoAttacks,
@@ -40,16 +42,18 @@ export default class Sala0 extends Phaser.Scene {
         type: "shoot",
       });
       this.monecoAttacks.add(this.expl);
-      console.log(this.monecoAttacks);
     }
 
-    if(this.physics.collide(this.player, this.monecoAttacks)){
-      this.onCollision(this.player,this.monecoAttacks)
+    if (this.physics.collide(this.player, this.monecoAttacks)) {
+      this.onCollision(this.player, this.monecoAttacks);
     }
-  
+    if (this.flash >= 1) this.flash--;
   }
-  onCollision(obj1) {
-    obj1.x = 0;
-    console.log("eyyy");
+  onCollision(obj1, obj2) {  
+    if (this.flash === 0) {
+      this.lives--;
+      this.flash = 100;
+    }
+    console.log(this.lives, "  ", this.flash);
   }
 }
