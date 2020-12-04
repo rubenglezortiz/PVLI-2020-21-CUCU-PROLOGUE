@@ -1,8 +1,8 @@
 export default class Shoot extends Phaser.GameObjects.Sprite {
   constructor(config) {
-    console.log(typeof config);
     super(config.scene, config.x, config.y, config.type);
     config.scene.add.existing(this);
+    config.scene.physics.world.enable(this);
   }
 
   preUpdate(t, dt) {

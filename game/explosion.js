@@ -4,7 +4,7 @@ export default class Explosion extends Phaser.GameObjects.Sprite {
     config.scene.add.existing(this);
     this.timer = 0;
     this.scene.anims.create({
-      key: "f",
+      key: "bomb",
       frames: this.scene.anims.generateFrameNumbers("pigmalion", {
         start: 0,
         end: 12,
@@ -12,12 +12,11 @@ export default class Explosion extends Phaser.GameObjects.Sprite {
       frameRate: 20,
       repeat: -1,
     });
-    console.log(this.scene);
   }
 
   preUpdate(time, delta) {
-    console.log("sí se llama");
-    this.anims.play("f", true);
+    super.preUpdate(time, delta);
+    this.anims.play("bomb",true);
     this.timer += delta;
     if (this.timer > 2000) {
       this.destroy();
