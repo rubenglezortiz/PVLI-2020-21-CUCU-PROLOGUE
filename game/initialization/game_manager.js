@@ -1,5 +1,6 @@
 import Sala0 from "../scenes/sala0.js";
-import { sala1 } from "../scenes/sala1.js";
+import Sala1  from "../scenes/sala1.js";
+import Sala2  from "../scenes/sala2.js";
 import Bootloader from "./bootloader.js";
 
 //import cst from "./cst.js";
@@ -16,7 +17,7 @@ var config = {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
-  scene: [Bootloader, Sala0, sala1],
+  scene: [Bootloader, Sala0, Sala1, Sala2],
   physics: {
     default: "arcade",
     arcade: { debug: true },

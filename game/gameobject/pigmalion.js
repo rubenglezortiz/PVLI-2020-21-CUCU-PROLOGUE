@@ -59,18 +59,6 @@ export default class Pigmalion extends Phaser.GameObjects.Sprite {
       this.anims.play("walk", false);
     }
 
-    if (this.x < 0) {
-      this.x = this.scene.sys.game.canvas.width - 1; //PARA EL DAILY: EL FALLO ESTÁ CORREGIDO EN LAS LINEAS 59 Y 60 LO DEJO SIN ARREGLAR PARA COMENTARLO
-      this.scene.start("sala1");
-    }
-    if (this.x > 1400) {
-      this.x = 1;
-    }
-    if (this.y < 0) {
-      this.y = this.scene.sys.game.canvas.height - 1;
-    }
-    if (this.y > 800) {
-      this.y = 1;
-    }
+    
   }
 }

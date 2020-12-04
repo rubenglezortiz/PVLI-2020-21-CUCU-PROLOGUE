@@ -5,7 +5,7 @@ import CucuAttack from "../cucuAttack.js";
 
 export default class Sala1 extends Phaser.Scene {
   constructor() {
-    super({ key: cst.SCENES.SALA1 });
+    super({ key: cst.SCENES.SALA2 });
   }
 
   init(datos){
@@ -55,18 +55,17 @@ export default class Sala1 extends Phaser.Scene {
     if (this.flash >= 1) this.flash--;
 
     if (this.player.x < 0) {
-      this.player.x = 1400 - 1; //PARA EL DAILY: EL FALLO ESTÁ CORREGIDO EN LAS LINEAS 59 Y 60 LO DEJO SIN ARREGLAR PARA COMENTARLO
-      this.scene.start(cst.SCENES.SALA2,  {posx : this.player.x, posy: this.player.y});
+      //La sala 2 no tiene movieminet a la iezquierda
     }
     if (this.player.x > 1400) {
       this.player.x = 1;
-      this.scene.start(cst.SCENES.SALA0,  {posx : this.player.x, posy: this.player.y});
+      this.scene.start(cst.SCENES.SALA1,  {posx : this.player.x, posy: this.player.y});
     }
     if (this.player.y  < 0) {
-      this.y = 800 - 1;
+     //La sala 2 no tiene movieminet abajo
     }
     if (this.player.y > 800) {
-      this.y = 1;
+      //La sala 2 no tiene movieminet arriba
     }
   }
   onCollision(obj1, obj2) {  
