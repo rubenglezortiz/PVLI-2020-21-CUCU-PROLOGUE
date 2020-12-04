@@ -1,5 +1,3 @@
-import Shoot from "../shoot.js";
-import Explosion from "../explosion.js";
 export default class Pigmalion extends Phaser.GameObjects.Sprite {
   constructor(scene, x, y, type) {
     super(scene, x, y, type);
@@ -25,7 +23,6 @@ export default class Pigmalion extends Phaser.GameObjects.Sprite {
     this.a = this.scene.input.keyboard.addKey("A");
     this.s = this.scene.input.keyboard.addKey("S");
     this.d = this.scene.input.keyboard.addKey("D");
-    this.e = this.scene.input.keyboard.addKey("E");    
   }
 
   update() {
@@ -53,16 +50,6 @@ export default class Pigmalion extends Phaser.GameObjects.Sprite {
     } else {
       quietoX = true;
       this.body.setVelocityX(0);
-    }
-    if (this.e.isDown) {
-      let xx = this.scene.sys.game.canvas.width;
-      let yy = Phaser.Math.Between(0, this.scene.sys.game.canvas.height);
-      this.disparo = new Shoot({
-        scene: this.scene,
-        x: xx,
-        y: yy,
-        type: "shoot",
-      });
     }
 
     //si se está moviendo en cualquier direccion hace la anim

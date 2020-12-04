@@ -1,19 +1,17 @@
-import Explosion from "./explosion";
-import Shoot from "./shoot";
+export default class Shoot extends Phaser.GameObjects.Sprite {
+  constructor(config) {
+    super(config.scene, config.x, config.y, config.type);
+    config.scene.add.existing(this);
+    config.scene.physics.add.existing(this);
+    config.scene.physics.world.enable(this);
+    this.body.immovable = true;
+  }
 
-export default class CucuAttack extends Shoot{
-
-    constructor(config) {
-        console.log(typeof config);
-        super(config.scene, config.x, config.y, config.type);
-        config.scene.add.existing(this);
-      }
-      
-    preUpdate(t, dt) {
-        super.preUpdate(t, dt);
-        this.x -= 10;
-        if (this.x < 0) {
-          this.destroy();
-        }
-      }
+  preUpdate(t, dt) {
+    super.preUpdate(t, dt);
+    this.x -= 10;
+    if (this.x < 0) {
+      this.destroy();
+    }
+  }
 }
