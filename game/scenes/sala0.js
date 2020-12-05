@@ -2,6 +2,7 @@ import { cst } from "../cst.js";
 import Explosion from "../explosion.js";
 import Pigmalion from "../gameobject/pigmalion.js";
 import CucuAttack from "../cucuAttack.js";
+import LindoAttack from "../donLindoAttack.js";
 
 
 export default class Sala0 extends Phaser.Scene {
@@ -25,6 +26,7 @@ export default class Sala0 extends Phaser.Scene {
 
     this.monecoAttacks = this.physics.add.group();
     this.r = this.input.keyboard.addKey("R");
+    this.t = this.input.keyboard.addKey("T");
 
     this.physics.add.overlap(
       this.player,
@@ -47,7 +49,17 @@ export default class Sala0 extends Phaser.Scene {
       });
       this.monecoAttacks.add(this.expl);
     }
-
+    if (this.t.isDown) {
+      let xx = this.sys.game.canvas.width;
+      let yy = Phaser.Math.Between(0, this.sys.game.canvas.height);
+      this.expl = new LindoAttack({
+        scene: this,
+        x: xx,
+        y: yy,
+        type: "shoot",
+      });
+      this.monecoAttacks.add(this.expl);
+    }
     if (this.physics.overlap(this.player, this.monecoAttacks)) {
       this.onCollision(this.player, this.monecoAttacks);
     }
