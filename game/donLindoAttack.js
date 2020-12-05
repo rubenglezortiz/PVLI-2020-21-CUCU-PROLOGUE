@@ -6,6 +6,7 @@ export default class LindoShoot extends Phaser.GameObjects.Sprite {
     config.scene.physics.world.enable(this);
     this.velX = Phaser.Math.Between(150,200);
     this.velY = Phaser.Math.Between(150,200);
+    this.timer =0;
   }
 
   preUpdate(t, dt) {

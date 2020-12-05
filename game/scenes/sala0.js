@@ -4,13 +4,12 @@ import Pigmalion from "../gameobject/pigmalion.js";
 import CucuAttack from "../cucuAttack.js";
 import LindoAttack from "../donLindoAttack.js";
 
-
 export default class Sala0 extends Phaser.Scene {
   constructor() {
-    super({ key: cst.SCENES.SALA0  });
+    super({ key: cst.SCENES.SALA0 });
   }
   preload() {}
-  init(datos){
+  init(datos) {
     this.posx = datos.posx;
     this.posy = datos.posy;
   }
@@ -27,6 +26,7 @@ export default class Sala0 extends Phaser.Scene {
     this.monecoAttacks = this.physics.add.group();
     this.r = this.input.keyboard.addKey("R");
     this.t = this.input.keyboard.addKey("T");
+    this.e = this.input.keyboard.addKey("E");
 
     this.physics.add.overlap(
       this.player,
@@ -38,42 +38,62 @@ export default class Sala0 extends Phaser.Scene {
   update(time, delta) {
     this.player.update();
 
+    //-----PRUEBA DE ATAQUES DE MUÑECOS-----
     if (this.r.isDown) {
       let xx = this.sys.game.canvas.width;
       let yy = Phaser.Math.Between(0, this.sys.game.canvas.height);
-      this.expl = new CucuAttack({
+      this.cucuAt = new CucuAttack({
         scene: this,
         x: xx,
         y: yy,
         type: "shoot",
       });
-      this.monecoAttacks.add(this.expl);
+      this.monecoAttacks.add(this.cucuAt);
     }
     if (this.t.isDown) {
       let xx = this.sys.game.canvas.width;
       let yy = Phaser.Math.Between(0, this.sys.game.canvas.height);
-      this.expl = new LindoAttack({
+      this.lindoAt = new LindoAttack({
         scene: this,
         x: xx,
         y: yy,
         type: "shoot",
       });
-      this.monecoAttacks.add(this.expl);
+      this.monecoAttacks.add(this.lindoAt);
     }
+    if (this.e.isDown) {
+      let xx = Phaser.Math.Between(0, this.sys.game.canvas.width);
+      let yy = Phaser.Math.Between(0, this.sys.game.canvas.height);
+      this.expl = new Explosion({
+        scene: this,
+        x: xx,
+        y: yy,
+        type: "pigmalion",
+      });
+      // this.monecoAttacks.add(this.expl);
+    }
+    if (this.expl !== undefined && this.expl.aabb)   
+       this.monecoAttacks.add(this.expl);
+
     if (this.physics.overlap(this.player, this.monecoAttacks)) {
       this.onCollision(this.player, this.monecoAttacks);
     }
     if (this.flash >= 1) this.flash--;
 
+    //-----CAMBIO SALAS-----
+
     if (this.player.x < 0) {
       this.player.x = 1400 - 1;
-      this.scene.start(cst.SCENES.SALA11, {posx : this.player.x, posy: this.player.y});
+      this.scene.start(cst.SCENES.SALA11, {
+        posx: this.player.x,
+        posy: this.player.y,
+      });
     }
     if (this.player.x > 1400) {
-     // De momento en la sala 0 no hay cambio a la derecha
+      // De momento en la sala 0 no hay cambio a la derecha
       // this.x = 1;
     }
-    if (this.player.y  < 0) {
+    if (this.player.y < 0) {
       // De momento en la sala 0 no hay cambio arriba
       //this.player.y = 800 - 1;
     }
@@ -82,7 +102,7 @@ export default class Sala0 extends Phaser.Scene {
       //this.y = 1;
     }
   }
-  onCollision(obj1, obj2) {  
+  onCollision(obj1, obj2) {
     if (this.flash === 0) {
       this.lives--;
       this.flash = 100;
