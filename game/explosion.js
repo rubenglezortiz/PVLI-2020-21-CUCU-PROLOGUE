@@ -1,6 +1,8 @@
 export default class Explosion extends Phaser.GameObjects.Sprite {
   constructor(config) {
+
     super(config.scene, config.x, config.y, config.type);
+    config.scene.physics.world.enable(this);
     config.scene.add.existing(this);
     this.timer = 0;
     this.scene.anims.create({
@@ -12,6 +14,7 @@ export default class Explosion extends Phaser.GameObjects.Sprite {
       frameRate: 20,
       repeat: -1,
     });
+    this.body.immovable = true;
   }
 
   preUpdate(time, delta) {
@@ -22,4 +25,4 @@ export default class Explosion extends Phaser.GameObjects.Sprite {
       this.destroy();
     }
   }
-}
+} 

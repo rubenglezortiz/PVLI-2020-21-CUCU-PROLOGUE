@@ -26,7 +26,7 @@ export default class Sala0 extends Phaser.Scene {
     this.monecoAttacks = this.physics.add.group();
     this.r = this.input.keyboard.addKey("R");
 
-    this.physics.add.collider(
+    this.physics.add.overlap(
       this.player,
       this.monecoAttacks,
       this.onCollision(this.player, this.monecoAttacks)
@@ -48,13 +48,13 @@ export default class Sala0 extends Phaser.Scene {
       this.monecoAttacks.add(this.expl);
     }
 
-    if (this.physics.collide(this.player, this.monecoAttacks)) {
+    if (this.physics.overlap(this.player, this.monecoAttacks)) {
       this.onCollision(this.player, this.monecoAttacks);
     }
     if (this.flash >= 1) this.flash--;
 
     if (this.player.x < 0) {
-      this.player.x = 1400 - 1; //PARA EL DAILY: EL FALLO ESTÁ CORREGIDO EN LAS LINEAS 59 Y 60 LO DEJO SIN ARREGLAR PARA COMENTARLO
+      this.player.x = 1400 - 1;
       this.scene.start(cst.SCENES.SALA11, {posx : this.player.x, posy: this.player.y});
     }
     if (this.player.x > 1400) {
