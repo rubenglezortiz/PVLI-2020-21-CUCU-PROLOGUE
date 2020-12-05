@@ -3,9 +3,9 @@ import Explosion from "../explosion.js";
 import Pigmalion from "../gameobject/pigmalion.js";
 import CucuAttack from "../cucuAttack.js";
 
-export default class Sala1 extends Phaser.Scene {
+export default class Sala14 extends Phaser.Scene {
   constructor() {
-    super({ key: cst.SCENES.SALA1 });
+    super({ key: cst.SCENES.SALA14 });
   }
 
   init(datos){
@@ -55,18 +55,23 @@ export default class Sala1 extends Phaser.Scene {
     if (this.flash >= 1) this.flash--;
 
     if (this.player.x < 0) {
-      this.player.x = 1400 - 1; //PARA EL DAILY: EL FALLO ESTÁ CORREGIDO EN LAS LINEAS 59 Y 60 LO DEJO SIN ARREGLAR PARA COMENTARLO
-      this.scene.start(cst.SCENES.SALA2,  {posx : this.player.x, posy: this.player.y});
+      //la sala 1.4 no tiene nada a la izquierda
     }
     if (this.player.x > 1400) {
-      this.player.x = 1;
-      this.scene.start(cst.SCENES.SALA0,  {posx : this.player.x, posy: this.player.y});
+      //aun no está hecha la parte de pomponina
+      //this.player.x = 1;
+      //this.scene.start(cst.SCENES.SALA34,  {posx : this.player.x, posy: this.player.y});
     }
     if (this.player.y  < 0) {
-      this.y = 800 - 1;
+      //En la 1.4 no hay nada hacia arriba
+    
+      
     }
     if (this.player.y > 800) {
-      this.y = 1;
+      this.player.y = 1;
+      this.scene.start(cst.SCENES.SALA13,  {posx : this.player.x, posy: this.player.y});
+
+     
     }
   }
   onCollision(obj1, obj2) {  

@@ -3,9 +3,9 @@ import Explosion from "../explosion.js";
 import Pigmalion from "../gameobject/pigmalion.js";
 import CucuAttack from "../cucuAttack.js";
 
-export default class Sala1 extends Phaser.Scene {
+export default class Sala15 extends Phaser.Scene {
   constructor() {
-    super({ key: cst.SCENES.SALA2 });
+    super({ key: cst.SCENES.SALA15 });
   }
 
   init(datos){
@@ -55,17 +55,20 @@ export default class Sala1 extends Phaser.Scene {
     if (this.flash >= 1) this.flash--;
 
     if (this.player.x < 0) {
-      //La sala 2 no tiene movieminet a la iezquierda
+      //la sala 1.5 no tiene nada a la inquierda
     }
     if (this.player.x > 1400) {
-      this.player.x = 1;
-      this.scene.start(cst.SCENES.SALA1,  {posx : this.player.x, posy: this.player.y});
+      //la sala 1.5 no tiene nada a la derecha
     }
     if (this.player.y  < 0) {
-     //La sala 2 no tiene movieminet abajo
+      this.player.y = 800 - 1;
+      this.scene.start(cst.SCENES.SALA11,  {posx : this.player.x, posy: this.player.y});
+
     }
     if (this.player.y > 800) {
-      //La sala 2 no tiene movieminet arriba
+      this.player.y = 1;
+      this.scene.start(cst.SCENES.SALA16,  {posx : this.player.x, posy: this.player.y});
+
     }
   }
   onCollision(obj1, obj2) {  
