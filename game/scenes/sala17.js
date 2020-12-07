@@ -1,7 +1,5 @@
 import { cst } from "../cst.js";
-import Explosion from "../explosion.js";
 import Pigmalion from "../gameobject/pigmalion.js";
-import CucuAttack from "../cucuAttack.js";
 
 export default class Sala17 extends Phaser.Scene {
   constructor() {
