@@ -1,85 +1,24 @@
 import { cst } from "../cst.js";
-import Explosion from "../explosion.js";
 import Pigmalion from "../gameobject/pigmalion.js";
-import CucuAttack from "../cucuAttack.js";
-import LindoAttack from "../donLindoAttack.js";
 
 export default class Sala0 extends Phaser.Scene {
   constructor() {
     super({ key: cst.SCENES.SALA0 });
   }
-  preload() {}
+
   init(datos) {
     this.posx = datos.posx;
     this.posy = datos.posy;
   }
   create() {
-    //this.add.text(10, 10, "¡Hola, mundodasddsasafda!", { fontColor: 0xffff00 });
-    let { width, height } = this.sys.game.canvas;
-    let edificio = this.physics.add.sprite(0, 175, "objetovacio");
     this.add.image(700, 400, "background");
     this.player = new Pigmalion(this, this.posx, this.posy, "pigmalion");
     this.player.create();
     this.lives = 10;
-    this.flash = 0;
-
-    this.monecoAttacks = this.physics.add.group();
-    this.r = this.input.keyboard.addKey("R");
-    this.t = this.input.keyboard.addKey("T");
-    this.e = this.input.keyboard.addKey("E");
-
-    this.physics.add.overlap(
-      this.player,
-      this.monecoAttacks,
-      this.onCollision(this.player, this.monecoAttacks)
-    );
   }
 
   update(time, delta) {
     this.player.update();
-
-    //-----PRUEBA DE ATAQUES DE MUÑECOS-----
-    if (this.r.isDown) {
-      let xx = this.sys.game.canvas.width;
-      let yy = Phaser.Math.Between(0, this.sys.game.canvas.height);
-      this.cucuAt = new CucuAttack({
-        scene: this,
-        x: xx,
-        y: yy,
-        type: "shoot",
-      });
-      this.monecoAttacks.add(this.cucuAt);
-    }
-    if (this.t.isDown) {
-      let xx = this.sys.game.canvas.width;
-      let yy = Phaser.Math.Between(0, this.sys.game.canvas.height);
-      this.lindoAt = new LindoAttack({
-        scene: this,
-        x: xx,
-        y: yy,
-        type: "shoot",
-      });
-      this.monecoAttacks.add(this.lindoAt);
-    }
-    if (this.e.isDown) {
-      let xx = Phaser.Math.Between(0, this.sys.game.canvas.width);
-      let yy = Phaser.Math.Between(0, this.sys.game.canvas.height);
-      this.expl = new Explosion({
-        scene: this,
-        x: xx,
-        y: yy,
-        type: "pigmalion",
-      });
-      // this.monecoAttacks.add(this.expl);
-    }
-    if (this.expl !== undefined && this.expl.aabb)   
-       this.monecoAttacks.add(this.expl);
-
-    if (this.physics.overlap(this.player, this.monecoAttacks)) {
-      this.onCollision(this.player, this.monecoAttacks);
-    }
-    if (this.flash >= 1) this.flash--;
-
     //-----CAMBIO SALAS-----
 
     if (this.player.x < 0) {
@@ -101,12 +40,5 @@ export default class Sala0 extends Phaser.Scene {
       // De momento en la sala 0 no hay cambio a la derecha
       //this.y = 1;
     }
-  }
-  onCollision(obj1, obj2) {
-    if (this.flash === 0) {
-      this.lives--;
-      this.flash = 100;
-    }
-    console.log(this.lives, "  ", this.flash);
   }
 }
