@@ -23,7 +23,6 @@ export default class Sala11 extends Phaser.Scene {
     this.physics.add.collider(
       this.player,
       this.monecoAttacks,
-      this.onCollision(this.player, this.monecoAttacks)
     );
   }
 
