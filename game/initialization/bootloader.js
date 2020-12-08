@@ -1,4 +1,4 @@
-import { cst } from "../cst.js";
+import { cst } from "../scenes/cst.js";
 
 
 class Bootloader extends Phaser.Scene {

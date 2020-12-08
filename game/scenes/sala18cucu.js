@@ -1,5 +1,4 @@
-import { cst } from "../cst.js";
-import Explosion from "../explosion.js";
+import { cst } from "./cst.js";
 import Pigmalion from "../gameobject/pigmalion.js";
 import CucuAttack from "../cucuAttack.js";
 

@@ -1,4 +1,4 @@
-import { cst } from "../cst.js";
+import { cst } from "./cst.js";
 import Pigmalion from "../gameobject/pigmalion.js";
 
 export default class Sala17 extends Phaser.Scene {
@@ -6,16 +6,16 @@ export default class Sala17 extends Phaser.Scene {
     super({ key: cst.SCENES.SALA17 });
   }
 
-  init(datos){
+  init(datos) {
     this.posx = datos.posx;
     this.posy = datos.posy;
   }
-    
-  create() {  
+
+  create() {
     this.add.image(700, 400, "background");
     this.player = new Pigmalion(this, this.posx, this.posy, "pigmalion");
     this.player.create();
-    this.lives = 10;   
+    this.lives = 10;
   }
 
   update(time, delta) {
@@ -25,14 +25,16 @@ export default class Sala17 extends Phaser.Scene {
     }
     if (this.player.x > 1400) {
       this.player.x = 1;
-      this.scene.start(cst.SCENES.SALA16,  {posx : this.player.x, posy: this.player.y});
+      this.scene.start(cst.SCENES.SALA16, {
+        posx: this.player.x,
+        posy: this.player.y,
+      });
     }
-    if (this.player.y  < 0) {
-     //La sala 1.7 no tiene movieminet abajo
+    if (this.player.y < 0) {
+      //La sala 1.7 no tiene movieminet abajo
     }
     if (this.player.y > 800) {
       //La sala 1.7 no tiene movieminet arriba
     }
-  }  
+  }
 }
-

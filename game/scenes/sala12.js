@@ -1,7 +1,5 @@
-import { cst } from "../cst.js";
-import Explosion from "../explosion.js";
+import { cst } from "./cst.js";
 import Pigmalion from "../gameobject/pigmalion.js";
-import CucuAttack from "../cucuAttack.js";
 
 export default class Sala12 extends Phaser.Scene {
   constructor() {
@@ -13,11 +11,7 @@ export default class Sala12 extends Phaser.Scene {
     this.posy = datos.posy;
   }
 
-
   create() {
-    //this.add.text(10, 10, "¡Hola, mundodasddsasafda!", { fontColor: 0xffff00 });
-    let { width, height } = this.sys.game.canvas;
-    let edificio = this.physics.add.sprite(0, 175, "objetovacio");
     this.add.image(700, 400, "background");
     this.player = new Pigmalion(this, this.posx, this.posy, "pigmalion");
     this.player.create();
@@ -27,7 +21,7 @@ export default class Sala12 extends Phaser.Scene {
   update(time, delta) {
     this.player.update();
     if (this.player.x < 0) {
-      //La sala 2 no tiene movieminet a la iezquierda
+      //La sala 2 no tiene moviemiento a la iezquierda
     }
     if (this.player.x > 1400) {
       this.player.x = 1;

@@ -1,4 +1,4 @@
-import { cst } from "../cst.js";
+import { cst } from "./cst.js";
 import Pigmalion from "../gameobject/pigmalion.js";
 
 export default class Sala14 extends Phaser.Scene {
@@ -16,12 +16,6 @@ export default class Sala14 extends Phaser.Scene {
     this.player = new Pigmalion(this, this.posx, this.posy, "pigmalion");
     this.player.create();
     this.lives = 10;
-
-    this.physics.add.collider(
-      this.player,
-      this.monecoAttacks,
-      this.onCollision(this.player, this.monecoAttacks)
-    );
   }
 
   update(time, delta) {

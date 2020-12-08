@@ -1,5 +1,6 @@
-import { cst } from "../cst.js";
+import { cst } from "./cst.js";
 import Pigmalion from "../gameobject/pigmalion.js";
+import PomponinaAttack from "../monecoAttacks/pomponinaAttack.js";
 
 export default class Sala0 extends Phaser.Scene {
   constructor() {
@@ -15,12 +16,20 @@ export default class Sala0 extends Phaser.Scene {
     this.player = new Pigmalion(this, this.posx, this.posy, "pigmalion");
     this.player.create();
     this.lives = 10;
+
+    let xx = this.sys.game.canvas.width;
+    let yy = Phaser.Math.Between(0, this.sys.game.canvas.height);
+    this.a = new PomponinaAttack({
+      scene: this,
+      x: xx,
+      y: yy,
+      type: "shoot",
+    });
   }
 
   update(time, delta) {
     this.player.update();
     //-----CAMBIO SALAS-----
-
     if (this.player.x < 0) {
       this.player.x = 1400 - 1;
       this.scene.start(cst.SCENES.SALA11, {

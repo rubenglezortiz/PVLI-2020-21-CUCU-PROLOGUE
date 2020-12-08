@@ -1,4 +1,4 @@
-import { cst } from "../cst.js";
+import { cst } from "./cst.js";
 import Pigmalion from "../gameobject/pigmalion.js";
 
 export default class Sala16 extends Phaser.Scene {

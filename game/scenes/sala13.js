@@ -1,4 +1,4 @@
-import { cst } from "../cst.js";
+import { cst } from "./cst.js";
 import Pigmalion from "../gameobject/pigmalion.js";
 
 export default class Sala13 extends Phaser.Scene {
@@ -10,7 +10,6 @@ export default class Sala13 extends Phaser.Scene {
     this.posx = datos.posx;
     this.posy = datos.posy;
   }
-
 
   create() {
     this.add.image(700, 400, "background");
