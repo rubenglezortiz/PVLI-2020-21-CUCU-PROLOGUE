@@ -1,3 +1,4 @@
+import MenuCombate from "../scenes/menuCombate.js";
 import Sala0 from "../scenes/sala0.js";
 import Sala11  from "../scenes/sala11.js";
 import Sala12  from "../scenes/sala12.js";
@@ -22,7 +23,7 @@ var config = {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
-  scene: [Bootloader, Sala0, Sala11, Sala12, Sala13, Sala14, Sala15, Sala16, Sala17],
+  scene: [Bootloader,MenuCombate, Sala0, Sala11, Sala12, Sala13, Sala14, Sala15, Sala16, Sala17],
   physics: {
     default: "arcade",
     arcade: { debug: true },

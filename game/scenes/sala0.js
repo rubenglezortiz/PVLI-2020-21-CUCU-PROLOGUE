@@ -25,6 +25,7 @@ export default class Sala0 extends Phaser.Scene {
       y: yy,
       type: "shoot",
     });
+    this.r = this.input.keyboard.addKey("R");
   }
 
   update(time, delta) {
@@ -48,6 +49,16 @@ export default class Sala0 extends Phaser.Scene {
     if (this.player.y > 800) {
       // De momento en la sala 0 no hay cambio a la derecha
       //this.y = 1;
+    }
+
+    if (this.r.isDown) {
+      this.scene.launch("mc");
+      this.scene.pause();
+      // this.scene.switch('mc');
+
+      // this.scene.start('mc');
+      // this.scene.pause();
+      // this.scene.switch("mc");
     }
   }
 }

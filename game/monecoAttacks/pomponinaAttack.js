@@ -14,6 +14,6 @@ export default class PomponinaAttack extends Phaser.GameObjects.Sprite {
     this.body.setCollideWorldBounds(true);   
     this.body.setBounce(1);
     if (this.x < this.width/2 +1) this.destroy();
-    console.log(this.x,"  ",this.width);
+    // console.log(this.x,"  ",this.width);
   }
 }
