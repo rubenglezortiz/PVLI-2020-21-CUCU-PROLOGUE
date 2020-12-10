@@ -14,12 +14,10 @@ export default class Sala17 extends Phaser.Scene {
   create() {
     this.add.image(700, 400, "background");
     this.player = new Pigmalion(this, this.posx, this.posy, "pigmalion");
-    this.player.create();
     this.lives = 10;
   }
 
   update(time, delta) {
-    this.player.update();
     if (this.player.x < 0) {
       //La sala 1.7 no tiene movieminet a la iezquierda
     }

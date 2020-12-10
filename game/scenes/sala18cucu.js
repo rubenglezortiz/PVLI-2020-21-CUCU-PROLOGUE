@@ -1,78 +1,61 @@
-import { cst } from "./cst.js";
 import Pigmalion from "../gameobject/pigmalion.js";
-import CucuAttack from "../cucuAttack.js";
+import CucuAttack from "../monecoAttacks/cucuAttack.js";
 
-export default class Sala17 extends Phaser.Scene {
+export default class Sala18CUCU extends Phaser.Scene {
   constructor() {
-    super({ key: cst.SCENES.SALA17 });
+    super({ key: "SALA18CUCU" });
   }
 
-  init(datos){
+  init(datos) {
     this.posx = datos.posx;
     this.posy = datos.posy;
   }
-  preload() {}
-  
+
   create() {
-    //this.add.text(10, 10, "¡Hola, mundodasddsasafda!", { fontColor: 0xffff00 });
-    let { width, height } = this.sys.game.canvas;
-    let edificio = this.physics.add.sprite(0, 175, "objetovacio");
     this.add.image(700, 400, "background");
-    this.player = new Pigmalion(this, this.posx, this.posy, "pigmalion");
-    this.player.create();
+    this.player = new Pigmalion(this, 200, 200, "pigmalion");
     this.lives = 10;
     this.flash = 0;
-
     this.monecoAttacks = this.physics.add.group();
-    this.r = this.input.keyboard.addKey("R");
-
-    this.physics.add.collider(
-      this.player,
-      this.monecoAttacks,
-      this.onCollision(this.player, this.monecoAttacks)
-    );
+    this.monecoLP = 100;
+    this.monecoPP = 0;
+    this.physics.add.overlap(this.player, this.monecoAttacks);
+    this.cucuAttackF();
+    // this.player.create();
   }
 
   update(time, delta) {
-    this.player.update();
 
-    if (this.r.isDown) {
-      let xx = this.sys.game.canvas.width;
-      let yy = Phaser.Math.Between(0, this.sys.game.canvas.height);
-      this.expl = new CucuAttack({
-        scene: this,
-        x: xx,
-        y: yy,
-        type: "shoot",
-      });
-      this.monecoAttacks.add(this.expl);
-    }
-
-    if (this.physics.collide(this.player, this.monecoAttacks)) {
-      this.onCollision(this.player, this.monecoAttacks);
-    }
+    if (this.flash === 0)
+      if (this.physics.overlap(this.player, this.monecoAttacks)) {
+        this.lives--;
+        this.flash = 100;
+        console.log(this.lives);
+      }
     if (this.flash >= 1) this.flash--;
-
-    if (this.player.x < 0) {
-      //La sala 1.7 no tiene movieminet a la iezquierda
-    }
-    if (this.player.x > 1400) {
-      this.player.x = 1;
-      this.scene.start(cst.SCENES.SALA16,  {posx : this.player.x, posy: this.player.y});
-    }
-    if (this.player.y  < 0) {
-     //La sala 1.7 no tiene movieminet abajo
-    }
-    if (this.player.y > 800) {
-      //La sala 1.7 no tiene movieminet arriba
-    }
   }
-  onCollision(obj1, obj2) {  
-    if (this.flash === 0) {
-      this.lives--;
-      this.flash = 100;
-    }
-    console.log(this.lives, "  ", this.flash);
+
+  cucuAttackF() {
+    this.timer = this.time.addEvent({
+      delay: 2000,
+      callback: () => {
+        let xx = this.sys.game.canvas.width;
+        let yy = Phaser.Math.Between(0, this.sys.game.canvas.height);
+        this.cucuAt = new CucuAttack({
+          scene: this,
+          x: xx,
+          y: yy,
+          type: "cucuAttack",
+        });
+        this.monecoAttacks.add(this.cucuAt);
+      },
+      repeat: 3,
+    });
+    
+    this.timerMenu = this.time.delayedCall(12000, () => {
+      this.scene.launch("mc");
+      this.cucuAttackF();
+      this.scene.pause();
+    });
   }
 }
-

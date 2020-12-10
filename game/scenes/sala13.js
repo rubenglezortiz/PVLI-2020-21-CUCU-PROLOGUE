@@ -14,14 +14,11 @@ export default class Sala13 extends Phaser.Scene {
   create() {
     this.add.image(700, 400, "background");
     this.player = new Pigmalion(this, this.posx, this.posy, "pigmalion");
-    this.player.create();
     this.lives = 10;
     this.flash = 0;
   }
 
   update(time, delta) {
-    this.player.update();
-
     if (this.player.x < 0) {
       //la sala 3 no tiene nada a la inquierda
     }

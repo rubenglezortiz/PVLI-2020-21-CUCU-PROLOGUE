@@ -8,9 +8,8 @@ export default class CucuAttack extends Phaser.GameObjects.Sprite {
 
   preUpdate(t, dt) {
     super.preUpdate(t, dt);
+ 
     this.body.setVelocityX(-500);
-    if (this.x < 0) 
-      this.destroy();
-    
+    if (this.x < 0) this.destroy();
   }
 }

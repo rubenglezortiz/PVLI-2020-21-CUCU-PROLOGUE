@@ -16,16 +16,15 @@ export default class Pigmalion extends Phaser.GameObjects.Sprite {
       frameRate: 20,
       repeat: -1,
     });
-  }
 
-  create() {
     this.w = this.scene.input.keyboard.addKey("W");
     this.a = this.scene.input.keyboard.addKey("A");
     this.s = this.scene.input.keyboard.addKey("S");
     this.d = this.scene.input.keyboard.addKey("D");
   }
 
-  update() {
+  
+  preUpdate(t,dt) {
     //derecha
     let quietoX = true;
     let quietoY = true;

@@ -15,12 +15,10 @@ export default class Sala16 extends Phaser.Scene {
     //this.add.text(10, 10, "¡Hola, mundodasddsasafda!", { fontColor: 0xffff00 });
     this.add.image(700, 400, "background");
     this.player = new Pigmalion(this, this.posx, this.posy, "pigmalion");
-    this.player.create();
     this.lives = 10;
   }
 
   update(time, delta) {
-    this.player.update();
     if (this.player.x < 0) {
       this.player.x = 1400 - 1;
       this.scene.start(cst.SCENES.SALA17, {

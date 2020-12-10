@@ -8,13 +8,15 @@ class Bootloader extends Phaser.Scene {
 
   preload() {
     this.load.on("complete", () => {
-      this.scene.start(cst.SCENES.SALA0, {posx: 700, posy :400});
+      this.scene.start("SALA18CUCU", {posx: 700, posy :400});
     });
 
     this.load.spritesheet("pigmalion", "./././resources/sprites/pigmalion.png", {
       frameWidth: 192,
       frameHeight: 192,
     });
+
+
     // spritesheet 384x512
     this.load.image("background", "./././resources/sprites/background.png");
     this.load.image("objetovacio", "./././resources/sprites/objetovacio.png");
@@ -23,5 +25,4 @@ class Bootloader extends Phaser.Scene {
     this.load.image("attackButton", "./././resources/sprites/botonAtacar.png");
   }
 }
-
 export default Bootloader;

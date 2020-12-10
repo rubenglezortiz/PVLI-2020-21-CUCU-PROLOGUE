@@ -8,17 +8,16 @@ export default class Sala11 extends Phaser.Scene {
   init(datos) {
     this.posx = datos.posx;
     this.posy = datos.posy;
+    console.log(this.posx);
   }
 
   create() {
     this.add.image(700, 400, "background");
     this.player = new Pigmalion(this, this.posx, this.posy, "pigmalion");
-    this.player.create();
     this.lives = 10;
   }
 
   update(time, delta) {
-    this.player.update();
     if (this.player.x < 0) {
       this.player.x = 1400 - 1;
       this.scene.start(cst.SCENES.SALA12, {
