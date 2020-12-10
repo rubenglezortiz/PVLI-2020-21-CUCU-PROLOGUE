@@ -15,8 +15,11 @@ class Bootloader extends Phaser.Scene {
       frameWidth: 192,
       frameHeight: 192,
     });
-
-
+    this.load.spritesheet("cucuat", "./././resources/sprites/cucuattacksprite.png", {
+      frameWidth: 216,
+      frameHeight: 108,
+    });
+// this.load.image("cucuat", "./././resources/sprites/cucuattacksprite.png");
     // spritesheet 384x512
     this.load.image("background", "./././resources/sprites/background.png");
     this.load.image("objetovacio", "./././resources/sprites/objetovacio.png");

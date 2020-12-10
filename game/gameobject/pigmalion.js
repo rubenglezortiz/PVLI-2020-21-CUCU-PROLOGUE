@@ -23,9 +23,9 @@ export default class Pigmalion extends Phaser.GameObjects.Sprite {
     this.d = this.scene.input.keyboard.addKey("D");
   }
 
-  
+
   preUpdate(t,dt) {
-    //derecha
+    super.preUpdate(t,dt)
     let quietoX = true;
     let quietoY = true;
 

@@ -45,7 +45,7 @@ export default class Sala18CUCU extends Phaser.Scene {
           scene: this,
           x: xx,
           y: yy,
-          type: "cucuAttack",
+          type: "cucuat",
         });
         this.monecoAttacks.add(this.cucuAt);
       },
