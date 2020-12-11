@@ -35,9 +35,9 @@ export default class MenuCombate extends Phaser.Scene {
       });
       button.on("pointerdown", (pointer) => {
         //esto en verdad no debe pasar con ningún botón
-       // this.scene.pause();
-        //this.scene.resume("SALA18CUCU");
-       //this.scene.sendToBack();
+        this.scene.pause();
+        this.scene.resume("SALA18CUCU");
+        this.scene.sendToBack();
       });
     });
     this.attackButton.on("pointerdown", (pointer) => {
