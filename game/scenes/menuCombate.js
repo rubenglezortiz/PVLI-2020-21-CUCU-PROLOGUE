@@ -1,4 +1,5 @@
 import eventsCenter from "../eventsCenter.js";
+import rod from "./rod.js";
 export default class MenuCombate extends Phaser.Scene {
   constructor(datos) {
     super({ key: "mc" });
@@ -32,17 +33,34 @@ export default class MenuCombate extends Phaser.Scene {
       button.on("pointerout", (pointer) => {
         button.setAlpha(1);
       });
-
-      button.on("pointerdown", (pointer) => {//esto en verdad no debe pasar con ningún botón
-        
-        this.scene.pause();
-        this.scene.resume("SALA18CUCU");
-        this.scene.sendToBack();
+      button.on("pointerdown", (pointer) => {
+        //esto en verdad no debe pasar con ningún botón
+       // this.scene.pause();
+        //this.scene.resume("SALA18CUCU");
+       //this.scene.sendToBack();
       });
     });
     this.attackButton.on("pointerdown", (pointer) => {
-      this.damage = 10;
+    this.barraFinal = this.add.sprite(700, 500, "barrafinal");
+    this.barramovil1 = new rod({
+      scene: this,
+          x: this.barraFinal.x-50,
+          y: this.barraFinal.y,
+          type: "barraMovil"
+    });
+    this.barramovil2 = new rod({
+      scene: this,
+      x: this.barraFinal.x+450,
+      y: this.barraFinal.y,
+      type: "barraMovil"
+    });
+    if (this.barramovil1.x >= this.barramovil2.x)
+      this.damage = 1000/(this.barramovil1.x-this.barramovil2.x);
+      else this.damage = 1000/(this.barramovil2.x-this.barramovil1.x);
       eventsCenter.emit("damage", this.damage);
+      // this.scene.pause();
+        //this.scene.resume("SALA18CUCU");
+       //this.scene.sendToBack();
     });
     this.talkButton.on("pointerdown", (pointer) => {
       this.persuasion = 10;
