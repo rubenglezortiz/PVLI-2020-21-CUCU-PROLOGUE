@@ -9,11 +9,12 @@ export default class Sala13 extends Phaser.Scene {
   init(datos) {
     this.posx = datos.posx;
     this.posy = datos.posy;
+    this.lives=datos.lives;
   }
 
   create() {
     this.add.image(700, 400, "background");
-    this.player = new Pigmalion(this, this.posx, this.posy, "pigmalion");
+    this.player = new Pigmalion(this, this.posx, this.posy, this.lives,"pigmalion");
     this.lives = 10;
     this.flash = 0;
   }
@@ -30,6 +31,7 @@ export default class Sala13 extends Phaser.Scene {
       this.scene.start(cst.SCENES.SALA14, {
         posx: this.player.x,
         posy: this.player.y,
+        lives: this.player.lives,
       });
     }
     if (this.player.y > 800) {
@@ -37,6 +39,7 @@ export default class Sala13 extends Phaser.Scene {
       this.scene.start(cst.SCENES.SALA11, {
         posx: this.player.x,
         posy: this.player.y,
+        lives: this.player.lives,
       });
     }
   }

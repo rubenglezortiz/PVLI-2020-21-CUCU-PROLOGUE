@@ -8,10 +8,23 @@ export default class MenuCombate extends Phaser.Scene {
     this.scene.bringToTop();
     this.menu = this.add.image(700, 500, "mc");
     this.menu.setAlpha(0.5);
-    this.attackButton = this.add.sprite(300, 700, "attackButton").setInteractive();
+    this.mercy;
+
+    this.attackButton = this.add
+      .sprite(300, 700, "attackButton")
+      .setInteractive();
     this.talkButton = this.add.sprite(700, 700, "talkButton").setInteractive();
-    this.merciButton = this.add.sprite(1100, 700, "mercyButton").setInteractive();
-    this.buttonVec = [this.attackButton, this.talkButton, this.merciButton];
+
+    eventsCenter.on("canMercy", this.setMercyButton, this);
+    if (!this.mercy) {
+      this.mercyButton = this.add.sprite(1100, 700, "mercyButton");
+      this.mercyButton.setAlpha(0.5);
+    } else {
+      this.mercyButton = this.add.sprite(1100, 700, "mercyButton").setInteractive();
+      this.mercyButton.setAlpha(1);
+    }
+  
+    this.buttonVec = [this.attackButton, this.talkButton, this.mercyButton];
     this.buttonVec.forEach((button) => {
       button.on("pointerover", (pointer) => {
         button.setAlpha(0.5);
@@ -19,8 +32,9 @@ export default class MenuCombate extends Phaser.Scene {
       button.on("pointerout", (pointer) => {
         button.setAlpha(1);
       });
-      button.on("pointerdown", (pointer) => {
-        //esto en verdad no debe pasar con ningún botón
+
+      button.on("pointerdown", (pointer) => {//esto en verdad no debe pasar con ningún botón
+        
         this.scene.pause();
         this.scene.resume("SALA18CUCU");
         this.scene.sendToBack();
@@ -30,5 +44,18 @@ export default class MenuCombate extends Phaser.Scene {
       this.damage = 10;
       eventsCenter.emit("damage", this.damage);
     });
+    this.talkButton.on("pointerdown", (pointer) => {
+      this.persuasion = 10;
+      eventsCenter.emit("persuade", this.persuasion);
+    });
+    this.mercyButton.on("pointerdown", (pointer) => {
+      eventsCenter.emit("isMercy", true);
+    });
+  }
+
+  setMercyButton(monecoPP) {
+    if (monecoPP === 100) this.mercy = true;
+    else this.mercy = false;
+    console.log(this.mercy);
   }
 }

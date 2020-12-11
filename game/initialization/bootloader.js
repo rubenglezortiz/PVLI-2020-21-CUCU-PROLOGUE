@@ -8,7 +8,7 @@ class Bootloader extends Phaser.Scene {
 
   preload() {
     this.load.on("complete", () => {
-      this.scene.start("SALA18CUCU", {posx: 700, posy :400});
+      this.scene.start("SALA18CUCU", {posx: 700, posy :400, lives:10});
     });
 
     this.load.spritesheet("pigmalion", "./././resources/sprites/pigmalion.png", {

@@ -1,5 +1,5 @@
 export default class Pigmalion extends Phaser.GameObjects.Sprite {
-  constructor(scene, x, y, type) {
+  constructor(scene, x, y, lives, type) {
     super(scene, x, y, type);
     console.log(this);
     scene.add.existing(this);
@@ -16,16 +16,15 @@ export default class Pigmalion extends Phaser.GameObjects.Sprite {
       frameRate: 20,
       repeat: -1,
     });
-
+    this.lives = lives;
     this.w = this.scene.input.keyboard.addKey("W");
     this.a = this.scene.input.keyboard.addKey("A");
     this.s = this.scene.input.keyboard.addKey("S");
     this.d = this.scene.input.keyboard.addKey("D");
   }
 
-
-  preUpdate(t,dt) {
-    super.preUpdate(t,dt)
+  preUpdate(t, dt) {
+    super.preUpdate(t, dt);
     let quietoX = true;
     let quietoY = true;
 
@@ -57,7 +56,5 @@ export default class Pigmalion extends Phaser.GameObjects.Sprite {
     } else {
       this.anims.play("walk", false);
     }
-
-    
   }
 }

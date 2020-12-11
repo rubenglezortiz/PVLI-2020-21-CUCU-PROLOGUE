@@ -1,6 +1,5 @@
 import { cst } from "./cst.js";
 import Pigmalion from "../gameobject/pigmalion.js";
-import PomponinaAttack from "../monecoAttacks/pomponinaAttack.js";
 
 export default class Sala0 extends Phaser.Scene {
   constructor() {
@@ -8,12 +7,14 @@ export default class Sala0 extends Phaser.Scene {
   }
 
   init(datos) {
+    console.log("creada sala 0");
     this.posx = datos.posx;
     this.posy = datos.posy;
+    this.lives=datos.lives;
   }
   create() {
     this.add.image(700, 400, "background");
-    this.player = new Pigmalion(this, this.posx, this.posy, "pigmalion");
+    this.player = new Pigmalion(this, this.posx, this.posy,this.lives, "pigmalion");
   }
 
   update(time, delta) {
