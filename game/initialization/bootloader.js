@@ -26,6 +26,8 @@ class Bootloader extends Phaser.Scene {
     this.load.image("shoot", "./././resources/sprites/cuadrado.jpg");
     this.load.image("mc","./././resources/sprites/MenuComb.png");
     this.load.image("attackButton", "./././resources/sprites/botonAtacar.png");
+    this.load.image("talkButton",".././resources/sprites/botonHablar.png");
+    this.load.image("mercyButton",".././resources/sprites/botonPiedad.png");
   }
 }
 export default Bootloader;
