@@ -14,19 +14,21 @@ export default class Sala0 extends Phaser.Scene {
     this.lives = datos.lives;
   }
   create() {
-    this.add.image(700, 400, "background");
-    this.player = new Pigmalion(
-      this,
-      this.posx,
-      this.posy,
-      this.lives,
-      "pigmalion"
-    );
+    this.add.image(700, 400, "tablones");
+    this.physics.add.image(700,400,"cortinas");
+    this.player = new Pigmalion(this, this.posx, this.posy,this.lives, "pigmalion");
+    this.add.image(700,400,"telon");
+  
+      //this.floor = new Phaser.Geom.Rectangle(274, 400, 550, 5);
+
+    this.lives = 10;
     this.monecoAttacks = this.physics.add.group();
     this.r = this.input.keyboard.addKey("R");
   }
 
   update(time, delta) {
+
+
     //-----CAMBIO SALAS-----
     if (this.player.x < 0) {
       this.player.x = 1400 - 1;

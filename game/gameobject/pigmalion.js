@@ -5,7 +5,7 @@ export default class Pigmalion extends Phaser.GameObjects.Sprite {
     scene.add.existing(this);
     scene.physics.world.enable(this);
     this.body.immovable = true;
-    this.body.setCollideWorldBounds(true);
+    this.body.setCollideWorldBounds(false);
     //this.anim = type;
     this.scene.anims.create({
       key: "walk",

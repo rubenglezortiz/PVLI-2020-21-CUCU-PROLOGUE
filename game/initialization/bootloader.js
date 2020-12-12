@@ -23,9 +23,15 @@ class Bootloader extends Phaser.Scene {
       frameWidth: 91,
       frameHeight:108
     });
-    // spritesheet 384x512
-    this.load.image("background", "./././resources/sprites/background.png");
-    this.load.image("objetovacio", "./././resources/sprites/objetovacio.png");
+
+    
+    this.load.image("background", "./././resources/sprites/teatroGeneral/background.png");
+    this.load.image("caballo", "./././resources/sprites/caballo.png");
+    this.load.image("cortinas", "./././resources/sprites/teatroGeneral/cortinas.png");
+    this.load.image("telon", "./././resources/sprites/teatroGeneral/telon.png");
+    this.load.image("telonGrande", "./././resources/sprites/teatroGeneral/telonGrande.png");
+    this.load.image("tablones", "./././resources/sprites/teatroGeneral/tablones.png");
+    this.load.image("objetovacio", "./././resources/sprites/teatroGeneral/objetovacio.png");
     this.load.image("mc","./././resources/sprites/MenuComb.png");
 
     //-----SPRITES MENU ATAQUE-----

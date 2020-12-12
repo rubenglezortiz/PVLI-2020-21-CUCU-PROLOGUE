@@ -13,8 +13,13 @@ export default class Sala13 extends Phaser.Scene {
   }
 
   create() {
-    this.add.image(700, 400, "background");
-    this.player = new Pigmalion(this, this.posx, this.posy, this.lives,"pigmalion");
+    this.add.image(700, 400, "tablones");
+    this.physics.add.image(700,400,"cortinas");
+    this.caballo = this.physics.add.sprite(700,350,"caballo").setScale(0.75);
+   // this.caballo.sprite.setScale(0.5);
+    this.player = new Pigmalion(this, this.posx, this.posy,this.lives, "pigmalion");
+    this.add.image(700,400,"telon");
+
     this.lives = 10;
     this.flash = 0;
   }
