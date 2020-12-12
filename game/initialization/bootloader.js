@@ -15,22 +15,26 @@ class Bootloader extends Phaser.Scene {
       frameWidth: 192,
       frameHeight: 192,
     });
-    this.load.spritesheet("cucuat", "./././resources/sprites/cucuattacksprite.png", {
+    this.load.spritesheet("cucuat", "./././resources/sprites/cucu/cucuattacksprite.png", {
       frameWidth: 216,
       frameHeight: 108,
     });
-// this.load.image("cucuat", "./././resources/sprites/cucuattacksprite.png");
+    this.load.spritesheet("cucuat2", "./././resources/sprites/cucu/cucuattacksprite2.png",{
+      frameWidth: 91,
+      frameHeight:108
+    });
     // spritesheet 384x512
     this.load.image("background", "./././resources/sprites/background.png");
     this.load.image("objetovacio", "./././resources/sprites/objetovacio.png");
-    this.load.image("shoot", "./././resources/sprites/cuadrado.jpg");
     this.load.image("mc","./././resources/sprites/MenuComb.png");
-    this.load.image("attackButton", "./././resources/sprites/botonAtacar.png");
-    this.load.image("talkButton",".././resources/sprites/botonHablar.png");
-    this.load.image("mercyButton",".././resources/sprites/botonPiedad.png");
-    this.load.image("backButton", ".././resources/sprites/botonRetroceder.png");
-    this.load.image("barrafinal",".././resources/sprites/barrafinal.png");
-    this.load.image("barraMovil",".././resources/sprites/barraMovil.png");
+
+    //-----SPRITES MENU ATAQUE-----
+    this.load.image("attackButton", ".././resources/sprites/menuAtaque/botonAtacar.png");
+    this.load.image("talkButton",".././resources/sprites/menuAtaque/botonHablar.png");
+    this.load.image("mercyButton",".././resources/sprites/menuAtaque/botonPiedad.png");
+    this.load.image("backButton", ".././resources/sprites/menuAtaque/botonRetroceder.png");
+    this.load.image("bar",".././resources/sprites/menuAtaque/barrafinal.png");
+    this.load.image("moveBar",".././resources/sprites/menuAtaque/barraMovil.png");
   }
 }
 export default Bootloader;

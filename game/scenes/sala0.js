@@ -1,5 +1,6 @@
 import { cst } from "./cst.js";
 import Pigmalion from "../gameobject/pigmalion.js";
+import Explosion from "../monecoAttacks/explosion.js";
 
 export default class Sala0 extends Phaser.Scene {
   constructor() {
@@ -10,11 +11,19 @@ export default class Sala0 extends Phaser.Scene {
     console.log("creada sala 0");
     this.posx = datos.posx;
     this.posy = datos.posy;
-    this.lives=datos.lives;
+    this.lives = datos.lives;
   }
   create() {
     this.add.image(700, 400, "background");
-    this.player = new Pigmalion(this, this.posx, this.posy,this.lives, "pigmalion");
+    this.player = new Pigmalion(
+      this,
+      this.posx,
+      this.posy,
+      this.lives,
+      "pigmalion"
+    );
+    this.monecoAttacks = this.physics.add.group();
+    this.r = this.input.keyboard.addKey("R");
   }
 
   update(time, delta) {
@@ -37,6 +46,16 @@ export default class Sala0 extends Phaser.Scene {
     if (this.player.y > 800) {
       // De momento en la sala 0 no hay cambio a la derecha
       //this.y = 1;
+    }
+
+    if (this.r.isDown) {
+      this.expl = new Explosion(
+        {scene: this,
+        x: 300,
+        y: 300,
+        type: "pigmalion"});
+        delay
+       this.monecoAttacks.add(this.expl);
     }
   }
 }

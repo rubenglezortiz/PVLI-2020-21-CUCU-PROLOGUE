@@ -45,15 +45,18 @@ export default class Sala18CUCU extends Phaser.Scene {
       delay: 2000,
       callback: () => {
         let xx = this.sys.game.canvas.width;
-        let yy = Phaser.Math.Between(
-          this.player.y - this.player.height / 2,
-          this.player.y + this.player.height / 2
-        );
+        let yy = -1;
+        while (yy < 54 || yy > this.sys.game.canvas.height-54) { //CUIDADO CON EL CABLEADO POR CÓDIGO
+          yy = Phaser.Math.Between(
+            this.player.y - this.player.height * 1.5,
+            this.player.y + this.player.height * 1.5
+          );
+        }
         this.cucuAt = new CucuAttack({
           scene: this,
           x: xx,
           y: yy,
-          type: "cucuat",
+          type: "cucuat2",
         });
         this.monecoAttacks.add(this.cucuAt);
       },
