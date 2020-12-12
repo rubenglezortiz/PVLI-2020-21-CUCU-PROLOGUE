@@ -29,6 +29,7 @@ export default class Sala18CUCU extends Phaser.Scene {
     if (this.flash === 0)
       if (this.physics.overlap(this.player, this.monecoAttacks)) {
         this.player.lives--;
+        eventsCenter.emit("hit",this);
         console.log(this.player.lives);
         this.flash = 100;
       }

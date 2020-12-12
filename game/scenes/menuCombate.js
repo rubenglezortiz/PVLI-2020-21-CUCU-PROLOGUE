@@ -3,6 +3,7 @@ import rod from "./rod.js";
 export default class MenuCombate extends Phaser.Scene {
   constructor(datos) {
     super({ key: "mc" });
+    this.test = false;
   }
 
   create() {
@@ -35,12 +36,21 @@ export default class MenuCombate extends Phaser.Scene {
       });
       button.on("pointerdown", (pointer) => {
         //esto en verdad no debe pasar con ningún botón
-        this.scene.pause();
-        this.scene.resume("SALA18CUCU");
-        this.scene.sendToBack();
+       // this.scene.pause();
+       // this.scene.resume("SALA18CUCU");
+       // this.scene.sendToBack();
       });
     });
     this.attackButton.on("pointerdown", (pointer) => {
+      this.backButton = this.add.sprite(100, 100, "backButton").setInteractive();
+      this.backButton.on("pointerover", (pointer) => {
+        this.backButton.setAlpha(0.5);
+      });
+      this.backButton.on("pointerout", (pointer) => {
+        this.backButton.setAlpha(1);
+      });
+      this.backButton.on("pointerdown", (pointer) => {
+});
     this.barraFinal = this.add.sprite(700, 500, "barrafinal");
     this.barramovil1 = new rod({
       scene: this,
@@ -58,10 +68,11 @@ export default class MenuCombate extends Phaser.Scene {
       this.damage = 1000/(this.barramovil1.x-this.barramovil2.x);
       else this.damage = 1000/(this.barramovil2.x-this.barramovil1.x);
       eventsCenter.emit("damage", this.damage);
-      // this.scene.pause();
-        //this.scene.resume("SALA18CUCU");
-       //this.scene.sendToBack();
-    });
+      this.buttonVec.forEach((button) => {
+        button.disableInteractive();
+        button.setAlpha(0.5);
+      });
+});
     this.talkButton.on("pointerdown", (pointer) => {
       this.persuasion = 10;
       eventsCenter.emit("persuade", this.persuasion);
@@ -70,10 +81,20 @@ export default class MenuCombate extends Phaser.Scene {
       eventsCenter.emit("isMercy", true);
     });
   }
-
+  update(time,delta)
+  {
+   // this.test = false;
+    eventsCenter.on("salir",this.parar,this);
+  }
   setMercyButton(monecoPP) {
     if (monecoPP === 100) this.mercy = true;
     else this.mercy = false;
     console.log(this.mercy);
+  }
+  parar()
+  {
+    this.scene.pause();
+    this.scene.resume("SALA18CUCU");
+    this.scene.sendToBack();
   }
 }
