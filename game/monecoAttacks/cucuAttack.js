@@ -1,3 +1,4 @@
+import eventsCenter from "../eventsCenter.js";
 export default class CucuAttack extends Phaser.GameObjects.Sprite {
   constructor(config) {
     super(config.scene, config.x, config.y, config.type);
@@ -19,6 +20,7 @@ export default class CucuAttack extends Phaser.GameObjects.Sprite {
     super.preUpdate(t, dt); 
     this.anims.play("cucu", true);
     this.body.setVelocityX(-500);
+    eventsCenter.on("hit",this.destroy,this);
     if (this.x < 0) this.destroy();
   }
 }

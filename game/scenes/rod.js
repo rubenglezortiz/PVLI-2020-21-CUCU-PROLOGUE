@@ -1,4 +1,5 @@
 import eventsCenter from "../eventsCenter.js";
+import menuCombate from "./menuCombate.js";
 export default class rod extends Phaser.GameObjects.Sprite {
   constructor(config) {
     super(config.scene, config.x, config.y, config.type);
@@ -22,7 +23,8 @@ export default class rod extends Phaser.GameObjects.Sprite {
       }
       if (this.parar.isDown) {
        { 
-           this.active = false;
+          this.active = false;
+          eventsCenter.emit("salir", true);
        }
       }
   }
