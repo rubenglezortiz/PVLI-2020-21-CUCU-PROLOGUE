@@ -17,12 +17,22 @@ export default class Sala12 extends Phaser.Scene {
     this.physics.add.image(700,400,"cortinas");
     this.player = new Pigmalion(this, this.posx, this.posy,this.lives, "pigmalion");
     this.add.image(300,400,"mesa");
+    this.bebe = this.physics.add.sprite(1000,300,"bebe").setScale(1);
+    this.bebeE =  this.add.image(this.bebe.x, this.bebe.y -  this.bebe.height, "teclaE");
     this.add.image(700,400,"telon");
     
     this.lives = 10;
   }
 
   update(time, delta) {
+    if(this.physics.overlap(this.player, this.bebe)) {
+      this.bebeE.visible = true;
+    }
+    else{
+      this.bebeE.visible = false;
+    }
+
+
     if (this.player.x < 0) {
       //La sala 2 no tiene moviemiento a la iezquierda
     }

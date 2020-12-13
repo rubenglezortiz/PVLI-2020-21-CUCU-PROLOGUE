@@ -15,6 +15,10 @@ class Bootloader extends Phaser.Scene {
       frameWidth: 192,
       frameHeight: 192,
     });
+    this.load.spritesheet("cucu", "./././resources/sprites/cucu.png", {
+      frameWidth: 32,
+      frameHeight: 32,
+    });
     this.load.spritesheet("cucuat", "./././resources/sprites/cucu/cucuattacksprite.png", {
       frameWidth: 216,
       frameHeight: 108,
@@ -24,6 +28,8 @@ class Bootloader extends Phaser.Scene {
       frameHeight:108
     });
 
+
+    this.load.image("bebe", "./././resources/sprites/bebe.png");
     this.load.image("teclaE", "./././resources/sprites/teclaE.png");
     this.load.image("mesa", "./././resources/sprites/mesas1.png");
     this.load.image("background", "./././resources/sprites/teatroGeneral/background.png");

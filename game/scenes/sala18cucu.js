@@ -6,19 +6,32 @@ import eventsCenter from "../eventsCenter.js";
 
 export default class Sala18CUCU extends Phaser.Scene {
   constructor() {
-    super({ key: "SALA18CUCU" });
+    super({ key: cst.SCENES.SALA18CUCU  });
   }
 
   init(datos) {
     this.lives = datos.lives;
+    this.posx = datos.posx;
+    this.posy = datos.posy;
+    this.lives=datos.lives
   }
-
+ 
   create() {
     this.add.image(700, 400, "tablones");
     this.physics.add.image(700,400,"cortinas");
     this.player = new Pigmalion(this, this.posx, this.posy,this.lives, "pigmalion");
     this.add.image(700,400,"telon");
-    
+  
+    this.anims.create({
+      key: "cucu1",
+      frames: this.anims.generateFrameNumbers("cucu", {
+        start: 0,
+        end: 21,
+      }),
+      frameRate: 20,
+      repeat: -1,
+    });
+
     this.flash = 0; //esto puede estar aquí, pero es muy chapucero
     this.monecoAttacks = this.physics.add.group();
     this.monecoLP = 100;
@@ -29,6 +42,11 @@ export default class Sala18CUCU extends Phaser.Scene {
   }
 
   update(time, delta) {
+
+    
+    //this.anims.play("cucu1", true);
+
+
     if (this.flash === 0)
       if (this.physics.overlap(this.player, this.monecoAttacks)) {
         this.player.lives--;

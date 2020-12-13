@@ -8,5 +8,6 @@ export const  cst = {
         SALA15: "SALA15",
         SALA16: "SALA16",
         SALA17: "SALA17",
+        SALA18CUCU: "SALA18CUCU"
     }
 }
