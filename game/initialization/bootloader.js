@@ -8,7 +8,7 @@ class Bootloader extends Phaser.Scene {
 
   preload() {
     this.load.on("complete", () => {
-      this.scene.start("SALA18CUCU", {posx: 700, posy :400, lives:10});
+      this.scene.start("SALA0", {posx: 700, posy :400, lives:10});
     });
 
     this.load.spritesheet("pigmalion", "./././resources/sprites/pigmalion.png", {
@@ -24,7 +24,7 @@ class Bootloader extends Phaser.Scene {
       frameHeight:108
     });
 
-    
+    this.load.image("mesa", "./././resources/sprites/mesas1.png");
     this.load.image("background", "./././resources/sprites/teatroGeneral/background.png");
     this.load.image("caballo", "./././resources/sprites/caballo.png");
     this.load.image("cortinas", "./././resources/sprites/teatroGeneral/cortinas.png");

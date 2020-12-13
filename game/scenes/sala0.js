@@ -17,8 +17,9 @@ export default class Sala0 extends Phaser.Scene {
     this.add.image(700, 400, "tablones");
     this.physics.add.image(700,400,"cortinas");
     this.player = new Pigmalion(this, this.posx, this.posy,this.lives, "pigmalion");
+    this.add.image(300,400,"mesa");
     this.add.image(700,400,"telon");
-  
+   
       //this.floor = new Phaser.Geom.Rectangle(274, 400, 550, 5);
 
     this.lives = 10;
