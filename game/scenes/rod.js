@@ -11,6 +11,7 @@ export default class rod extends Phaser.GameObjects.Sprite {
     this.active = true;
   }
   preUpdate(t, dt) {
+    eventsCenter.on("back",this.destroy,this);
     if (this.active) {
       if (this.right1) this.x += 10;
       else this.x -= 10;

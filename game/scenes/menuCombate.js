@@ -12,9 +12,7 @@ export default class MenuCombate extends Phaser.Scene {
     this.menu.setAlpha(0.5);
     this.mercy;
 
-    this.attackButton = this.add
-      .sprite(300, 700, "attackButton")
-      .setInteractive();
+    this.attackButton = this.add.sprite(300, 700, "attackButton").setInteractive();
     this.talkButton = this.add.sprite(700, 700, "talkButton").setInteractive();
 
     eventsCenter.on("canMercy", this.setMercyButton, this);
@@ -36,12 +34,13 @@ export default class MenuCombate extends Phaser.Scene {
       });
       button.on("pointerdown", (pointer) => {
         //esto en verdad no debe pasar con ningún botón
-       this.scene.pause();
-        this.scene.resume("SALA18CUCU");
-       this.scene.sendToBack();
+      // this.scene.pause();
+      //  this.scene.resume("SALA18CUCU");
+      // this.scene.sendToBack();
       });
     });
-    this.attackButton.on("pointerdown", (pointer) => {
+    // Botón de ataque
+    this.attackButton.on("pointerdown", (pointer) => { 
       this.backButton = this.add.sprite(100, 100, "backButton").setInteractive();
       this.backButton.on("pointerover", (pointer) => {
         this.backButton.setAlpha(0.5);
@@ -50,32 +49,49 @@ export default class MenuCombate extends Phaser.Scene {
         this.backButton.setAlpha(1);
       });
       this.backButton.on("pointerdown", (pointer) => {
-});
-    this.barraFinal = this.add.sprite(700, 500, "barrafinal");
+        this.barraFinal.destroy();
+        eventsCenter.emit("back",this);
+          this.attackButton.setInteractive();
+          this.attackButton.setAlpha(1);
+          this.talkButton.setInteractive();
+          this.talkButton.setAlpha(1);
+          if (this.mercy)
+          {
+            this.mercyButton.setInteractive();
+            this.mercyButton.setAlpha(1);
+          }
+          this.backButton.destroy();
+        });
+        this.buttonVec.forEach((button) => {
+          button.disableInteractive();
+          button.setAlpha(0.5);
+        });
+        this.backButton.setInteractive();
+        this.barraFinal = this.add.sprite(700, 500, "bar");
+    // Primera barra móvil
     this.barramovil1 = new rod({
       scene: this,
           x: this.barraFinal.x-50,
           y: this.barraFinal.y,
-          type: "barraMovil"
+          type: "moveBar"
     });
+    // Segunda barra móvil
     this.barramovil2 = new rod({
       scene: this,
       x: this.barraFinal.x+450,
       y: this.barraFinal.y,
-      type: "barraMovil"
+      type: "moveBar"
     });
+    // Gestión de daño
     if (this.barramovil1.x >= this.barramovil2.x)
       this.damage = 1000/(this.barramovil1.x-this.barramovil2.x);
       else this.damage = 1000/(this.barramovil2.x-this.barramovil1.x);
       eventsCenter.emit("damage", this.damage);
-      this.buttonVec.forEach((button) => {
-        button.disableInteractive();
-        button.setAlpha(0.5);
       });
-});
     this.talkButton.on("pointerdown", (pointer) => {
       this.persuasion = 10;
       eventsCenter.emit("persuade", this.persuasion);
+      this.parar();
     });
     this.mercyButton.on("pointerdown", (pointer) => {
       eventsCenter.emit("isMercy", true);
@@ -84,7 +100,7 @@ export default class MenuCombate extends Phaser.Scene {
   update(time,delta)
   {
    // this.test = false;
-    eventsCenter.on("salir",this.parar,this);
+    eventsCenter.on("exit",this.parar,this);
   }
   setMercyButton(monecoPP) {
     if (monecoPP === 100) this.mercy = true;
