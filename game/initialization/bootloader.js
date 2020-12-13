@@ -24,6 +24,7 @@ class Bootloader extends Phaser.Scene {
       frameHeight:108
     });
 
+    this.load.image("teclaE", "./././resources/sprites/teclaE.png");
     this.load.image("mesa", "./././resources/sprites/mesas1.png");
     this.load.image("background", "./././resources/sprites/teatroGeneral/background.png");
     this.load.image("caballo", "./././resources/sprites/caballo.png");
