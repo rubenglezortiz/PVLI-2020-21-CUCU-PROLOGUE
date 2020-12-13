@@ -21,12 +21,12 @@ export default class Sala18CUCU extends Phaser.Scene {
     this.physics.add.image(700,400,"cortinas");
     this.player = new Pigmalion(this, this.posx, this.posy,this.lives, "pigmalion");
     this.add.image(700,400,"telon");
-  
+    this.cucu = this.physics.add.sprite(1100, 450, "cucu").setScale(6);;
     this.anims.create({
       key: "cucu1",
       frames: this.anims.generateFrameNumbers("cucu", {
         start: 0,
-        end: 21,
+        end: 20,
       }),
       frameRate: 20,
       repeat: -1,
@@ -44,7 +44,7 @@ export default class Sala18CUCU extends Phaser.Scene {
   update(time, delta) {
 
     
-    //this.anims.play("cucu1", true);
+    this.cucu.anims.play("cucu1", true);
 
 
     if (this.flash === 0)

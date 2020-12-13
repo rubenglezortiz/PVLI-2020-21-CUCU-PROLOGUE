@@ -18,8 +18,7 @@ export default class Sala0 extends Phaser.Scene {
     this.add.image(700, 400, "tablones");
     this.physics.add.image(700,400,"cortinas");
     this.player = new Pigmalion(this, this.posx, this.posy,this.lives, "pigmalion");
-    this.caballo = this.physics.add.sprite(700,350,"caballo").setScale(0.5);
-    this.caballoE =  this.add.image(700, 800-  this.caballo.height, "teclaE");
+   
 
     //this.caballo = new GameObject(this, 700,350,"caballo", this.player);
     
@@ -32,22 +31,18 @@ export default class Sala0 extends Phaser.Scene {
     this.r = this.input.keyboard.addKey("R");
 
 
-
+/*
 this.trigger = this.add.zone(700, 400);
 this.trigger.setSize(200, 200);
 this.physics.world.enable(this.trigger);
 this.trigger.body.setAllowGravity(false);
 this.trigger.body.moves = false;
+*/
   }
 
   update(time, delta) {
 
-    if(this.physics.overlap(this.player, this.caballo)) {
-      this.caballoE.visible = true;
-    }
-    else{
-      this.caballoE.visible = false;
-    }
+   
     //-----CAMBIO SALAS-----
     if (this.player.x < 0) {
       this.player.x = 1400 - 1;
