@@ -82,7 +82,7 @@ export default class MenuCombate extends Phaser.Scene {
       y: this.barraFinal.y,
       type: "moveBar"
     });
-    // Gestión de daño
+    // Gestión de daño      //CÓMO SE DETECTA QUE SE HAYA PULSADO EL ESPACIO??????
     if (this.barramovil1.x >= this.barramovil2.x)
       this.damage = 1000/(this.barramovil1.x-this.barramovil2.x);
       else this.damage = 1000/(this.barramovil2.x-this.barramovil1.x);

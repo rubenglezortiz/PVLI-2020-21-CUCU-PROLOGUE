@@ -6,22 +6,28 @@ import eventsCenter from "../eventsCenter.js";
 
 export default class Sala18CUCU extends Phaser.Scene {
   constructor() {
-    super({ key: cst.SCENES.SALA18CUCU  });
+    super({ key: cst.SCENES.SALA18CUCU });
   }
 
   init(datos) {
     this.lives = datos.lives;
     this.posx = datos.posx;
     this.posy = datos.posy;
-    this.lives=datos.lives
+    this.lives = datos.lives;
   }
- 
+
   create() {
     this.add.image(700, 400, "tablones");
-    this.physics.add.image(700,400,"cortinas");
-    this.player = new Pigmalion(this, this.posx, this.posy,this.lives, "pigmalion");
-    this.add.image(700,400,"telon");
-    this.cucu = this.physics.add.sprite(1100, 450, "cucu").setScale(6);;
+    this.physics.add.image(700, 400, "cortinas");
+    this.player = new Pigmalion(
+      this,
+      this.posx,
+      this.posy,
+      this.lives,
+      "pigmalion"
+    );
+    this.add.image(700, 400, "telon");
+    this.cucu = this.physics.add.sprite(1100, 450, "cucu").setScale(6);
     this.anims.create({
       key: "cucu1",
       frames: this.anims.generateFrameNumbers("cucu", {
@@ -38,27 +44,29 @@ export default class Sala18CUCU extends Phaser.Scene {
     this.monecoPP = 0;
     this.monecoMercy = false;
     this.physics.add.overlap(this.player, this.monecoAttacks);
-    this.cucuAttackF();
+    this.startVS();
   }
 
   update(time, delta) {
-
-    
     this.cucu.anims.play("cucu1", true);
-
 
     if (this.flash === 0)
       if (this.physics.overlap(this.player, this.monecoAttacks)) {
         this.player.lives--;
-        eventsCenter.emit("hit",this);
+        eventsCenter.emit("hit", this.player.y, this.player.height);
         console.log(this.player.lives);
         this.flash = 100;
       }
     if (this.flash >= 1) this.flash--;
-    if (this.player.lives === 0){
-      this.player.lives=10;
-       this.finishVS();
+    if (this.player.lives === 0) {
+      this.player.lives = 10;
+      this.finishVS();
     }
+  }
+
+  startVS() {
+    if (this.monecoLP >= 50) this.cucuAttackF();
+    else this.cucuAttackF2();
   }
 
   cucuAttackF() {
@@ -67,7 +75,8 @@ export default class Sala18CUCU extends Phaser.Scene {
       callback: () => {
         let xx = this.sys.game.canvas.width;
         let yy = -1;
-        while (yy < 54 || yy > this.sys.game.canvas.height-54) { //CUIDADO CON EL CABLEADO POR CÓDIGO
+        while (yy < 54 || yy > this.sys.game.canvas.height - 54) {
+          //CUIDADO CON EL CABLEADO POR CÓDIGO
           yy = Phaser.Math.Between(
             this.player.y - this.player.height * 1.5,
             this.player.y + this.player.height * 1.5
@@ -77,13 +86,48 @@ export default class Sala18CUCU extends Phaser.Scene {
           scene: this,
           x: xx,
           y: yy,
-          type: "cucuat2",
+          type: "cucuat",
         });
         this.monecoAttacks.add(this.cucuAt);
       },
       repeat: 3,
     });
+    this.startMenu();
+  }
 
+  cucuAttackF2() {
+    this.timer = this.time.addEvent({
+      delay: 2000,
+      callback: () => {
+        let xx = this.sys.game.canvas.width;
+        let yy = Phaser.Math.Between(this.player.y - this.player.height * 1.5, this.player.y + this.player.height * 1.5);
+        let yy2 = Phaser.Math.Between(0, this.sys.game.canvas.height  );
+        this.cucuAt1 = new CucuAttack({
+          scene: this,
+          x: xx,
+          y: yy,
+          type: "cucuat2",
+        });
+        this.monecoAttacks.add(this.cucuAt1);
+        this.timerAttack2=this.time.delayedCall(350,()=>{
+        this.cucuAt2 = new CucuAttack({
+          scene: this,
+          x: xx,
+          y: yy2,
+          type: "cucuat2",
+        });
+        this.monecoAttacks.add(this.cucuAt2);
+      });      
+        
+      },
+      repeat: 3,
+     
+    });
+    console.log(this.monecoAttacks);
+    this.startMenu();
+  }
+
+  startMenu() {
     this.timerMenu = this.time.delayedCall(12000, () => {
       this.scene.launch("mc");
       eventsCenter.emit("canMercy", this.monecoPP);
@@ -95,7 +139,7 @@ export default class Sala18CUCU extends Phaser.Scene {
         eventsCenter.off("persuade", this.persuade, this);
         eventsCenter.off("isMercy", this.mercy, this);
       });
-      this.cucuAttackF();
+      this.startVS();
       this.scene.pause();
     });
   }
