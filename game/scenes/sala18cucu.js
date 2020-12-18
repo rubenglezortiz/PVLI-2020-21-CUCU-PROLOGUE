@@ -139,8 +139,9 @@ export default class Sala18CUCU extends Phaser.Scene {
         eventsCenter.off("persuade", this.persuade, this);
         eventsCenter.off("isMercy", this.mercy, this);
       });
-      this.startVS();
+      this.startVS();      
       this.scene.pause();
+      this.player.resetInput();
     });
   }
 

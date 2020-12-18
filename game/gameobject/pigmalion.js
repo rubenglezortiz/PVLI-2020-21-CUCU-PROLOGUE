@@ -27,7 +27,6 @@ export default class Pigmalion extends Phaser.GameObjects.Sprite {
     super.preUpdate(t, dt);
     let quietoX = true;
     let quietoY = true;
-
     if (this.w.isDown) {
       this.body.setVelocityY(-300);
       quietoY = false;
@@ -56,5 +55,12 @@ export default class Pigmalion extends Phaser.GameObjects.Sprite {
     } else {
       this.anims.play("walk", false);
     }
+  }
+
+  resetInput() {
+    this.w.reset();
+    this.a.reset();
+    this.s.reset();
+    this.d.reset();
   }
 }
