@@ -16,22 +16,26 @@ export default class Sala0 extends Phaser.Scene {
   }
   create() {
     this.add.image(700, 400, "tablones");
-    this.physics.add.image(700,400,"cortinas");
-    this.player = new Pigmalion(this, this.posx, this.posy,this.lives, "pigmalion");
-   
+    this.physics.add.image(700, 400, "cortinas");
+    this.player = new Pigmalion(
+      this,
+      this.posx,
+      this.posy,
+      this.lives,
+      "pigmalion"
+    );
 
     //this.caballo = new GameObject(this, 700,350,"caballo", this.player);
-    
-    this.add.image(700,400,"telon");
-   
-      //this.floor = new Phaser.Geom.Rectangle(274, 400, 550, 5);
+
+    this.add.image(700, 400, "telon");
+
+    //this.floor = new Phaser.Geom.Rectangle(274, 400, 550, 5);
 
     this.lives = 10;
     this.monecoAttacks = this.physics.add.group();
     this.r = this.input.keyboard.addKey("R");
 
-
-/*
+    /*
 this.trigger = this.add.zone(700, 400);
 this.trigger.setSize(200, 200);
 this.physics.world.enable(this.trigger);
@@ -41,8 +45,6 @@ this.trigger.body.moves = false;
   }
 
   update(time, delta) {
-
-   
     //-----CAMBIO SALAS-----
     if (this.player.x < 0) {
       this.player.x = 1400 - 1;
@@ -65,13 +67,16 @@ this.trigger.body.moves = false;
     }
 
     if (this.r.isDown) {
-      this.expl = new Explosion(
-        {scene: this,
+      this.expl = new Explosion({
+        scene: this,
         x: 300,
         y: 300,
-        type: "pigmalion"});
-        delay
-       this.monecoAttacks.add(this.expl);
+        type: "pigmalion",
+      });
+      this.timer = this.time.delayedCall(800,()=>{
+        this.monecoAttacks.add(this.expl);
+        console.log("añadido al grupo fis");
+      })
     }
   }
 }

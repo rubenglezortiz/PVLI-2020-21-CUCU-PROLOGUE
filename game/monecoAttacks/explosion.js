@@ -19,20 +19,8 @@ export default class Explosion extends Phaser.GameObjects.Sprite {
   preUpdate(time, delta) {
     super.preUpdate(time, delta);
     this.anims.play("bomb", true);
-
-    this.timer += delta;
-    if (this.aabb === false) {
-      if (this.timer > 2000) {
-        this.activateaabb();
-      }
-    } else {
-      if (this.timer > 500) {
-        this.destroy();
-      }
-    }
-  }
-  activateaabb() {
-    this.aabb = true;
-    this.timer = 0;
+    this.timer = this.scene.time.delayedCall(1000, () => {
+      this.destroy();
+    });
   }
 }
