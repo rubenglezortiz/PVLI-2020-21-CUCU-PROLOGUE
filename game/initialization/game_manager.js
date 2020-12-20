@@ -27,7 +27,7 @@ var config = {
   scene: [Bootloader,MenuCombate,Sala18CUCU,Sala0,Sala11,Sala12,Sala13,Sala14,Sala15,Sala16,Sala17,],
   physics: {
     default: "arcade",
-    arcade: { debug: true },
+    arcade: { debug: false },
   },
 };
 new Phaser.Game(config);
