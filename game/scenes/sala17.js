@@ -13,10 +13,23 @@ export default class Sala17 extends Phaser.Scene {
   }
 
   create() {
+    
+
     this.add.image(700, 400, "tablones");
     this.physics.add.image(700,400,"cortinas");
-    this.cucu = this.physics.add.sprite(300,400,"bebe").setScale(1);
-    this.cucuE =  this.add.image(this.cucu.x, this.cucu.y -  this.cucu.height, "teclaE");
+    this.add.image(300, 300, "carreta").setScale(6);
+    this.cucu = this.physics.add.sprite(300,400,"cucu_idle").setScale(6);
+    this.cucuE =  this.add.image(this.cucu.x, this.cucu.y - this.cucu.height*6, "teclaE");
+    this.anims.create({
+      key: "idle",
+      frames: this.anims.generateFrameNumbers("cucu_idle", {
+        start: 0,
+        end: 6, 
+      }),
+      frameRate: 4,
+      repeat: -1,
+    });
+    
     this.player = new Pigmalion(this, this.posx, this.posy,this.lives, "pigmalion");
     this.add.image(700,400,"telon");
     this.lives = 10;
@@ -25,6 +38,7 @@ export default class Sala17 extends Phaser.Scene {
   }
 
   update(time, delta) {
+    this.cucu.play("idle",true);
     if(this.physics.overlap(this.player, this.cucu)) {
       this.cucuE.visible = true;
       

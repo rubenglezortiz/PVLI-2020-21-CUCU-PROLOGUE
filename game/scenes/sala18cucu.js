@@ -27,6 +27,7 @@ export default class Sala18CUCU extends Phaser.Scene {
       "pigmalion"
     );
     this.add.image(700, 400, "telon");
+    this.add.image(1100, 350, "carreta").setScale(6);
     this.cucu = this.physics.add.sprite(1100, 450, "cucu").setScale(6);
     this.anims.create({
       key: "cucu1",

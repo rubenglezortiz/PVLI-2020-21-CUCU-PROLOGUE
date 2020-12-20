@@ -8,7 +8,7 @@ class Bootloader extends Phaser.Scene {
 
   preload() {
     this.load.on("complete", () => {
-      this.scene.start("SALA13", {posx: 700, posy :400, lives:10});
+      this.scene.start("SALA0", {posx: 700, posy :400, lives:10});
     });
 
     this.load.spritesheet("pigmalion", "./././resources/sprites/pigmalion.png", {
@@ -32,10 +32,17 @@ class Bootloader extends Phaser.Scene {
       frameWidth: 288,
       frameHeight:288
     });
+    this.load.spritesheet("cucu_idle", "./././resources/sprites/cucu_idle.png",{
+      frameWidth: 32,
+      frameHeight:32
+    });
 
 
 
-
+    //this.load.image("cucu_idle", "./././resources/sprites/cucu_idle");
+    this.load.image("caja", "./././resources/sprites/caja.png");
+    this.load.image("mujer", "./././resources/sprites/mujer.png");
+    this.load.image("carreta", "./././resources/sprites/carreta.png");
     this.load.image("tiendarastroiz", "./././resources/sprites/tienda_rastro_iz.png");
     this.load.image("tiendarastrodr", "./././resources/sprites/tienda_rastro_dr.png");
     this.load.image("tiendadisfraces", "./././resources/sprites/tienda_disfraces.png");

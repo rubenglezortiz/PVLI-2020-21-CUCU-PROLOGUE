@@ -15,8 +15,10 @@ export default class Sala0 extends Phaser.Scene {
     this.lives = datos.lives;
   }
   create() {
+    
     this.add.image(700, 400, "tablones");
     this.physics.add.image(700, 400, "cortinas");
+    this.add.image(300, 400, "caja").setScale(7);
     this.player = new Pigmalion(
       this,
       this.posx,
@@ -28,7 +30,7 @@ export default class Sala0 extends Phaser.Scene {
     //this.caballo = new GameObject(this, 700,350,"caballo", this.player);
 
     this.add.image(700, 400, "telon");
-
+    
     //this.floor = new Phaser.Geom.Rectangle(274, 400, 550, 5);
 
     this.lives = 10;
