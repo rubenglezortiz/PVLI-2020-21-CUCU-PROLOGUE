@@ -38,7 +38,8 @@ class Bootloader extends Phaser.Scene {
     });
 
 
-
+  
+    
     //this.load.image("cucu_idle", "./././resources/sprites/cucu_idle");
     this.load.image("caja", "./././resources/sprites/caja.png");
     this.load.image("mujer", "./././resources/sprites/mujer.png");
