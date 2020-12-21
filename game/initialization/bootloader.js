@@ -60,12 +60,12 @@ class Bootloader extends Phaser.Scene {
     this.load.image("mc","./././resources/sprites/MenuComb.png");
 
     //-----SPRITES MENU ATAQUE-----
-    this.load.image("attackButton", ".././resources/sprites/menuAtaque/botonAtacar.png");
-    this.load.image("talkButton",".././resources/sprites/menuAtaque/botonHablar.png");
-    this.load.image("mercyButton",".././resources/sprites/menuAtaque/botonPiedad.png");
-    this.load.image("backButton", ".././resources/sprites/menuAtaque/botonRetroceder.png");
-    this.load.image("bar",".././resources/sprites/menuAtaque/barrafinal.png");
-    this.load.image("moveBar",".././resources/sprites/menuAtaque/barraMovil.png");
+    this.load.image("attackButton", "./././resources/sprites/menuAtaque/boton_atacar.png");
+    this.load.image("talkButton","./././resources/sprites/menuAtaque/boton_hablar.png");
+    this.load.image("mercyButton","./././resources/sprites/menuAtaque/boton_piedad.png");
+    this.load.image("backButton", "./././resources/sprites/menuAtaque/boton_retroceder.png");
+    this.load.image("bar","./././resources/sprites/menuAtaque/barra_final.png");
+    this.load.image("moveBar","./././resources/sprites/menuAtaque/barra_movil.png");
   }
 }
 export default Bootloader;
