@@ -32,14 +32,14 @@ class Bootloader extends Phaser.Scene {
       frameWidth: 288,
       frameHeight:288
     });
-    this.load.spritesheet("cucu_idle", "./././resources/sprites/cucu_idle.png",{
+    this.load.spritesheet("cucu_idle", "./././resources/sprites/cucu_idle_anim.png",{
       frameWidth: 32,
       frameHeight:32
     });
 
 
   
-    
+
     //this.load.image("cucu_idle", "./././resources/sprites/cucu_idle");
     this.load.image("caja", "./././resources/sprites/caja.png");
     this.load.image("mujer", "./././resources/sprites/mujer.png");
