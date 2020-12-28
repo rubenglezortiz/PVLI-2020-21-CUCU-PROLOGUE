@@ -23,6 +23,6 @@ export default class GameObject extends Phaser.GameObjects.Sprite {
     
     if(this.physics.overlap(this.player, this.trigger)) {
       textInfo.text = "Hay solape";
-  }
+    }
   }
 }

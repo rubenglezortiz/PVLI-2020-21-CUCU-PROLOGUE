@@ -9,13 +9,12 @@ export default class Sala0 extends Phaser.Scene {
   }
 
   init(datos) {
-    console.log("creada sala 0");
     this.posx = datos.posx;
     this.posy = datos.posy;
     this.lives = datos.lives;
   }
   create() {
-    
+    console.log(this);
     this.add.image(700, 400, "tablones");
     this.physics.add.image(700, 400, "cortinas");
     this.add.image(300, 400, "caja").setScale(7);

@@ -29,7 +29,7 @@ var config = {
   scene: [Bootloader,MenuCombate,SalaHija,  SalaBase, Sala18CUCU,Sala0,Sala11,Sala12,Sala13,Sala14,Sala15,Sala16,Sala17,],
   physics: {
     default: "arcade",
-    arcade: { debug: false },
+    arcade: { debug: true },
   },
 };
 new Phaser.Game(config);

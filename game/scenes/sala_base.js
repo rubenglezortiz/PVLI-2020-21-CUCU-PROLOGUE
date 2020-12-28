@@ -4,18 +4,20 @@ import GameObject from "../gameobject/gameObject.js";
 import Explosion from "../monecoAttacks/explosion.js";
 
 export default class SalaBase extends Phaser.Scene {
-  constructor(name, abajo) {
+  constructor(name, direcciones) {
     super({ key: name });
-    this._abajo = abajo;
-    console.log("Cambio a sala hija");
+    this._direcciones = direcciones;
   }
 
+
   init(datos) {
-    console.log("creada sala 0");
+    //console.log(this);
     this.posx = datos.posx;
     this.posy = datos.posy;
     this.lives = datos.lives;
   }
+
+
   create() {
     
     this.add.image(700, 400, "tablones");
@@ -49,25 +51,40 @@ this.trigger.body.moves = false;
 
   update(time, delta) {
     //-----CAMBIO SALAS-----
-    if (this.player.x < 0) {
+    if (this._direcciones[0] !== 0 && this.player.x < 0) {
+      
       this.player.x = 1400 - 1;
-      this.scene.start(cst.SCENES.SALA11, {
+
+
+      this.scene.start(this._direcciones[0], {
         posx: this.player.x,
         posy: this.player.y,
       });
     }
-    if (this.player.x > 1400) {
-      // De momento en la sala 0 no hay cambio a la derecha
-      // this.x = 1;
+    if (this._direcciones[1] !== 0 && this.player.y < 0) {
+     
+      this.player.y = 800 - 1;
+
+      this.scene.start(this._direcciones[1], {
+        posx: this.player.x,
+        posy: this.player.y,
+      });
     }
-    if (this.player.y < 0) {
-      // De momento en la sala 0 no hay cambio arriba
-      //this.player.y = 800 - 1;
+    if (this._direcciones[2] !== 0 && this.player.x > 1400) {
+       
+       this.player.x = 1;
+
+       this.scene.start(this._direcciones[2], {
+        posx: this.player.x,
+        posy: this.player.y,
+      });
     }
-    if (this.player.y > 800) {
-      // De momento en la sala 0 no hay cambio a la derecha
+    if (this._direcciones[3] !== 0 && this.player.y > 800) {
+      
       this.player.y = 1;
-      this.scene.start(this._abajo, {
+
+
+      this.scene.start(this._direcciones[3], {
         posx: this.player.x,
         posy: this.player.y,
       });
