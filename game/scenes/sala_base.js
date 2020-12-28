@@ -3,9 +3,11 @@ import Pigmalion from "../gameobject/pigmalion.js";
 import GameObject from "../gameobject/gameObject.js";
 import Explosion from "../monecoAttacks/explosion.js";
 
-export default class Sala0 extends Phaser.Scene {
-  constructor() {
-    super({ key: 'Sala0' });
+export default class SalaBase extends Phaser.Scene {
+  constructor(name, abajo) {
+    super({ key: name });
+    this._abajo = abajo;
+    console.log("Cambio a sala hija");
   }
 
   init(datos) {
@@ -18,7 +20,6 @@ export default class Sala0 extends Phaser.Scene {
     
     this.add.image(700, 400, "tablones");
     this.physics.add.image(700, 400, "cortinas");
-    this.add.image(300, 400, "caja").setScale(7);
     this.player = new Pigmalion(
       this,
       this.posx,
@@ -61,16 +62,15 @@ this.trigger.body.moves = false;
     }
     if (this.player.y < 0) {
       // De momento en la sala 0 no hay cambio arriba
-      this.player.y = 800 - 1;
-      this.scene.start('SalaHija1', {
-        posx: this.player.x,
-        posy: this.player.y,
-       
-      });
+      //this.player.y = 800 - 1;
     }
     if (this.player.y > 800) {
       // De momento en la sala 0 no hay cambio a la derecha
-      //this.y = 1;
+      this.player.y = 1;
+      this.scene.start(this._abajo, {
+        posx: this.player.x,
+        posy: this.player.y,
+      });
     }
 
     if (this.r.isDown) {

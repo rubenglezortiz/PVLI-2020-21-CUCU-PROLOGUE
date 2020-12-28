@@ -7,6 +7,8 @@ import Sala14 from "../scenes/sala14.js";
 import Sala15 from "../scenes/sala15.js";
 import Sala16 from "../scenes/sala16.js";
 import Sala17 from "../scenes/sala17.js";
+import SalaBase from "../scenes/sala_base.js";
+import SalaHija from "../scenes/sala_hija.js";
 import Sala18CUCU from "../scenes/sala18cucu.js";
 import Bootloader from "./bootloader.js";
 
@@ -24,7 +26,7 @@ var config = {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
-  scene: [Bootloader,MenuCombate,Sala18CUCU,Sala0,Sala11,Sala12,Sala13,Sala14,Sala15,Sala16,Sala17,],
+  scene: [Bootloader,MenuCombate,SalaHija,  SalaBase, Sala18CUCU,Sala0,Sala11,Sala12,Sala13,Sala14,Sala15,Sala16,Sala17,],
   physics: {
     default: "arcade",
     arcade: { debug: false },
