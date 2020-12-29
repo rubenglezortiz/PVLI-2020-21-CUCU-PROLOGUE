@@ -41,7 +41,7 @@ export default class Sala17 extends SalaBase {
       this.cucuE.visible = true;
 
       if (Phaser.Input.Keyboard.JustDown(this.e)) {
-        this.scene.start("SALA18CUCU", {
+        this.scene.start("Sala18Cucu", {
           posx: this.player.x,
           posy: this.player.y,
           lives: this.player.lives,

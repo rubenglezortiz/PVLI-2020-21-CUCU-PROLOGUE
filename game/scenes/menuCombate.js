@@ -248,7 +248,7 @@ export default class MenuCombate extends Phaser.Scene {
   }
   parar() {
     this.scene.pause();
-    this.scene.resume("SALA18CUCU");
+    this.scene.resume("Sala18Cucu");
     this.scene.sendToBack();
   }
 }
