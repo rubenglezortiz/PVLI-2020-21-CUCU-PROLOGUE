@@ -2,7 +2,7 @@ import SalaBase from "./sala_base.js";
 
 export default class Sala13 extends SalaBase {
   constructor() {
-    // <-      ^     ->     v
+                  // <-      ^     ->     v
     super("Sala13", [0, "Sala14", 0, "Sala11"]);
   }
 
@@ -12,13 +12,19 @@ export default class Sala13 extends SalaBase {
 
   create() {
     super.create();
-    this.caballo = this.physics.add.sprite(700, 350, "caballo").setScale(0.75);
+   
     this.chulapos = this.physics.add.sprite(1100, 300, "chulapos");
     this.chulaposE = this.add.image(
       this.chulapos.x,
       this.chulapos.y - this.chulapos.height + 50,
       "teclaE"
     );
+    this.camino = this.add.image(800, 400, "cucucamino1");
+    this.camino.depth = 1;
+    this.camino.angle = 90;
+
+    this.caballo = this.physics.add.sprite(700, 350, "caballo").setScale(0.5);
+    this.caballo.depth = 1;
     this.anims.create({
       key: "chulaposAnim",
       frames: this.anims.generateFrameNumbers("chulapos", {

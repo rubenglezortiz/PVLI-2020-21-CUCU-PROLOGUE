@@ -15,6 +15,8 @@ export default class Sala11 extends SalaBase{
 
     create(){
           super.create();
+          this.camino = this.add.image(700, 400, "cucucamino4");
+          this.camino.depth = 1;
      }
     
 

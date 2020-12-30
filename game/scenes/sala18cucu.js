@@ -17,6 +17,7 @@ export default class Sala18Cucu extends SalaBase {
 
   create() {
     super.create();
+    this.camino = this.add.image(1400, 400, "cucucamino1");
     this.add.image(1100, 350, "carreta").setScale(6);
     this.cucu = this.physics.add.sprite(1100, 450, "cucu").setScale(6);
     this.anims.create({

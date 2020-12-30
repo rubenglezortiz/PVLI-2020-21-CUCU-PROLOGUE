@@ -14,7 +14,11 @@ export default class Sala15 extends SalaBase{
 
     create(){
           super.create();
-          this.tiendadisfraces = this.physics.add.sprite(1000,500,"tiendadisfraces").setScale(1.1);
+          this.camino = this.add.image(800, 400, "cucucamino1");
+          this.camino.depth = 1;
+          this.camino.angle = 90;
+          this.tiendadisfraces = this.physics.add.sprite(1050,475,"tiendadisfraces").setScale(1.1);
+          this.tiendadisfraces.depth = 1;
           this.tiendadisfracesE =  this.add.image(this.tiendadisfraces.x, this.tiendadisfraces.y -  this.tiendadisfraces.height, "teclaE");
           this.e = this.input.keyboard.addKey("E");
      }

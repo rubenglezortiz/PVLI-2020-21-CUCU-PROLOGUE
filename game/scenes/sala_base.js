@@ -20,8 +20,9 @@ export default class SalaBase extends Phaser.Scene {
 
   create() {
     
-    this.add.image(700, 400, "tablones");
-    this.physics.add.image(700, 400, "cortinas");
+    this.add.image(700, 400, "tablones").depth = 0;
+    
+    this.physics.add.image(700, 400, "cortinas").depth = 1;
     this.player = new Pigmalion(
       this,
       this.posx,
@@ -29,10 +30,11 @@ export default class SalaBase extends Phaser.Scene {
       this.lives,
       "pigmalion"
     );
+    this.player.depth = 3;
 
     //this.caballo = new GameObject(this, 700,350,"caballo", this.player);
 
-    this.add.image(700, 400, "telon");
+    this.add.image(700, 400, "telon").depth = 5;
     
     //this.floor = new Phaser.Geom.Rectangle(274, 400, 550, 5);
 

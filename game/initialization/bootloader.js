@@ -38,6 +38,12 @@ class Bootloader extends Phaser.Scene {
     });
 
 
+
+    //caminos cucu
+    this.load.image("cucucamino1" , "./././resources/sprites/caminos/cucu/camino_piedra_1.png" );
+    this.load.image("cucucamino2" , "./././resources/sprites/caminos/cucu/camino_piedra_2.png" );
+    this.load.image("cucucamino3" , "./././resources/sprites/caminos/cucu/camino_piedra_3.png" );
+    this.load.image("cucucamino4" , "./././resources/sprites/caminos/cucu/camino_piedra_4.png" );
   
 
     //this.load.image("cucu_idle", "./././resources/sprites/cucu_idle");

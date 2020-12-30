@@ -18,7 +18,8 @@ export default class Sala12 extends SalaBase{
           this.bebe = this.physics.add.sprite(1000,300,"bebe").setScale(1);
           this.add.image(300,400,"mesa").setScale(7);
           this.bebeE =  this.add.image(this.bebe.x, this.bebe.y -  this.bebe.height, "teclaE");
-
+          this.camino = this.add.image(1400, 400, "cucucamino1");
+          this.camino.depth = 1;
           
          this.e = this.input.keyboard.addKey("E");
      }
