@@ -1,6 +1,8 @@
 export default class Pigmalion extends Phaser.GameObjects.Sprite {
   constructor(scene, x, y, lives, type) {
     super(scene, x, y, type);
+    
+    //this.originY = 0;
     console.log(this);
     scene.add.existing(this);
     scene.physics.world.enable(this);
@@ -21,6 +23,9 @@ export default class Pigmalion extends Phaser.GameObjects.Sprite {
     this.a = this.scene.input.keyboard.addKey("A");
     this.s = this.scene.input.keyboard.addKey("S");
     this.d = this.scene.input.keyboard.addKey("D");
+    this.depth = 3;//Es la capa en la que se renderiza, cunto mas alta mas arriba en la pantalla
+    
+    
   }
 
   preUpdate(t, dt) {

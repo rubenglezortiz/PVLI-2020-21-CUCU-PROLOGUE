@@ -1,5 +1,5 @@
 import SalaBase from "./sala_base.js";
-
+import Prop from "../gameobject/prop.js";
 export default class Sala16 extends SalaBase{
     constructor(){
                           // <-        ^      -> v
@@ -17,8 +17,9 @@ export default class Sala16 extends SalaBase{
           this.camino = this.add.image(700, 400, "cucucamino3");
           this.camino.depth = 1;
         
-          this.add.image(1100, 200, "tiendarastroiz").depth=2;
-          this.add.image(300, 200, "tiendarastrodr").depth=2;
+          this.tiendaDr= new Prop(this, 1100, 200, "tiendarastroiz", this.player);
+          this.tiendaDr= new Prop(this, 300, 200, "tiendarastrodr", this.player);
+          
           
      }
     

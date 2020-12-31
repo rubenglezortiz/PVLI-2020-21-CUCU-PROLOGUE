@@ -15,7 +15,6 @@ export default class Sala14 extends SalaBase{
     create(){
           super.create();
           this.camino = this.add.sprite(720, 580, "cucucamino2");
-          //this.camino.depth = 1;
           console.log(this.camino);
           this.camino.scaleY *= -1;
           

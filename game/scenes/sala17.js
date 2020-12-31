@@ -1,4 +1,5 @@
 import SalaBase from "./sala_base.js";
+import Prop from "../gameobject/prop.js";
 
 export default class Sala17 extends SalaBase {
   constructor() {
@@ -13,8 +14,8 @@ export default class Sala17 extends SalaBase {
   create() {
     super.create();
     this.camino = this.add.image(1400, 400, "cucucamino1");
-    this.add.image(300, 300, "carreta").setScale(6);
-    this.cucu = this.physics.add.sprite(300, 400, "cucu_idle").setScale(6);
+    this.carreta= new Prop(this,300, 300, "carreta", this.player).setScale(6);
+    this.cucu= new Prop(this, 300, 400, "cucu_idle", this.player).setScale(6);
     this.cucuE = this.add.image(
       this.cucu.x,
       this.cucu.y - this.cucu.height * 6,

@@ -4,6 +4,7 @@ import Pigmalion from "../gameobject/pigmalion.js";
 import CucuAttack from "../monecoAttacks/cucuAttack.js";
 import MenuCombate from "../scenes/menuCombate.js";
 import eventsCenter from "../eventsCenter.js";
+import Prop from "../gameobject/prop.js";
 
 export default class Sala18Cucu extends SalaBase {
   constructor() {
@@ -18,8 +19,8 @@ export default class Sala18Cucu extends SalaBase {
   create() {
     super.create();
     this.camino = this.add.image(1400, 400, "cucucamino1");
-    this.add.image(1100, 350, "carreta").setScale(6);
-    this.cucu = this.physics.add.sprite(1100, 450, "cucu").setScale(6);
+    this.carreta= new Prop(this,1100, 350, "carreta", this.player).setScale(6);
+    this.cucu= new Prop(this, 1100, 450, "cucu", this.player).setScale(6);
     this.anims.create({
       key: "cucu1",
       frames: this.anims.generateFrameNumbers("cucu", {

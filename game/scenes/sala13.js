@@ -1,4 +1,6 @@
 import SalaBase from "./sala_base.js";
+import Prop from "../gameobject/prop.js";
+
 
 export default class Sala13 extends SalaBase {
   constructor() {
@@ -24,8 +26,8 @@ export default class Sala13 extends SalaBase {
     this.camino.depth = 1;
     this.camino.angle = 90;
 
-    this.caballo = this.physics.add.sprite(700, 350, "caballo").setScale(0.5);
-    this.caballo.depth = 1;
+    this.caballo = new Prop(this, 700, 350, "caballo", this.player).setScale(0.5);
+
     this.anims.create({
       key: "chulaposAnim",
       frames: this.anims.generateFrameNumbers("chulapos", {

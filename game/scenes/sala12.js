@@ -1,5 +1,6 @@
 
 import SalaBase from "./sala_base.js";
+import Prop from "../gameobject/prop.js";
 
 export default class Sala12 extends SalaBase{
     constructor(){
@@ -15,7 +16,7 @@ export default class Sala12 extends SalaBase{
 
     create(){
           super.create();
-          this.bebe = this.physics.add.sprite(1000,300,"bebe").setScale(1);
+          this.bebe = new Prop(this, 1000, 300, "bebe", this.player);
           this.add.image(300,400,"mesa").setScale(7);
           this.bebeE =  this.add.image(this.bebe.x, this.bebe.y -  this.bebe.height, "teclaE");
           this.bebeE.depth = 6;

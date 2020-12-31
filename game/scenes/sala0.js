@@ -1,3 +1,4 @@
+import Prop from "../gameobject/prop.js";
 import SalaBase from "./sala_base.js";
 
 export default class Sala0 extends SalaBase{
@@ -14,7 +15,7 @@ export default class Sala0 extends SalaBase{
 
     create(){
           super.create();
-          this.add.image(300, 250, "caja").setScale(7).depth = 2;
+          this.caja = new Prop(this, 300, 250, "caja", this.player).setScale(7);
           this.camino = this.add.image(700, 400, "cucucamino4");
           this.camino.depth=1;
          
