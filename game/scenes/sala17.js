@@ -20,6 +20,7 @@ export default class Sala17 extends SalaBase {
       this.cucu.y - this.cucu.height * 6,
       "teclaE"
     );
+    this.cucuE.depth = 6;
     this.anims.create({
       key: "idle",
       frames: this.anims.generateFrameNumbers("cucu_idle", {

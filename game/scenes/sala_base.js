@@ -21,6 +21,11 @@ export default class SalaBase extends Phaser.Scene {
   create() {
     
     this.add.image(700, 400, "tablones").depth = 0;
+    this.derecha = this.physics.add.sprite(1400,500);
+    this.izquierda = this.physics.add.sprite(0,500);
+    this.arriba = this.physics.add.sprite(700,0);
+    this.abajo = this.physics.add.sprite(700,800);
+    this.add.rectangle(200, 200, 148, 148, 0x6666ff);
     
     this.physics.add.image(700, 400, "cortinas").depth = 1;
     this.player = new Pigmalion(
@@ -52,10 +57,15 @@ this.trigger.body.moves = false;
   }
 
   update(time, delta) {
+
+
+
+   
+
     //-----CAMBIO SALAS-----
-    if (this._direcciones[0] !== 0 && this.player.x < 0) {
+    if (this._direcciones[0] !== 0 && this.physics.overlap(this.player, this.izquierda)) {
       
-      this.player.x = 1400 - 1;
+      this.player.x = 1400 - this.player.width;
 
 
       this.scene.start(this._direcciones[0], {
@@ -63,27 +73,27 @@ this.trigger.body.moves = false;
         posy: this.player.y,
       });
     }
-    if (this._direcciones[1] !== 0 && this.player.y < 0) {
+    if (this._direcciones[1] !== 0 && this.physics.overlap(this.player, this.arriba)) {
      
-      this.player.y = 800 - 1;
+      this.player.y = 800 - this.player.height;
 
       this.scene.start(this._direcciones[1], {
         posx: this.player.x,
         posy: this.player.y,
       });
     }
-    if (this._direcciones[2] !== 0 && this.player.x > 1400) {
+    if (this._direcciones[2] !== 0 && this.physics.overlap(this.player, this.derecha)) {
        
-       this.player.x = 1;
+       this.player.x = this.player.width;
 
        this.scene.start(this._direcciones[2], {
         posx: this.player.x,
         posy: this.player.y,
       });
     }
-    if (this._direcciones[3] !== 0 && this.player.y > 800) {
+    if (this._direcciones[3] !== 0 && this.physics.overlap(this.player, this.abajo)) {
       
-      this.player.y = 1;
+      this.player.y = this.player.height;
 
 
       this.scene.start(this._direcciones[3], {

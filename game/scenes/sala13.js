@@ -19,6 +19,7 @@ export default class Sala13 extends SalaBase {
       this.chulapos.y - this.chulapos.height + 50,
       "teclaE"
     );
+    this.chulaposE.depth = 6;
     this.camino = this.add.image(800, 400, "cucucamino1");
     this.camino.depth = 1;
     this.camino.angle = 90;

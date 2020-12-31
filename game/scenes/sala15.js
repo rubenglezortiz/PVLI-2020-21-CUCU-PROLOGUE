@@ -20,6 +20,7 @@ export default class Sala15 extends SalaBase{
           this.tiendadisfraces = this.physics.add.sprite(1050,475,"tiendadisfraces").setScale(1.1);
           this.tiendadisfraces.depth = 1;
           this.tiendadisfracesE =  this.add.image(this.tiendadisfraces.x, this.tiendadisfraces.y -  this.tiendadisfraces.height, "teclaE");
+          this.tiendadisfracesE.depth = 6;
           this.e = this.input.keyboard.addKey("E");
      }
     

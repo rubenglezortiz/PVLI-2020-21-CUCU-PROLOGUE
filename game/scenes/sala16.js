@@ -17,8 +17,8 @@ export default class Sala16 extends SalaBase{
           this.camino = this.add.image(700, 400, "cucucamino3");
           this.camino.depth = 1;
         
-          this.add.image(1100, 200, "tiendarastroiz");
-          this.add.image(300, 200, "tiendarastrodr");
+          this.add.image(1100, 200, "tiendarastroiz").depth=2;
+          this.add.image(300, 200, "tiendarastrodr").depth=2;
           
      }
     
