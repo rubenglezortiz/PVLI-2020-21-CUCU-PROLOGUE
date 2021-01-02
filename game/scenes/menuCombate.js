@@ -4,14 +4,19 @@ export default class MenuCombate extends Phaser.Scene {
   constructor(datos) {
     super({ key: "mc" });
     this.test = false;
+    eventsCenter.on("thisKey", this.prevScene, this);  
   }
 
   create() {
     this.scene.bringToTop();
+    this.events.on(Phaser.Scenes.Events.RESUME, () => {
+      eventsCenter.on("thisKey", this.prevScene, this);  
+      eventsCenter.off("thisKey",this.prevScene,this)    
+    });
+    // eventsCenter.on("thisKey", this.prevScene, this)  
     this.menu = this.add.image(700, 500, "mc");
     this.menu.setAlpha(0.5);
     this.mercy;
-
     this.attackButton = this.add
       .sprite(200, 150, "attackButton")
       .setInteractive();
@@ -238,17 +243,23 @@ export default class MenuCombate extends Phaser.Scene {
     });
   }
   update(time, delta) {
-    // this.test = false;
     eventsCenter.on("exit", this.parar, this);
   }
+
   setMercyButton(monecoPP) {
     if (monecoPP === 100) this.mercy = true;
     else this.mercy = false;
-    console.log(this.mercy);
+    
   }
+
+  //NOTA PUTÍSIMAMENTE IMPORTANTE:
+  //HAY QUE COMPROBAR QUE ESTA "key" CAMBIE POR EJEMPLO EN LA SALA DE POMPONINA, es decir
+  //si nos cargamos al cucu y luego vamos a por pomponina, hay que mirar que este key CAMBIE
+  prevScene(key) {this.prevKey = key;console.log(this.prevKey)}
+
   parar() {
-    this.scene.pause();
-    this.scene.resume("Sala18Cucu");
+    this.scene.pause();   
+    this.scene.resume(this.prevKey);
     this.scene.sendToBack();
   }
 }
