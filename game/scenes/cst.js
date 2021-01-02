@@ -1,13 +1,15 @@
 export const  cst = {
     SCENES:{
-        SALA0: "SALA0",
-        SALA11: "SALA11",
-        SALA12: "SALA12",
-        SALA13: "SALA13",
-        SALA14: "SALA14",
-        SALA15: "SALA15",
-        SALA16: "SALA16",
-        SALA17: "SALA17",
-        SALA18CUCU: "SALA18CUCU"
+        SALA0: "sala0",
+        SALA11: "sala11",
+        SALA12: "sala12",
+        SALA13: "sala13",
+        SALA14: "sala14",
+        SALA15: "sala15",
+        SALA16: "sala16",
+        SALA17: "sala17",
+        SALA18CUCU: "sala18cucu",
+        SALAXXPOMPONINA: "salaxxpomponina",
+        SALAXXDONLINDO: "salaxxdonlindo"
     }
 }

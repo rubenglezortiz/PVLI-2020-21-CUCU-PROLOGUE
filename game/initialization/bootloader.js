@@ -8,7 +8,7 @@ class Bootloader extends Phaser.Scene {
 
   preload() {
     this.load.on("complete", () => {
-      this.scene.start('salaXXPomponina', {posx: 700, posy :400, lives:10});
+      this.scene.start(cst.SCENES.SALA0, {posx: 700, posy :400, lives:10});
     });
 
     this.load.spritesheet("pigmalion", "./././resources/sprites/pigmalion.png", {
@@ -37,8 +37,11 @@ class Bootloader extends Phaser.Scene {
       frameHeight:32
     });
 
-
-  
+    //caminos cucu
+    this.load.image("cucucamino1" , "./././resources/sprites/caminos/cucu/camino_piedra_1.png" );
+    this.load.image("cucucamino2" , "./././resources/sprites/caminos/cucu/camino_piedra_2.png" );
+    this.load.image("cucucamino3" , "./././resources/sprites/caminos/cucu/camino_piedra_3.png" );
+    this.load.image("cucucamino4" , "./././resources/sprites/caminos/cucu/camino_piedra_4.png" );
 
     //this.load.image("cucu_idle", "./././resources/sprites/cucu_idle");
     this.load.image("caja", "./././resources/sprites/caja.png");

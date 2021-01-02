@@ -9,7 +9,7 @@ import Prop from "../gameobject/prop.js";
 export default class Sala18Cucu extends SalaBase {
   constructor() {
     //<- ^ ->v
-    super("Sala18Cucu", [0, 0, 0, 0]);
+    super(cst.SCENES.SALA18CUCU, [0, 0, 0, 0]);
     console.log(this.player);
   }
 
@@ -20,9 +20,7 @@ export default class Sala18Cucu extends SalaBase {
   create() {
     super.create();
     this.camino = this.add.image(1400, 400, "cucucamino1");
-    this.carreta = new Prop(this, 1100, 350, "carreta", this.player).setScale(
-      6
-    );
+    this.carreta = new Prop(this, 1100, 350, "carreta", this.player).setScale(6)
     this.cucu = new Prop(this, 1100, 450, "cucu", this.player).setScale(6);
     this.anims.create({
       key: "cucu1",

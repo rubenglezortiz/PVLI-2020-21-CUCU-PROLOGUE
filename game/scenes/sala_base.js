@@ -1,7 +1,7 @@
-import { cst } from "./cst.js";
 import Pigmalion from "../gameobject/pigmalion.js";
 import GameObject from "../gameobject/gameObject.js";
 import Explosion from "../monecoAttacks/explosion.js";
+import {cst}from"./cst.js";
 
 export default class SalaBase extends Phaser.Scene {
   constructor(name, direcciones) {

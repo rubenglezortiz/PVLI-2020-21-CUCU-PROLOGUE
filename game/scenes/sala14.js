@@ -1,9 +1,10 @@
 import SalaBase from "./sala_base.js";
+import {cst} from "./cst.js";
 
 export default class Sala14 extends SalaBase{
     constructor(){
                       // <-  ^   ->     v
-        super('Sala14', [ 0, 0,  0, 'Sala13']);
+        super(cst.SCENES.SALA14, [ 0, 0,  0,cst.SCENES.SALA13])
     }
 
 
