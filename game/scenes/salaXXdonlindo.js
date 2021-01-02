@@ -1,13 +1,13 @@
 import { cst } from "./cst.js";
 import SalaBase from "./sala_base.js";
 import Pigmalion from "../gameobject/pigmalion.js";
-import PomponinaAttack from "../monecoAttacks/pomponinaAttack.js";
+import DonLindoAttack from "../monecoAttacks/donLindoAttack.js";
 import MenuCombate from "../scenes/menuCombate.js";
 import eventsCenter from "../eventsCenter.js";
 
 export default class SalaXXPomponina extends SalaBase {
   constructor() {
-    super(cst.SCENES.SALAXXPOMPONINA, [0, 0, 0, 0]);
+    super(cst.SCENES.SALAXXDONLINDO, [0, 0, 0, 0]);
   }
 
   init(datos) {
@@ -23,7 +23,7 @@ export default class SalaXXPomponina extends SalaBase {
 
     //ANIMACIÓN POMPONINA
     this.monecoAttacks = this.add.group();
-    this.monecoLP = 49;
+    this.monecoLP = 100;
     this.monecoPP = 0;
     this.monecoMercy = false;
     this.physics.add.overlap(this.player, this.monecoAttacks);
@@ -45,42 +45,25 @@ export default class SalaXXPomponina extends SalaBase {
   startVS() {
     if (this.monecoLP >= 50) this.pomponinaAttack();
     else this.pomponinaAttackV2();
-    this.time.delayedCall(3000,()=>{this.startMenu()});
+    this.time.delayedCall(5000,()=>{this.startMenu()});
   }
 
   pomponinaAttack() {
     this.timer = this.time.addEvent({
-      delay: 2000,
+      delay: 5000,
       callback: () => {
-        this.pompAt = new PomponinaAttack(
-          this,
-          this.sys.game.canvas.width,
-          this.sys.game.canvas.height / 2,
-          "shoot",
-          this.player
-        );
-       
+        this.donLindoAt =new DonLindoAttack(this, 0,0,"shoot");
+        this.monecoAttacks.add(this.donLindoAt);
       },
       repeat: 3,
     });
-
-    this.startMenu();
   }
 
   pomponinaAttackV2() {
     this.timer = this.time.addEvent({
       delay: 2000,
       callback: () => {
-        for (let i = 0; i < 3; i++) {
-          this.pompAt = new PomponinaAttack(
-            this,
-            this.sys.game.canvas.width,
-            this.sys.game.canvas.height / 2,
-            "shoot",
-            this.player
-          );
-          this.monecoAttacks.add(this.pompAt);
-        }
+        
       },
       repeat: 3,
     });

@@ -10,6 +10,7 @@ import Sala17 from "../scenes/sala17.js";
 import SalaBase from "../scenes/sala_base.js";
 import Sala18CUCU from "../scenes/sala18cucu.js";
 import SalaXXPomponina from "../scenes/salaXXpomponina.js";
+import SalaXXdonlindo from "../scenes/salaXXdonlindo.js";
 import Bootloader from "./bootloader.js";
 
 //import cst from "./cst.js";
@@ -26,7 +27,8 @@ var config = {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
-  scene: [Bootloader, SalaBase, Sala0, Sala11, Sala12, Sala13, Sala14, Sala15, Sala16, Sala17, SalaXXPomponina, Sala18CUCU, MenuCombate,],
+  scene: [
+    Bootloader, SalaBase, Sala0, Sala11, Sala12, Sala13, Sala14, Sala15, Sala16, Sala17, Sala18CUCU,SalaXXPomponina, SalaXXdonlindo,  MenuCombate,],
   physics: {
     default: "arcade",
     arcade: { debug: true },

@@ -5,17 +5,17 @@ export default class PomponinaAttack extends Phaser.GameObjects.Sprite {
     scene.physics.add.existing(this);
     scene.physics.world.enable(this);   
     this.player=pigmalion
-    this.calculateVelocity();
+    this.setPhysics();
   }
 
   preUpdate(t, dt) {
     super.preUpdate(t, dt);   
     if(this.scene.physics.overlap(this,this.player)) this.destroy();
-    if (this.x < this.width) this.destroy();
-    
+    if (this.x < this.width) this.destroy();    
   }
 
-  calculateVelocity(){
+   //ESTO, TAL CUAL LO TIENE DON LINDO ---> HERENCIA
+  setPhysics(){
     this.body.setCollideWorldBounds(true);
     this.body.setBounce(1);
     this.velocity = 400;

@@ -70,10 +70,10 @@ export default class Sala18Cucu extends SalaBase {
         );
         this.cucuAt = new CucuAttack(this, x, y, "cucuat", this.player);
         this.monecoAttacks.add(this.cucuAt);
+        this.cucuAt.depth=2;
       },
       repeat: 3,
     });
-    this.startMenu();
   }
 
   cucuAttackF2() {
@@ -101,7 +101,7 @@ export default class Sala18Cucu extends SalaBase {
   startMenu() {
     if (this.monecoAttacks.countActive() === 0) {
       this.scene.launch("mc");
-      eventsCenter.emit("thisKey", "Sala18Cucu");
+      eventsCenter.emit("thisKey", cst.SCENES.SALA18CUCU);
       eventsCenter.emit("canMercy", this.monecoPP);
       eventsCenter.on("damage", this.damage, this);
       eventsCenter.on("persuade", this.persuade, this);

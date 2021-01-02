@@ -23,7 +23,7 @@ export default class SalaXXPomponina extends SalaBase {
 
     //ANIMACIÓN POMPONINA
     this.monecoAttacks = this.add.group();
-    this.monecoLP = 49;
+    this.monecoLP = 100;
     this.monecoPP = 0;
     this.monecoMercy = false;
     this.physics.add.overlap(this.player, this.monecoAttacks);
@@ -58,13 +58,11 @@ export default class SalaXXPomponina extends SalaBase {
           this.sys.game.canvas.height / 2,
           "shoot",
           this.player
-        );
-       
+        );   
+        this.monecoAttacks.add(this.pompAt);    
       },
       repeat: 3,
     });
-
-    this.startMenu();
   }
 
   pomponinaAttackV2() {
@@ -92,7 +90,7 @@ export default class SalaXXPomponina extends SalaBase {
   startMenu() {
     if (this.monecoAttacks.countActive() === 0){ 
         this.scene.launch("mc");
-        eventsCenter.emit("thisKey", "salaXXPomponina");
+        eventsCenter.emit("thisKey", cst.SCENES.SalaXXPomponina);
         eventsCenter.emit("canMercy", this.monecoPP);
         eventsCenter.on("damage", this.damage, this);
         eventsCenter.on("persuade", this.persuade, this);
