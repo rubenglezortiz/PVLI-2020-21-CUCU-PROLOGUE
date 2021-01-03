@@ -88,15 +88,10 @@ export default class MenuCombate extends Phaser.Scene {
       // Segunda barra móvil
       this.barramovil2 = new rod({
         scene: this,
-        x: this.barraFinal.x + 450,
+        x: this.barraFinal.x + 300,
         y: this.barraFinal.y,
         type: "moveBar",
       });
-      // Gestión de daño      //CÓMO SE DETECTA QUE SE HAYA PULSADO EL ESPACIO??????
-      if (this.barramovil1.x >= this.barramovil2.x)
-        this.damage = 1000 / (this.barramovil1.x - this.barramovil2.x);
-      else this.damage = 1000 / (this.barramovil2.x - this.barramovil1.x);
-      eventsCenter.emit("damage", this.damage);
     });
     this.talkButton.on("pointerdown", (pointer) => {
       //this.persuasion = 10;
@@ -235,14 +230,13 @@ export default class MenuCombate extends Phaser.Scene {
         }
         this.backButton2.destroy();
       });
-
-      //this.parar();
     });
     this.mercyButton.on("pointerdown", (pointer) => {
       eventsCenter.emit("isMercy", true);
     });
   }
   update(time, delta) {
+    eventsCenter.on("daño", this.calcularDaño, this);
     eventsCenter.on("exit", this.parar, this);
   }
 
@@ -261,5 +255,39 @@ export default class MenuCombate extends Phaser.Scene {
     this.scene.pause();   
     this.scene.resume(this.prevKey);
     this.scene.sendToBack();
+  }
+  calcularDaño(){
+    let distancia = 1000; // Distancia entre las barras
+    if (this.barramovil1.x >= this.barramovil2.x)
+      distancia = this.barramovil1.x - this.barramovil2.x;
+    else
+      distancia = this.barramovil2.x - this.barramovil1.x;
+    switch (true)
+    {
+      case distancia < 10:
+        this.damage = 10;
+        break;
+        case distancia < 20:
+        this.damage = 9;
+        break;
+        case distancia < 30:
+        this.damage = 8;
+        break;
+        case distancia < 40:
+        this.damage = 7;
+        break;
+        case distancia < 50:
+        this.damage = 6;
+        break;
+        case distancia < 60:
+        this.damage = 5;
+        break;
+        default:
+        this.damage = 3;
+        break;
+    }
+  eventsCenter.emit("damage",this.damage);
+  eventsCenter.off("damage");
+  eventsCenter.emit("exit",true);
   }
 }
