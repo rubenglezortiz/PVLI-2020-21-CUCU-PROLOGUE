@@ -13,15 +13,14 @@ export default class rod extends Phaser.GameObjects.Sprite {
   preUpdate(t, dt) {
     eventsCenter.on("back",this.destroy,this);
     if (this.active) {
-      if (this.right1) this.x += 5;
-      else this.x -= 5;
+      if (this.right1) this.x += 10;
+      else this.x -= 10;
       if (this.x > 1025) this.right1 = false;
       else if (this.x < 380) this.right1 = true;
     }
     if (this.stop.isDown) {
       {
         this.active = false;
-        eventsCenter.emit("daño", true);
         eventsCenter.emit("exit", true);
       }
     }
