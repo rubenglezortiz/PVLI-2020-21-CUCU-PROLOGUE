@@ -4,6 +4,7 @@ import Pigmalion from "../gameobject/pigmalion.js";
 import DonLindoAttack from "../monecoAttacks/donLindoAttack.js";
 import MenuCombate from "../scenes/menuCombate.js";
 import eventsCenter from "../eventsCenter.js";
+import Explosion from "../monecoAttacks/explosion.js";
 
 export default class SalaXXPomponina extends SalaBase {
   constructor() {
@@ -43,30 +44,39 @@ export default class SalaXXPomponina extends SalaBase {
     }
   }
   startVS() {
-    if (this.monecoLP >= 50) this.pomponinaAttack();
-    else this.pomponinaAttackV2();
+    if (this.monecoLP >= 50) this.donlindoAttack();
+    else this.donlindoAttackV2();
     this.time.delayedCall(5000,()=>{this.startMenu()});
   }
 
-  pomponinaAttack() {
+  donlindoAttack() {
     this.timer = this.time.addEvent({
-      delay: 5000,
+      delay: 4000,
       callback: () => {
-        this.donLindoAt =new DonLindoAttack(this, 0,0,"shoot");
+        this.donLindoAt =new DonLindoAttack(this, this.sys.game.canvas.width, this.sys.game.canvas.height / 2,"shoot", this.player);
         this.monecoAttacks.add(this.donLindoAt);
       },
       repeat: 3,
     });
   }
 
-  pomponinaAttackV2() {
+  donlindoAttackV2() {
     this.timer = this.time.addEvent({
-      delay: 2000,
+      delay: 3500,
       callback: () => {
-        
+        this.donLindoAt =new DonLindoAttack(this, this.sys.game.canvas.width, this.sys.game.canvas.height / 2,"shoot", this.player);
+        this.monecoAttacks.add(this.donLindoAt);
+      },
+      repeat: 5,
+    });
+    this.timer2=this.time.addEvent({
+      delay: 5000,
+      callback:()=>{
+        this.expl =new Explosion(this, Phaser.Math.Between(0,this.sys.game.canvas.width),Phaser.Math.Between(0,this.sys.game.canvas.height),"pigmalion",this.player);
+        this.monecoAttacks.add(this.expl);
       },
       repeat: 3,
-    });
+    })
    
   }
 
@@ -75,7 +85,7 @@ export default class SalaXXPomponina extends SalaBase {
   startMenu() {
     if (this.monecoAttacks.countActive() === 0){ 
         this.scene.launch("mc");
-        eventsCenter.emit("thisKey", "salaXXPomponina");
+        eventsCenter.emit("thisKey", cst.SCENES.SALAXXDONLINDO);
         eventsCenter.emit("canMercy", this.monecoPP);
         eventsCenter.on("damage", this.damage, this);
         eventsCenter.on("persuade", this.persuade, this);

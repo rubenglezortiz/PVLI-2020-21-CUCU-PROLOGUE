@@ -52,13 +52,7 @@ export default class SalaXXPomponina extends SalaBase {
     this.timer = this.time.addEvent({
       delay: 2000,
       callback: () => {
-        this.pompAt = new PomponinaAttack(
-          this,
-          this.sys.game.canvas.width,
-          this.sys.game.canvas.height / 2,
-          "shoot",
-          this.player
-        );   
+        this.pompAt = new PomponinaAttack(this, this.sys.game.canvas.width, this.sys.game.canvas.height / 2, "shoot", this.player);   
         this.monecoAttacks.add(this.pompAt);    
       },
       repeat: 3,
@@ -70,13 +64,7 @@ export default class SalaXXPomponina extends SalaBase {
       delay: 2000,
       callback: () => {
         for (let i = 0; i < 3; i++) {
-          this.pompAt = new PomponinaAttack(
-            this,
-            this.sys.game.canvas.width,
-            this.sys.game.canvas.height / 2,
-            "shoot",
-            this.player
-          );
+          this.pompAt = new PomponinaAttack(this, this.sys.game.canvas.width, this.sys.game.canvas.height / 2, "shoot", this.player);
           this.monecoAttacks.add(this.pompAt);
         }
       },
