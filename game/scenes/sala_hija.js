@@ -14,7 +14,7 @@ export default class SalaHija extends SalaBase{
 
     create(){
           super.create();
-          this.bebe = this.physics.add.sprite(1000,300,"bebe").setScale(1);
+          this.bebe = this.physics.add.sprite(1000,300,"bebe");
           this.bebeE =  this.add.image(this.bebe.x, this.bebe.y -  this.bebe.height, "teclaE");
      }
     

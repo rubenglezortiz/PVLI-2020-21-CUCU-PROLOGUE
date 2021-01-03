@@ -15,7 +15,8 @@ export default class Sala13 extends SalaBase {
   create() {
     super.create();
    
-    this.chulapos = this.physics.add.sprite(1100, 300, "chulapos");
+
+    this.chulapos = new Prop(this, 1100, 300, "chulapos", this.player, 1, 60,50);
     this.chulaposE = this.add.image(
       this.chulapos.x,
       this.chulapos.y - this.chulapos.height + 50,
@@ -26,7 +27,7 @@ export default class Sala13 extends SalaBase {
     this.camino.depth = 1;
     this.camino.angle = 90;
 
-    this.caballo = new Prop(this, 700, 350, "caballo", this.player).setScale(0.5);
+    this.caballo = new Prop(this, 700, 350, "caballo", this.player, 0.5, 60,50);
 
     this.anims.create({
       key: "chulaposAnim",

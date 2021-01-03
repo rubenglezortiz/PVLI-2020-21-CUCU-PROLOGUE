@@ -16,11 +16,11 @@ export default class Sala0 extends SalaBase{
 
     create(){
           super.create();
-          this.caja = new Prop(this, 300, 250, "caja", this.player).setScale(7);
+          this.caja = new Prop(this, 300, 250, "caja", this.player, 7,60,50);
           this.camino = this.add.image(700, 400, "cucucamino4");
           this.camino.depth=1;
          
-          
+          //this.physics.add.collider(this.caja.collider, this.player);
     } 
     
 

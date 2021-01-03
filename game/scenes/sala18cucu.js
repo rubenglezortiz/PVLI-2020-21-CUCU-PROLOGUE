@@ -20,8 +20,8 @@ export default class Sala18Cucu extends SalaBase {
   create() {
     super.create();
     this.camino = this.add.image(1400, 400, "cucucamino1");
-    this.carreta = new Prop(this, 1100, 350, "carreta", this.player).setScale(6)
-    this.cucu = new Prop(this, 1100, 450, "cucu", this.player).setScale(6);
+    this.carreta = new Prop(this, 1100, 350, "carreta", this.player,6,60,50);
+    this.cucu = new Prop(this, 1100, 450, "cucu", this.player,6,60,50);
     this.anims.create({
       key: "cucu1",
       frames: this.anims.generateFrameNumbers("cucu", {

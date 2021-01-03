@@ -18,8 +18,9 @@ export default class Sala16 extends SalaBase{
           this.camino = this.add.image(700, 400, "cucucamino3");
           this.camino.depth = 1;
         
-          this.tiendaDr= new Prop(this, 1100, 200, "tiendarastroiz", this.player);
-          this.tiendaDr= new Prop(this, 300, 200, "tiendarastrodr", this.player);
+                                  
+          this.tiendaDr= new Prop(this, 1100, 210, "tiendarastroiz", this.player,1,60,35);
+          this.tiendaIz= new Prop(this, 300, 200, "tiendarastrodr", this.player,1,60,40);
           
           
      }

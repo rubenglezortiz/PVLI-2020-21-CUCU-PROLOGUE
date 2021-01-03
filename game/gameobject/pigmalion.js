@@ -6,8 +6,9 @@ export default class Pigmalion extends Phaser.GameObjects.Sprite {
     console.log(this);
     scene.add.existing(this);
     scene.physics.world.enable(this);
-    this.body.immovable = true;
+    this.body.immovable = false;
     this.body.setCollideWorldBounds(true);
+    
     //this.anim = type;
     this.scene.anims.create({
       key: "walk",
@@ -25,33 +26,42 @@ export default class Pigmalion extends Phaser.GameObjects.Sprite {
     this.d = this.scene.input.keyboard.addKey("D");
     this.depth = 3;//Es la capa en la que se renderiza, cunto mas alta mas arriba en la pantalla
     
+    this.collider = this.scene.physics.add.sprite(this.x,this.y);
+    this.collider.setSize(80,20,true);
+    this.collider.immovable = false;
+    this.collider.setCollideWorldBounds(true);
+    
+   
     
   }
 
   preUpdate(t, dt) {
     super.preUpdate(t, dt);
+
+    
+
     let quietoX = true;
     let quietoY = true;
     if (this.w.isDown) {
-      this.body.setVelocityY(-300);
+      this.collider.setVelocityY(-300);
       quietoY = false;
     } else if (this.s.isDown) {
-      this.body.setVelocityY(300);
+      this.collider.setVelocityY(300);
       quietoY = false;
     } else {
       quietoY = true;
-      this.body.setVelocityY(0);
+      this.collider.setVelocityY(0);
     }
 
     if (this.a.isDown) {
-      this.body.setVelocityX(-300);
+      this.collider.setVelocityX(-300);
       quietoX = false;
     } else if (this.d.isDown) {
-      this.body.setVelocityX(300);
+      this.collider.setVelocityX(300);
       quietoX = false;
     } else {
       quietoX = true;
-      this.body.setVelocityX(0);
+      this.collider.setVelocityX(0);
     }
 
     //si se está moviendo en cualquier direccion hace la anim
@@ -60,6 +70,43 @@ export default class Pigmalion extends Phaser.GameObjects.Sprite {
     } else {
       this.anims.play("walk", false);
     }
+    this.x = this.collider.x;
+    this.y = this.collider.y - this.height/2 + this.collider.height/2;
+
+
+    // let quietoX = true;
+    // let quietoY = true;
+    // if (this.w.isDown) {
+    //   this.body.setVelocityY(-300);
+    //   quietoY = false;
+    // } else if (this.s.isDown) {
+    //   this.body.setVelocityY(300);
+    //   quietoY = false;
+    // } else {
+    //   quietoY = true;
+    //   this.body.setVelocityY(0);
+    // }
+
+    // if (this.a.isDown) {
+    //   this.body.setVelocityX(-300);
+    //   quietoX = false;
+    // } else if (this.d.isDown) {
+    //   this.body.setVelocityX(300);
+    //   quietoX = false;
+    // } else {
+    //   quietoX = true;
+    //   this.body.setVelocityX(0);
+    // }
+
+    // //si se está moviendo en cualquier direccion hace la anim
+    // if (!(quietoX && quietoY)) {
+    //   this.anims.play("walk", true);
+    // } else {
+    //   this.anims.play("walk", false);
+    // }
+    // this.collider.x = this.x;
+    // this.collider.y = this.y + this.height/2 - this.collider.height/2;
+
   }
 
   resetInput() {

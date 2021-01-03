@@ -15,8 +15,8 @@ export default class Sala17 extends SalaBase {
   create() {
     super.create();
     this.camino = this.add.image(1400, 400, "cucucamino1");
-    this.carreta= new Prop(this,300, 300, "carreta", this.player).setScale(6);
-    this.cucu= new Prop(this, 300, 400, "cucu_idle", this.player).setScale(6);
+    this.carreta= new Prop(this,300, 300, "carreta", this.player,6, 60,50);
+    this.cucu= new Prop(this, 300, 400, "cucu_idle", this.player,6, 60,50);
     this.cucuE = this.add.image(
       this.cucu.x,
       this.cucu.y - this.cucu.height * 6,
@@ -45,7 +45,7 @@ export default class Sala17 extends SalaBase {
       this.cucuE.visible = true;
 
       if (Phaser.Input.Keyboard.JustDown(this.e)) {
-        this.scene.start("Sala18Cucu", {
+        this.scene.start(cst.SCENES.SALA18CUCU, {
           posx: this.player.x,
           posy: this.player.y,
           lives: this.player.lives,
