@@ -1,28 +1,238 @@
+
+
+
 h1 {
-  font-family: 'Satisfy', cursive;
-  text-align: center;  
-  font-size: 100px;  
-  padding-bottom: 2% ;
+  
+  font-family: 'Satisfy', cursive;  
+  font-size: 100px;
+  display: inline-block;  
+  padding-top: 3%;  
+  width: 100%;
+  text-align : center;
+  
   color: black;
+}
+#session {
+  top:0;
+  padding-top:0;
+  position:relative;
+  margin:0;
+}
+
+
+#atg{
+  position: relative;
+}
+
+header{
+  overflow: hidden;
+  margin:auto;
+  width:100%;
+  
+  height:60px; /*Anchura de la barra*/
+
+  position:fixed; /*Para que la barra se quede fija*/
+  z-index:101; /*Para que la barra se quede fija*/
+  background: #9b6707;  
+  border-bottom: 10px solid #a0850f; /*Línea de debajo del menú, si no queréis borrad esta línea*/
+  
+}
+/* header::after{
+  content: '';
+  display: table;
+  clear: both;
+} */
+.containertext .imagen{
+  display: inline-block;
+  vertical-align: top;
+  width: 46%;
+  margin: 20px 30px 0 0;
+  max-width: 10%;
+  min-width: 10%;
+  
+  height:auto;
+  
+  @media (max-width: 620px) {
+    display: block;
+    vertical-align: none;
+  }
+}
+
+.containertext .atg{
+  display: inline-block;
+  width: 60%;
+  @media (max-width: 620px) {
+    width: 100%;
+  }
+}
+
+.barrita{
+  position: relative;
+  margin : 0 auto;
+  margin-bottom: 10vh;
+  margin-top: 10vh;
+  height: 0.5vh;
+  width: 80%;
+  background-color: rgb(158, 121, 19);
+}
+
+.atg{
+  color:white;
+  text-align: left;
+  position: relative;  
+  
+  @media (max-width: 620px) {
+    width: 100%;
+  }
+}
+.atg span{
+
+margin-left: 50vh;
+
+display: inline-block;
+}
+
+.atg h3{  
+margin-left: 50vh;
+
+display: inline-block;
+  
+}
+
+.text1{
+ 
+  font-size: 6vh;
+  margin-bottom: 3vh;
+  
+  position: relative;
+  animation : text4 3s 1;
+}
+.text2{
+
+  font-size: 2.5vh;
+  animation : text 3s 1;
+  margin-right: 15vh;
+  
+  
+}
+
+.text3{
+  font-size: 2.5vh;
+  animation : text 3s 1;
+  margin-right: 15vh;
+  margin-left: 50vh;
+  
+}
+.imagen{    
+    
+  margin: auto;
+  display: inline-block;  
+  
+  position: relative;  
+  
 }
 
 body{
-  background-color: gray;
+  margin: 0px;
+  background-color: rgb(177, 143, 105);
+  font-weight: 500;
 }
-canvas{  
+nav > li{
+  float: left;
+}
+nav  li:hover{
+  transform: scale(1.05);
+}
+
+nav{
+  margin:0 auto;
+  width:1000px; /*Ancho del menú dentro de la barra, variaremos este valor hasta conseguir el que buscamos*/
+}
+
+
+@keyframes text {
+  0% {    
+    margin-left: -40vh; 
+    
+  }
+}
+
+@keyframes text4 {
+  0% {    
+    margin-left: 80vh; 
+    
+  }
+}
+
+nav ul{
+  margin:0;
+  padding: 0;
+  list-style: none ;
+}
+nav li{
+  
+  display: inline-block;
+  
+  margin-left: 70px;
+
+  padding-top: 20px;
+  /* padding: 20px 20px ; */
+
+  position: relative ;
+}
+nav a{
+  color:#2b2b2b;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 125%;                              
+}
+nav a:hover{  
+  color:#133d7a;
+}
+
+
+
+nav li::before{
+  content:'';
+  display: block;
+  height: 150%;
+  width: 0%;
+  /* background-color: rgb(191, 206, 58); */
+  background: linear-gradient(180deg, #9b6707  , #a0850f,  #a0850f);
+  position: absolute;
+  top:90%;  
+  transition: all ease-in-out 150ms;
+}
+
+ nav li:hover::before{
+width: 100%;
+
+} 
+.container{
+  width: 80%;
+  margin: 0 auto;
+  
+}
+
+
+canvas{   
+  margin-top: 5vh;
+  display: block;
+  position: relative;
   border-color:black;
-  border-width: 40px;
+  border-width:3vh;
+  
   border-style: solid;
   border-radius: 20px;
 }
 
-#links{    
-    padding: 1em;    
+#links{
+    padding: 1em;
     background-color: rgba(12, 12, 12, 0.836);
-      
+
 }
 .button
-{   
+{
   border: 2px solid whitesmoke;
   border-radius: 20%;
   font-size: 70px;
@@ -48,4 +258,15 @@ canvas{
 .button2:hover {
   background-color:  #2b2b2b;
   color:  #d3d3d3;
+}
+
+@media screen and (max-width:1000px){
+  .text2{
+    font-size: 2.5vh;
+    animation : text 3s 1;
+    margin-right: 5vh;
+  }
+  .imagen{
+    display: block;
+  }
 }
