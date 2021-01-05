@@ -1,6 +1,7 @@
 import Pigmalion from "../gameobject/pigmalion.js";
 import GameObject from "../gameobject/gameObject.js";
 import Explosion from "../monecoAttacks/explosion.js";
+import Prop from "../gameobject/prop.js";
 import {cst}from"./cst.js";
 
 export default class SalaBase extends Phaser.Scene {
@@ -26,7 +27,8 @@ export default class SalaBase extends Phaser.Scene {
     this.arriba = this.physics.add.sprite(700,0);
     this.abajo = this.physics.add.sprite(700,800);
     
-    this.physics.add.image(700, 400, "cortinas").depth = 1;
+    
+   
     this.player = new Pigmalion(
       this,
       this.posx,
@@ -35,11 +37,12 @@ export default class SalaBase extends Phaser.Scene {
       "pigmalion"
     );
 
-    //this.caballo = new GameObject(this, 700,350,"caballo", this.player);
+    this.cortinas =new Prop(this, 700, 400, "cortinas", this.player,1, 100,-30).depth = 1;
+    //su collider va a ocupar el 100% del ancho del sprite y como el sprite ocupa 1400x800, su collider va a estar en -30 para ajustarlo bien, y que no se peuda salir
+    
+    
 
     this.add.image(700, 400, "telon").depth = 5;
-    
-    //this.floor = new Phaser.Geom.Rectangle(274, 400, 550, 5);
 
     this.lives = 10;
     this.monecoAttacks = this.physics.add.group();
