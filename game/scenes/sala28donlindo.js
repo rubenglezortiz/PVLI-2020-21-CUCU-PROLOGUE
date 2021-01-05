@@ -1,14 +1,12 @@
 import { cst } from "./cst.js";
 import SalaBase from "./sala_base.js";
-import Pigmalion from "../gameobject/pigmalion.js";
 import DonLindoAttack from "../monecoAttacks/donLindoAttack.js";
-import MenuCombate from "../scenes/menuCombate.js";
 import eventsCenter from "../eventsCenter.js";
 import Explosion from "../monecoAttacks/explosion.js";
 
-export default class SalaXXPomponina extends SalaBase {
+export default class Sala28donlindo extends SalaBase {
   constructor() {
-    super(cst.SCENES.SALAXXDONLINDO, [0, 0, 0, 0]);
+    super(cst.SCENES.SALA28DONLINDO, [0, 0, 0, 0]);
   }
 
   init(datos) {
