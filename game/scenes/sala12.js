@@ -1,6 +1,7 @@
 import SalaBase from "./sala_base.js";
 import Prop from "../gameobject/prop.js";
 import {cst} from "./cst.js";
+import eventsCenter from "../eventsCenter.js";
 
 export default class Sala12 extends SalaBase{
     constructor(){
@@ -33,7 +34,9 @@ export default class Sala12 extends SalaBase{
         if(this.physics.overlap(this.player, this.bebe)) {
           this.bebeE.visible = true;
           if (Phaser.Input.Keyboard.JustDown(this.e)) {
-            console.log("Hablaste con bebe");
+            
+            this.scene.launch("dialogo", {npc:"bebe"});
+            
           }
         }
         else{
