@@ -11,11 +11,11 @@ class Bootloader extends Phaser.Scene {
       this.scene.start(cst.SCENES.SALA0, {posx: 700, posy :400, lives:10});
     });
 
-    this.load.spritesheet("pigmalion", "./././resources/sprites/pigmalion.png", {
+    this.load.spritesheet("pigmalion", "./././resources/sprites/prota/pigmalion.png", {
       frameWidth: 192,
       frameHeight: 192,
     });
-    this.load.spritesheet("cucu", "./././resources/sprites/cucu.png", {
+    this.load.spritesheet("cucu", "./././resources/sprites/cucu/cucu.png", {
       frameWidth: 32,
       frameHeight: 32,
     });
@@ -28,11 +28,11 @@ class Bootloader extends Phaser.Scene {
       frameHeight:108
     });
 
-    this.load.spritesheet("chulapos", "./././resources/sprites/chulaposanim_sheet.png",{
+    this.load.spritesheet("chulapos", "./././resources/sprites/cucu/chulaposanim_sheet.png",{
       frameWidth: 288,
       frameHeight:288
     });
-    this.load.spritesheet("cucu_idle", "./././resources/sprites/cucu_idle_anim.png",{
+    this.load.spritesheet("cucu_idle", "./././resources/sprites/cucu/cucu_idle_anim.png",{
       frameWidth: 32,
       frameHeight:32
     });
@@ -44,23 +44,23 @@ class Bootloader extends Phaser.Scene {
     this.load.image("cucucamino4" , "./././resources/sprites/caminos/cucu/camino_piedra_4.png" );
 
     //this.load.image("cucu_idle", "./././resources/sprites/cucu_idle");
-    this.load.image("caja", "./././resources/sprites/caja.png");
-    this.load.image("mujer", "./././resources/sprites/mujer.png");
-    this.load.image("carreta", "./././resources/sprites/carreta.png");
-    this.load.image("tiendarastroiz", "./././resources/sprites/tienda_rastro_iz.png");
-    this.load.image("tiendarastrodr", "./././resources/sprites/tienda_rastro_dr.png");
-    this.load.image("tiendadisfraces", "./././resources/sprites/tienda_disfraces.png");
-    this.load.image("bebe", "./././resources/sprites/bebe.png");
-    this.load.image("teclaE", "./././resources/sprites/teclaE.png");
-    this.load.image("mesa", "./././resources/sprites/mesas1.png");
-    this.load.image("background", "./././resources/sprites/teatroGeneral/background.png");
-    this.load.image("caballo", "./././resources/sprites/caballo.png");
+    this.load.image("caja", "./././resources/sprites/cucu/caja.png");
+    this.load.image("mujer", "./././resources/sprites/cucu/mujer.png");
+    this.load.image("carreta", "./././resources/sprites/cucu/carreta.png");
+    this.load.image("tiendarastroiz", "./././resources/sprites/cucu/tienda_rastro_iz.png");
+    this.load.image("tiendarastrodr", "./././resources/sprites/cucu/tienda_rastro_dr.png");
+    this.load.image("tiendadisfraces", "./././resources/sprites/cucu/tienda_disfraces.png");
+    this.load.image("bebe", "./././resources/sprites/cucu/bebe.png");
+    this.load.image("teclaE", "./././resources/sprites/interaccion/teclaE.png");
+    this.load.image("mesa", "./././resources/sprites/cucu/mesas1.png");
+    //this.load.image("background", "./././resources/sprites/teatroGeneral/background.png");
+    this.load.image("caballo", "./././resources/sprites/cucu/caballo.png");
     this.load.image("cortinas", "./././resources/sprites/teatroGeneral/cortinas.png");
     this.load.image("telon", "./././resources/sprites/teatroGeneral/telon.png");
     this.load.image("telonGrande", "./././resources/sprites/teatroGeneral/telonGrande.png");
     this.load.image("tablones", "./././resources/sprites/teatroGeneral/tablones.png");
     this.load.image("objetovacio", "./././resources/sprites/teatroGeneral/objetovacio.png");
-    this.load.image("mc","./././resources/sprites/MenuComb.png");
+    this.load.image("mc","./././resources/sprites/menuAtaque/MenuComb.png");
 
     //-----SPRITES MENU ATAQUE-----
     this.load.image("attackButton", "./././resources/sprites/menuAtaque/boton_atacar.png");
