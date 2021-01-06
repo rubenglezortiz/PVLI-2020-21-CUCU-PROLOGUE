@@ -5,9 +5,10 @@ import Prop from "../gameobject/prop.js";
 import {cst}from"./cst.js";
 
 export default class SalaBase extends Phaser.Scene {
-  constructor(name, direcciones) {
+  constructor(name, direcciones, isCombat) {
     super({ key: name });
     this._direcciones = direcciones;
+    this._salaCombate = isCombat;
   }
 
 
@@ -37,24 +38,19 @@ export default class SalaBase extends Phaser.Scene {
       "pigmalion"
     );
 
-    this.cortinas =new Prop(this, 700, 400, "cortinas", this.player,1, 100,-30).depth = 1;
-    //su collider va a ocupar el 100% del ancho del sprite y como el sprite ocupa 1400x800, su collider va a estar en -30 para ajustarlo bien, y que no se peuda salir
+    if(!this._salaCombate){
+      this.cortinas =new Prop(this, 700, 400, "cortinas", this.player,1, 100,-30).depth = 1;
+      //su collider va a ocupar el 100% del ancho del sprite y como el sprite ocupa 1400x800, su collider va a estar en -30 para ajustarlo bien, y que no se peuda salir
+      
+      this.add.image(700, 400, "telon").depth = 5;
+    }
     
-    
-
-    this.add.image(700, 400, "telon").depth = 5;
 
     this.lives = 10;
     this.monecoAttacks = this.physics.add.group();
     this.r = this.input.keyboard.addKey("R");
 
-    /*
-this.trigger = this.add.zone(700, 400);
-this.trigger.setSize(200, 200);
-this.physics.world.enable(this.trigger);
-this.trigger.body.setAllowGravity(false);
-this.trigger.body.moves = false;
-*/
+  
   }
 
   update(time, delta) {
@@ -72,6 +68,7 @@ this.trigger.body.moves = false;
       this.scene.start(this._direcciones[0], {
         posx: this.player.x,
         posy: this.player.y,
+        lives: this.lives
       });
     }
     if (this._direcciones[1] !== 0 && this.physics.overlap(this.player, this.arriba)) {
@@ -81,6 +78,7 @@ this.trigger.body.moves = false;
       this.scene.start(this._direcciones[1], {
         posx: this.player.x,
         posy: this.player.y,
+        lives: this.lives
       });
     }
     if (this._direcciones[2] !== 0 && this.physics.overlap(this.player, this.derecha)) {
@@ -90,6 +88,7 @@ this.trigger.body.moves = false;
        this.scene.start(this._direcciones[2], {
         posx: this.player.x,
         posy: this.player.y,
+        lives: this.lives
       });
     }
     if (this._direcciones[3] !== 0 && this.physics.overlap(this.player, this.abajo)) {
@@ -100,20 +99,9 @@ this.trigger.body.moves = false;
       this.scene.start(this._direcciones[3], {
         posx: this.player.x,
         posy: this.player.y,
+        lives: this.lives
       });
     }
 
-    if (this.r.isDown) {
-      this.expl = new Explosion({
-        scene: this,
-        x: 300,
-        y: 300,
-        type: "pigmalion",
-      });
-      this.timer = this.time.delayedCall(800,()=>{
-        this.monecoAttacks.add(this.expl);
-        console.log("añadido al grupo fis");
-      })
-    }
   }
 }

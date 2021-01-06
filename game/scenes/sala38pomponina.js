@@ -1,11 +1,11 @@
 import { cst } from "./cst.js";
-import SalaBase from "./sala_base.js";
+import SalaBaseCombate from "./sala_base_combate.js";
 import PomponinaAttack from "../monecoAttacks/pomponinaAttack.js";
 import eventsCenter from "../eventsCenter.js";
 
-export default class Sala38pomponina extends SalaBase {
+export default class Sala38pomponina extends SalaBaseCombate {
   constructor() {
-    super(cst.SCENES.SALA38POMPONINA, [0, 0, 0, 0]);
+    super(cst.SCENES.SALA38POMPONINA);
   }
 
   init(datos) {
@@ -15,30 +15,29 @@ export default class Sala38pomponina extends SalaBase {
     //-------------------------//
     //HERENCIA BIEN HECHA??
     super.create();
-    this.add.image(700, 400, "telon");
-    this.add.image(1100, 350, "carreta").setScale(6);
+   
     //-------------------------//
 
     //ANIMACIÓN POMPONINA
-    this.monecoAttacks = this.add.group();
-    this.monecoLP = 100;
-    this.monecoPP = 0;
-    this.monecoMercy = false;
-    this.physics.add.overlap(this.player, this.monecoAttacks);
+    // this.monecoAttacks = this.add.group();
+    // this.monecoLP = 100;
+    // this.monecoPP = 0;
+    // this.monecoMercy = false;
+    // this.physics.add.overlap(this.player, this.monecoAttacks);
     this.startVS();
   }
 
   update() {
     super.update();
     //ANIMACIÓN ATAQUE
-    if (this.physics.overlap(this.player, this.monecoAttacks)) {
-      this.player.lives--;
-      console.log(this.player.lives);
-    }
-    if (this.player.lives === 0) {
-      this.player.lives = 10;
-      this.finishVS();
-    }
+    // if (this.physics.overlap(this.player, this.monecoAttacks)) {
+    //   this.player.lives--;
+    //   console.log(this.player.lives);
+    // }
+    // if (this.player.lives === 0) {
+    //   this.player.lives = 10;
+    //   this.finishVS();
+    // }
   }
   startVS() {
     if (this.monecoLP >= 50) this.pomponinaAttack();
@@ -73,50 +72,50 @@ export default class Sala38pomponina extends SalaBase {
 
   //---------------------------------------------------------
   //HERENCIA
-  startMenu() {
-    if (this.monecoAttacks.countActive() === 0){ 
-        this.scene.launch("mc");
-        eventsCenter.emit("thisKey", cst.SCENES.SalaXXPomponina);
-        eventsCenter.emit("canMercy", this.monecoPP);
-        eventsCenter.on("damage", this.damage, this);
-        eventsCenter.on("persuade", this.persuade, this);
-        eventsCenter.on("isMercy", this.mercy, this);
-        this.events.on(Phaser.Scenes.Events.RESUME, () => {
-          eventsCenter.off("damage", this.damage, this);
-          eventsCenter.off("persuade", this.persuade, this);
-          eventsCenter.off("isMercy", this.mercy, this);
-        });
-        this.startVS();
-        this.scene.pause();
-        this.player.resetInput();
+  // startMenu() {
+  //   if (this.monecoAttacks.countActive() === 0){ 
+  //       this.scene.launch("mc");
+  //       eventsCenter.emit("thisKey", cst.SCENES.SALA38POMPONINA);
+  //       eventsCenter.emit("canMercy", this.monecoPP);
+  //       eventsCenter.on("damage", this.damage, this);
+  //       eventsCenter.on("persuade", this.persuade, this);
+  //       eventsCenter.on("isMercy", this.mercy, this);
+  //       this.events.on(Phaser.Scenes.Events.RESUME, () => {
+  //         eventsCenter.off("damage", this.damage, this);
+  //         eventsCenter.off("persuade", this.persuade, this);
+  //         eventsCenter.off("isMercy", this.mercy, this);
+  //       });
+  //       this.startVS();
+  //       this.scene.pause();
+  //       this.player.resetInput();
      
-    }
-    else this.time.delayedCall(3000,()=>{this.startMenu()});
-    }
+  //   }
+  //   else this.time.delayedCall(3000,()=>{this.startMenu()});
+  //   }
   
   //-----------------------------------------------------------
 
-  damage(damage) {
-    this.monecoLP -= damage;
-    console.log(this.monecoLP);
-  }
-  persuade(persuade) {
-    this.monecoPP += persuade;
-    console.log(this.monecoPP);
-  }
+  // damage(damage) {
+  //   this.monecoLP -= damage;
+  //   console.log(this.monecoLP);
+  // }
+  // persuade(persuade) {
+  //   this.monecoPP += persuade;
+  //   console.log(this.monecoPP);
+  // }
 
-  mercy(mercy) {
-    //HABRÍA QUE AJUSTAR PARÁMETROS, VER SI SE SALVA EL MUNECO ETC.
-    if (mercy) {
-      this.finishVS();
-    }
-  }
+  // mercy(mercy) {
+  //   //HABRÍA QUE AJUSTAR PARÁMETROS, VER SI SE SALVA EL MUNECO ETC.
+  //   if (mercy) {
+  //     this.finishVS();
+  //   }
+  // }
 
-  finishVS(win) {
-    this.scene.start(cst.SCENES.SALA0, {
-      posx: this.player.x,
-      posy: this.player.y,
-      lives: this.player.lives,
-    });
-  }
+  // finishVS(win) {
+  //   this.scene.start(cst.SCENES.SALA0, {
+  //     posx: this.player.x,
+  //     posy: this.player.y,
+  //     lives: this.player.lives,
+  //   });
+  // }
 }

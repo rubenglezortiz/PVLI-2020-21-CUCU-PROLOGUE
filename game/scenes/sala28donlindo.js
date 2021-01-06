@@ -83,7 +83,7 @@ export default class Sala28donlindo extends SalaBase {
   startMenu() {
     if (this.monecoAttacks.countActive() === 0){ 
         this.scene.launch("mc");
-        eventsCenter.emit("thisKey", cst.SCENES.SALAXXDONLINDO);
+        eventsCenter.emit("thisKey", cst.SCENES.SALA28DONLINDO);
         eventsCenter.emit("canMercy", this.monecoPP);
         eventsCenter.on("damage", this.damage, this);
         eventsCenter.on("persuade", this.persuade, this);

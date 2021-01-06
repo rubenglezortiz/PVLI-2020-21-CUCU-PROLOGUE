@@ -4,7 +4,7 @@ import {cst} from "./cst.js";
 export default class Sala14 extends SalaBase{
     constructor(){
                       // <-  ^   ->     v
-        super(cst.SCENES.SALA14, [ 0, 0, cst.SCENES.SALA34, cst.SCENES.SALA13])
+        super(cst.SCENES.SALA14, [ 0, 0, cst.SCENES.SALA34, cst.SCENES.SALA13],false)
     }
 
 
