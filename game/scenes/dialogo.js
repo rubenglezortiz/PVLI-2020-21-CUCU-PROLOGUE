@@ -1,6 +1,6 @@
 
 import {npcs} from "./npcs.js";
-
+import eventsCenter from "../eventsCenter.js";
 export default class Dialogo extends Phaser.Scene  {
   constructor() {
     super({ key: "dialogo" });    
@@ -8,42 +8,66 @@ export default class Dialogo extends Phaser.Scene  {
   
   init(datos) {
     this.npc = datos.npc;
+    this.prevKey = datos.prevKey;
    
 }
-  create() {
-    //habria que crear los arrays y todos los mensajes de cada muñeco
-    this.bebe = ["agugutata","jaja ruben es tonto"];
-    this.iterator = 0;
-    this.e = this.input.keyboard.addKey("E");
-  }
-
-  update(time, delta) {
-    
-  switch(this.npc)
-  {
-    case npcs.NPCS.bebe:
-      while (this.iterator != this.bebe.length)
-      {
-        this.text = this.add.text(
-        200,
-        200,
-        this.bebe[this.iterator]
-        );
-        if (Phaser.Input.Keyboard.JustDown(this.e))
-        {
-          this.iterator++;
-        }
-      }
-      this.npc = null;
-      break;
-  }
-  }
+create() {
+  //habria que crear los arrays y todos los mensajes de cada muñeco
+  this.scene.bringToTop();
+    this.events.on(Phaser.Scenes.Events.RESUME, () => {
+      eventsCenter.on("thisKey", this.prevScene, this);  
+      eventsCenter.off("thisKey",this.prevScene,this)    
+    });
+  this.menu = this.add.image(700, 500, "mc");
+  this.menu.setAlpha(0.5);
+  console.log("aaa");
+  this.bebe = ["agugutata","jaja ruben es tonto"];
+  this.caja = ["Has conseguido una caja"];
+  this.iterator = 0;
+  this.e = this.input.keyboard.addKey("E");
   
+  
+
+  this.text = this.add.text(
+    500,
+    500,
+    this.bebe[this.iterator]
+  );
+  this.text.setFontSize(50);
 }
 
-
-//let text = this.add.text(
-//  200,
-//  500,
-//  "- Has elegido la opción 4, que da 0 de persuasión -"
-//);
+update(time, delta) {
+  
+  if (Phaser.Input.Keyboard.JustDown(this.e))
+  {
+    this.iterator++;
+  }
+switch(this.npc)
+{
+  case npcs.NPCS.bebe:
+    if (this.iterator != this.bebe.length)    
+      this.text.setText(this.bebe[this.iterator]);
+    else {
+    this.scene.pause();   
+    this.scene.resume(this.prevKey);
+    this.scene.sendToBack();
+    }
+        
+    break;
+    case npcs.NPCS.caja:
+      if (this.iterator != this.caja.length)
+      this.text.setText(this.caja[this.iterator]);
+    else {
+    this.scene.pause();   
+    this.scene.resume(this.prevKey);
+    this.scene.sendToBack();
+    }
+        
+    break;
+   default:
+      console.log('error en el switch de diálogo');
+    break;
+}
+}
+prevScene(key) {this.prevKey = key;console.log(this.prevKey)}
+}

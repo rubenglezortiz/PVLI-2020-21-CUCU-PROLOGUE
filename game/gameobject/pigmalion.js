@@ -3,7 +3,7 @@ export default class Pigmalion extends Phaser.GameObjects.Sprite {
     super(scene, x, y, type);
     
     //this.originY = 0;
-    console.log(this);
+    
     scene.add.existing(this);
     scene.physics.world.enable(this);
     this.body.immovable = false;
@@ -24,22 +24,16 @@ export default class Pigmalion extends Phaser.GameObjects.Sprite {
     this.a = this.scene.input.keyboard.addKey("A");
     this.s = this.scene.input.keyboard.addKey("S");
     this.d = this.scene.input.keyboard.addKey("D");
-    this.depth = 3;//Es la capa en la que se renderiza, cunto mas alta mas arriba en la pantalla
+    this.depth = 3;//Es la capa en la que se renderiza, cuanto mas alta mas arriba en la pantalla
     
     this.collider = this.scene.physics.add.sprite(this.x,this.y);
     this.collider.setSize(80,20,true);
     this.collider.immovable = false;
-    this.collider.setCollideWorldBounds(true);
-    
-   
-    
+    this.collider.setCollideWorldBounds(true);  
   }
 
   preUpdate(t, dt) {
     super.preUpdate(t, dt);
-
-    
-
     let quietoX = true;
     let quietoY = true;
     if (this.w.isDown) {
@@ -74,39 +68,6 @@ export default class Pigmalion extends Phaser.GameObjects.Sprite {
     this.y = this.collider.y - this.height/2 + this.collider.height/2;
 
 
-    // let quietoX = true;
-    // let quietoY = true;
-    // if (this.w.isDown) {
-    //   this.body.setVelocityY(-300);
-    //   quietoY = false;
-    // } else if (this.s.isDown) {
-    //   this.body.setVelocityY(300);
-    //   quietoY = false;
-    // } else {
-    //   quietoY = true;
-    //   this.body.setVelocityY(0);
-    // }
-
-    // if (this.a.isDown) {
-    //   this.body.setVelocityX(-300);
-    //   quietoX = false;
-    // } else if (this.d.isDown) {
-    //   this.body.setVelocityX(300);
-    //   quietoX = false;
-    // } else {
-    //   quietoX = true;
-    //   this.body.setVelocityX(0);
-    // }
-
-    // //si se está moviendo en cualquier direccion hace la anim
-    // if (!(quietoX && quietoY)) {
-    //   this.anims.play("walk", true);
-    // } else {
-    //   this.anims.play("walk", false);
-    // }
-    // this.collider.x = this.x;
-    // this.collider.y = this.y + this.height/2 - this.collider.height/2;
-
   }
 
   resetInput() {
@@ -115,4 +76,5 @@ export default class Pigmalion extends Phaser.GameObjects.Sprite {
     this.s.reset();
     this.d.reset();
   }
+  
 }

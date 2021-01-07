@@ -1,6 +1,5 @@
 import { cst } from "../scenes/cst.js";
 
-
 class Bootloader extends Phaser.Scene {
   constructor() {
     super({ key: "Bootloader" });
@@ -8,7 +7,7 @@ class Bootloader extends Phaser.Scene {
 
   preload() {
     this.load.on("complete", () => {
-      this.scene.start(cst.SCENES.SALA0, {posx: 700, posy :400, lives:10});
+      this.scene.start(cst.SCENES.SALA0, {posx: 700, posy :400, lives:10, objs:[false,false,false,false]});
     });
 
     this.load.spritesheet("pigmalion", "./././resources/sprites/prota/pigmalion.png", {

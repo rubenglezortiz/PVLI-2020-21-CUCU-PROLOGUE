@@ -1,7 +1,7 @@
 export const npcs = {
 NPCS:{
-    bebe:"bebe"
-    
+    bebe:"bebe",
+    caja:"caja"
     }
 
 

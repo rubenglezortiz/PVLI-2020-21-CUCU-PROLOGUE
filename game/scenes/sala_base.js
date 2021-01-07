@@ -1,8 +1,6 @@
 import Pigmalion from "../gameobject/pigmalion.js";
-import GameObject from "../gameobject/gameObject.js";
-import Explosion from "../monecoAttacks/explosion.js";
 import Prop from "../gameobject/prop.js";
-import {cst}from"./cst.js";
+import {objs} from "./objeto.js";
 
 export default class SalaBase extends Phaser.Scene {
   constructor(name, direcciones, isCombat) {
@@ -13,10 +11,16 @@ export default class SalaBase extends Phaser.Scene {
 
 
   init(datos) {
+    
+    this.objetos = Array(objs.OBJECTS.NumObjs);
     //console.log(this);
     this.posx = datos.posx;
     this.posy = datos.posy;
     this.lives = datos.lives;
+    this.objetos = datos.objs;
+    console.log(this.objetos);
+   
+  
   }
 
 
@@ -35,7 +39,7 @@ export default class SalaBase extends Phaser.Scene {
       this.posx,
       this.posy,
       this.lives,
-      "pigmalion"
+      "pigmalion",           
     );
 
     if(!this._salaCombate){
@@ -44,20 +48,12 @@ export default class SalaBase extends Phaser.Scene {
       
       this.add.image(700, 400, "telon").depth = 5;
     }
-    
-
     this.lives = 10;
     this.monecoAttacks = this.physics.add.group();
     this.r = this.input.keyboard.addKey("R");
-
-  
   }
 
   update(time, delta) {
-
-
-
-   
 
     //-----CAMBIO SALAS-----
     if (this._direcciones[0] !== 0 && this.physics.overlap(this.player, this.izquierda)) {
@@ -68,7 +64,8 @@ export default class SalaBase extends Phaser.Scene {
       this.scene.start(this._direcciones[0], {
         posx: this.player.x,
         posy: this.player.y,
-        lives: this.lives
+        lives: this.lives,
+        objs: this.objetos
       });
     }
     if (this._direcciones[1] !== 0 && this.physics.overlap(this.player, this.arriba)) {
@@ -78,7 +75,8 @@ export default class SalaBase extends Phaser.Scene {
       this.scene.start(this._direcciones[1], {
         posx: this.player.x,
         posy: this.player.y,
-        lives: this.lives
+        lives: this.lives ,
+        objs: this.objetos
       });
     }
     if (this._direcciones[2] !== 0 && this.physics.overlap(this.player, this.derecha)) {
@@ -88,7 +86,8 @@ export default class SalaBase extends Phaser.Scene {
        this.scene.start(this._direcciones[2], {
         posx: this.player.x,
         posy: this.player.y,
-        lives: this.lives
+        lives: this.lives,
+        objs: this.objetos
       });
     }
     if (this._direcciones[3] !== 0 && this.physics.overlap(this.player, this.abajo)) {
@@ -99,7 +98,8 @@ export default class SalaBase extends Phaser.Scene {
       this.scene.start(this._direcciones[3], {
         posx: this.player.x,
         posy: this.player.y,
-        lives: this.lives
+        lives: this.lives,
+        objs: this.objetos
       });
     }
 
