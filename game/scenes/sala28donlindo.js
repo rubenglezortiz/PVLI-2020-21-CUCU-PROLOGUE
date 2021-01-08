@@ -1,46 +1,27 @@
 import { cst } from "./cst.js";
-import SalaBase from "./sala_base.js";
+import SalaBaseCombate from "./sala_base_combate.js";
 import DonLindoAttack from "../monecoAttacks/donLindoAttack.js";
 import eventsCenter from "../eventsCenter.js";
 import Explosion from "../monecoAttacks/explosion.js";
 
-export default class Sala28donlindo extends SalaBase {
+export default class Sala28donlindo extends SalaBaseCombate {
   constructor() {
-    super(cst.SCENES.SALA28DONLINDO, [0, 0, 0, 0]);
+    super(cst.SCENES.SALA28DONLINDO);
   }
 
   init(datos) {
     super.init(datos);
   }
-  create() {
-    //-------------------------//
-    //HERENCIA BIEN HECHA??
+  create() {   
     super.create();
-    this.add.image(700, 400, "telon");
-    this.add.image(1100, 350, "carreta").setScale(6);
-    //-------------------------//
-
-    //ANIMACIÓN POMPONINA
-    this.monecoAttacks = this.add.group();
-    this.monecoLP = 100;
-    this.monecoPP = 0;
-    this.monecoMercy = false;
-    this.physics.add.overlap(this.player, this.monecoAttacks);
+    //ANIMACIÓN Y DECORADO
     this.startVS();
   }
 
   update() {
-    super.update();
-    //ANIMACIÓN ATAQUE
-    if (this.physics.overlap(this.player, this.monecoAttacks)) {
-      this.player.lives--;
-      console.log(this.player.lives);
-    }
-    if (this.player.lives === 0) {
-      this.player.lives = 10;
-      this.finishVS();
-    }
+    super.update();   
   }
+
   startVS() {
     if (this.monecoLP >= 50) this.donlindoAttack();
     else this.donlindoAttackV2();
@@ -74,56 +55,6 @@ export default class Sala28donlindo extends SalaBase {
         this.monecoAttacks.add(this.expl);
       },
       repeat: 3,
-    })
-   
-  }
-
-  //---------------------------------------------------------
-  //HERENCIA
-  startMenu() {
-    if (this.monecoAttacks.countActive() === 0){ 
-        this.scene.launch("mc");
-        eventsCenter.emit("thisKey", cst.SCENES.SALA28DONLINDO);
-        eventsCenter.emit("canMercy", this.monecoPP);
-        eventsCenter.on("damage", this.damage, this);
-        eventsCenter.on("persuade", this.persuade, this);
-        eventsCenter.on("isMercy", this.mercy, this);
-        this.events.on(Phaser.Scenes.Events.RESUME, () => {
-          eventsCenter.off("damage", this.damage, this);
-          eventsCenter.off("persuade", this.persuade, this);
-          eventsCenter.off("isMercy", this.mercy, this);
-        });
-        this.startVS();
-        this.scene.pause();
-        this.player.resetInput();
-     
-    }
-    else this.time.delayedCall(3000,()=>{this.startMenu()});
-    }
-  
-  //-----------------------------------------------------------
-
-  damage(damage) {
-    this.monecoLP -= damage;
-    console.log(this.monecoLP);
-  }
-  persuade(persuade) {
-    this.monecoPP += persuade;
-    console.log(this.monecoPP);
-  }
-
-  mercy(mercy) {
-    //HABRÍA QUE AJUSTAR PARÁMETROS, VER SI SE SALVA EL MUNECO ETC.
-    if (mercy) {
-      this.finishVS();
-    }
-  }
-
-  finishVS(win) {
-    this.scene.start(cst.SCENES.SALA0, {
-      posx: this.player.x,
-      posy: this.player.y,
-      lives: this.player.lives,
-    });
+    })   
   }
 }

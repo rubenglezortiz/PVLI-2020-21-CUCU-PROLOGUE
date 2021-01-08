@@ -63,7 +63,7 @@ var config = {
   ],
   physics: {
     default: "arcade",
-    arcade: { debug: true },
+    arcade: { debug: false },
   },
 };
 new Phaser.Game(config);

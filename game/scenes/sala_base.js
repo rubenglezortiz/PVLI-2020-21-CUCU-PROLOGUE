@@ -11,16 +11,11 @@ export default class SalaBase extends Phaser.Scene {
 
 
   init(datos) {
-    
     this.objetos = Array(objs.OBJECTS.NumObjs);
-    //console.log(this);
     this.posx = datos.posx;
     this.posy = datos.posy;
     this.lives = datos.lives;
-    this.objetos = datos.objs;
-    console.log(this.objetos);
-   
-  
+    this.objetos = datos.objs; 
   }
 
 

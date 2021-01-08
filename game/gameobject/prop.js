@@ -5,12 +5,10 @@ export default class Prop extends Phaser.GameObjects.Sprite {
     //this.originY = 0;
     this.anchoPC = wC;
     this.posYC = yC;
-    console.log(this);
     scene.add.existing(this);
     scene.physics.world.enable(this);
     this.body.immovable = true;
     this.body.setCollideWorldBounds(true);
-    //this.anim = type;
     this.pigmalion = player;
     this.setScale(sc);
 
