@@ -1,9 +1,6 @@
 import SalaBaseCombate from "./sala_base_combate.js";
 import { cst } from "./cst.js";
-import Pigmalion from "../gameobject/pigmalion.js";
 import CucuAttack from "../monecoAttacks/cucuAttack.js";
-import MenuCombate from "../scenes/menuCombate.js";
-import eventsCenter from "../eventsCenter.js";
 import Prop from "../gameobject/prop.js";
 
 export default class Sala18Cucu extends SalaBaseCombate {
@@ -17,11 +14,11 @@ export default class Sala18Cucu extends SalaBaseCombate {
 
   create() {
     super.create();
-    this.camino = this.add.image(1400, 400, "cucucamino1");
-    this.carreta = new Prop(this, 1100, 350, "carreta", this.player,6,60,50);
-    this.cucu = new Prop(this, 1100, 450, "cucu", this.player,6,60,50);
+    this.camino = this.add.image(700, 400, "cucucamino5");
+    this.carreta = new Prop(this,1500,100,"carreta",this.player,6,60,50,false);
+    this.cucu = new Prop(this,1200,this.sys.game.canvas.height/2,"cucu_idle",this.player,6,60,50,false);
     this.anims.create({
-      key: "cucu1",
+      key: "cucu",
       frames: this.anims.generateFrameNumbers("cucu", {
         start: 0,
         end: 20,
@@ -35,21 +32,39 @@ export default class Sala18Cucu extends SalaBaseCombate {
 
   update() {
     super.update();
-   
+    this.cucu.play("cucu",true);
   }
 
   startVS() {
-    if (this.monecoLP >= 50) this.cucuAttackF();
-    else this.cucuAttackF2();
-    this.time.delayedCall(3000, () => {
-      this.startMenu();
-    });
+    if (this.monecoLP >= 50) this.phase1();
+    else this.phase2();
   }
 
-  cucuAttackF() {
+  phase1() {
+    this.time.delayedCall(500,()=>{this.attack1()})
     this.timer = this.time.addEvent({
       delay: 2000,
       callback: () => {
+        this.attack1();
+        if(this.timer.getRepeatCount()===0) this.startMenu();
+      },
+      repeat: 2,
+    });
+  }
+
+  phase2() {
+    this.time.delayedCall(500,()=>{this.attack2()})
+    this.timer = this.time.addEvent({
+      delay: 2000,
+      callback: () => {
+        this.attack2();
+        if(this.timer.getRepeatCount()===0) this.startMenu();
+      },
+      repeat: 2,
+    });
+  }
+
+  attack1(){
         let x = this.sys.game.canvas.width;
         let y = Phaser.Math.Between(
           this.player.y - this.player.height * 1.5,
@@ -57,33 +72,21 @@ export default class Sala18Cucu extends SalaBaseCombate {
         );
         this.cucuAt = new CucuAttack(this, x, y, "cucuat", this.player);
         this.monecoAttacks.add(this.cucuAt);
-        this.cucuAt.depth=2;
-      },
-      repeat: 3,
-    });
   }
 
-  cucuAttackF2() {
-    this.timer = this.time.addEvent({
-      delay: 2000,
-      callback: () => {
-        let x = this.sys.game.canvas.width;
-        let y = Phaser.Math.Between(
-          this.player.y - this.player.height * 1.5,
-          this.player.y + this.player.height * 1.5
-        );
-        let y2 = Phaser.Math.Between(0, this.sys.game.canvas.height);
-        this.cucuAt1 = new CucuAttack(this, x, y, "cucuat2", this.player);
-        this.monecoAttacks.add(this.cucuAt1);
-        this.timerAttack2 = this.time.delayedCall(350, () => {
-          this.cucuAt2 = new CucuAttack(this, x, y2, "cucuat2", this.player);
-          this.monecoAttacks.add(this.cucuAt2);
-        });
-      },
-      repeat: 3,
+  attack2(){
+    let x = this.sys.game.canvas.width;
+    let y = Phaser.Math.Between(
+      this.player.y - this.player.height * 1.5,
+      this.player.y + this.player.height * 1.5
+    );
+    let y2 = Phaser.Math.Between(0, this.sys.game.canvas.height);
+    this.cucuAt1 = new CucuAttack(this, x, y, "cucuat2", this.player);
+    this.monecoAttacks.add(this.cucuAt1);
+    this.timerAttack2 = this.time.delayedCall(350, () => {
+      this.cucuAt2 = new CucuAttack(this, x, y2, "cucuat2", this.player);
+      this.monecoAttacks.add(this.cucuAt2);
     });
-    console.log(this.monecoAttacks);
   }
-
   
 }

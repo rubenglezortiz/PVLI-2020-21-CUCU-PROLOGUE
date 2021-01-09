@@ -1,5 +1,6 @@
 import SalaBase from "./sala_base.js";
 import { cst } from "./cst.js";
+import Prop from "../gameobject/prop.js";
 
 export default class Sala33 extends SalaBase {
   constructor() {
@@ -13,9 +14,20 @@ export default class Sala33 extends SalaBase {
 
   create() {
     super.create();
+    this.florista=new Prop(this, this.sys.canvas.width/2,250,"florista",this.player,1.5,60,50,true);
+    this.anims.create({
+      key: "floristaAnim",
+      frames: this.anims.generateFrameNumbers("florista",{
+        start:0,
+        end:6
+      }),
+      frameRate: 4,
+      repeat: -1
+    })
   }
 
   update() {
     super.update();
+    this.florista.play("floristaAnim",true)
   }
 }

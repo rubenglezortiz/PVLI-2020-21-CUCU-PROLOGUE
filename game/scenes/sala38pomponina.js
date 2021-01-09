@@ -1,7 +1,7 @@
 import { cst } from "./cst.js";
 import SalaBaseCombate from "./sala_base_combate.js";
 import PomponinaAttack from "../monecoAttacks/pomponinaAttack.js";
-import eventsCenter from "../eventsCenter.js";
+import Prop from "../gameobject/prop.js";
 
 export default class Sala38pomponina extends SalaBaseCombate {
   constructor() {
@@ -12,110 +12,64 @@ export default class Sala38pomponina extends SalaBaseCombate {
     super.init(datos);
   }
   create() {
-    //-------------------------//
-    //HERENCIA BIEN HECHA??
     super.create();
-   
-    //-------------------------//
-
-    //ANIMACIÓN POMPONINA
-    // this.monecoAttacks = this.add.group();
-    // this.monecoLP = 100;
-    // this.monecoPP = 0;
-    // this.monecoMercy = false;
-    // this.physics.add.overlap(this.player, this.monecoAttacks);
+    this.pomponina=new Prop(this,1200,this.sys.game.canvas.height/2,"",this.player,6,60,50,false)
+    this.anims.create({
+      key: "pomponinaEnfadada",
+      frames: this.anims.generateFrameNumbers("pomponina", {
+        start: 0,
+        end: 9,
+      }),
+      frameRate: 8,
+      repeat: -1,
+    });
     this.startVS();
   }
 
   update() {
-    super.update();
-    //ANIMACIÓN ATAQUE
-    // if (this.physics.overlap(this.player, this.monecoAttacks)) {
-    //   this.player.lives--;
-    //   console.log(this.player.lives);
-    // }
-    // if (this.player.lives === 0) {
-    //   this.player.lives = 10;
-    //   this.finishVS();
-    // }
+    super.update();   
+    this.pomponina.play("pomponinaEnfadada",true);
   }
   startVS() {
-    if (this.monecoLP >= 50) this.pomponinaAttack();
-    else this.pomponinaAttackV2();
-    this.time.delayedCall(3000,()=>{this.startMenu()});
+    if (this.monecoLP >= 50) this.phase1();
+    else this.phase2();
   }
 
-  pomponinaAttack() {
+  phase1() {    
+    this.time.delayedCall(500,()=>{this.attack1()})
     this.timer = this.time.addEvent({
-      delay: 2000,
+      delay: 7500,
       callback: () => {
-        this.pompAt = new PomponinaAttack(this, this.sys.game.canvas.width, this.sys.game.canvas.height / 2, "shoot", this.player);   
-        this.monecoAttacks.add(this.pompAt);    
+       this.attack1();
+        if(this.timer.getRepeatCount()===0) this.startMenu();
       },
-      repeat: 3,
+      repeat: 2,
     });
   }
 
-  pomponinaAttackV2() {
+  phase2() {
+    this.time.delayedCall(500,()=>{this.attack2()})
     this.timer = this.time.addEvent({
-      delay: 2000,
+      delay: 7500,
       callback: () => {
-        for (let i = 0; i < 3; i++) {
-          this.pompAt = new PomponinaAttack(this, this.sys.game.canvas.width, this.sys.game.canvas.height / 2, "shoot", this.player);
-          this.monecoAttacks.add(this.pompAt);
-        }
+        this.attack2();
+        if(this.timer.getRepeatCount()===0) this.startMenu();
       },
-      repeat: 3,
+      repeat: 1,
     });
    
   }
 
-  //---------------------------------------------------------
-  //HERENCIA
-  // startMenu() {
-  //   if (this.monecoAttacks.countActive() === 0){ 
-  //       this.scene.launch("mc");
-  //       eventsCenter.emit("thisKey", cst.SCENES.SALA38POMPONINA);
-  //       eventsCenter.emit("canMercy", this.monecoPP);
-  //       eventsCenter.on("damage", this.damage, this);
-  //       eventsCenter.on("persuade", this.persuade, this);
-  //       eventsCenter.on("isMercy", this.mercy, this);
-  //       this.events.on(Phaser.Scenes.Events.RESUME, () => {
-  //         eventsCenter.off("damage", this.damage, this);
-  //         eventsCenter.off("persuade", this.persuade, this);
-  //         eventsCenter.off("isMercy", this.mercy, this);
-  //       });
-  //       this.startVS();
-  //       this.scene.pause();
-  //       this.player.resetInput();
-     
-  //   }
-  //   else this.time.delayedCall(3000,()=>{this.startMenu()});
-  //   }
-  
-  //-----------------------------------------------------------
-
-  // damage(damage) {
-  //   this.monecoLP -= damage;
-  //   console.log(this.monecoLP);
-  // }
-  // persuade(persuade) {
-  //   this.monecoPP += persuade;
-  //   console.log(this.monecoPP);
-  // }
-
-  // mercy(mercy) {
-  //   //HABRÍA QUE AJUSTAR PARÁMETROS, VER SI SE SALVA EL MUNECO ETC.
-  //   if (mercy) {
-  //     this.finishVS();
-  //   }
-  // }
-
-  // finishVS(win) {
-  //   this.scene.start(cst.SCENES.SALA0, {
-  //     posx: this.player.x,
-  //     posy: this.player.y,
-  //     lives: this.player.lives,
-  //   });
-  // }
+  attack1(){
+    this.velY = Phaser.Math.Between(0,1);
+    this.pompAt = new PomponinaAttack(this, this.sys.game.canvas.width, this.sys.game.canvas.height / 2, "pomponinaat", this.player,this.velY);
+    this.monecoAttacks.add(this.pompAt); 
+  }
+  attack2(){
+    for (let i = 0; i < 2; i++) {
+      this.pompAt = new PomponinaAttack(this, this.sys.game.canvas.width, this.sys.game.canvas.height / 2, "pomponinaat", this.player,i%2);
+      this.monecoAttacks.add(this.pompAt);
+    }
+  }
 }
+

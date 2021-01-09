@@ -9,7 +9,7 @@ export default class CucuAttack extends Phaser.GameObjects.Sprite {
     this.t = type;
 
     this.scene.anims.create({
-      key: "cucu",
+      key: "cucu1",
       frames: this.scene.anims.generateFrameNumbers("cucuat", {
         start: 0,
         end: 14,
@@ -37,7 +37,7 @@ export default class CucuAttack extends Phaser.GameObjects.Sprite {
 
   preUpdate(t, dt) {
     super.preUpdate(t, dt);
-    if (this.t === "cucuat") this.anims.play("cucu", true);
+    if (this.t === "cucuat") this.anims.play("cucu1", true);
     else this.anims.play("cucu2", true);
     if(this.scene.physics.overlap(this,this.player)) this.destroy();
     if (this.x < 0) this.destroy();  
