@@ -2,6 +2,8 @@ import MenuCombate from "../scenes/menuCombate.js";
 
 
 import Sala0 from "../scenes/sala0.js";
+import Sala0Urdemalas from "../scenes/sala0urdemalas.js";
+
 import Sala11 from "../scenes/sala11.js";
 import Sala12 from "../scenes/sala12.js";
 import Sala13 from "../scenes/sala13.js";
@@ -41,6 +43,7 @@ var config = {
   scene: [
     Bootloader,
     Sala0,
+    Sala0Urdemalas,
     Sala11,
     Sala12,
     Sala13,

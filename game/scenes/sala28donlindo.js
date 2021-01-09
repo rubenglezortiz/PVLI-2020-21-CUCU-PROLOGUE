@@ -11,6 +11,7 @@ export default class Sala28donlindo extends SalaBaseCombate {
   init(datos) {
     super.init(datos);
   }
+  
   create() {   
     super.create();
     //ANIMACIÓN Y DECORADO

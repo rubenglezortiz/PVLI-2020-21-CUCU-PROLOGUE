@@ -44,7 +44,7 @@ export default class SalaBase extends Phaser.Scene {
       this.add.image(700, 400, "telon").depth = 5;
     }
   
-    
+
     this.e = this.input.keyboard.addKey("E");
   }
 
@@ -70,7 +70,7 @@ export default class SalaBase extends Phaser.Scene {
       this.scene.start(this._direcciones[1], {
         posx: this.player.x,
         posy: this.player.y,
-        lives: this.lives ,
+        lives: this.lives,
         objs: this.objetos
       });
     }

@@ -1,6 +1,7 @@
 export const  cst = {
     SCENES:{
         SALA0: "sala0",
+        SALA0URDEMALAS: "sala0urdemalas",
         SALA11: "sala11",
         SALA12: "sala12",
         SALA13: "sala13",
