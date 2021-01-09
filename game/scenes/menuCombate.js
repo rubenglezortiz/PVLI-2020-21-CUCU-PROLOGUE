@@ -1,12 +1,16 @@
 import eventsCenter from "../eventsCenter.js";
 import rod from "./rod.js";
+import { objs } from "./objeto.js";
 export default class MenuCombate extends Phaser.Scene {
   constructor(datos) {
     super({ key: "mc" });
     this.test = false;
     eventsCenter.on("thisKey", this.prevScene, this);  
+    
   }
-
+  init(datos){
+    this.objetos = datos.objects;
+  }
   create() {
     this.scene.bringToTop();
     this.events.on(Phaser.Scenes.Events.RESUME, () => {
@@ -23,16 +27,19 @@ export default class MenuCombate extends Phaser.Scene {
     this.talkButton = this.add.sprite(550, 150, "talkButton").setInteractive();
 
     eventsCenter.on("canMercy", this.setMercyButton, this);
-    if (!this.mercy) {
+    if (!this.mercy) 
+    {
       this.mercyButton = this.add.sprite(850, 150, "mercyButton");
       this.mercyButton.setAlpha(0.5);
-    } else {
+    } 
+    else 
+    {
       this.mercyButton = this.add
         .sprite(850, 150, "mercyButton")
         .setInteractive();
       this.mercyButton.setAlpha(1);
     }
-
+    this.setHablarButton();
     this.buttonVec = [this.attackButton, this.talkButton, this.mercyButton];
     this.buttonVec.forEach((button) => {
       button.on("pointerover", (pointer) => {
@@ -43,9 +50,6 @@ export default class MenuCombate extends Phaser.Scene {
       });
       button.on("pointerdown", (pointer) => {
         //esto en verdad no debe pasar con ningún botón
-        // this.scene.pause();
-        //  this.scene.resume("SALA18CUCU");
-        // this.scene.sendToBack();
       });
     });
     // Botón de ataque
@@ -105,9 +109,18 @@ export default class MenuCombate extends Phaser.Scene {
       this.talkOption2 = this.add
         .sprite(550, 700, "talkButton")
         .setInteractive();
+        if (this.opcion3)
+        {
       this.talkOption3 = this.add
         .sprite(850, 700, "talkButton")
         .setInteractive();
+        }
+        else
+        {
+          this.talkOption3 = this.add
+        .sprite(850, 700, "talkButton");
+        this.talkOption3.setAlpha(0.5);
+        }
       this.talkOption4 = this.add
         .sprite(1200, 700, "talkButton")
         .setInteractive();
@@ -243,9 +256,11 @@ export default class MenuCombate extends Phaser.Scene {
   setMercyButton(monecoPP) {
     if (monecoPP === 100) this.mercy = true;
     else this.mercy = false;
-    
   }
-
+  setHablarButton() {
+    if (this.objetos[objs.OBJECTS.caja]) this.opcion3 = true;
+    else this.opcion3 = false;
+  }
   //NOTA PUTÍSIMAMENTE IMPORTANTE:
   //HAY QUE COMPROBAR QUE ESTA "key" CAMBIE POR EJEMPLO EN LA SALA DE POMPONINA, es decir
   //si nos cargamos al cucu y luego vamos a por pomponina, hay que mirar que este key CAMBIE

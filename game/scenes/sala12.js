@@ -26,7 +26,7 @@ export default class Sala12 extends SalaBase {
     if(this.physics.overlap(this.player, this.bebe)) {
       if (Phaser.Input.Keyboard.JustDown(this.e)) {
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:"bebe",prevKey:cst.SCENES.SALA12});
+        this.scene.launch("dialogo", {npc:"bebe",prevKey:cst.SCENES.SALA12,objs:this.objetos});
         this.scene.pause();
         this.player.resetInput();
       }

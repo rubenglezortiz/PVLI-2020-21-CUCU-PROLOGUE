@@ -37,6 +37,7 @@ export default class Sala17 extends SalaBase {
           posx: 200,
           posy: this.sys.game.canvas.height / 2 + this.player.height/2,
           lives: this.player.lives,
+          objs: this.objetos
         });
       }
     }    

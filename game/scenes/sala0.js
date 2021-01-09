@@ -36,6 +36,7 @@ export default class Sala0 extends SalaBase {
         this.scene.launch("dialogo", {
           npc: "caja",
           prevKey: cst.SCENES.SALA0,
+          objs:this.objetos
         });
         this.scene.pause();
         this.player.resetInput();

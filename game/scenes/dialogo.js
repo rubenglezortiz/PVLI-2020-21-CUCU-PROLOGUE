@@ -1,5 +1,6 @@
 import { npcs } from "./npcs.js";
 import eventsCenter from "../eventsCenter.js";
+import { objs } from "./objeto.js"
 export default class Dialogo extends Phaser.Scene {
   constructor() {
     super({ key: "dialogo" });
@@ -8,6 +9,7 @@ export default class Dialogo extends Phaser.Scene {
   init(datos) {
     this.npc = datos.npc;
     this.prevKey = datos.prevKey;
+    this.objetos = datos.objs;
   }
   create() {
     //habria que crear los arrays y todos los mensajes de cada muñeco
@@ -18,7 +20,9 @@ export default class Dialogo extends Phaser.Scene {
     });
     this.menu = this.add.image(700, 500, "mc");
     this.menu.setAlpha(0.5);
-    this.bebe = ["agugutata", "jaja ruben es tonto"];
+    if(this.objetos[objs.OBJECTS.caja])  
+      this.bebe = ["¡Qué caja más bonita!"];
+    else this.bebe = ["agugutata", "jaja ruben es tonto"];
     this.caja = ["Has conseguido una caja"];
     this.iterator = 0;
     this.e = this.input.keyboard.addKey("E");
@@ -40,7 +44,6 @@ export default class Dialogo extends Phaser.Scene {
           this.scene.resume(this.prevKey);
           this.scene.sendToBack();
         }
-
         break;
       case npcs.NPCS.caja:
         if (this.iterator != this.caja.length)
