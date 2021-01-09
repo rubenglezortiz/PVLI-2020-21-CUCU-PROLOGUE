@@ -19,13 +19,17 @@ export default class Sala0 extends SalaBase {
     this.caja = new Prop(this,300,250,"cajaCucu",this.player,7,60,50,true);
     this.camino = this.add.image(700, 400, "cucucamino4");
     this.camino.depth = 1;
-    this.e = this.input.keyboard.addKey("E");
+    
+
+  
   }
 
   update() {
     super.update();
-    if (this.physics.overlap(this.player, this.caja)) {
+    console.log();
+    if (this.caja.propE.visible /*this.physics.overlap(this.player, this.caja)*/) {
       if (Phaser.Input.Keyboard.JustDown(this.e)) {
+      
         this.objetos[objs.OBJECTS.caja] = true;
         console.log(this.objetos[objs.OBJECTS.caja]);
         eventsCenter.emit("thisKey", this._nombreSala);

@@ -43,9 +43,9 @@ export default class SalaBase extends Phaser.Scene {
       
       this.add.image(700, 400, "telon").depth = 5;
     }
-    this.lives = 10;
-    this.monecoAttacks = this.physics.add.group();
-    this.r = this.input.keyboard.addKey("R");
+  
+    
+    this.e = this.input.keyboard.addKey("E");
   }
 
   update(time, delta) {

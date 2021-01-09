@@ -8,7 +8,7 @@ class Bootloader extends Phaser.Scene {
 
   preload() {
     this.load.on("complete", () => {
-      this.scene.start(cst.SCENES.SALA37, {posx: 700, posy :400, lives:10,objs:[false,false,false,false]});
+      this.scene.start(cst.SCENES.SALA0, {posx: 700, posy :400, lives:10,objs:[false,false,false,false]});
     });
 
 
@@ -117,6 +117,17 @@ class Bootloader extends Phaser.Scene {
     this.load.image("backButton", "./././resources/sprites/menuAtaque/boton_retroceder.png");
     this.load.image("bar","./././resources/sprites/menuAtaque/barra_final.png");
     this.load.image("moveBar","./././resources/sprites/menuAtaque/barra_movil.png");
+
+
+
+
+
+
+
+    //-------Audio------------
+    this.load.audio("chotis","./././resources/audio/chotis.mp3");
+
+
   }
 }
 export default Bootloader;

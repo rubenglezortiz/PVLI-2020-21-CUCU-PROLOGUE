@@ -66,4 +66,6 @@ var config = {
     arcade: { debug: true },
   },
 };
+
+
 new Phaser.Game(config);

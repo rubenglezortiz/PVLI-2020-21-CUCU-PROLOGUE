@@ -1,5 +1,5 @@
 export default class Prop extends Phaser.GameObjects.Sprite {
-  constructor(scene, x, y, nombreSprite, player, sc, wC, yC, interactive) {
+  constructor(scene, x, y, nombreSprite, player, sc, wC, yC, interactive, interFunct) {
     super(scene, x, y, nombreSprite);
     this.anchoPC = wC;
     this.posYC = yC;
@@ -9,6 +9,7 @@ export default class Prop extends Phaser.GameObjects.Sprite {
     this.body.setCollideWorldBounds(true);
     this.pigmalion = player;
     this.setScale(sc); this.posYE=this.y-this.height*sc+20;
+    this.interFunction = interFunct;
 
     //20 va a ser la altura de todos
     this.colliderP = this.scene.physics.add.staticSprite(this.x,this.y + (this.height * this.scale * this.posYC) / 100 - 20);
@@ -30,8 +31,10 @@ export default class Prop extends Phaser.GameObjects.Sprite {
     else this.depth = 4;
 
     if (this.int){      
-      if (this.scene.physics.overlap(this, this.pigmalion))
-        this.propE.visible = true;      
+      if (this.scene.physics.overlap(this, this.pigmalion)){
+        this.propE.visible = true; 
+
+      }
       else this.propE.visible = false;      
     }
   }
