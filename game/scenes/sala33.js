@@ -14,7 +14,7 @@ export default class Sala33 extends SalaBase {
 
   create() {
     super.create();
-    this.florista=new Prop(this, this.sys.canvas.width/2,250,"florista",this.player,1.5,60,50,true);
+    this.florista=new Prop(this, this.sys.canvas.width/2,250,"florista",this.player,1,60,45,true);
     this.anims.create({
       key: "floristaAnim",
       frames: this.anims.generateFrameNumbers("florista",{

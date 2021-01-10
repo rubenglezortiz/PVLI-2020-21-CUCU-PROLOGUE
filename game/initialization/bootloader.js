@@ -76,8 +76,8 @@ class Bootloader extends Phaser.Scene {
       frameHeight: 192
     });
     this.load.spritesheet("fuente", "./././resources/sprites/pomponina/fuente.png",{
-      frameWidth: 64,
-      frameHeight: 72
+      frameWidth: 64*5,
+      frameHeight: 72*5
     });    
     this.load.spritesheet("clienteBombones1", "./././resources/sprites/pomponina/cliente_bombones_1.png",{
       frameWidth: 192,
@@ -88,8 +88,8 @@ class Bootloader extends Phaser.Scene {
       frameHeight: 192
     });
     this.load.spritesheet("florista", "./././resources/sprites/pomponina/florista.png",{
-      frameWidth: 192,
-      frameHeight: 192
+      frameWidth: 192*1.5,
+      frameHeight: 192*1.5
     });
     this.load.spritesheet("hijoFlorista", "./././resources/sprites/pomponina/hijo_florista.png",{
       frameWidth: 192,
@@ -97,12 +97,12 @@ class Bootloader extends Phaser.Scene {
     });   
     //muñeco
     this.load.spritesheet("pomponinaIdl", "./././resources/sprites/pomponina/pomponina_idle.png",{
-      frameWidth: 32,
-      frameHeight: 32
+      frameWidth: 192,
+      frameHeight: 192
     });
     this.load.spritesheet("pomponina", "./././resources/sprites/pomponina/pomponina_enfadada.png",{
-      frameWidth: 32,
-      frameHeight: 32
+      frameWidth: 192,
+      frameHeight: 192
     });
     this.load.spritesheet("pomponinaat", "./././resources/sprites/pomponina/pomponina_attack.png",{
       frameWidth: 125,

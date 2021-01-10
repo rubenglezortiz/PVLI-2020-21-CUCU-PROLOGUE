@@ -23,7 +23,7 @@ export default class Sala32 extends SalaBase {
 
   create() {
     super.create();
-    this.fuente = new Prop(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2, "fuente", this.player, 5, 60, 50, false,);
+    this.fuente = new Prop(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2, "fuente", this.player, 1, 60, 45, false,);
     this.anims.create({
       key: "fuenteAnim",
       frames: this.anims.generateFrameNumbers("fuente", {
