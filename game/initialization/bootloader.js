@@ -76,8 +76,8 @@ class Bootloader extends Phaser.Scene {
       frameHeight: 192
     });
     this.load.spritesheet("fuente", "./././resources/sprites/pomponina/fuente.png",{
-      frameWidth: 64*5,
-      frameHeight: 72*5
+      frameWidth: 320,
+      frameHeight: 360
     });    
     this.load.spritesheet("clienteBombones1", "./././resources/sprites/pomponina/cliente_bombones_1.png",{
       frameWidth: 192,
@@ -88,8 +88,8 @@ class Bootloader extends Phaser.Scene {
       frameHeight: 192
     });
     this.load.spritesheet("florista", "./././resources/sprites/pomponina/florista.png",{
-      frameWidth: 192*1.5,
-      frameHeight: 192*1.5
+      frameWidth: 288,
+      frameHeight: 288
     });
     this.load.spritesheet("hijoFlorista", "./././resources/sprites/pomponina/hijo_florista.png",{
       frameWidth: 192,

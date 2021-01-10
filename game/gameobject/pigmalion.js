@@ -37,10 +37,10 @@ export default class Pigmalion extends Phaser.GameObjects.Sprite {
     let quietoX = true;
     let quietoY = true;
     if (this.w.isDown) {
-      this.collider.setVelocityY(-300);
+      this.collider.setVelocityY(-500);
       quietoY = false;
     } else if (this.s.isDown) {
-      this.collider.setVelocityY(300);
+      this.collider.setVelocityY(500);
       quietoY = false;
     } else {
       quietoY = true;
@@ -48,10 +48,10 @@ export default class Pigmalion extends Phaser.GameObjects.Sprite {
     }
 
     if (this.a.isDown) {
-      this.collider.setVelocityX(-300);
+      this.collider.setVelocityX(-500);
       quietoX = false;
     } else if (this.d.isDown) {
-      this.collider.setVelocityX(300);
+      this.collider.setVelocityX(500);
       quietoX = false;
     } else {
       quietoX = true;

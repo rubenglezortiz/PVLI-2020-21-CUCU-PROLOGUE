@@ -14,7 +14,7 @@ export default class Sala38pomponina extends SalaBaseCombate {
   }
   create() {
     super.create();
-    this.pomponina=new Prop(this,1200,this.sys.game.canvas.height/2,"",this.player,6,60,50,false)
+    this.pomponina=new Prop(this,1200,this.sys.game.canvas.height/2,"",this.player,1,60,50,false)
     this.anims.create({
       key: "pomponinaEnfadada",
       frames: this.anims.generateFrameNumbers("pomponina", {

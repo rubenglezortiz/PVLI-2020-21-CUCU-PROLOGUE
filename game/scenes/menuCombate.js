@@ -259,8 +259,8 @@ export default class MenuCombate extends Phaser.Scene {
     else this.mercy = false;
   }
   setHablarButton() {
-    if (this.objetos[objs.OBJECTS.caja]) this.opcion3 = true;
-    else this.opcion3 = false;
+    // if (this.objetos[objs.OBJECTS.caja]) this.opcion3 = true;
+    // else this.opcion3 = false;
   }
   //NOTA PUTÍSIMAMENTE IMPORTANTE:
   //HAY QUE COMPROBAR QUE ESTA "key" CAMBIE POR EJEMPLO EN LA SALA DE POMPONINA, es decir

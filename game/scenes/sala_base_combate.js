@@ -1,7 +1,6 @@
 import SalaBase from "./sala_base.js";
 import { cst } from "./cst.js";
 import eventsCenter from "../eventsCenter.js";
-import RunInfo from "../runInfo.js";
 
 export default class SalaBaseCombate extends SalaBase {
   constructor(name, moneco) {
