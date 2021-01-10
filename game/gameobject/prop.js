@@ -8,7 +8,7 @@ export default class Prop extends Phaser.GameObjects.Sprite {
     this.body.immovable = true;
     this.body.setCollideWorldBounds(true);
     this.pigmalion = player;
-    this.setScale(sc); this.posYE=this.y-this.height*sc+20;
+    this.setScale(sc); this.posYE=this.y-this.height;
     this.interFunction = interFunct;
 
     //20 va a ser la altura de todos
@@ -17,7 +17,8 @@ export default class Prop extends Phaser.GameObjects.Sprite {
     this.scene.physics.add.collider(this.colliderP, this.pigmalion.collider);
     this.int = interactive;
     if (this.int) {
-      this.propE = this.scene.add.image(x,this.posYE,"teclaE"); 
+      this.propE = this.scene.add.image(x,this.posYE,"teclaE");
+      this.propE.y+=this.propE.height; 
       this.propE.depth = 6
       this.e = this.scene.input.keyboard.addKey("E", false);
     }    
@@ -32,8 +33,7 @@ export default class Prop extends Phaser.GameObjects.Sprite {
 
     if (this.int){      
       if (this.scene.physics.overlap(this, this.pigmalion)){
-        this.propE.visible = true; 
-
+        this.propE.visible = true;
       }
       else this.propE.visible = false;      
     }
