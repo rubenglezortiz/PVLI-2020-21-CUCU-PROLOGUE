@@ -17,7 +17,7 @@ export default class Sala0 extends SalaBase {
 
   create() {
     super.create();
-    this.caja = new Prop(this,300,250,"cajaCucu",this.player,7,60,50,true);
+    this.caja = new Prop(this,300,250,"caja",this.player,7,60,50,true);
     this.camino = this.add.image(700, 400, "cucucamino4");
     this.camino.depth = 1;
   }

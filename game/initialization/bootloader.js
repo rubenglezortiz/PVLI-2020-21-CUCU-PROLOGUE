@@ -21,6 +21,8 @@ class Bootloader extends Phaser.Scene {
     this.load.image("telon", "./././resources/sprites/teatroGeneral/telon.png");
     this.load.image("telonGrande", "./././resources/sprites/teatroGeneral/telonGrande.png");
     this.load.image("tablones", "./././resources/sprites/teatroGeneral/tablones.png");   
+    this.load.image("caja", "./././resources/sprites/teatroGeneral/caja.png");
+    this.load.image("cajaCerrada","./././resources/sprites/teatroGeneral/caja_cerrada.png");
     this.load.image("teclaE", "./././resources/sprites/interaccion/teclaE.png");
 
 
@@ -31,8 +33,7 @@ class Bootloader extends Phaser.Scene {
     this.load.image("cucucamino3" , "./././resources/sprites/caminos/cucu/camino_piedra_3.png" );
     this.load.image("cucucamino4" , "./././resources/sprites/caminos/cucu/camino_piedra_4.png" );
     this.load.image("cucucamino5" , "./././resources/sprites/caminos/cucu/camino_piedra_5.png" );
-    //decorado
-    this.load.image("cajaCucu", "./././resources/sprites/cucu/caja.png");
+    //decorado  
     this.load.image("mujer", "./././resources/sprites/cucu/mujer.png");
     this.load.image("carreta", "./././resources/sprites/cucu/carreta.png");
     this.load.image("tiendarastroiz", "./././resources/sprites/cucu/tienda_rastro_iz.png");
