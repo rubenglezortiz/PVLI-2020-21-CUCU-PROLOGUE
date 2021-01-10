@@ -1,5 +1,5 @@
 import { cst } from "../scenes/cst.js";
-
+import RunInfo from "../runInfo.js";
 
 class Bootloader extends Phaser.Scene {
   constructor() {
@@ -8,7 +8,7 @@ class Bootloader extends Phaser.Scene {
 
   preload() {
     this.load.on("complete", () => {
-      this.scene.start(cst.SCENES.SALA0, {posx: 700, posy :400, lives:10,objs:[false,false,false,false]});
+      this.scene.start(cst.SCENES.SALA18CUCU, {posx: 700, posy :400, lives:10,objs:[false,false,false,false],runInfo:new RunInfo()});
     });
 
 

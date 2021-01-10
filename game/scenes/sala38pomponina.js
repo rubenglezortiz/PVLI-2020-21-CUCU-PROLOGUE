@@ -3,9 +3,10 @@ import SalaBaseCombate from "./sala_base_combate.js";
 import PomponinaAttack from "../monecoAttacks/pomponinaAttack.js";
 import Prop from "../gameobject/prop.js";
 
+
 export default class Sala38pomponina extends SalaBaseCombate {
   constructor() {
-    super(cst.SCENES.SALA38POMPONINA);
+    super(cst.SCENES.SALA38POMPONINA,2);
   }
 
   init(datos) {

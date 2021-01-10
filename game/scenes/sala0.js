@@ -12,6 +12,7 @@ export default class Sala0 extends SalaBase {
 
   init(datos) {
     super.init(datos);
+    console.log(this);
   }
 
   create() {
@@ -19,9 +20,6 @@ export default class Sala0 extends SalaBase {
     this.caja = new Prop(this,300,250,"cajaCucu",this.player,7,60,50,true);
     this.camino = this.add.image(700, 400, "cucucamino4");
     this.camino.depth = 1;
-    
-
-  
   }
 
   update() {

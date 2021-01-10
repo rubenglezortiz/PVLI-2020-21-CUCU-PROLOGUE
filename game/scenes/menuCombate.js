@@ -246,6 +246,7 @@ export default class MenuCombate extends Phaser.Scene {
     });
     this.mercyButton.on("pointerdown", (pointer) => {
       eventsCenter.emit("isMercy", true);
+      this.parar();
     });
   }
   update(time, delta) {
@@ -254,7 +255,7 @@ export default class MenuCombate extends Phaser.Scene {
   }
 
   setMercyButton(monecoPP) {
-    if (monecoPP === 100) this.mercy = true;
+    if (monecoPP >= 100) this.mercy = true;
     else this.mercy = false;
   }
   setHablarButton() {

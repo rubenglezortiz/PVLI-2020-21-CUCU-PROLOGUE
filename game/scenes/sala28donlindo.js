@@ -5,7 +5,7 @@ import Explosion from "../monecoAttacks/explosion.js";
 
 export default class Sala28donlindo extends SalaBaseCombate {
   constructor() {
-    super(cst.SCENES.SALA28DONLINDO);
+    super(cst.SCENES.SALA28DONLINDO,1);
   }
 
   init(datos) {
