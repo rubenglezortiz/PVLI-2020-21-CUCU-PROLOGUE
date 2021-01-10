@@ -65,27 +65,15 @@ export default class Sala18Cucu extends SalaBaseCombate {
   }
 
   attack1(){
-        let x = this.sys.game.canvas.width;
-        let y = Phaser.Math.Between(
-          this.player.y - this.player.height * 1.5,
-          this.player.y + this.player.height * 1.5
-        );
-        this.cucuAt = new CucuAttack(this, x, y, "cucuat", this.player);
-        this.monecoAttacks.add(this.cucuAt);
+        
+        this.cucuAt = new CucuAttack(this,  "cucuat", this.player);
   }
 
   attack2(){
-    let x = this.sys.game.canvas.width;
-    let y = Phaser.Math.Between(
-      this.player.y - this.player.height * 1.5,
-      this.player.y + this.player.height * 1.5
-    );
-    let y2 = Phaser.Math.Between(0, this.sys.game.canvas.height);
-    this.cucuAt1 = new CucuAttack(this, x, y, "cucuat2", this.player);
-    this.monecoAttacks.add(this.cucuAt1);
+    
+    this.cucuAt1 = new CucuAttack(this, "cucuat2", this.player);
     this.timerAttack2 = this.time.delayedCall(350, () => {
-      this.cucuAt2 = new CucuAttack(this, x, y2, "cucuat2", this.player);
-      this.monecoAttacks.add(this.cucuAt2);
+      this.cucuAt2 = new CucuAttack(this, "cucuat2", this.player);
     });
   }
   

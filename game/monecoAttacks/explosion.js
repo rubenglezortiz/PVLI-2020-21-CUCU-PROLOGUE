@@ -1,6 +1,6 @@
 export default class Explosion extends Phaser.GameObjects.Sprite {
-  constructor(scene, x, y, type, pigmalion) {
-    super(scene, x, y, type);
+  constructor(scene, type, pigmalion) {
+    super(scene, 0, 0, type);
     scene.add.existing(this);
     this.scene.anims.create({
       key: "bomb",
@@ -11,6 +11,10 @@ export default class Explosion extends Phaser.GameObjects.Sprite {
       frameRate: 20,
       repeat: -1,
     });
+    this.player = pigmalion;
+    this.x = Phaser.Math.Between(this.player.x-200,this.player.x+200) ;
+    this.y = Phaser.Math.Between(this.player.y-150,this.player.y+150);
+
     if (this.x < this.width / 2) this.x = this.width/2;
     if (this.x > this.scene.sys.game.canvas.width - this.width / 2)
       this.x = this.scene.sys.game.canvas.width - this.width / 2;
@@ -19,8 +23,10 @@ export default class Explosion extends Phaser.GameObjects.Sprite {
       this.y = this.scene.sys.game.canvas.height - this.height / 2;
     if (this.y < this.height / 2) this.y = this.height / 2;
 
-    this.player = pigmalion;
+    
     this.bomb();
+    this.scene.monecoAttacks.add(this);
+   
   }
 
   preUpdate(time, delta) {

@@ -61,14 +61,11 @@ export default class Sala38pomponina extends SalaBaseCombate {
   }
 
   attack1(){
-    this.velY = Phaser.Math.Between(0,1);
     this.pompAt = new PomponinaAttack(this, this.sys.game.canvas.width, this.sys.game.canvas.height / 2, "pomponinaat", this.player,this.velY);
-    this.monecoAttacks.add(this.pompAt); 
   }
   attack2(){
     for (let i = 0; i < 2; i++) {
       this.pompAt = new PomponinaAttack(this, this.sys.game.canvas.width, this.sys.game.canvas.height / 2, "pomponinaat", this.player,i%2);
-      this.monecoAttacks.add(this.pompAt);
     }
   }
 }

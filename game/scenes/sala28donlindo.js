@@ -30,7 +30,7 @@ export default class Sala28donlindo extends SalaBaseCombate {
   phase1() {
     this.time.delayedCall(750,()=>{this.attack1()})
     this.timer = this.time.addEvent({
-      delay: 75000,
+      delay: 7500,
       callback: () => {
        this.attack1();
        if(this.timer.getRepeatCount()===0) this.startMenu();
@@ -42,7 +42,7 @@ export default class Sala28donlindo extends SalaBaseCombate {
   phase2() {
     this.time.delayedCall(750,()=>{this.attack1()})
     this.timer = this.time.addEvent({
-      delay: 7500,
+      delay: 6500,
       callback: () => {
         this.attack1()
         if(this.timer.getRepeatCount()===0) this.startMenu();
@@ -57,13 +57,11 @@ export default class Sala28donlindo extends SalaBaseCombate {
   }
 
   attack1(){
-    this.dY = Phaser.Math.Between(0,1);
-    this.donLindoAt = new DonLindoAttack(this, this.sys.game.canvas.width, this.sys.game.canvas.height / 2,"shoot", this.player,this.dY);
-    this.monecoAttacks.add(this.donLindoAt);
+    this.donLindoAt = new DonLindoAttack(this, this.sys.game.canvas.width, this.sys.game.canvas.height / 2,"shoot", this.player);
   }
 
   attack2(){
-    this.expl = new Explosion(this, Phaser.Math.Between(this.player.x-200,this.player.x+200) ,Phaser.Math.Between(this.player.y-150,this.player.y+150),"pigmalion",this.player);
-    this.monecoAttacks.add(this.expl);
+    this.expl = new Explosion(this,"pigmalion",this.player);
+    
   }
 }

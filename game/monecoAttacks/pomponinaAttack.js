@@ -1,5 +1,5 @@
 export default class PomponinaAttack extends Phaser.GameObjects.Sprite {
-  constructor(scene,x,y,type,pigmalion,dirY) {
+  constructor(scene,x,y,type,pigmalion) {
     super(scene, x, y,type);
     scene.add.existing(this);
     scene.physics.add.existing(this);
@@ -15,8 +15,9 @@ export default class PomponinaAttack extends Phaser.GameObjects.Sprite {
       frameRate: 12,
       repeat:-1,
     });
-    this.dy = dirY;
+    this.dy = Phaser.Math.Between(0,1);;
     this.setPhysics();
+    this.scene.monecoAttacks.add(this);
   }
 
   preUpdate(t, dt) {
