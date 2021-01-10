@@ -48,12 +48,12 @@ class Bootloader extends Phaser.Scene {
     });
     //muñeco
     this.load.spritesheet("cucu_idle", "./././resources/sprites/cucu/cucu_idle_anim.png",{
-      frameWidth: 32,
-      frameHeight:32
+      frameWidth: 32*6,
+      frameHeight:32*6
     });
     this.load.spritesheet("cucu", "./././resources/sprites/cucu/cucu.png", {
-      frameWidth: 32,
-      frameHeight: 32,
+      frameWidth: 32*6,
+      frameHeight: 32*6,
     });
     this.load.spritesheet("cucuat", "./././resources/sprites/cucu/cucuattacksprite.png", {
       frameWidth: 216,

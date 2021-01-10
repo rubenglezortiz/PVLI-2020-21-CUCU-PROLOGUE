@@ -17,7 +17,7 @@ export default class Sala13 extends SalaBase {
     this.camino.depth = 1;
     this.camino.angle = 90;
     this.chulapos = new Prop(this,1100,300,"chulapos",this.player,1,60,50,true);
-    this.caballo = new Prop(this,700,350,"caballo",this.player,0.5,60,50,false);
+    this.caballo = new Prop(this,700,350,"caballo",this.player,1,60,50,false);
    
     this.anims.create({
       key: "chulaposAnim",
