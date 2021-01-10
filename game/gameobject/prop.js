@@ -12,13 +12,15 @@ export default class Prop extends Phaser.GameObjects.Sprite {
     this.interFunction = interFunct;
 
     //20 va a ser la altura de todos
-    this.colliderP = this.scene.physics.add.staticSprite(this.x,this.y + (this.height * this.scale * this.posYC) / 100 - 20);
+    this.colliderP = this.scene.physics.add.staticSprite(this.x,this.y + (this.height * this.scale * this.posYC) / 100);
     this.colliderP.setSize((this.width * this.scale * this.anchoPC) / 100, 20, true);
     this.scene.physics.add.collider(this.colliderP, this.pigmalion.collider);
     this.int = interactive;
+   
+   
     if (this.int) {
-      this.propE = this.scene.add.image(x,this.posYE,"teclaE");
-      this.propE.y+=this.propE.height; 
+      this.propE = this.scene.add.image(x, y - this.height/2,"teclaE");
+      this.propE.y -= this.propE.height/2;
       this.propE.depth = 6
       this.e = this.scene.input.keyboard.addKey("E", false);
     }    
