@@ -8,6 +8,7 @@ export default class Sala11 extends SalaBase {
 
   init(datos) {
     super.init(datos);
+    console.log(this);
   }
 
   create() {

@@ -7,7 +7,7 @@ import eventsCenter from "../eventsCenter.js";
 export default class Sala0 extends SalaBase {
     // <-  ^   ->   v
   constructor() {
-    super(cst.SCENES.SALA0,[cst.SCENES.SALA11, cst.SCENES.SALA34, cst.SCENES.SALA31, 0],false);
+    super(cst.SCENES.SALA0,[cst.SCENES.SALA11, cst.SCENES.SALA18CUCU /*cst.SCENES.SALA34*/, cst.SCENES.SALA31, 0],false);
   }
 
   init(datos) {

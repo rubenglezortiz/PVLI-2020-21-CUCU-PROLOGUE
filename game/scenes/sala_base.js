@@ -4,7 +4,7 @@ import {objs} from "./objeto.js";
 import RunInfo from "../runInfo.js"
 
 export default class SalaBase extends Phaser.Scene {
-  constructor(name, direcciones, isCombat, runInfo) {
+  constructor(name, direcciones, isCombat) {
     super({ key: name });
     this._direcciones = direcciones;
     this._salaCombate = isCombat;
@@ -18,7 +18,7 @@ export default class SalaBase extends Phaser.Scene {
     this.posx = datos.posx;
     this.posy = datos.posy;
     this.lives = datos.lives;
-    this._runInfo = datos.runInfo;
+    this._runInfo = datos.runInf;
     
   }
 
@@ -64,7 +64,8 @@ export default class SalaBase extends Phaser.Scene {
         posx: this.player.x,
         posy: this.player.y,
         lives: this.lives,
-        objs: this.objetos
+        objs: this.objetos,
+        runInf: this._runInfo
       });
     }
     if (this._direcciones[1] !== 0 && this.physics.overlap(this.player, this.arriba)) {
@@ -75,7 +76,8 @@ export default class SalaBase extends Phaser.Scene {
         posx: this.player.x,
         posy: this.player.y,
         lives: this.lives,
-        objs: this.objetos
+        objs: this.objetos,
+        runInf: this._runInfo
       });
     }
     if (this._direcciones[2] !== 0 && this.physics.overlap(this.player, this.derecha)) {
@@ -86,7 +88,8 @@ export default class SalaBase extends Phaser.Scene {
         posx: this.player.x,
         posy: this.player.y,
         lives: this.lives,
-        objs: this.objetos
+        objs: this.objetos,
+        runInf: this._runInfo
       });
     }
     if (this._direcciones[3] !== 0 && this.physics.overlap(this.player, this.abajo)) {
@@ -98,7 +101,8 @@ export default class SalaBase extends Phaser.Scene {
         posx: this.player.x,
         posy: this.player.y,
         lives: this.lives,
-        objs: this.objetos
+        objs: this.objetos,
+        runInf: this._runInfo
       });
     }
 

@@ -44,8 +44,10 @@ export default class SalaBaseCombate extends SalaBase {
 
     if(this.monecoLP<=0){
       this.finishVS();
+      this._runInfo._monecos[moneco] = 1;
     }
     if(this.monecoMercy){
+      this._runInfo._monecos[moneco] = 2;
       this.finishVS();
     }
   }

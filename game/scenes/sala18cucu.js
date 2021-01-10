@@ -10,6 +10,8 @@ export default class Sala18Cucu extends SalaBaseCombate {
 
   init(datos) {
     super.init(datos);
+    console.log(this);
+    
   }
 
   create() {
