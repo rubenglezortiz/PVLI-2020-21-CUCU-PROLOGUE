@@ -60,7 +60,7 @@ class Bootloader extends Phaser.Scene {
       frameHeight: 108,
     });
     this.load.spritesheet("cucuat2", "./././resources/sprites/cucu/cucuattacksprite2.png",{
-      frameWidth: 91,
+      frameWidth: 100,
       frameHeight:108
     });
     
