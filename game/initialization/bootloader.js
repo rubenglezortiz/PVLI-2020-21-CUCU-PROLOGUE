@@ -47,9 +47,9 @@ class Bootloader extends Phaser.Scene {
       frameHeight: 288
     });
     //muñeco
-    this.load.spritesheet("cucu_idle", "./././resources/sprites/cucu/cucu_idle_anim.png",{
-      frameWidth: 32*6,
-      frameHeight:32*6
+    this.load.spritesheet("cucuIdle", "./././resources/sprites/cucu/cucu_idle_anim.png",{
+      frameWidth: 192,
+      frameHeight:192
     });
     this.load.spritesheet("cucu", "./././resources/sprites/cucu/cucu.png", {
       frameWidth: 32*6,
@@ -96,7 +96,7 @@ class Bootloader extends Phaser.Scene {
       frameHeight: 192
     });   
     //muñeco
-    this.load.spritesheet("pomponinaIdl", "./././resources/sprites/pomponina/pomponina_idle.png",{
+    this.load.spritesheet("pomponinaIdle", "./././resources/sprites/pomponina/pomponina_idle.png",{
       frameWidth: 192,
       frameHeight: 192
     });

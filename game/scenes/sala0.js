@@ -6,7 +6,7 @@ import { objs } from "./objeto.js";
 export default class Sala0 extends SalaBase {
   // <-  ^   ->   v
   constructor() {
-    super(cst.SCENES.SALA0,[cst.SCENES.SALA11,cst.SCENES.SALA37 /*cst.SCENES.SALA34*/,cst.SCENES.SALA31,0,],false);
+    super(cst.SCENES.SALA0,[cst.SCENES.SALA11,cst.SCENES.SALA17 /*cst.SCENES.SALA34*/,cst.SCENES.SALA31,0,],false);
   }
 
   init(datos) {
@@ -15,17 +15,45 @@ export default class Sala0 extends SalaBase {
   }
 
   create() {
-    super.create();
-    let offset = 0;
-    this.cajas();
-
+    super.create();  
     this.camino = this.add.image(700, 400, "cucucamino4");
     this.camino.depth = 1;
+    this.objA = [];
+    this.infoA = [{ x: 300, y: 250, moneco:"cucuIdle" },{ x: 1100, y: 250, moneco: "donLindo" },{ x: 300, y: 850,moneco: "pomponinaIdle" },];
+    this.cajas();
+
+
+    this.anims.create({
+      key: "cucuIdle",
+      frames: this.anims.generateFrameNumbers("cucuIdle", {
+        start: 0,
+        end: 6,
+      }),
+      frameRate: 4,
+      repeat: -1,
+    });
+    //ANIMACION DON LINDO CRRUUUUUUK
+    this.anims.create({
+      key: "pomponinaIdle",
+      frames: this.anims.generateFrameNumbers("pomponinaIdle", {
+        start: 0,
+        end: 6,
+      }),
+      frameRate: 4,
+      repeat: -1,
+    });
   }
 
   update() {
     super.update();
     console.log();
+    // if(this.objA[i]===2)
+    //  this.objA[0].play(this.infoA[0].moneco,true);
+    for(let i = 0 ; i < 3 ; ++i){
+      if(this._runInfo._monecos[i] === 2)
+      this.objA[i].play(this.infoA[i].moneco,true);
+    }
+   
     // if (
     //   this.caja.propE.visible /*this.physics.overlap(this.player, this.caja)*/
     // ) {
@@ -45,10 +73,8 @@ export default class Sala0 extends SalaBase {
   }
 
   cajas() {
-    this.monecoA = ["cucu", "donLindo", "pomponina"];
-    this.infoA = [{ x: 300, y: 250, moneco:"cucu" },{ x: 1100, y: 250, moneco: "donLindo" },{ x: 300, y: 850,moneco: "pomponina" },];
     this.noPlayed=0; this.killed=0; this.saved=0;
-    this.objA = [];
+
     for (let i = 0; i < 3; ++i) {      
         if (this._runInfo._monecos[i] === 0) {
           this.objA[i]=new Prop(this,this.infoA[i].x,this.infoA[i].y,"caja",this.player,1,60,50,false);
@@ -58,20 +84,19 @@ export default class Sala0 extends SalaBase {
           this.killed++;
         } else {
           this.objA[i]=new Prop(this,this.infoA[i].x,this.infoA[i].y,this.infoA[i].moneco,this.player,1,60,50,false);
+          this.objA[i].play(this.objA[i].moneco,true);
           this.saved++;
         }      
     }
-    if(this.noPlayed<3){
+    if(this.noPlayed===0){
       if(this.killed===3){
         console.log("inicio combate urdemalas");
       }
       else if(this.saved===3){
         console.log("todos salvados :)");
       }
-      else{
+      else
         console.log("has matado y salvado");
       }
     }
-    
-  }
 }
