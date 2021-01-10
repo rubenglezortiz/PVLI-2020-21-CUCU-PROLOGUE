@@ -8,7 +8,7 @@ class Bootloader extends Phaser.Scene {
 
   preload() {
     this.load.on("complete", () => {
-      this.scene.start(cst.SCENES.SALA0, {posx: 700, posy :400, lives:10,objs:[false,false,false,false],runInf:new RunInfo()});
+      this.scene.start(cst.SCENES.SALA33, {posx: 700, posy :400, lives:10,objs:[false,false,false,false],runInf:new RunInfo()});
     });
 
 
@@ -52,8 +52,8 @@ class Bootloader extends Phaser.Scene {
       frameHeight:192
     });
     this.load.spritesheet("cucu", "./././resources/sprites/cucu/cucu.png", {
-      frameWidth: 32*6,
-      frameHeight: 32*6,
+      frameWidth: 192,
+      frameHeight: 192,
     });
     this.load.spritesheet("cucuat", "./././resources/sprites/cucu/cucuattacksprite.png", {
       frameWidth: 216,
@@ -95,6 +95,14 @@ class Bootloader extends Phaser.Scene {
       frameWidth: 192,
       frameHeight: 192
     });   
+    this.load.spritesheet("encargadoAnticuario", "./././resources/sprites/pomponina/encargado_anticuario.png",{
+      frameWidth: 32,
+      frameHeight: 32
+    });   
+    this.load.spritesheet("jarron", "./././resources/sprites/pomponina/jarron_con_llave.png",{
+      frameWidth: 32,
+      frameHeight: 32
+    });  
     //muñeco
     this.load.spritesheet("pomponinaIdle", "./././resources/sprites/pomponina/pomponina_idle.png",{
       frameWidth: 192,

@@ -15,6 +15,7 @@ export default class Sala33 extends SalaBase {
   create() {
     super.create();
     this.florista=new Prop(this, this.sys.canvas.width/2,250,"florista",this.player,1,60,45,true);
+    this.jarron=new Prop(this, this.sys.canvas.width-300,this.sys.canvas.height-100,"jarron",this.player,1,60,45,true);
     this.anims.create({
       key: "floristaAnim",
       frames: this.anims.generateFrameNumbers("florista",{
@@ -24,10 +25,20 @@ export default class Sala33 extends SalaBase {
       frameRate: 4,
       repeat: -1
     })
+    this.anims.create({
+      key: "jarron",
+      frames: this.anims.generateFrameNumbers("jarron",{
+        start:0,
+        end:5
+      }),
+      frameRate: 6,
+      repeat: -1
+    })
   }
 
   update() {
     super.update();
-    this.florista.play("floristaAnim",true)
+    this.florista.play("floristaAnim",true);
+    this.jarron.play("jarron",true);
   }
 }
