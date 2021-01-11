@@ -88,8 +88,8 @@ class Bootloader extends Phaser.Scene {
       frameHeight: 192
     });
     this.load.spritesheet("florista", "./././resources/sprites/pomponina/florista.png",{
-      frameWidth: 288,
-      frameHeight: 288
+      frameWidth: 192,
+      frameHeight: 192
     });
     this.load.spritesheet("hijoFlorista", "./././resources/sprites/pomponina/hijo_florista.png",{
       frameWidth: 192,
