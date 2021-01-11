@@ -41,10 +41,14 @@ export default class SalaBase extends Phaser.Scene {
       "pigmalion",           
     );
 
+    this.colliderArriba = this.physics.add.staticSprite(this.sys.game.canvas.width/2, this.player.body.height- 30);
+    this.colliderArriba.setSize(this.sys.game.canvas.width , 20, true);
+    this.physics.add.collider(this.colliderArriba, this.player.collider);
+
     if(!this._salaCombate){
-      this.cortinas =new Prop(this, 700, 400, "cortinas", this.player,1, 100,-30).depth = 1;
+     
       //su collider va a ocupar el 100% del ancho del sprite y como el sprite ocupa 1400x800, su collider va a estar en -30 para ajustarlo bien, y que no se peuda salir
-      
+      this.add.image( 700, 400, "cortinas").depth = 1;
       this.add.image(700, 400, "telon").depth = 5;
     }
   
