@@ -5,16 +5,7 @@ import Prop from "../gameobject/prop.js";
 export default class Sala32 extends SalaBase {
   constructor() {
     // <-          ^        ->        v
-    super(
-      cst.SCENES.SALA32,
-      [
-        cst.SCENES.SALA31,
-        cst.SCENES.SALA35,
-        cst.SCENES.SALA33,
-        cst.SCENES.SALA26,
-      ],
-      false
-    );
+    super(cst.SCENES.SALA32,[cst.SCENES.SALA31,cst.SCENES.SALA35,cst.SCENES.SALA33,cst.SCENES.SALA26,],false);
   }
 
   init(datos) {
@@ -23,6 +14,7 @@ export default class Sala32 extends SalaBase {
 
   create() {
     super.create();
+    this.camino= this.add.image(this.sys.game.canvas.width / 2+15,this.sys.game.canvas.height / 2,"pomponinacamino3")
     this.fuente = new Prop(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2, "fuente", this.player, 1, 60, 45, false,);
     this.anims.create({
       key: "fuenteAnim",

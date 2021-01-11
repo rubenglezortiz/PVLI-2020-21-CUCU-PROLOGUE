@@ -8,7 +8,7 @@ class Bootloader extends Phaser.Scene {
 
   preload() {
     this.load.on("complete", () => {
-      this.scene.start(cst.SCENES.SALA33, {posx: 700, posy :400, lives:10,objs:[false,false,false,false],runInf:new RunInfo()});
+      this.scene.start(cst.SCENES.SALA0, {posx: 700, posy :400, lives:10,objs:[false,false,false,false],runInf:new RunInfo()});
     });
 
 
@@ -67,6 +67,11 @@ class Bootloader extends Phaser.Scene {
 
     //-----SPRITES POMPONINA-----
     //caminos
+    this.load.image("pomponinacamino1" , "./././resources/sprites/caminos/pomponina/camino_marmol_1.png" );
+    this.load.image("pomponinacamino2" , "./././resources/sprites/caminos/pomponina/camino_marmol_2.png" );
+    this.load.image("pomponinacamino3" , "./././resources/sprites/caminos/pomponina/camino_marmol_3.png" );
+    this.load.image("pomponinacamino4" , "./././resources/sprites/caminos/pomponina/camino_marmol_4.png" );
+    this.load.image("pomponinacamino5" , "./././resources/sprites/caminos/pomponina/camino_marmol_5.png" );
     //decorado
     this.load.image("tiendabombones","./././resources/sprites/pomponina/tienda_bombones.png");
     this.load.image("anticuario","./././resources/sprites/pomponina/anticuario.png");
@@ -100,8 +105,8 @@ class Bootloader extends Phaser.Scene {
       frameHeight: 32
     });   
     this.load.spritesheet("jarron", "./././resources/sprites/pomponina/jarron_con_llave.png",{
-      frameWidth: 32,
-      frameHeight: 32
+      frameWidth: 128,
+      frameHeight: 128
     });  
     //muñeco
     this.load.spritesheet("pomponinaIdle", "./././resources/sprites/pomponina/pomponina_idle.png",{
