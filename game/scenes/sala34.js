@@ -1,7 +1,8 @@
 import SalaBase from "./sala_base.js";
 import { cst } from "./cst.js";
 import Prop from "../gameobject/prop.js";
-
+import eventsCenter from "../eventsCenter.js";
+import { objs } from "./objeto.js";
 export default class Sala34 extends SalaBase {
   constructor() {
     // <-          ^        ->        v
@@ -30,5 +31,15 @@ export default class Sala34 extends SalaBase {
   update() {
     super.update();
     this.clienteBombones.play("clienteBombonesAnim",true);
+    if(this.physics.overlap(this.player, this.clienteBombones)) {
+      if (Phaser.Input.Keyboard.JustDown(this.e)) {
+        eventsCenter.emit("thisKey", this._nombreSala);
+        this.scene.launch("dialogo", {npc:"cliente2",prevKey:cst.SCENES.SALA34,objs:this.objetos});
+        this.scene.pause();
+        this.player.resetInput();
+        if (this.objetos[objs.OBJECTS.repartoBombones])
+          this.objetos[objs.OBJECTS.bombonesRepartidos2] = true;
+  }
+}
   }
 }

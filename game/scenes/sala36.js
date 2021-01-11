@@ -1,7 +1,8 @@
 import SalaBase from "./sala_base.js";
 import { cst } from "./cst.js";
 import Prop from "../gameobject/prop.js";
-
+import eventsCenter from "../eventsCenter.js";
+import { objs } from "./objeto.js";
 export default class Sala36 extends SalaBase {
   constructor() {
     // <-          ^        ->        v
@@ -21,5 +22,14 @@ export default class Sala36 extends SalaBase {
 
   update() {
     super.update();
+    if(this.physics.overlap(this.player, this.comoda)) {
+      if (Phaser.Input.Keyboard.JustDown(this.e)) {
+        eventsCenter.emit("thisKey", this._nombreSala);
+        this.scene.launch("dialogo", {npc:"comoda",prevKey:cst.SCENES.SALA36,objs:this.objetos});
+        this.scene.pause();
+        this.player.resetInput();
+        if (this.objetos[objs.OBJECTS.llaveComoda]) this.objetos[objs.OBJECTS.abanicoRoto] = true;
+  }
+}
   }
 }

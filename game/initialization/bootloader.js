@@ -101,8 +101,8 @@ class Bootloader extends Phaser.Scene {
       frameHeight: 192
     });   
     this.load.spritesheet("encargadoAnticuario", "./././resources/sprites/pomponina/encargado_anticuario.png",{
-      frameWidth: 32,
-      frameHeight: 32
+      frameWidth: 192,
+      frameHeight: 192
     });   
     this.load.spritesheet("jarron", "./././resources/sprites/pomponina/jarron_con_llave.png",{
       frameWidth: 128,

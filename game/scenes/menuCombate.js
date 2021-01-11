@@ -281,25 +281,25 @@ export default class MenuCombate extends Phaser.Scene {
     switch (true)
     {
       case distancia < 10:
-        this.damage = 10;
+        this.damage = 20;
         break;
         case distancia < 20:
-        this.damage = 9;
+        this.damage = 18;
         break;
         case distancia < 30:
-        this.damage = 8;
+        this.damage = 16;
         break;
         case distancia < 40:
-        this.damage = 7;
+        this.damage = 14;
         break;
         case distancia < 50:
-        this.damage = 6;
+        this.damage = 12;
         break;
         case distancia < 60:
-        this.damage = 5;
+        this.damage = 10;
         break;
         default:
-        this.damage = 3;
+        this.damage = 5;
         break;
     }
   eventsCenter.emit("damage",this.damage);
