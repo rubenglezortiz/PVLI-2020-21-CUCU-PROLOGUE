@@ -37,6 +37,7 @@ export default class Prop extends Phaser.GameObjects.Sprite {
     if (this.int){      
       if (this.scene.physics.overlap(this, this.pigmalion)){
         this.propE.visible = true;
+        this.propE.depth=this.depth;
       }
       else this.propE.visible = false;      
     }

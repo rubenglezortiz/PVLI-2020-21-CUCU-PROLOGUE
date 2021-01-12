@@ -23,6 +23,9 @@ import Sala35 from "../scenes/sala35.js";
 import Sala36 from "../scenes/sala36.js";
 import Sala37 from "../scenes/sala37.js";
 import Sala38pomponina from "../scenes/sala38pomponina.js";
+
+import FinalNeutral from "../scenes/salaFinal.js";
+
 import Dialogo from "../scenes/dialogo.js";
 import Bootloader from "./bootloader.js";
 
@@ -61,6 +64,7 @@ var config = {
     Sala36,
     Sala37,
     Sala38pomponina,
+    FinalNeutral,
     MenuCombate,
     Dialogo,
   ],

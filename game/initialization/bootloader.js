@@ -76,6 +76,7 @@ class Bootloader extends Phaser.Scene {
     this.load.image("tiendabombones","./resources/sprites/pomponina/tienda_bombones.png");
     this.load.image("anticuario","./resources/sprites/pomponina/anticuario.png");
     this.load.image("comoda","./resources/sprites/pomponina/comoda_espejo.png");
+    this.load.image("floristeria", "./resources/sprites/pomponina/floristeria.png")
     this.load.spritesheet("abuela", "./resources/sprites/pomponina/abuela.png",{
       frameWidth: 192,
       frameHeight: 192
