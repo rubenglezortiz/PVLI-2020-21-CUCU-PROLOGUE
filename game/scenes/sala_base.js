@@ -25,7 +25,7 @@ export default class SalaBase extends Phaser.Scene {
 
   create() {
     
-    this.add.image(700, 400, "tablones").depth = 0;
+    this.add.image(700, 400, "tablones").depth = -1;
     this.derecha = this.physics.add.sprite(1400,500);
     this.izquierda = this.physics.add.sprite(0,500);
     this.arriba = this.physics.add.sprite(700,0);
@@ -49,7 +49,7 @@ export default class SalaBase extends Phaser.Scene {
      
       //su collider va a ocupar el 100% del ancho del sprite y como el sprite ocupa 1400x800, su collider va a estar en -30 para ajustarlo bien, y que no se peuda salir
       this.add.image( 700, 400, "cortinas").depth = 1;
-      this.add.image(700, 400, "telon").depth = 5;
+      this.add.image(700, 400, "telon").depth = this.sys.game.canvas.height +1 ;
     }
   
 

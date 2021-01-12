@@ -24,16 +24,19 @@ export default class Pigmalion extends Phaser.GameObjects.Sprite {
     this.a = this.scene.input.keyboard.addKey("A");
     this.s = this.scene.input.keyboard.addKey("S");
     this.d = this.scene.input.keyboard.addKey("D");
-    this.depth = 3;//Es la capa en la que se renderiza, cuanto mas alta mas arriba en la pantalla
+    
     
     this.collider = this.scene.physics.add.sprite(this.x,this.y);
     this.collider.setSize(80,20,true);
     this.collider.immovable = false;
     this.collider.setCollideWorldBounds(true);  
+    console.log(this);
   }
 
   preUpdate(t, dt) {
     super.preUpdate(t, dt);
+    this.depth = this.y + this.height/2;//Es la capa en la que se renderiza, cuanto mas alta mas arriba en la pantalla
+    
     let quietoX = true;
     let quietoY = true;
     if (this.w.isDown) {

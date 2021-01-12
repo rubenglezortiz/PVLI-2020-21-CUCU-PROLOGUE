@@ -24,14 +24,15 @@ export default class Prop extends Phaser.GameObjects.Sprite {
       this.propE.depth = 6
       this.e = this.scene.input.keyboard.addKey("E", false);
     }    
+    console.log(this);
   }
 
   preUpdate(t, dt) {
     super.preUpdate(t, dt);
+    this.depth = this.y + this.height/2;
     //como el offset está a 0.5 hay que restarle la mitad
    
-    if (this.colliderP.y < this.pigmalion.y + (this.pigmalion.height / 2) * this.pigmalion.scale) this.depth = 2;
-    else this.depth = 4;
+    
 
     if (this.int){      
       if (this.scene.physics.overlap(this, this.pigmalion)){
