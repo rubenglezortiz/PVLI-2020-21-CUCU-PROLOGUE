@@ -25,6 +25,7 @@ export const  cst = {
         SALA35: "sala35",
         SALA36: "sala36",
         SALA37: "sala37",
-        SALA38POMPONINA: "sala38pomponina"      
+        SALA38POMPONINA: "sala38pomponina",
+        FINALNEUTRAL: "finalneutral"
     }
 }

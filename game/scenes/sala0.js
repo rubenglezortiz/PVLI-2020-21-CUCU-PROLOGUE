@@ -88,15 +88,28 @@ export default class Sala0 extends SalaBase {
           this.saved++;
         }      
     }
+
     if(this.noPlayed===0){
       if(this.killed===3){
         console.log("inicio combate urdemalas");
+        this.final=1;
       }
       else if(this.saved===3){
         console.log("todos salvados :)");
+        this.final=2;
       }
-      else
+      else{
         console.log("has matado y salvado");
+        this.final=0;
       }
+      this.scene.start(cst.SCENES.FINALNEUTRAL, {
+        posx: this.sys.game.canvas.width/2,
+        posy: this.sys.game.canvas.height,
+        lives: this.lives,
+        objs: this.objetos,
+        runInf: this._runInfo,
+        tipoFinal: this.final
+      });
     }
+  }
 }
