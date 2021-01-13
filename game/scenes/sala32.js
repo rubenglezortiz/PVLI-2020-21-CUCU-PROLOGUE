@@ -6,7 +6,7 @@ import { objs } from "./objeto.js";
 export default class Sala32 extends SalaBase {
   constructor() {
     // <-          ^        ->        v
-    super(cst.SCENES.SALA32,[cst.SCENES.SALA31,cst.SCENES.SALA35,cst.SCENES.SALA33,cst.SCENES.SALA26,],false);
+    super(cst.SCENES.SALA32,[cst.SCENES.SALA31,cst.SCENES.SALA35,cst.SCENES.SALA33,cst.SCENES.SALA23,],false);
   }
 
   init(datos) {

@@ -170,8 +170,8 @@ export default class Dialogo extends Phaser.Scene {
                     posy: this.sys.game.canvas.height/2,
                     lives: 10,
                     objs: this.objetos,
-                  });
-                  // this.end();
+                    runInfo: this.runInfo
+                    });
                   }
                 break;
                 case npcs.NPCS.urdemalas2:

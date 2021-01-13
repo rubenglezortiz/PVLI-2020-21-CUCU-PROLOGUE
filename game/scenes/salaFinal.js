@@ -39,7 +39,7 @@ export default class FinalNeutral extends SalaBase {
     if(this.physics.overlap(this.player, this.urdemalas)) {
       if (Phaser.Input.Keyboard.JustDown(this.e)) {
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:this.final,prevKey:cst.SCENES.FINAL,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:this.final,prevKey:cst.SCENES.FINAL,objs:this.objetos, runInfo:this._runInfo});
         this.scene.pause();
         this.player.resetInput();
             

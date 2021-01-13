@@ -13,6 +13,13 @@ import Sala16 from "../scenes/sala16.js";
 import Sala17 from "../scenes/sala17.js";
 import Sala18CUCU from "../scenes/sala18cucu.js";
 
+import Sala21 from "../scenes/sala21.js";
+import Sala22 from "../scenes/sala22.js";
+import Sala23 from "../scenes/sala23.js";
+import Sala24 from "../scenes/sala24.js";
+import Sala25 from "../scenes/sala25.js";
+import Sala26 from "../scenes/sala26.js";
+import Sala27 from "../scenes/sala27.js";
 import Sala28donlindo from "../scenes/sala28donlindo.js";
 
 import Sala31 from "../scenes/sala31.js";
@@ -55,6 +62,13 @@ var config = {
     Sala16,
     Sala17,
     Sala18CUCU,
+    Sala21,
+    Sala22,
+    Sala23,
+    Sala24,
+    Sala25,
+    Sala26,
+    Sala27,
     Sala28donlindo,
     Sala31,
     Sala32,

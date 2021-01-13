@@ -3,7 +3,7 @@ import Prop from "../gameobject/prop.js";
 import { cst } from "./cst.js";
 export default class Sala16 extends SalaBase {
   constructor() {
-    super(cst.SCENES.SALA16,[0, cst.SCENES.SALA15, 0, cst.SCENES.SALA17],false);
+    super(cst.SCENES.SALA16,[0, cst.SCENES.SALA15, cst.SCENES.SALA24, cst.SCENES.SALA17],false);
   }
 
   init(datos) {

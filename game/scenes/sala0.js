@@ -6,7 +6,7 @@ import { objs } from "./objeto.js";
 export default class Sala0 extends SalaBase {
   // <-  ^   ->   v
   constructor() {
-    super(cst.SCENES.SALA0,[cst.SCENES.SALA11,cst.SCENES.SALA34,cst.SCENES.SALA31,0,],false);
+    super(cst.SCENES.SALA0,[cst.SCENES.SALA11,cst.SCENES.SALA34,cst.SCENES.SALA31,cst.SCENES.SALA21,],false);
   }
 
   init(datos) {
@@ -46,30 +46,11 @@ export default class Sala0 extends SalaBase {
 
   update() {
     super.update();
-    console.log();
-    // if(this.objA[i]===2)
-    //  this.objA[0].play(this.infoA[0].moneco,true);
     for(let i = 0 ; i < 3 ; ++i){
       if(this._runInfo._monecos[i] === 2)
       this.objA[i].play(this.infoA[i].moneco,true);
     }
    
-    // if (
-    //   this.caja.propE.visible /*this.physics.overlap(this.player, this.caja)*/
-    // ) {
-    //   if (Phaser.Input.Keyboard.JustDown(this.e)) {
-    //     this.objetos[objs.OBJECTS.caja] = true;
-    //     console.log(this.objetos[objs.OBJECTS.caja]);
-    //     eventsCenter.emit("thisKey", this._nombreSala);
-    //     this.scene.launch("dialogo", {
-    //       npc: "caja",
-    //       prevKey: cst.SCENES.SALA0,
-    //       objs: this.objetos,
-    //     });
-    //     this.scene.pause();
-    //     this.player.resetInput();
-    //   }
-    // }
   }
 
   cajas() {
