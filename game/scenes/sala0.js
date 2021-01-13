@@ -102,7 +102,7 @@ export default class Sala0 extends SalaBase {
         console.log("has matado y salvado");
         this.final=0;
       }
-      this.scene.start(cst.SCENES.FINALNEUTRAL, {
+      this.scene.start(cst.SCENES.FINAL, {
         posx: this.sys.game.canvas.width/2,
         posy: this.sys.game.canvas.height,
         lives: this.lives,

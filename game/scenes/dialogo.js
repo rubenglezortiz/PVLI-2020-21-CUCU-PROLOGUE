@@ -1,6 +1,7 @@
 import { npcs } from "./npcs.js";
 import eventsCenter from "../eventsCenter.js";
 import { objs } from "./objeto.js"
+import { cst } from "./cst.js";
 export default class Dialogo extends Phaser.Scene {
   constructor() {
     super({ key: "dialogo" });
@@ -54,6 +55,12 @@ export default class Dialogo extends Phaser.Scene {
     else this.comoda = ["Abres el cajón con la llave de la fuente.", "Hay un abanico roto.", "Pigmalión: A Pomponina le encantaba su abanico.", "Seguro que se alegra si le consigo otro."]
     
     this.fuente = ["Has encontrado una llave en la fuente"];
+
+
+    this.finalNeutral=["URDEMALAS: Tanto tiempo trabajando para ti...","URDEMALAS: Y no has sido capaz de entender lo\nque necesitábamos.", "PIGMALIÓN: He hecho lo que tenía que hacer.","PIGMALIÓN: No me habéis dejado opción alguna.", "PIGMALIÓN: Fuistéis creados por y para mí.","PIGMALIÓN: Y ya es hora de volver al trabajo.","URDEMALAS: No te confundas.","URDEMALAS: Vas a tener que empezar a trabajar\nsin tus muñecos.","PIGMALIÓN: ¿Qué estás insinuando?","URDEMALAS: Te quedas tú solo.","PIGMALIÓN: No podéis hacer eso.","URDEMALAS: Podemos y lo haremos.","URDEMALAS: Mas no te preocupes...","URDEMALAS: Volveremos a por ti...", "URDEMALAS: Lo que has hecho tendrá\nconsecuencias."];
+    this.finalPacifista=["URDEMALAS: Atónito\n me encuentro, de que alguien como tú, después de todo este tiempo y todo lo que nos has hecho, nos hayas por fin entendido.", "PIGMALIÓN : ¡Urdemalas! ¡Por ti estaba preguntándome!. Me alegro de que estés bien","URDEMALAS: Lo cierto es que estaba decidido a irme.", "URDEMALAS: Pero después de ver cómo tratabas a mis compañeros,","creo que te daré una segunda oportunidad.","URDEMALAS: Pero no la vuelvas a cagar, ¿entendido?"]
+    this.finalGenocida=["URDEMALAS: Después de todo lo que hemos hecho por ti...", "de lo que hemos tragado... ", "encima nos cazas como si de ganado nos tratasemos...", "¿Es que no significamos nada para ti?", "Me las vas a pagar."]
+    
 
     this.iterator = 0;
     this.e = this.input.keyboard.addKey("E");
@@ -144,6 +151,38 @@ export default class Dialogo extends Phaser.Scene {
                   this.end();
                 }
                 break;
+                case npcs.NPCS.urdemalas0:
+                  if (this.iterator != this.finalNeutral.length)
+                    this.text.setText(this.finalNeutral[this.iterator]);
+                else {
+                  //CARGA PANTALLA FINAL
+                  this.end();
+                }
+                break;
+                case npcs.NPCS.urdemalas1:
+                if (this.iterator != this.finalGenocida.length)
+                this.text.setText(this.finalGenocida[this.iterator]);
+                else {
+                  this.scene.pause();
+                  this.scene.sendToBack(this.prevKey);
+                  this.scene.start(cst.SCENES.SALA0URDEMALAS, {
+                    posx: this.sys.game.canvas.width/2,
+                    posy: this.sys.game.canvas.height/2,
+                    lives: 10,
+                    objs: this.objetos,
+                  });
+                  // this.end();
+                  }
+                break;
+                case npcs.NPCS.urdemalas2:
+                  if (this.iterator != this.finalPacifista.length)
+                    this.text.setText(this.finalPacifista[this.iterator]);
+                else {
+                  //CARGA PANTALLA FINAL
+                  this.end();
+                }
+                break;
+
       default:
         console.log("error en el switch de diálogo");
         break;

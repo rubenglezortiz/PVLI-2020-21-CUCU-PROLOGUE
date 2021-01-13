@@ -1,15 +1,19 @@
 import Prop from "../gameobject/prop.js";
 import SalaBase from "./sala_base.js";
 import { cst } from "./cst.js";
+import eventsCenter from "../eventsCenter.js";
 
 export default class FinalNeutral extends SalaBase {
   // <-  ^   ->   v
   constructor() {
-    super(cst.SCENES.FINALNEUTRAL,[0,0,0,0],false);
+    super(cst.SCENES.FINAL,[0,0,0,0],false);
   }
 
   init(datos) {
     super.init(datos);    
+    this.final="urdemalas"+datos.tipoFinal;
+    console.log(this.final);
+    
   }
 
   create() {
@@ -31,6 +35,16 @@ export default class FinalNeutral extends SalaBase {
       if(this._runInfo._monecos[i] === 2)
       this.objA[i].play(this.infoA[i].moneco,true);
     }
+
+    if(this.physics.overlap(this.player, this.urdemalas)) {
+      if (Phaser.Input.Keyboard.JustDown(this.e)) {
+        eventsCenter.emit("thisKey", this._nombreSala);
+        this.scene.launch("dialogo", {npc:this.final,prevKey:cst.SCENES.FINAL,objs:this.objetos});
+        this.scene.pause();
+        this.player.resetInput();
+            
+      }
+    }     
   }
 
   cajas() {
@@ -47,6 +61,7 @@ export default class FinalNeutral extends SalaBase {
                 this.saved++;
             }         
         }
-    }
+  }
+  
 
 }

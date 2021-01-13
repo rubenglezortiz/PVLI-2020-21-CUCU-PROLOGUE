@@ -10,7 +10,7 @@ import Explosion from "../monecoAttacks/explosion.js";
 export default class Sala0Urdemalas extends SalaBaseCombate{
 
   constructor(){
-    super(cst.SCENES.SALA0URDEMALAS)
+    super(cst.SCENES.SALA0URDEMALAS,3)
   }
 
   init(datos){

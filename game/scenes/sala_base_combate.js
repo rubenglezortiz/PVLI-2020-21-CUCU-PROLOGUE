@@ -43,10 +43,12 @@ export default class SalaBaseCombate extends SalaBase {
 
     if(this.monecoLP<=0){
       this.finishVS();
-      this._runInfo._monecos[this.m] = 1;
+      if(this.m!==3)
+        this._runInfo._monecos[this.m] = 1;
     }
     if(this.monecoMercy){
-      this._runInfo._monecos[this.m] = 2;
+      if(this.m!==3)
+        this._runInfo._monecos[this.m] = 2;
       this.finishVS();
     }
   }
@@ -90,12 +92,17 @@ export default class SalaBaseCombate extends SalaBase {
   }
 
   finishVS() {    
-    this.scene.start(cst.SCENES.SALA0, {
-      posx: this.player.x,
-      posy: this.player.y,
-      lives: this.player.lives,
-      objs: this.objetos,
-      runInf: this._runInfo,
-    });
+    if(this.m!==3){
+      this.scene.start(cst.SCENES.SALA0, {
+        posx: this.player.x,
+        posy: this.player.y,
+        lives: this.player.lives,
+        objs: this.objetos,
+        runInf: this._runInfo,
+      });
+    }
+    else{
+      console.log("fin del juego")
+    }
   }
 }
