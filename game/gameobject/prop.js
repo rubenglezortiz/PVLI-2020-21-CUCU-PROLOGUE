@@ -12,12 +12,15 @@ export default class Prop extends Phaser.GameObjects.Sprite {
     this.interFunction = interFunct;
 
     //20 va a ser la altura de todos
+    //colliderP es el collider estático que tineen la mayoria de
+    //props justo debajo, para que se choque con los pies de pigmalion
     this.colliderP = this.scene.physics.add.staticSprite(this.x,this.y + (this.height * this.scale * this.posYC) / 100);
     this.colliderP.setSize((this.width * this.scale * this.anchoPC) / 100, 20, true);
-    this.scene.physics.add.collider(this.colliderP, this.pigmalion.collider);
+    this.scene.physics.add.collider(this.colliderP, this.pigmalion);
     this.int = interactive;
    
    
+    //esto es para el triger en el que sale una E para interactuar
     if (this.int) {
       this.propE = this.scene.add.image(x, y - this.height/2,"teclaE");
       this.propE.y -= this.propE.height/2;
