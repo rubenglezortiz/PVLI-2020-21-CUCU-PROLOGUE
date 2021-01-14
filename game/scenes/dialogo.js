@@ -23,6 +23,24 @@ export default class Dialogo extends Phaser.Scene {
     this.menu.setAlpha(0.5);
     
     this.bebe = ["agugutata."];
+    // Diálogos del combate contra Pomponina
+    this.rosasCombate = ["PIGMALIÓN: Te he traído estas rosas. Como \nsiempre te han gustado pensé que te alegrarían.","POMPONINA:  Ohh, son muy bonitas, quizás \npodríamos llegar a entendernos."]
+    this.floresRosasCombate = ["PIGMALIÓN: Pensé que esta sería una buena forma de\n disculparme","POMPONINA: ¡Son rosas! ¡Son mis favoritas!\n Muchas gracias, Pigmalión."]
+    this.collarCombate = ["PIGMALIÓN: Te he traído un collar. A las \n chicas os encantan estas cosas, ¿no?","POMPONINA: ¡No! Te he dicho muchísimas veces \nque no me gustan los collares! Si vas a tener \nun detalle deberías darme algo especial \npara mí, no cualquier baratija que encuentres \npor ahí."];
+    this.bombonesCombate = ["PIGMALIÓN: Toma. Esto me lo dió una anciana a \nla que ayudaste para que te lo trajese.","POMPONINA:¿Ha conseguido mantener el negocio?","PIGMALIÓN: Sí, y todo gracias a tí. Esa es la\n razón por la que creo que nos podemos entender.", "POMPONINA:  Gracias por traérmelo. (...) \n¿De verdad no estás enfadado?","PIGMALIÓN: No, de hecho nunca he estado tan \norgulloso de ti como ahora."]
+    this.abanicoCombate = ["PIGMALIÓN: Encontré tu abanico roto.  Como le\n tenías tanto cariño  decidí llevarlo \na reparar.","POMPONINA: ¡Oh, qué detalle!  Muchas gracias, \nPigmalión. Parece  que te importo más \nde lo que pensaba."]
+    this.halagarCombate = ["PIGMALIÓN: ¡Cuidado! No debes ponerte bajo el sol.","POMPONINA:  ¿Se puede saber por qué me dices\n eso ahora?","PIGMALIÓN:Porque te derrites, bombón.","POMPONINA:  Tendré cuidado, a nadie le gustan \n los bombones derretidos."];
+    this.amenazarCombate = ["PIGMALIÓN: Vas a tener un castigo muy gordo \n como no vengas conmigo","POMPONINA: siempre estás igual, estoy cansada \n de tus castigos, no pienso volver."];
+    this.ordenarCombate = ["PIGMALIÓN: Vuelve a tu caja.","POMPONINA:  ¡No me da la gana! "];
+
+    // Diálogos del combate contra Cucu
+
+    this.chisteCombate = ["PIGMALIÓN: ¿Sabes cómo se queda un mago\n después de comer?","CUCU: …","PIGMALIÓN: Magordito"]
+    this.animarleCombate = ["PIGMALIÓN: Aunque los demás se rían de ti, yo\n sé que eres especial.","CUCU: :3"]
+    this.datoCombate = ["PIGMALIÓN: ¿Sabías que Los búhos son las únicas \naves que pueden ver el color azul?","CUCU: ..."]
+    this.reirseCombate = [ "PIGMALIÓN: JAJAJAJAJAJA CUCU, ¡QUÉ TONTO!","CUCU: >:C"]
+
+
 
     if (this.objetos[objs.OBJECTS.bombonesRepartidos1] && this.objetos[objs.OBJECTS.bombonesRepartidos2])
     this.abuela = ["Pigmalión: Ya he repartido las cajas. Tome el dinero.", "Abuela: Muchas gracias por su ayuda, joven.", "Me recuerda usted a la joven que está buscando.", "Me ayudó mucho cuando la conocí.", "Me dijo que se fue a una casa al fondo de la calle.", "Si la ve, ¿le dará estos bombones de mi parte?", "Pigmalión: Por supuesto. Y gracias por la información."]
@@ -179,6 +197,93 @@ export default class Dialogo extends Phaser.Scene {
                     this.text.setText(this.finalPacifista[this.iterator]);
                 else {
                   //CARGA PANTALLA FINAL
+                  this.end();
+                }
+                break;
+                //CASOS COMBATE POMPONINA
+                case npcs.NPCS.collarCombate:
+                  if (this.iterator != this.collarCombate.length)
+                  this.text.setText(this.collarCombate[this.iterator]);
+                else {
+                  this.end();
+                }
+                break;
+                case npcs.NPCS.bombonesCombate:
+                  if (this.iterator != this.bombonesCombate.length)
+                  this.text.setText(this.bombonesCombate[this.iterator]);
+                else {
+                  this.end();
+                }
+                break;
+                case npcs.NPCS.abanicoCombate:
+                  if (this.iterator != this.abanicoCombate.length)
+                  this.text.setText(this.abanicoCombate[this.iterator]);
+                else {
+                  this.end();
+                }
+                break;
+                case npcs.NPCS.halagarCombate:
+                  if (this.iterator != this.halagarCombate.length)
+                  this.text.setText(this.halagarCombate[this.iterator]);
+                else {
+                  this.end();
+                }
+                break;
+                case npcs.NPCS.ordenarCombate:
+                  if (this.iterator != this.ordenarCombate.length)
+                  this.text.setText(this.ordenarCombate[this.iterator]);
+                else {
+                  this.end();
+                }
+                break;
+                case npcs.NPCS.amenazarCombate:
+                  if (this.iterator != this.amenazarCombate.length)
+                  this.text.setText(this.amenazarCombate[this.iterator]);
+                else {
+                  this.end();
+                }
+                break;
+                case npcs.NPCS.floresRosasCombate:
+                  if (this.iterator != this.floresRosasCombate.length)
+                  this.text.setText(this.floresRosasCombate[this.iterator]);
+                else {
+                  this.end();
+                }
+                break;
+                case npcs.NPCS.rosasCombate:
+                  if (this.iterator != this.rosasCombate.length)
+                  this.text.setText(this.rosasCombate[this.iterator]);
+                else {
+                  this.end();
+                }
+                break;
+
+                // CASOS COMBATE CUCU
+                case npcs.NPCS.chisteCombate:
+                  if (this.iterator != this.chisteCombate.length)
+                  this.text.setText(this.chisteCombate[this.iterator]);
+                else {
+                  this.end();
+                }
+                break;
+                case npcs.NPCS.animarleCombate:
+                  if (this.iterator != this.animarleCombate.length)
+                  this.text.setText(this.animarleCombate[this.iterator]);
+                else {
+                  this.end();
+                }
+                break;
+                case npcs.NPCS.datoCombate:
+                  if (this.iterator != this.datoCombate.length)
+                  this.text.setText(this.datoCombate[this.iterator]);
+                else {
+                  this.end();
+                }
+                break;
+                case npcs.NPCS.reirseCombate:
+                  if (this.iterator != this.reirseCombate.length)
+                  this.text.setText(this.reirseCombate[this.iterator]);
+                else {
                   this.end();
                 }
                 break;

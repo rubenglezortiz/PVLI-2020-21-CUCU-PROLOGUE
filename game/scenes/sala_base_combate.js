@@ -55,7 +55,7 @@ export default class SalaBaseCombate extends SalaBase {
 
   startMenu() {
     if (this.monecoAttacks.countActive() === 0) {
-      this.scene.launch("mc", { objects: this.objetos });
+      this.scene.launch("mc", { objects: this.objetos, moneco:  this.m});
       eventsCenter.emit("thisKey", this._nombreSala);
       eventsCenter.emit("canMercy", this.monecoPP);
       eventsCenter.on("damage", this.damage, this);
