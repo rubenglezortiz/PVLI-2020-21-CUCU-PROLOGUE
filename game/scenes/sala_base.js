@@ -41,9 +41,28 @@ export default class SalaBase extends Phaser.Scene {
                
     );
 
+    this.bounds =  this.physics.add.staticGroup();
+
     this.colliderArriba = this.physics.add.staticSprite(this.sys.game.canvas.width/2, this.player.sprite.height- 30);
     this.colliderArriba.setSize(this.sys.game.canvas.width , 20, true);
-    this.physics.add.collider(this.colliderArriba, this.player);
+    this.bounds.add(this.colliderArriba);
+
+    this.colliderAbajo = this.physics.add.staticSprite(this.sys.game.canvas.width/2, this.sys.game.canvas.height);
+    this.colliderAbajo.setSize(this.sys.game.canvas.width , 20, true);
+    this.bounds.add(this.colliderAbajo);
+
+    this.colliderIzq= this.physics.add.staticSprite(0 ,this.sys.game.canvas.height/2);
+    this.colliderIzq.setSize(10 , this.sys.game.canvas.height , true);
+    this.bounds.add(this.colliderIzq);
+
+    this.colliderDr= this.physics.add.staticSprite(this.sys.game.canvas.width ,this.sys.game.canvas.height/2);
+    this.colliderDr.setSize(10 , this.sys.game.canvas.height , true);
+    this.bounds.add(this.colliderDr);
+
+    
+    
+    
+    this.physics.add.collider(this.bounds, this.player.collider);
 
     if(!this._salaCombate){
      

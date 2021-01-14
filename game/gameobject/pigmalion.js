@@ -30,7 +30,7 @@ export default class Pigmalion extends Phaser.GameObjects.Container {
     console.log(this);
 
 
-    this.body.setSize(100,30);
+    //this.body.setSize(100,30);
    
   
    this.sprite = this.scene.physics.add.sprite(0,0,"pigmalion")  
@@ -38,15 +38,13 @@ export default class Pigmalion extends Phaser.GameObjects.Container {
    this.add([this.sprite]);
   
 
-    // this.collider = this.scene.physics.add.sprite(0,this.sprite.height/2);
-    // this.collider.setSize(80,20,true);
-    // this.collider.immovable = false;
-    // this.collider.setCollideWorldBounds(true);  
-    // scene.physics.world.enable(this.collider);
-    // console.log(this);
-
-  
-    // this.add([this.collider]);
+    this.collider = this.scene.physics.add.sprite(0,this.sprite.height/2);
+    this.collider.setSize(80,20,true);
+    this.collider.immovable = false;
+    this.collider.setCollideWorldBounds(false);  
+    scene.physics.world.enable(this.collider);
+    console.log(this);
+    this.add([this.collider]);
     
   }
 
@@ -56,33 +54,33 @@ export default class Pigmalion extends Phaser.GameObjects.Container {
     let quietoX = true;
     let quietoY = true;
     if (this.w.isDown) {
-      this.body.setVelocityY(-500);
+      this.collider.setVelocityY(-500);
       quietoY = false;
     } else if (this.s.isDown) {
-      this.body.setVelocityY(500);
+      this.collider.setVelocityY(500);
       quietoY = false;
     } else {
       quietoY = true;
-      this.body.setVelocityY(0);
+      this.collider.setVelocityY(0);
     }
 
     if (this.a.isDown) {
-      this.body.setVelocityX(-500);
+      this.collider.setVelocityX(-500);
       quietoX = false;
     } else if (this.d.isDown) {
-      this.body.setVelocityX(500);
+      this.collider.setVelocityX(500);
       quietoX = false;
     } else {
       quietoX = true;
-      this.body.setVelocityX(0);
+      this.collider.setVelocityX(0);
     }
 
-    // // //si se está moviendo en cualquier direccion hace la anim
-    // if (!(quietoX && quietoY)) {
-    //   this.sprite.anims.play("walk", true);
-    // } else {
-    //   this.sprite.anims.play("walk", false);
-    // }
+    //si se está moviendo en cualquier direccion hace la anim
+    if (!(quietoX && quietoY)) {
+      this.sprite.anims.play("walk", true);
+    } else {
+      this.sprite.anims.play("walk", false);
+    }
   
 
 

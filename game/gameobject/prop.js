@@ -16,7 +16,7 @@ export default class Prop extends Phaser.GameObjects.Sprite {
     //props justo debajo, para que se choque con los pies de pigmalion
     this.colliderP = this.scene.physics.add.staticSprite(this.x,this.y + (this.height * this.scale * this.posYC) / 100);
     this.colliderP.setSize((this.width * this.scale * this.anchoPC) / 100, 20, true);
-    this.scene.physics.add.collider(this.colliderP, this.pigmalion);
+    this.scene.physics.add.collider(this.colliderP, this.pigmalion.collider);
     this.int = interactive;
    
    
