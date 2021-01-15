@@ -13,29 +13,17 @@ export default class CucuAttack extends Phaser.GameObjects.Sprite {
       this.player.y - this.player.height * 1.5,
       this.player.y + this.player.height * 1.5
     );
-
-    this.scene.anims.create({
-      key: "cucu1",
-      frames: this.scene.anims.generateFrameNumbers("cucuat", {
-        start: 0,
-        end: 14,
-      }),
-      frameRate: 15,
-      repeat: -1,
-    });
-    this.scene.anims.create({
-      key: "cucu2",
-      frames: this.scene.anims.generateFrameNumbers("cucuat2", {
-        start: 0,
-        end: 14,
-      }),
-      frameRate: 15,
-      repeat: -1,
-    });
+    
     this.scene.physics.add.overlap(this,this.player);
 
-    if (this.t === "cucuat") this.body.setVelocity(-500, 0);
-    else this.body.setVelocity(-650, 0);
+    if (this.t === "cucuat"){
+      this.body.setVelocity(-500, 0);
+      this.anims.play("cucu_at1", true);
+    }
+    else {
+      this.body.setVelocity(-650, 0);
+      this.anims.play("cucu_at2",true);
+    }
     if (this.y > this.scene.sys.game.canvas.height - this.height / 2)
       this.y = this.scene.sys.game.canvas.height - this.height / 2;
     if (this.y < this.height / 2) this.y = this.height / 2;
@@ -45,8 +33,6 @@ export default class CucuAttack extends Phaser.GameObjects.Sprite {
 
   preUpdate(t, dt) {
     super.preUpdate(t, dt);
-    if (this.t === "cucuat") this.anims.play("cucu1", true);
-    else this.anims.play("cucu2", true);
     if(this.scene.physics.overlap(this,this.player)) this.destroy();
     if (this.x < 0) this.destroy();  
   }

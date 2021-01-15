@@ -18,20 +18,11 @@ export default class Sala31 extends SalaBase{
     this.camino= this.add.image(this.sys.game.canvas.width / 2,this.sys.game.canvas.height / 2,"pomponinacamino1")
     this.tiendaBombones = new Prop(this,500,200,"tiendabombones",this.player,1,80,50);
     this.abuela = new Prop(this, 575, 325,"abuela",this.player,1,60,50,true);       
-    this.anims.create({
-          key:"abuelaAnim",
-          frames: this.anims.generateFrameNumbers("abuela",{
-            start:0,
-            end: 6,
-          }),
-          frameRate: 4,
-          repeat: -1
-    })        
+    this.abuela.play("abuela",true);
  }
 
      update(){
-        super.update();
-        this.abuela.play("abuelaAnim",true);
+        super.update();        
         if(this.physics.overlap(this.player, this.abuela)) {
           if (Phaser.Input.Keyboard.JustDown(this.e)) {
             eventsCenter.emit("thisKey", this._nombreSala);

@@ -17,23 +17,13 @@ export default class Sala17 extends SalaBase {
     this.carreta = new Prop(this,1500,100,"carreta",this.player,1,60,50,false);
     if (this._runInfo._monecos[0] === 0) {
       this.cucu = new Prop(this,1200,this.sys.game.canvas.height / 2,"cucuIdle",this.player,1,60,50,true);
-      this.anims.create({
-        key: "cucuIdle",
-        frames: this.anims.generateFrameNumbers("cucuIdle", {
-          start: 0,
-          end: 6,
-        }),
-        frameRate: 4,
-        repeat: -1,
-      });
-      this.e = this.input.keyboard.addKey("E");
+      this.cucu.play("cucu_idl",true);
     }
   }
 
   update() {
     super.update();    
     if (this._runInfo._monecos[0] === 0) {
-      this.cucu.play("cucuIdle", true);
       if (this.physics.overlap(this.player, this.cucu)) {
         if (Phaser.Input.Keyboard.JustDown(this.e)) {
           this.scene.start(cst.SCENES.SALA18CUCU, {
