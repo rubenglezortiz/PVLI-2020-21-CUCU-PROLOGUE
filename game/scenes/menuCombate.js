@@ -24,18 +24,18 @@ export default class MenuCombate extends Phaser.Scene {
     this.menu = this.add.image(700, 500, "mc");
     this.menu.setAlpha(0.5);
     this.mercy;
-    this.attackButton = this.add.sprite(200, 150, "attackButton").setInteractive();
-    this.talkButton = this.add.sprite(550, 150, "talkButton").setInteractive();
+    this.attackButton = this.add.sprite(200, 150, "attack_button").setInteractive();
+    this.talkButton = this.add.sprite(550, 150, "talk_button").setInteractive();
 
     eventsCenter.on("canMercy", this.setMercyButton, this);
     if (!this.mercy) 
     {
-      this.mercyButton = this.add.sprite(850, 150, "mercyButton");
+      this.mercyButton = this.add.sprite(850, 150, "mercy_button");
       this.mercyButton.setAlpha(0.5);
     } 
     else 
     {
-      this.mercyButton = this.add.sprite(850, 150, "mercyButton").setInteractive();
+      this.mercyButton = this.add.sprite(850, 150, "mercy_button").setInteractive();
       this.mercyButton.setAlpha(1);
     }
     this.buttonVec = [this.attackButton, this.talkButton, this.mercyButton];
@@ -49,7 +49,7 @@ export default class MenuCombate extends Phaser.Scene {
     });
     // Botón de ataque
     this.attackButton.on("pointerdown", (pointer) => {
-      this.backButton = this.add.sprite(1200, 150, "backButton").setInteractive();
+      this.backButton = this.add.sprite(1200, 150, "back_button").setInteractive();
       this.backButton.on("pointerover", (pointer) => {
         this.backButton.setAlpha(0.5);
       });
@@ -80,14 +80,14 @@ export default class MenuCombate extends Phaser.Scene {
         scene: this,
         x: this.barraFinal.x - 50,
         y: this.barraFinal.y,
-        type: "moveBar",
+        type: "move_bar",
       });
       // Segunda barra móvil
       this.barramovil2 = new rod({
         scene: this,
         x: this.barraFinal.x + 300,
         y: this.barraFinal.y,
-        type: "moveBar",
+        type: "move_bar",
       });
     });
     

@@ -17,13 +17,13 @@ class Bootloader extends Phaser.Scene {
       frameWidth: 192,
       frameHeight: 192,
     });
-    this.load.image("cortinas", "./resources/sprites/teatroGeneral/cortinas.png");
-    this.load.image("telon", "./resources/sprites/teatroGeneral/telon.png");
-    this.load.image("telonGrande", "./resources/sprites/teatroGeneral/telonGrande.png");
-    this.load.image("tablones", "./resources/sprites/teatroGeneral/tablones.png");   
-    this.load.image("caja", "./resources/sprites/teatroGeneral/caja.png");
-    this.load.image("cajaCerrada","./resources/sprites/teatroGeneral/caja_cerrada.png");
-    this.load.image("teclaE", "./resources/sprites/interaccion/teclaE.png");
+    this.load.image("cortinas", "./resources/sprites/teatro_general/cortinas.png");
+    this.load.image("telon", "./resources/sprites/teatro_general/telon.png");
+    this.load.image("telonGrande", "./resources/sprites/teatro_general/telon_grande.png");
+    this.load.image("tablones", "./resources/sprites/teatro_general/tablones.png");   
+    this.load.image("caja", "./resources/sprites/teatro_general/caja.png");
+    this.load.image("cajaCerrada","./resources/sprites/teatro_general/caja_cerrada.png");
+    this.load.image("tecla_e", "./resources/sprites/interaccion/tecla_e.png");
 
 
     //-----SPRITES CUCU-----
@@ -68,17 +68,17 @@ class Bootloader extends Phaser.Scene {
     //-----SPRITES DON LINDO-----
     //caminos
     //decorado
-    this.load.image("casa","./resources/sprites/donLindo/casa.png");
-    this.load.image("taberna","./resources/sprites/donLindo/taberna.png");
-    this.load.spritesheet("bullying", "./resources/sprites/donLindo/bullying.png",{
+    this.load.image("casa","./resources/sprites/don_lindo/casa.png");
+    this.load.image("taberna","./resources/sprites/don_lindo/taberna.png");
+    this.load.spritesheet("bullying", "./resources/sprites/don_lindo/bullying.png",{
       frameWidth: 288,
       frameHeight: 288
     });
-    this.load.spritesheet("frio1", "./resources/sprites/donLindo/npcFrio1.png",{
+    this.load.spritesheet("frio1", "./resources/sprites/don_lindo/npcFrio1.png",{
       frameWidth: 192,
       frameHeight: 192
     });
-    this.load.spritesheet("frio2", "./resources/sprites/donLindo/npcFrio2.png",{
+    this.load.spritesheet("frio2", "./resources/sprites/don_lindo/npcFrio2.png",{
       frameWidth: 192,
       frameHeight: 192
     });
@@ -146,13 +146,13 @@ class Bootloader extends Phaser.Scene {
     
    
     //-----SPRITES MENU COMBATE-----
-    this.load.image("mc","./resources/sprites/menuAtaque/MenuComb.png");
-    this.load.image("attackButton", "./resources/sprites/menuAtaque/boton_atacar.png");
-    this.load.image("talkButton","./resources/sprites/menuAtaque/boton_hablar.png");
-    this.load.image("mercyButton","./resources/sprites/menuAtaque/boton_piedad.png");
-    this.load.image("backButton", "./resources/sprites/menuAtaque/boton_retroceder.png");
-    this.load.image("bar","./resources/sprites/menuAtaque/barra_final.png");
-    this.load.image("moveBar","./resources/sprites/menuAtaque/barra_movil.png");
+    this.load.image("mc","./resources/sprites/menu_ataque/menu_comb.png");
+    this.load.image("attack_button", "./resources/sprites/menu_ataque/boton_atacar.png");
+    this.load.image("talk_button","./resources/sprites/menu_ataque/boton_hablar.png");
+    this.load.image("mercy_button","./resources/sprites/menu_ataque/boton_piedad.png");
+    this.load.image("back_button", "./resources/sprites/menu_ataque/boton_retroceder.png");
+    this.load.image("bar","./resources/sprites/menu_ataque/barra_final.png");
+    this.load.image("move_bar","./resources/sprites/menu_ataque/barra_movil.png");
 
 
     //-------AUDIO------------

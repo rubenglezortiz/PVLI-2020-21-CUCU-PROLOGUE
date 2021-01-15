@@ -1,7 +1,6 @@
 import Prop from "../gameobject/prop.js";
 import SalaBase from "./sala_base.js";
 import { cst } from "./cst.js";
-import { objs } from "./objeto.js";
 
 export default class Sala0 extends SalaBase {
   // <-  ^   ->   v
@@ -61,7 +60,7 @@ export default class Sala0 extends SalaBase {
           this.objA[i]=new Prop(this,this.infoA[i].x,this.infoA[i].y,"caja",this.player,60,50,false);
           this.noPlayed++;
         } else if (this._runInfo._monecos[i] === 1) {
-          this.objA[i]=new Prop(this,this.infoA[i].x,this.infoA[i].y,"cajaCerrada",this.player,60,50,false);
+          this.objA[i]=new Prop(this,this.infoA[i].x,this.infoA[i].y,"caja_cerrada",this.player,60,50,false);
           this.killed++;
         } else {
           this.objA[i]=new Prop(this,this.infoA[i].x,this.infoA[i].y,this.infoA[i].moneco,this.player,60,50,false);

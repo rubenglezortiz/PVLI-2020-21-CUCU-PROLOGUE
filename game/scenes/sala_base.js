@@ -1,7 +1,5 @@
 import Pigmalion from "../gameobject/pigmalion.js";
-import Prop from "../gameobject/prop.js";
 import {objs} from "./objeto.js";
-import RunInfo from "../runInfo.js"
 
 export default class SalaBase extends Phaser.Scene {
   constructor(name, direcciones, isCombat) {
