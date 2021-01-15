@@ -18,7 +18,7 @@ export default class Prop extends Phaser.GameObjects.Sprite {
     this.colliderP.setSize((this.width * this.scale * this.anchoPC) / 100, 20, true);
     this.scene.physics.add.collider(this.colliderP, this.pigmalion.collider);
     this.int = interactive;
-   
+    this.calloFunct = interFunct;
    
     //esto es para el triger en el que sale una E para interactuar
     if (this.int) {
@@ -41,6 +41,10 @@ export default class Prop extends Phaser.GameObjects.Sprite {
       if (this.scene.physics.overlap(this, this.pigmalion)){
         this.propE.visible = true;
         this.propE.depth=this.depth;
+        if (Phaser.Input.Keyboard.JustDown(this.e)){
+          this.interFunction();
+          console.log("hablo");
+        }
       }
       else this.propE.visible = false;      
     }
