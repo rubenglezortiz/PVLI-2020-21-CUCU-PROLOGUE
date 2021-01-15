@@ -54,25 +54,25 @@ export default class Pigmalion extends Phaser.GameObjects.Container {
     let quietoX = true;
     let quietoY = true;
     if (this.w.isDown) {
-      this.collider.setVelocityY(-500);
+      this.body.setVelocityY(-500);
       quietoY = false;
     } else if (this.s.isDown) {
-      this.collider.setVelocityY(500);
+      this.body.setVelocityY(500);
       quietoY = false;
     } else {
       quietoY = true;
-      this.collider.setVelocityY(0);
+      this.body.setVelocityY(0);
     }
 
     if (this.a.isDown) {
-      this.collider.setVelocityX(-500);
+      this.body.setVelocityX(-500);
       quietoX = false;
     } else if (this.d.isDown) {
-      this.collider.setVelocityX(500);
+      this.body.setVelocityX(500);
       quietoX = false;
     } else {
       quietoX = true;
-      this.collider.setVelocityX(0);
+      this.body.setVelocityX(0);
     }
 
     //si se está moviendo en cualquier direccion hace la anim

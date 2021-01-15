@@ -34,7 +34,7 @@ export default class Sala24 extends SalaBase {
       repeat: -1,
     })
   } 
-  
+  e
 
   update() {
     super.update();

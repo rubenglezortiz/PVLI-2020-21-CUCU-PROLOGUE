@@ -13,6 +13,7 @@ export default class Sala25 extends SalaBase {
 
   create() {
     super.create();
+    this.taberna = new Prop(this,1050,475,"taberna",this.player,1,60,45,true);
   }
 
   update() {
