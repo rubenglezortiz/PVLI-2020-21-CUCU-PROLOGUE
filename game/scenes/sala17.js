@@ -16,17 +16,8 @@ export default class Sala17 extends SalaBase {
     this.camino = this.add.image(700, 400, "cucucamino5");
     this.carreta = new Prop(this,1500,100,"carreta",this.player,1,60,50,false);
     if (this._runInfo._monecos[0] === 0) {
-      this.cucu = new Prop(this,1200,this.sys.game.canvas.height / 2,"cucu_idle",this.player,1,60,50,true);
-      this.anims.create({
-        key: "cucu_idle",
-        frames: this.anims.generateFrameNumbers("cucu_idle", {
-          start: 0,
-          end: 6,
-        }),
-        frameRate: 4,
-        repeat: -1,
-      });
-      this.e = this.input.keyboard.addKey("E");
+      this.cucu = new Prop(this,1200,this.sys.game.canvas.height / 2,"cucuIdle",this.player,1,60,50,true);
+      this.cucu.play("cucu_idl",true);
     }
   }
 

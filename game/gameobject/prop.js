@@ -22,7 +22,7 @@ export default class Prop extends Phaser.GameObjects.Sprite {
    
     //esto es para el triger en el que sale una E para interactuar
     if (this.int) {
-      this.propE = this.scene.add.image(x, y - this.height/2,"tecla_e");
+      this.propE = this.scene.add.image(x, y - this.height/2,"teclaE");
       this.propE.y -= this.propE.height/2;
       this.propE.depth = 6
       this.e = this.scene.input.keyboard.addKey("E", false);
