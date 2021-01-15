@@ -8,7 +8,7 @@ class Bootloader extends Phaser.Scene {
 
   preload() {
     this.load.on("complete", () => {
-      this.scene.start(cst.SCENES.SALA0, {posx: 700, posy :400, lives:10,objs:[false,false,false,false],runInf:new RunInfo()});
+      this.scene.start(cst.SCENES.SALA22, {posx: 700, posy :400, lives:10,objs:[false,false,false,false],runInf:new RunInfo()});
     });
 
 
@@ -64,6 +64,25 @@ class Bootloader extends Phaser.Scene {
       frameHeight:108
     });
     
+
+    //-----SPRITES DON LINDO-----
+    //caminos
+    //decorado
+    this.load.image("casa","./resources/sprites/donLindo/casa.png");
+    this.load.spritesheet("bullying", "./resources/sprites/donLindo/bullying.png",{
+      frameWidth: 288,
+      frameHeight: 288
+    });
+    this.load.spritesheet("frio1", "./resources/sprites/donLindo/npcFrio1.png",{
+      frameWidth: 192,
+      frameHeight: 192
+    });
+    this.load.spritesheet("frio2", "./resources/sprites/donLindo/npcFrio2.png",{
+      frameWidth: 192,
+      frameHeight: 192
+    });
+
+
 
     //-----SPRITES POMPONINA-----
     //caminos
