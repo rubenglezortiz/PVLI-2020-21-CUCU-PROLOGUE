@@ -441,7 +441,9 @@ export default class MenuCombate extends Phaser.Scene {
     if (monecoPP >= 100) this.mercy = true;
     else this.mercy = false;
   }
- 
+  //NOTA PUTÍSIMAMENTE IMPORTANTE:
+  //HAY QUE COMPROBAR QUE ESTA "key" CAMBIE POR EJEMPLO EN LA SALA DE POMPONINA, es decir
+  //si nos cargamos al cucu y luego vamos a por pomponina, hay que mirar que este key CAMBIE
   prevScene(key) {this.prevKey = key;}
 
   parar() {

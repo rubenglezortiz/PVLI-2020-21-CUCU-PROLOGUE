@@ -11,28 +11,47 @@ export default class Sala33 extends SalaBase {
 
   init(datos) {
     super.init(datos);
-    }
+  }
 
   create() {
     super.create();
     this.camino= this.add.image(0,this.sys.game.canvas.height / 2,"pomponinacamino1")
     this.floristeria= new Prop(this,this.sys.canvas.width/2,100,"floristeria",this.player,1,100,75,false)
     this.florista=new Prop(this, this.sys.canvas.width/2,350,"florista",this.player,1,60,45,true);
-    this.florista.play("florista",true);
     this.jarron=new Prop(this, this.sys.canvas.width-300,this.sys.canvas.height-100,"jarron",this.player,1,60,45,true);
-    this.jarron.play("jarron",true);
+    this.anims.create({
+      key: "floristaAnim",
+      frames: this.anims.generateFrameNumbers("florista",{
+        start:0,
+        end:6
+      }),
+      frameRate: 4,
+      repeat: -1
+    })
+    this.anims.create({
+      key: "jarron",
+      frames: this.anims.generateFrameNumbers("jarron",{
+        start:0,
+        end:5
+      }),
+      frameRate: 6,
+      repeat: -1
+    })
   }
 
   update() {
-    super.update();   
+    super.update();
+    this.florista.play("floristaAnim",true);
+    this.jarron.play("jarron",true);
     if(this.physics.overlap(this.player, this.jarron)) {
       if (Phaser.Input.Keyboard.JustDown(this.e)) {
         eventsCenter.emit("thisKey", this._nombreSala);
         this.objetos[objs.OBJECTS.llaveFlorista] = true;
         this.scene.launch("dialogo", {npc:"jarron",prevKey:cst.SCENES.SALA33,objs:this.objetos});
         this.scene.pause();
-        this.player.resetInput();        
-      }
+        this.player.resetInput();
+        
+    }
     }
     if(this.physics.overlap(this.player, this.florista)) {
       if (Phaser.Input.Keyboard.JustDown(this.e)) {
@@ -44,7 +63,7 @@ export default class Sala33 extends SalaBase {
           this.objetos[objs.OBJECTS.floresHijo] = true;
         if (this.objetos[objs.OBJECTS.hijoAyudado])
           this.objetos[objs.OBJECTS.floresRosas] = true;
-      }
+    }
     }
   }
 }

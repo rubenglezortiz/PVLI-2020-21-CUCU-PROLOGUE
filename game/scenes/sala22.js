@@ -14,10 +14,19 @@ export default class Sala22 extends SalaBase {
   create() {
     super.create();
     this.frio = new Prop (this, 1000, 800,"frio2",this.player,1,60,50,true);
-    this.frio.play("frio2",true);
+    this.anims.create({
+      key: "frio2",
+      frames: this.anims.generateFrameNumbers("frio2", {
+        start: 0,
+        end: 15,
+      }),
+      frameRate: 4,
+      repeat: -1,
+    })
   }  
 
   update() {
-    super.update();
+    super.update();  
+    this.frio.play("frio2",true);
   }
 }
