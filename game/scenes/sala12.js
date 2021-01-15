@@ -19,7 +19,6 @@ export default class Sala12 extends SalaBase {
     this.add.image(300, 400, "mesa").setScale(7);
     this.camino = this.add.image(1400, 400, "cucucamino1");
     this.camino.depth = 1;
-    this.e = this.input.keyboard.addKey("E");
   }
 
   update() {

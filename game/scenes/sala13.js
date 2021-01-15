@@ -17,18 +17,8 @@ export default class Sala13 extends SalaBase {
     this.camino.depth = 1;
     this.camino.angle = 90;
     this.chulapos = new Prop(this,1100,300,"chulapos",this.player,60,50,true);
-    this.caballo = new Prop(this,700,350,"caballo",this.player,60,50,false);
-   
-    this.anims.create({
-      key: "chulaposAnim",
-      frames: this.anims.generateFrameNumbers("chulapos", {
-        start: 0,
-        end: 20,
-      }),
-      frameRate: 4,
-      repeat: -1,
-    });
-
+    this.chulapos.play("chulapos", true);
+    this.caballo = new Prop(this,700,350,"caballo",this.player,60,50,false);    
 
     this.chotis = this.sound.add('chotis');
     
@@ -43,15 +33,10 @@ export default class Sala13 extends SalaBase {
      }
 
      this.chotis.play(this.musicConfig);
-
-
-  }
+    }
 
   update() {
     super.update();
-    this.chulapos.play("chulaposAnim", true);
-
-
     if (this.chulapos.propE.visible /*this.physics.overlap(this.player, this.caja)*/) {
       if (Phaser.Input.Keyboard.JustDown(this.e)) {
         //interacciones

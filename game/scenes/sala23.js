@@ -16,7 +16,6 @@ export default class Sala23 extends SalaBase {
   }
 
   update() {
-    super.update();   
-    
+    super.update();    
   }
 }

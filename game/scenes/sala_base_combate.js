@@ -16,7 +16,7 @@ export default class SalaBaseCombate extends SalaBase {
   create() {
     super.create();
     this.monecoAttacks = this.add.group();
-    this.monecoLP = 3;
+    this.monecoLP = 100;
     this.monecoPP = 99;
     this.monecoMercy = false;
     this.physics.add.overlap(this.player, this.monecoAttacks);

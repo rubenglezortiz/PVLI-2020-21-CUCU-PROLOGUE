@@ -6,15 +6,7 @@ export default class PomponinaAttack extends Phaser.GameObjects.Sprite {
     scene.physics.world.enable(this);   
     this.player=pigmalion    
 
-    this.scene.anims.create({
-      key:"pomponinaat",
-      frames: this.scene.anims.generateFrameNumbers("pomponinaat",{
-        start:0,
-        end: 9,
-      }),
-      frameRate: 12,
-      repeat:-1,
-    });
+    this.anims.play("pomponina_at",true);
     this.dy = dyC;
     this.setPhysics();
     this.scene.monecoAttacks.add(this);
@@ -22,7 +14,7 @@ export default class PomponinaAttack extends Phaser.GameObjects.Sprite {
 
   preUpdate(t, dt) {
     super.preUpdate(t, dt);   
-    this.anims.play("pomponinaat",true);
+
     if(this.scene.physics.overlap(this,this.player)) this.destroy();
     if (this.x < this.width/2+1) this.destroy();    
   }

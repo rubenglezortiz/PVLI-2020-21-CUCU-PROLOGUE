@@ -18,23 +18,13 @@ export default class Sala18Cucu extends SalaBaseCombate {
     super.create();
     this.camino = this.add.image(700, 400, "cucucamino5");
     this.carreta = new Prop(this,1500,100,"carreta",this.player,60,50,false);
-    this.cucu = new Prop(this,1200,this.sys.game.canvas.height/2,"cucuIdle",this.player,60,50,false);
-    this.anims.create({
-      key: "cucu",
-      frames: this.anims.generateFrameNumbers("cucu", {
-        start: 0,
-        end: 20,
-      }),
-      frameRate: 20,
-      repeat: -1,
-    });
- 
+    this.cucu = new Prop(this,1200,this.sys.game.canvas.height/2,"cucu_idl",this.player,60,50,false);
+    this.cucu.play("cucu",true);
     this.startVS();
   }
 
   update() {
-    super.update();
-    this.cucu.play("cucu",true);
+    super.update(); 
   }
 
   startVS() {
@@ -68,14 +58,14 @@ export default class Sala18Cucu extends SalaBaseCombate {
 
   attack1(){
         
-        this.cucuAt = new CucuAttack(this,  "cucuat", this.player);
+        this.cucuAt = new CucuAttack(this, "cucu_at1", this.player);
   }
 
   attack2(){
     
-    this.cucuAt1 = new CucuAttack(this, "cucuat2", this.player);
+    this.cucuAt1 = new CucuAttack(this, "cucu_at2", this.player);
     this.timerAttack2 = this.time.delayedCall(350, () => {
-      this.cucuAt2 = new CucuAttack(this, "cucuat2", this.player);
+      this.cucuAt2 = new CucuAttack(this, "cucu_at2", this.player);
     });
   }
   

@@ -8,7 +8,7 @@ class Bootloader extends Phaser.Scene {
 
   preload() {
     this.load.on("complete", () => {
-      this.scene.start(cst.SCENES.SALA0, {posx: 700, posy :400, lives:10,objs:[false,false,false,false],runInf:new RunInfo()});
+      this.scene.start(cst.SCENES.SALA12, {posx: 700, posy :400, lives:10,objs:[false,false,false,false],runInf:new RunInfo()});
     });
 
 
@@ -55,17 +55,14 @@ class Bootloader extends Phaser.Scene {
       frameWidth: 192,
       frameHeight: 192,
     });
-    this.load.spritesheet("cucuat", "./resources/sprites/cucu/cucuattacksprite.png", {
+    this.load.spritesheet("cucu_at1", "./resources/sprites/cucu/cucuattacksprite.png", {
       frameWidth: 216,
       frameHeight: 108,
     });
-    this.load.spritesheet("cucuat2", "./resources/sprites/cucu/cucuattacksprite2.png",{
+    this.load.spritesheet("cucu_at2", "./resources/sprites/cucu/cucuattacksprite2.png",{
       frameWidth: 100,
       frameHeight:108
     });
-   
-   
-    this.e = this.input.keyboard.addKey("E");
     
 
     //-----SPRITES DON LINDO-----
@@ -95,6 +92,7 @@ class Bootloader extends Phaser.Scene {
     this.load.image("pomponinacamino3" , "./resources/sprites/caminos/pomponina/camino_marmol_3.png" );
     this.load.image("pomponinacamino4" , "./resources/sprites/caminos/pomponina/camino_marmol_4.png" );
     this.load.image("pomponinacamino5" , "./resources/sprites/caminos/pomponina/camino_marmol_5.png" );
+    this.load.image("pomponinacamino6" , "./resources/sprites/caminos/pomponina/camino_marmol_6.png" );
     //decorado
     this.load.image("tiendabombones","./resources/sprites/pomponina/tienda_bombones.png");
     this.load.image("anticuario","./resources/sprites/pomponina/anticuario.png");
@@ -108,11 +106,11 @@ class Bootloader extends Phaser.Scene {
       frameWidth: 320,
       frameHeight: 360
     });    
-    this.load.spritesheet("clienteBombones1", "./resources/sprites/pomponina/cliente_bombones_1.png",{
+    this.load.spritesheet("cliente_bombones1", "./resources/sprites/pomponina/cliente_bombones_1.png",{
       frameWidth: 192,
       frameHeight: 192
     });
-    this.load.spritesheet("clienteBombones2", "./resources/sprites/pomponina/cliente_bombones_2.png",{
+    this.load.spritesheet("cliente_bombones2", "./resources/sprites/pomponina/cliente_bombones_2.png",{
       frameWidth: 192,
       frameHeight: 192
     });
@@ -120,11 +118,11 @@ class Bootloader extends Phaser.Scene {
       frameWidth: 192,
       frameHeight: 192
     });
-    this.load.spritesheet("hijoFlorista", "./resources/sprites/pomponina/hijo_florista.png",{
+    this.load.spritesheet("hijo_florista", "./resources/sprites/pomponina/hijo_florista.png",{
       frameWidth: 192,
       frameHeight: 192
     });   
-    this.load.spritesheet("encargadoAnticuario", "./resources/sprites/pomponina/encargado_anticuario.png",{
+    this.load.spritesheet("encargado_anticuario", "./resources/sprites/pomponina/encargado_anticuario.png",{
       frameWidth: 192,
       frameHeight: 192
     });   
@@ -133,7 +131,7 @@ class Bootloader extends Phaser.Scene {
       frameHeight: 128
     });  
     //muñeco
-    this.load.spritesheet("pomponinaIdle", "./resources/sprites/pomponina/pomponina_idle.png",{
+    this.load.spritesheet("pomponina_idl", "./resources/sprites/pomponina/pomponina_idle.png",{
       frameWidth: 192,
       frameHeight: 192
     });
@@ -193,18 +191,18 @@ class Bootloader extends Phaser.Scene {
       frameRate: 20,
       repeat: -1,
     });
-    this.scene.anims.create({
+    this.anims.create({
       key: "cucu_at1",
-      frames: this.scene.anims.generateFrameNumbers("cucu_at1", {
+      frames: this.anims.generateFrameNumbers("cucu_at1", {
         start: 0,
         end: 14,
       }),
       frameRate: 15,
       repeat: -1,
     }); 
-    this.scene.anims.create({
+    this.anims.create({
       key: "cucu_at2",
-      frames: this.scene.anims.generateFrameNumbers("cucu_at2", {
+      frames: this.anims.generateFrameNumbers("cucu_at2", {
         start: 0,
         end: 14,
       }),
@@ -271,7 +269,7 @@ class Bootloader extends Phaser.Scene {
     })
     this.anims.create({
       key: "hijo_florista",
-      frames: this.anims.generateFrameNumbers("hijoFlorista", {
+      frames: this.anims.generateFrameNumbers("hijo_florista", {
         start: 0,
         end: 6,
       }),
@@ -288,8 +286,8 @@ class Bootloader extends Phaser.Scene {
       repeat:-1,
     })
     this.anims.create({
-      key:"cliente_bombones_2",
-      frames: this.anims.generateFrameNumbers("cliente_bombones_2",{
+      key:"cliente_bombones2",
+      frames: this.anims.generateFrameNumbers("cliente_bombones2",{
         start:0,
         end: 6,
       }),
@@ -306,7 +304,7 @@ class Bootloader extends Phaser.Scene {
       repeat: -1
     })
     this.anims.create({
-      key: "encargad_anticuario",
+      key: "encargado_anticuario",
       frames: this.anims.generateFrameNumbers("encargado_anticuario", {
         start: 0,
         end: 6,
@@ -315,8 +313,8 @@ class Bootloader extends Phaser.Scene {
       repeat: -1,
     });
     this.anims.create({
-      key: "pomponina_idle",
-      frames: this.anims.generateFrameNumbers("pomponina_idle",{
+      key: "pomponina_idl",
+      frames: this.anims.generateFrameNumbers("pomponina_idl",{
         start:0,
         end:12
       }),
@@ -332,9 +330,9 @@ class Bootloader extends Phaser.Scene {
       frameRate: 8,
       repeat: -1,
     });
-    this.scene.anims.create({
+    this.anims.create({
       key:"pomponina_at",
-      frames: this.scene.anims.generateFrameNumbers("pomponina_at",{
+      frames: this.anims.generateFrameNumbers("pomponina_at",{
         start:0,
         end: 9,
       }),

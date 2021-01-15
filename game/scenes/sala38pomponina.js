@@ -16,22 +16,14 @@ export default class Sala38pomponina extends SalaBaseCombate {
     super.create();
     this.camino= this.add.image(this.sys.game.canvas.width/2+90,this.sys.game.canvas.height+350,"pomponinacamino1")
     this.camino.angle=90;
-    this.pomponina=new Prop(this,1200,this.sys.game.canvas.height/2,"pomponina",this.player,60,50,false)
-    this.anims.create({
-      key: "pomponinaEnfadada",
-      frames: this.anims.generateFrameNumbers("pomponina", {
-        start: 0,
-        end: 9,
-      }),
-      frameRate: 8,
-      repeat: -1,
-    });
+    this.pomponina=new Prop(this,1200,this.sys.game.canvas.height/2,"pomponina",this.player,60,50,false);
+    this.pomponina.play("pomponina",true);
     this.startVS();
   }
 
   update() {
     super.update();   
-    this.pomponina.play("pomponinaEnfadada",true);
+
   }
   startVS() {
     if (this.monecoLP >= 50) this.phase1();
@@ -64,11 +56,11 @@ export default class Sala38pomponina extends SalaBaseCombate {
   }
 
   attack1(){
-    this.pompAt = new PomponinaAttack(this, this.sys.game.canvas.width, this.sys.game.canvas.height / 2, "pomponinaat", this.player,Phaser.Math.Between(0,1));
+    this.pompAt = new PomponinaAttack(this, this.sys.game.canvas.width, this.sys.game.canvas.height / 2, "pomponina_at", this.player,Phaser.Math.Between(0,1));
   }
   attack2(){
     for (let i = 0; i < 2; i++) {
-      this.pompAt = new PomponinaAttack(this, this.sys.game.canvas.width, this.sys.game.canvas.height / 2, "pomponinaat", this.player,i%2);
+      this.pompAt = new PomponinaAttack(this, this.sys.game.canvas.width, this.sys.game.canvas.height / 2, "pomponina_at", this.player,i%2);
     }
   }
 }

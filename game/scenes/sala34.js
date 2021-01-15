@@ -16,21 +16,12 @@ export default class Sala34 extends SalaBase {
   create() {
     super.create(); 
     this.camino= this.add.image(this.sys.game.canvas.width / 2+15,this.sys.game.canvas.height / 2,"pomponinacamino5")
-    this.clienteBombones=new Prop(this, 300, this.sys.game.canvas.height-150,"clienteBombones2",this.player,60,50,true);
-    this.anims.create({
-      key:"clienteBombonesAnim",
-      frames: this.anims.generateFrameNumbers("clienteBombones2",{
-        start:0,
-        end: 6,
-      }),
-      frameRate: 4,
-      repeat: -1
-    })        
+    this.clienteBombones=new Prop(this, 300, this.sys.game.canvas.height-150,"cliente_bombones2",this.player,60,50,true);
+    this.clienteBombones.play("cliente_bombones2",true);
  } 
 
   update() {
-    super.update();
-    this.clienteBombones.play("clienteBombonesAnim",true);
+    super.update();  
     if(this.physics.overlap(this.player, this.clienteBombones)) {
       if (Phaser.Input.Keyboard.JustDown(this.e)) {
         eventsCenter.emit("thisKey", this._nombreSala);
