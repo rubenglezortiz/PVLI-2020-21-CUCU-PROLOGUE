@@ -62,7 +62,7 @@ export default class SalaBase extends Phaser.Scene {
     
     
     
-    this.physics.add.collider(this.bounds, this.player.collider);
+    this.physics.add.collider(this.bounds, this.player);
 
     if(!this._salaCombate){
      

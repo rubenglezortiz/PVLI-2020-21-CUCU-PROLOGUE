@@ -6,10 +6,14 @@ export default class Pigmalion extends Phaser.GameObjects.Container {
     
     scene.add.existing(this);
     scene.physics.world.enable(this);
-   // this.gameObject.setOrigin(0.5,1);
+    this.sprite = this.scene.physics.add.sprite( 50, -70, 'pigmalion')
+    this.add(this.sprite)
+    this.body.setSize(100,30,true);
    
     
     //this.anim = type;
+   
+   
     this.scene.anims.create({
       key: "walk",
       frames: this.scene.anims.generateFrameNumbers("pigmalion", {
@@ -30,26 +34,26 @@ export default class Pigmalion extends Phaser.GameObjects.Container {
     console.log(this);
 
 
-    //this.body.setSize(100,30);
+  //this.body.setSize(100,30);
    
   
-   this.sprite = this.scene.physics.add.sprite(0,0,"pigmalion")  
-   this.sprite.immovable = false;
-   this.add([this.sprite]);
+  //  this.sprite = this.scene.physics.add.sprite(0,0,"pigmalion")  
+  //  this.sprite.immovable = false;
+  //  this.add([this.sprite]);
   
 
-    this.collider = this.scene.physics.add.sprite(0,this.sprite.height/2);
-    this.collider.setSize(80,20,true);
-    this.collider.immovable = false;
-    this.collider.setCollideWorldBounds(false);  
-    scene.physics.world.enable(this.collider);
-    console.log(this);
-    this.add([this.collider]);
+  //   this.collider = this.scene.physics.add.sprite(0,this.sprite.height/2);
+  //   this.collider.setSize(80,20,true);
+  //   this.collider.immovable = false;
+  //   this.collider.setCollideWorldBounds(false);  
+  //   scene.physics.world.enable(this.collider);
+  //   console.log(this);
+  //   this.add([this.collider]);
     
   }
 
   preUpdate(t, dt) {
-    this.depth = this.y + this.sprite.height/2;//Es la capa en la que se renderiza, cuanto mas alta mas arriba en la pantalla
+    this.depth = this.y + this.height/2;//Es la capa en la que se renderiza, cuanto mas alta mas arriba en la pantalla
    
     let quietoX = true;
     let quietoY = true;
