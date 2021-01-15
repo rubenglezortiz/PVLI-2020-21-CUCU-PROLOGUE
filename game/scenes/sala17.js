@@ -14,9 +14,9 @@ export default class Sala17 extends SalaBase {
   create() {
     super.create();
     this.camino = this.add.image(700, 400, "cucucamino5");
-    this.carreta = new Prop(this,1500,100,"carreta",this.player,1,60,50,false);
+    this.carreta = new Prop(this,1500,100,"carreta",this.player,60,50,false);
     if (this._runInfo._monecos[0] === 0) {
-      this.cucu = new Prop(this,1200,this.sys.game.canvas.height / 2,"cucuIdle",this.player,1,60,50,true);
+      this.cucu = new Prop(this,1200,this.sys.game.canvas.height / 2,"cucuIdle",this.player,60,50,true);
       this.anims.create({
         key: "cucuIdle",
         frames: this.anims.generateFrameNumbers("cucuIdle", {

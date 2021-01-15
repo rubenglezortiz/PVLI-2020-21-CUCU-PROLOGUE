@@ -14,7 +14,7 @@ export default class Sala21 extends SalaBase {
 
   create() {
     super.create();
-    this.casa=new Prop(this,200,200,"casa",this.player,1,60,50,false);
+    this.casa=new Prop(this,200,200,"casa",this.player,60,50,false);
   }
     
   update() {

@@ -16,7 +16,7 @@ export default class Sala15 extends SalaBase {
     this.camino = this.add.image(800, 400, "cucucamino1");
     this.camino.depth = 1;
     this.camino.angle = 90;
-    this.tiendadisfraces = new Prop(this,1050,475,"tiendadisfraces",this.player,1,60,45,true);
+    this.tiendadisfraces = new Prop(this,1050,475,"tiendadisfraces",this.player,60,45,true);
   }
 
   update() {

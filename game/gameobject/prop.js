@@ -1,5 +1,5 @@
 export default class Prop extends Phaser.GameObjects.Sprite {
-  constructor(scene, x, y, nombreSprite, player, sc, wC, yC, interactive, interFunct) {
+  constructor(scene, x, y, nombreSprite, player, wC, yC, interactive, interFunct) {
     super(scene, x, y, nombreSprite);
     this.anchoPC = wC;
     this.posYC = yC;
@@ -8,14 +8,14 @@ export default class Prop extends Phaser.GameObjects.Sprite {
     this.body.immovable = true;
     this.body.setCollideWorldBounds(true);
     this.pigmalion = player;
-    this.setScale(sc); this.posYE=this.y-this.height;
+    this.posYE=this.y-this.height;
     this.interFunction = interFunct;
 
     //20 va a ser la altura de todos
     //colliderP es el collider estático que tineen la mayoria de
     //props justo debajo, para que se choque con los pies de pigmalion
-    this.colliderP = this.scene.physics.add.staticSprite(this.x,this.y + (this.height * this.scale * this.posYC) / 100);
-    this.colliderP.setSize((this.width * this.scale * this.anchoPC) / 100, 20, true);
+    this.colliderP = this.scene.physics.add.staticSprite(this.x,this.y + (this.height * this.posYC) / 100);
+    this.colliderP.setSize((this.width * this.anchoPC) / 100, 20, true);
     this.scene.physics.add.collider(this.colliderP, this.pigmalion);
     this.int = interactive;
     this.calloFunct = interFunct;
@@ -42,7 +42,7 @@ export default class Prop extends Phaser.GameObjects.Sprite {
         this.propE.visible = true;
         this.propE.depth=this.depth;
         if (Phaser.Input.Keyboard.JustDown(this.e)){
-          this.interFunction();
+          if(this.interFunction !== undefined)this.interFunction();
           console.log("hablo");
         }
       }

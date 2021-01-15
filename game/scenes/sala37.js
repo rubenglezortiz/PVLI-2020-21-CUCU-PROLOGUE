@@ -15,7 +15,7 @@ export default class Sala37 extends SalaBase{
       this.camino= this.add.image(this.sys.game.canvas.width/2+90,this.sys.game.canvas.height+350,"pomponinacamino1")
       this.camino.angle=90;
       if (this._runInfo._monecos[2] === 0) {
-        this.pomponina=new Prop(this,1200,this.sys.game.canvas.height/2,"pomponinaIdle",this.player,1,60,50,true)
+        this.pomponina=new Prop(this,1200,this.sys.game.canvas.height/2,"pomponinaIdle",this.player,60,50,true)
         this.anims.create({
         key: "pomponinaIdle",
         frames: this.anims.generateFrameNumbers("pomponinaIdle",{

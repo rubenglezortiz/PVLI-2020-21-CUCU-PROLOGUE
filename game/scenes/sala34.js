@@ -16,7 +16,7 @@ export default class Sala34 extends SalaBase {
   create() {
     super.create(); 
     this.camino= this.add.image(this.sys.game.canvas.width / 2+15,this.sys.game.canvas.height / 2,"pomponinacamino5")
-    this.clienteBombones=new Prop(this, 300, this.sys.game.canvas.height-150,"clienteBombones2",this.player,1,60,50,true);
+    this.clienteBombones=new Prop(this, 300, this.sys.game.canvas.height-150,"clienteBombones2",this.player,60,50,true);
     this.anims.create({
       key:"clienteBombonesAnim",
       frames: this.anims.generateFrameNumbers("clienteBombones2",{

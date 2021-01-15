@@ -15,7 +15,7 @@ export default class Sala12 extends SalaBase {
   create() {
     super.create();
     
-    this.bebe = new Prop(this, 1000, 300, "bebe", this.player, 1, 60, 50, true, this.hablaLlamar);
+    this.bebe = new Prop(this, 1000, 300, "bebe", this.player,60, 50, true, this.hablaLlamar);
     this.add.image(300, 400, "mesa").setScale(7);
     this.camino = this.add.image(1400, 400, "cucucamino1");
     this.camino.depth = 1;

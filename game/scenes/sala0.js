@@ -58,13 +58,13 @@ export default class Sala0 extends SalaBase {
 
     for (let i = 0; i < 3; ++i) {      
         if (this._runInfo._monecos[i] === 0) {
-          this.objA[i]=new Prop(this,this.infoA[i].x,this.infoA[i].y,"caja",this.player,1,60,50,false);
+          this.objA[i]=new Prop(this,this.infoA[i].x,this.infoA[i].y,"caja",this.player,60,50,false);
           this.noPlayed++;
         } else if (this._runInfo._monecos[i] === 1) {
-          this.objA[i]=new Prop(this,this.infoA[i].x,this.infoA[i].y,"cajaCerrada",this.player,1,60,50,false);
+          this.objA[i]=new Prop(this,this.infoA[i].x,this.infoA[i].y,"cajaCerrada",this.player,60,50,false);
           this.killed++;
         } else {
-          this.objA[i]=new Prop(this,this.infoA[i].x,this.infoA[i].y,this.infoA[i].moneco,this.player,1,60,50,false);
+          this.objA[i]=new Prop(this,this.infoA[i].x,this.infoA[i].y,this.infoA[i].moneco,this.player,60,50,false);
           this.objA[i].play(this.objA[i].moneco,true);
           this.saved++;
         }      

@@ -23,7 +23,7 @@ export default class FinalNeutral extends SalaBase {
     this.objA = [];
     this.infoA = [{ x: 300, y: 250, moneco:"cucuIdle" },{ x: 1100, y: 250, moneco: "donLindo" },{ x: 300, y: 850,moneco: "pomponinaIdle" },];
     this.cajas();
-    this.urdemalas= new Prop(this,this.sys.game.canvas.width-200,this.sys.game.canvas.height/2+60,"pigmalion",this.player,1,60,50,true);
+    this.urdemalas= new Prop(this,this.sys.game.canvas.width-200,this.sys.game.canvas.height/2+60,"pigmalion",this.player,60,50,true);
     //ANIMACION DON LINDO CRRUUUUUUK
   }
 

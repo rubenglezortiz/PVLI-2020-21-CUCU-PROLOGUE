@@ -16,7 +16,7 @@ export default class Sala38pomponina extends SalaBaseCombate {
     super.create();
     this.camino= this.add.image(this.sys.game.canvas.width/2+90,this.sys.game.canvas.height+350,"pomponinacamino1")
     this.camino.angle=90;
-    this.pomponina=new Prop(this,1200,this.sys.game.canvas.height/2,"pomponina",this.player,1,60,50,false)
+    this.pomponina=new Prop(this,1200,this.sys.game.canvas.height/2,"pomponina",this.player,60,50,false)
     this.anims.create({
       key: "pomponinaEnfadada",
       frames: this.anims.generateFrameNumbers("pomponina", {

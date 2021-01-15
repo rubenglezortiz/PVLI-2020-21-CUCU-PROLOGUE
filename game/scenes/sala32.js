@@ -16,7 +16,7 @@ export default class Sala32 extends SalaBase {
   create() {
     super.create();
     this.camino= this.add.image(this.sys.game.canvas.width / 2+15,this.sys.game.canvas.height / 2,"pomponinacamino3")
-    this.fuente = new Prop(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2, "fuente", this.player, 1, 60, 45, false,);
+    this.fuente = new Prop(this,this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2, "fuente", this.player, 60, 45, false,);
     this.anims.create({
       key: "fuenteAnim",
       frames: this.anims.generateFrameNumbers("fuente", {
@@ -26,7 +26,7 @@ export default class Sala32 extends SalaBase {
       frameRate: 8,
       repeat: -1,
     });
-    this.hijoFlorista = new Prop(this,this.sys.game.canvas.width / 2, 600,"hijoFlorista",this.player,1,60,50,true);
+    this.hijoFlorista = new Prop(this,this.sys.game.canvas.width / 2, 600,"hijoFlorista",this.player,60,50,true);
     this.anims.create({
       key: "hijoFloristaAnim",
       frames: this.anims.generateFrameNumbers("hijoFlorista", {
@@ -37,7 +37,7 @@ export default class Sala32 extends SalaBase {
       repeat: -1,
     });
   
-    this.cliente = new Prop(this,1150,700,"clienteBombones1",this.player,1,60,50,true);
+    this.cliente = new Prop(this,1150,700,"clienteBombones1",this.player,60,50,true);
     this.anims.create({
      key:"clienteAnim",
      frames: this.anims.generateFrameNumbers("clienteBombones1",{

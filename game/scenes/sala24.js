@@ -13,8 +13,8 @@ export default class Sala24 extends SalaBase {
 
   create() {
     super.create();
-    this.bullying = new Prop (this, 300,300,"bullying",this.player,1,60,50,true);
-    this.frio = new Prop (this, 1000, 800,"frio1",this.player,1,60,50,true);
+    this.bullying = new Prop (this, 300,300,"bullying",this.player,60,50,true);
+    this.frio = new Prop (this, 1000, 800,"frio1",this.player,60,50,true);
     this.anims.create({
       key: "bullying",
       frames: this.anims.generateFrameNumbers("bullying", {
