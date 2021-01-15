@@ -19,13 +19,13 @@ export default class Sala0 extends SalaBase {
     this.camino = this.add.image(700, 400, "cucucamino4");
     this.camino.depth = 1;
     this.objA = [];
-    this.infoA = [{ x: 300, y: 250, moneco:"cucuIdle" },{ x: 1100, y: 250, moneco: "donLindo" },{ x: 300, y: 850,moneco: "pomponinaIdle" },];
+    this.infoA = [{ x: 300, y: 250, moneco:"cucu_idle" },{ x: 1100, y: 250, moneco: "don_lindo" },{ x: 300, y: 850,moneco: "pomponina_idle" },];
     this.cajas();
 
 
     this.anims.create({
-      key: "cucuIdle",
-      frames: this.anims.generateFrameNumbers("cucuIdle", {
+      key: "cucu_idle",
+      frames: this.anims.generateFrameNumbers("cucu_idle", {
         start: 0,
         end: 6,
       }),
@@ -34,8 +34,8 @@ export default class Sala0 extends SalaBase {
     });
     //ANIMACION DON LINDO CRRUUUUUUK
     this.anims.create({
-      key: "pomponinaIdle",
-      frames: this.anims.generateFrameNumbers("pomponinaIdle", {
+      key: "pomponina_idle",
+      frames: this.anims.generateFrameNumbers("pomponina_idle", {
         start: 0,
         end: 6,
       }),
@@ -61,7 +61,7 @@ export default class Sala0 extends SalaBase {
           this.objA[i]=new Prop(this,this.infoA[i].x,this.infoA[i].y,"caja",this.player,1,60,50,false);
           this.noPlayed++;
         } else if (this._runInfo._monecos[i] === 1) {
-          this.objA[i]=new Prop(this,this.infoA[i].x,this.infoA[i].y,"cajaCerrada",this.player,1,60,50,false);
+          this.objA[i]=new Prop(this,this.infoA[i].x,this.infoA[i].y,"caja_cerrada",this.player,1,60,50,false);
           this.killed++;
         } else {
           this.objA[i]=new Prop(this,this.infoA[i].x,this.infoA[i].y,this.infoA[i].moneco,this.player,1,60,50,false);
