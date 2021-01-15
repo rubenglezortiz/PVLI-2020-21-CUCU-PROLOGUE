@@ -14,10 +14,10 @@ export default class Sala35 extends SalaBase{
       super.create();
       this.camino= this.add.image(this.sys.game.canvas.width / 2+15,this.sys.game.canvas.height/2,"pomponinacamino5")  
       this.anticuario=new Prop(this,this.sys.game.canvas.width/2+100,0,"anticuario",this.player,1,100,100,false);
-      this.encargado=new Prop(this,this.sys.game.canvas.width/2,500,"encargadoAnticuario",this.player,1,100,50,true);
+      this.encargado=new Prop(this,this.sys.game.canvas.width/2,500,"encargado_anticuario",this.player,1,100,50,true);
       this.anims.create({
         key: "encargadoAnticuario",
-        frames: this.anims.generateFrameNumbers("encargadoAnticuario", {
+        frames: this.anims.generateFrameNumbers("encargado_anticuario", {
           start: 0,
           end: 6,
         }),

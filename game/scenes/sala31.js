@@ -19,7 +19,7 @@ export default class Sala31 extends SalaBase{
     this.tiendaBombones = new Prop(this,500,200,"tiendabombones",this.player,1,80,50);
     this.abuela = new Prop(this, 575, 325,"abuela",this.player,1,60,50,true);       
     this.anims.create({
-          key:"abuelaAnim",
+          key:"abuela_anim",
           frames: this.anims.generateFrameNumbers("abuela",{
             start:0,
             end: 6,
@@ -31,7 +31,7 @@ export default class Sala31 extends SalaBase{
 
      update(){
         super.update();
-        this.abuela.play("abuelaAnim",true);
+        this.abuela.play("abuela_anim",true);
         if(this.physics.overlap(this.player, this.abuela)) {
           if (Phaser.Input.Keyboard.JustDown(this.e)) {
             eventsCenter.emit("thisKey", this._nombreSala);

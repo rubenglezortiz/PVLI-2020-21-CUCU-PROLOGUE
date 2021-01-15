@@ -20,7 +20,7 @@ export default class Sala13 extends SalaBase {
     this.caballo = new Prop(this,700,350,"caballo",this.player,1,60,50,false);
    
     this.anims.create({
-      key: "chulaposAnim",
+      key: "chulapos_anim",
       frames: this.anims.generateFrameNumbers("chulapos", {
         start: 0,
         end: 20,
@@ -49,7 +49,7 @@ export default class Sala13 extends SalaBase {
 
   update() {
     super.update();
-    this.chulapos.play("chulaposAnim", true);
+    this.chulapos.play("chulapos_anim", true);
 
 
     if (this.chulapos.propE.visible /*this.physics.overlap(this.player, this.caja)*/) {

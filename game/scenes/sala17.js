@@ -16,10 +16,10 @@ export default class Sala17 extends SalaBase {
     this.camino = this.add.image(700, 400, "cucucamino5");
     this.carreta = new Prop(this,1500,100,"carreta",this.player,1,60,50,false);
     if (this._runInfo._monecos[0] === 0) {
-      this.cucu = new Prop(this,1200,this.sys.game.canvas.height / 2,"cucuIdle",this.player,1,60,50,true);
+      this.cucu = new Prop(this,1200,this.sys.game.canvas.height / 2,"cucu_idle",this.player,1,60,50,true);
       this.anims.create({
-        key: "cucuIdle",
-        frames: this.anims.generateFrameNumbers("cucuIdle", {
+        key: "cucu_idle",
+        frames: this.anims.generateFrameNumbers("cucu_idle", {
           start: 0,
           end: 6,
         }),
@@ -33,7 +33,7 @@ export default class Sala17 extends SalaBase {
   update() {
     super.update();    
     if (this._runInfo._monecos[0] === 0) {
-      this.cucu.play("cucuIdle", true);
+      this.cucu.play("cucu_idle", true);
       if (this.physics.overlap(this.player, this.cucu)) {
         if (Phaser.Input.Keyboard.JustDown(this.e)) {
           this.scene.start(cst.SCENES.SALA18CUCU, {

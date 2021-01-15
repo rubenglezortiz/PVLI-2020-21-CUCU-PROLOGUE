@@ -24,18 +24,18 @@ export default class MenuCombate extends Phaser.Scene {
     this.menu = this.add.image(700, 500, "mc");
     this.menu.setAlpha(0.5);
     this.mercy;
-    this.attackButton = this.add.sprite(200, 150, "attackButton").setInteractive();
-    this.talkButton = this.add.sprite(550, 150, "talkButton").setInteractive();
+    this.attackButton = this.add.sprite(200, 150, "attack_button").setInteractive();
+    this.talkButton = this.add.sprite(550, 150, "talk_button").setInteractive();
 
     eventsCenter.on("canMercy", this.setMercyButton, this);
     if (!this.mercy) 
     {
-      this.mercyButton = this.add.sprite(850, 150, "mercyButton");
+      this.mercyButton = this.add.sprite(850, 150, "mercy_button");
       this.mercyButton.setAlpha(0.5);
     } 
     else 
     {
-      this.mercyButton = this.add.sprite(850, 150, "mercyButton").setInteractive();
+      this.mercyButton = this.add.sprite(850, 150, "mercy_button").setInteractive();
       this.mercyButton.setAlpha(1);
     }
     this.buttonVec = [this.attackButton, this.talkButton, this.mercyButton];
@@ -49,7 +49,7 @@ export default class MenuCombate extends Phaser.Scene {
     });
     // Botón de ataque
     this.attackButton.on("pointerdown", (pointer) => {
-      this.backButton = this.add.sprite(1200, 150, "backButton").setInteractive();
+      this.backButton = this.add.sprite(1200, 150, "back_button").setInteractive();
       this.backButton.on("pointerover", (pointer) => {
         this.backButton.setAlpha(0.5);
       });
@@ -80,14 +80,14 @@ export default class MenuCombate extends Phaser.Scene {
         scene: this,
         x: this.barraFinal.x - 50,
         y: this.barraFinal.y,
-        type: "moveBar",
+        type: "move_bar",
       });
       // Segunda barra móvil
       this.barramovil2 = new rod({
         scene: this,
         x: this.barraFinal.x + 300,
         y: this.barraFinal.y,
-        type: "moveBar",
+        type: "move_bar",
       });
     });
     
@@ -98,10 +98,10 @@ export default class MenuCombate extends Phaser.Scene {
       });
       if (this.moneco === 0) // Botones de hablar para Cucu
       {
-      this.talkOption1 = this.add.sprite(200, 500, "talkButton").setInteractive();
-      this.talkOption2 = this.add.sprite(550, 500, "talkButton").setInteractive();
-      this.talkOption3 = this.add.sprite(850, 500, "talkButton").setInteractive();
-      this.talkOption4 = this.add.sprite(1200, 500, "talkButton").setInteractive();
+      this.talkOption1 = this.add.sprite(200, 500, "talk_button").setInteractive();
+      this.talkOption2 = this.add.sprite(550, 500, "talk_button").setInteractive();
+      this.talkOption3 = this.add.sprite(850, 500, "talk_button").setInteractive();
+      this.talkOption4 = this.add.sprite(1200, 500, "talk_button").setInteractive();
       this.talkOptionsVec = [
         this.talkOption1,
         this.talkOption2,
@@ -140,52 +140,52 @@ export default class MenuCombate extends Phaser.Scene {
       else if (this.moneco === 1) // Botones de hablar para Don Lindo
       {
       if (this.objetos[objs.OBJECTS.floresRosas])
-      this.talkOption1 = this.add.sprite(200, 500, "talkButton").setInteractive();
+      this.talkOption1 = this.add.sprite(200, 500, "talk_button").setInteractive();
       else
       {
-        this.talkOption1 = this.add.sprite(200, 500, "talkButton");
+        this.talkOption1 = this.add.sprite(200, 500, "talk_button");
         this.talkOption1.setAlpha(0.5);
       }
       if (this.objetos[objs.OBJECTS.bombonesPomponina])
       {
-        this.talkOption2 = this.add.sprite(550, 500, "talkButton").setInteractive();
+        this.talkOption2 = this.add.sprite(550, 500, "talk_button").setInteractive();
       }
       else 
       {
-        this.talkOption2 = this.add.sprite(550, 500, "talkButton")
+        this.talkOption2 = this.add.sprite(550, 500, "talk_button")
         this.talkOption2.setAlpha(0.5);
       }
       if (this.objetos[objs.OBJECTS.abanico])
       {
-      this.talkOption3 = this.add.sprite(850, 500, "talkButton").setInteractive();
+      this.talkOption3 = this.add.sprite(850, 500, "talk_button").setInteractive();
       }
       else
       {
-      this.talkOption3 = this.add.sprite(850, 500, "talkButton");
+      this.talkOption3 = this.add.sprite(850, 500, "talk_button");
       this.talkOption3.setAlpha(0.5);
       }
       if (this.objetos[objs.OBJECTS.floresHijo])
       {
-        this.talkOption4 = this.add.sprite(1200, 500, "talkButton").setInteractive();
+        this.talkOption4 = this.add.sprite(1200, 500, "talk_button").setInteractive();
       }
       else 
       {
-        this.talkOption4 = this.add.sprite(1200, 500, "talkButton")
+        this.talkOption4 = this.add.sprite(1200, 500, "talk_button")
         this.talkOption4.setAlpha(0.5);
       }
 
       if (this.objetos[objs.OBJECTS.collar])
       {
-        this.talkOption5 = this.add.sprite(200, 700, "talkButton").setInteractive();
+        this.talkOption5 = this.add.sprite(200, 700, "talk_button").setInteractive();
       }
       else 
       {
-        this.talkOption5 = this.add.sprite(200, 700, "talkButton")
+        this.talkOption5 = this.add.sprite(200, 700, "talk_button")
         this.talkOption5.setAlpha(0.5);
       }
-        this.talkOption6 = this.add.sprite(550, 700, "talkButton").setInteractive();
-        this.talkOption7 = this.add.sprite(850, 700, "talkButton").setInteractive();
-        this.talkOption8 = this.add.sprite(1200, 700, "talkButton").setInteractive();
+        this.talkOption6 = this.add.sprite(550, 700, "talk_button").setInteractive();
+        this.talkOption7 = this.add.sprite(850, 700, "talk_button").setInteractive();
+        this.talkOption8 = this.add.sprite(1200, 700, "talk_button").setInteractive();
 
       this.talkOptionsVec = [
         this.talkOption1,
@@ -262,52 +262,52 @@ export default class MenuCombate extends Phaser.Scene {
       else if (this.moneco === 2) // Botones de hablar para Pomponina
       {
       if (this.objetos[objs.OBJECTS.floresRosas])
-      this.talkOption1 = this.add.sprite(200, 500, "talkButton").setInteractive();
+      this.talkOption1 = this.add.sprite(200, 500, "talk_button").setInteractive();
       else
       {
-        this.talkOption1 = this.add.sprite(200, 500, "talkButton");
+        this.talkOption1 = this.add.sprite(200, 500, "talk_button");
         this.talkOption1.setAlpha(0.5);
       }
       if (this.objetos[objs.OBJECTS.bombonesPomponina])
       {
-        this.talkOption2 = this.add.sprite(550, 500, "talkButton").setInteractive();
+        this.talkOption2 = this.add.sprite(550, 500, "talk_button").setInteractive();
       }
       else 
       {
-        this.talkOption2 = this.add.sprite(550, 500, "talkButton")
+        this.talkOption2 = this.add.sprite(550, 500, "talk_button")
         this.talkOption2.setAlpha(0.5);
       }
       if (this.objetos[objs.OBJECTS.abanico])
       {
-      this.talkOption3 = this.add.sprite(850, 500, "talkButton").setInteractive();
+      this.talkOption3 = this.add.sprite(850, 500, "talk_button").setInteractive();
       }
       else
       {
-      this.talkOption3 = this.add.sprite(850, 500, "talkButton");
+      this.talkOption3 = this.add.sprite(850, 500, "talk_button");
       this.talkOption3.setAlpha(0.5);
       }
       if (this.objetos[objs.OBJECTS.floresHijo])
       {
-        this.talkOption4 = this.add.sprite(1200, 500, "talkButton").setInteractive();
+        this.talkOption4 = this.add.sprite(1200, 500, "talk_button").setInteractive();
       }
       else 
       {
-        this.talkOption4 = this.add.sprite(1200, 500, "talkButton")
+        this.talkOption4 = this.add.sprite(1200, 500, "talk_button")
         this.talkOption4.setAlpha(0.5);
       }
 
       if (this.objetos[objs.OBJECTS.collar])
       {
-        this.talkOption5 = this.add.sprite(200, 700, "talkButton").setInteractive();
+        this.talkOption5 = this.add.sprite(200, 700, "talk_button").setInteractive();
       }
       else 
       {
-        this.talkOption5 = this.add.sprite(200, 700, "talkButton")
+        this.talkOption5 = this.add.sprite(200, 700, "talk_button")
         this.talkOption5.setAlpha(0.5);
       }
-        this.talkOption6 = this.add.sprite(550, 700, "talkButton").setInteractive();
-        this.talkOption7 = this.add.sprite(850, 700, "talkButton").setInteractive();
-        this.talkOption8 = this.add.sprite(1200, 700, "talkButton").setInteractive();
+        this.talkOption6 = this.add.sprite(550, 700, "talk_button").setInteractive();
+        this.talkOption7 = this.add.sprite(850, 700, "talk_button").setInteractive();
+        this.talkOption8 = this.add.sprite(1200, 700, "talk_button").setInteractive();
 
       this.talkOptionsVec = [
         this.talkOption1,
@@ -404,7 +404,7 @@ export default class MenuCombate extends Phaser.Scene {
       });
     
       this.backButton2 = this.add
-        .sprite(1200, 150, "backButton")
+        .sprite(1200, 150, "back_button")
         .setInteractive();
       this.backButton2.on("pointerover", (pointer) => {
         this.backButton2.setAlpha(0.5);

@@ -26,10 +26,10 @@ export default class Sala32 extends SalaBase {
       frameRate: 8,
       repeat: -1,
     });
-    this.hijoFlorista = new Prop(this,this.sys.game.canvas.width / 2, 600,"hijoFlorista",this.player,1,60,50,true);
+    this.hijoFlorista = new Prop(this,this.sys.game.canvas.width / 2, 600,"hijo_florista",this.player,1,60,50,true);
     this.anims.create({
       key: "hijoFloristaAnim",
-      frames: this.anims.generateFrameNumbers("hijoFlorista", {
+      frames: this.anims.generateFrameNumbers("hijo_florista", {
         start: 0,
         end: 6,
       }),
@@ -37,10 +37,10 @@ export default class Sala32 extends SalaBase {
       repeat: -1,
     });
   
-    this.cliente = new Prop(this,1150,700,"clienteBombones1",this.player,1,60,50,true);
+    this.cliente = new Prop(this,1150,700,"cliente_bombones1",this.player,1,60,50,true);
     this.anims.create({
      key:"clienteAnim",
-     frames: this.anims.generateFrameNumbers("clienteBombones1",{
+     frames: this.anims.generateFrameNumbers("cliente_bombones1",{
        start: 0,
        end: 6
      }),
