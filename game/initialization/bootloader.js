@@ -8,7 +8,7 @@ class Bootloader extends Phaser.Scene {
 
   preload() {
     this.load.on("complete", () => {
-      this.scene.start(cst.SCENES.SALA12, {posx: 700, posy :400, lives:10,objs:[false,false,false,false],runInf:new RunInfo()});
+      this.scene.start(cst.SCENES.SALA38POMPONINA, {posx: 700, posy :400, lives:10,objs:[false,false,false,false],runInf:new RunInfo()});
     });
 
 
@@ -151,6 +151,18 @@ class Bootloader extends Phaser.Scene {
     this.load.image("talk_button","./resources/sprites/menu_ataque/boton_hablar.png");
     this.load.image("mercy_button","./resources/sprites/menu_ataque/boton_piedad.png");
     this.load.image("back_button", "./resources/sprites/menu_ataque/boton_retroceder.png");
+    this.load.image("abanico_button", "./resources/sprites/menu_ataque/boton_abanico.png");
+    this.load.image("amenazar_button", "./resources/sprites/menu_ataque/boton_amenazar.png");
+    this.load.image("animarle_button", "./resources/sprites/menu_ataque/boton_animarle.png");
+    this.load.image("bombones_button", "./resources/sprites/menu_ataque/boton_bombones.png");
+    this.load.image("burlarse_button", "./resources/sprites/menu_ataque/boton_burlarse.png");
+    this.load.image("chiste_button", "./resources/sprites/menu_ataque/boton_chiste.png");
+    this.load.image("collar_button", "./resources/sprites/menu_ataque/boton_collar.png");
+    this.load.image("dato_button", "./resources/sprites/menu_ataque/boton_dato.png");
+    this.load.image("flores_rosas_button", "./resources/sprites/menu_ataque/boton_flores_rosas.png");
+    this.load.image("halagar_button", "./resources/sprites/menu_ataque/boton_halagar.png");
+    this.load.image("ordenar_button", "./resources/sprites/menu_ataque/boton_ordenar.png");
+    this.load.image("rosas_button", "./resources/sprites/menu_ataque/boton_rosas.png");
     this.load.image("bar","./resources/sprites/menu_ataque/barra_final.png");
     this.load.image("move_bar","./resources/sprites/menu_ataque/barra_movil.png");
 
