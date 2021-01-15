@@ -17,13 +17,13 @@ class Bootloader extends Phaser.Scene {
       frameWidth: 192,
       frameHeight: 192,
     });
-    this.load.image("cortinas", "./resources/sprites/teatro_general/cortinas.png");
-    this.load.image("telon", "./resources/sprites/teatro_general/telon.png");
-    this.load.image("telon_grande", "./resources/sprites/teatro_general/telon_grande.png");
-    this.load.image("tablones", "./resources/sprites/teatro_general/tablones.png");   
-    this.load.image("caja", "./resources/sprites/teatro_general/caja.png");
-    this.load.image("caja_gerrada","./resources/sprites/teatro_general/caja_cerrada.png");
-    this.load.image("tecla_e", "./resources/sprites/interaccion/tecla_e.png");
+    this.load.image("cortinas", "./resources/sprites/teatroGeneral/cortinas.png");
+    this.load.image("telon", "./resources/sprites/teatroGeneral/telon.png");
+    this.load.image("telonGrande", "./resources/sprites/teatroGeneral/telonGrande.png");
+    this.load.image("tablones", "./resources/sprites/teatroGeneral/tablones.png");   
+    this.load.image("caja", "./resources/sprites/teatroGeneral/caja.png");
+    this.load.image("cajaCerrada","./resources/sprites/teatroGeneral/caja_cerrada.png");
+    this.load.image("teclaE", "./resources/sprites/interaccion/teclaE.png");
 
 
     //-----SPRITES CUCU-----
@@ -47,7 +47,7 @@ class Bootloader extends Phaser.Scene {
       frameHeight: 288
     });
     //muñeco
-    this.load.spritesheet("cucu_idle", "./resources/sprites/cucu/cucu_idle_anim.png",{
+    this.load.spritesheet("cucu_idl", "./resources/sprites/cucu/cucu_idle_anim.png",{
       frameWidth: 192,
       frameHeight:192
     });
@@ -63,22 +63,25 @@ class Bootloader extends Phaser.Scene {
       frameWidth: 100,
       frameHeight:108
     });
+   
+   
+    this.e = this.input.keyboard.addKey("E");
     
 
     //-----SPRITES DON LINDO-----
     //caminos
     //decorado
-    this.load.image("casa","./resources/sprites/don_lindo/casa.png");
-    this.load.image("taberna","./resources/sprites/don_lindo/taberna.png");
-    this.load.spritesheet("bullying", "./resources/sprites/don_lindo/bullying.png",{
+    this.load.image("casa","./resources/sprites/donLindo/casa.png");
+    this.load.image("taberna","./resources/sprites/donLindo/taberna.png");
+    this.load.spritesheet("bullying", "./resources/sprites/donLindo/bullying.png",{
       frameWidth: 288,
       frameHeight: 288
     });
-    this.load.spritesheet("frio1", "./resources/sprites/don_lindo/npc_frio1.png",{
+    this.load.spritesheet("frio1", "./resources/sprites/donLindo/npcFrio1.png",{
       frameWidth: 192,
       frameHeight: 192
     });
-    this.load.spritesheet("frio2", "./resources/sprites/don_lindo/npc_frio2.png",{
+    this.load.spritesheet("frio2", "./resources/sprites/donLindo/npcFrio2.png",{
       frameWidth: 192,
       frameHeight: 192
     });
@@ -105,11 +108,11 @@ class Bootloader extends Phaser.Scene {
       frameWidth: 320,
       frameHeight: 360
     });    
-    this.load.spritesheet("cliente_bombones1", "./resources/sprites/pomponina/cliente_bombones_1.png",{
+    this.load.spritesheet("clienteBombones1", "./resources/sprites/pomponina/cliente_bombones_1.png",{
       frameWidth: 192,
       frameHeight: 192
     });
-    this.load.spritesheet("cliente_bombones2", "./resources/sprites/pomponina/cliente_bombones_2.png",{
+    this.load.spritesheet("clienteBombones2", "./resources/sprites/pomponina/cliente_bombones_2.png",{
       frameWidth: 192,
       frameHeight: 192
     });
@@ -117,11 +120,11 @@ class Bootloader extends Phaser.Scene {
       frameWidth: 192,
       frameHeight: 192
     });
-    this.load.spritesheet("hijo_florista", "./resources/sprites/pomponina/hijo_florista.png",{
+    this.load.spritesheet("hijoFlorista", "./resources/sprites/pomponina/hijo_florista.png",{
       frameWidth: 192,
       frameHeight: 192
     });   
-    this.load.spritesheet("encargado_anticuario", "./resources/sprites/pomponina/encargado_anticuario.png",{
+    this.load.spritesheet("encargadoAnticuario", "./resources/sprites/pomponina/encargado_anticuario.png",{
       frameWidth: 192,
       frameHeight: 192
     });   
@@ -130,7 +133,7 @@ class Bootloader extends Phaser.Scene {
       frameHeight: 128
     });  
     //muñeco
-    this.load.spritesheet("pomponina_idle", "./resources/sprites/pomponina/pomponina_idle.png",{
+    this.load.spritesheet("pomponinaIdle", "./resources/sprites/pomponina/pomponina_idle.png",{
       frameWidth: 192,
       frameHeight: 192
     });
@@ -138,31 +141,208 @@ class Bootloader extends Phaser.Scene {
       frameWidth: 192,
       frameHeight: 192
     });
-    this.load.spritesheet("pomponinaat", "./resources/sprites/pomponina/pomponina_attack.png",{
+    this.load.spritesheet("pomponina_at", "./resources/sprites/pomponina/pomponina_attack.png",{
       frameWidth: 125,
       frameHeight: 88
     });
     
    
     //-----SPRITES MENU COMBATE-----
-    this.load.image("mc","./resources/sprites/menu_ataque/menu_comb.png");
-    this.load.image("attack_button", "./resources/sprites/menu_ataque/boton_atacar.png");
-    this.load.image("talk_button","./resources/sprites/menu_ataque/boton_hablar.png");
-    this.load.image("mercy_button","./resources/sprites/menu_ataque/boton_piedad.png");
-    this.load.image("back_button", "./resources/sprites/menu_ataque/boton_retroceder.png");
-    this.load.image("bar","./resources/sprites/menu_ataque/barra_final.png");
-    this.load.image("move_bar","./resources/sprites/menu_ataque/barra_movil.png");
+    this.load.image("mc","./resources/sprites/menuAtaque/MenuComb.png");
+    this.load.image("attackButton", "./resources/sprites/menuAtaque/boton_atacar.png");
+    this.load.image("talkButton","./resources/sprites/menuAtaque/boton_hablar.png");
+    this.load.image("mercyButton","./resources/sprites/menuAtaque/boton_piedad.png");
+    this.load.image("backButton", "./resources/sprites/menuAtaque/boton_retroceder.png");
+    this.load.image("bar","./resources/sprites/menuAtaque/barra_final.png");
+    this.load.image("moveBar","./resources/sprites/menuAtaque/barra_movil.png");
 
 
-
-
-
-
-
-    //-------Audio------------
+    //-------AUDIO------------
     this.load.audio("chotis","./././resources/audio/chotis.mp3");
 
 
   }
+
+  create(){
+    //-----ANIMACIONES-----
+    //cucu
+    this.anims.create({
+      key: "chulapos",
+      frames: this.anims.generateFrameNumbers("chulapos", {
+        start: 0,
+        end: 20,
+      }),
+      frameRate: 4,
+      repeat: -1,
+    });
+    this.anims.create({
+      key: "cucu_idl",
+      frames: this.anims.generateFrameNumbers("cucu_idl", {
+        start: 0,
+        end: 6,
+      }),
+      frameRate: 4,
+      repeat: -1,
+    });
+    this.anims.create({
+      key: "cucu",
+      frames: this.anims.generateFrameNumbers("cucu", {
+        start: 0,
+        end: 20,
+      }),
+      frameRate: 20,
+      repeat: -1,
+    });
+    this.scene.anims.create({
+      key: "cucu_at1",
+      frames: this.scene.anims.generateFrameNumbers("cucu_at1", {
+        start: 0,
+        end: 14,
+      }),
+      frameRate: 15,
+      repeat: -1,
+    }); 
+    this.scene.anims.create({
+      key: "cucu_at2",
+      frames: this.scene.anims.generateFrameNumbers("cucu_at2", {
+        start: 0,
+        end: 14,
+      }),
+      frameRate: 15,
+      repeat: -1,
+    });
+    
+    //donLindo
+    this.anims.create({
+      key: "frio1",
+      frames: this.anims.generateFrameNumbers("frio1", {
+        start: 0,
+        end: 15,
+      }),
+      frameRate: 4,
+      repeat: -1,
+    })
+    this.anims.create({
+      key: "frio2",
+      frames: this.anims.generateFrameNumbers("frio2", {
+        start: 0,
+        end: 15,
+      }),
+      frameRate: 4,
+      repeat: -1,
+    })
+    this.anims.create({
+      key: "bullying",
+      frames: this.anims.generateFrameNumbers("bullying", {
+        start: 0,
+        end: 20,
+      }),
+      frameRate: 8,
+      repeat: -1,
+    })
+
+    //pomponina
+    this.anims.create({
+      key:"abuela",
+      frames: this.anims.generateFrameNumbers("abuela",{
+        start:0,
+        end: 6,
+      }),
+      frameRate: 4,
+      repeat: -1
+    }) 
+    this.anims.create({
+      key: "fuente",
+      frames: this.anims.generateFrameNumbers("fuente", {
+        start: 0,
+        end: 5,
+      }),
+      frameRate: 8,
+      repeat: -1,
+    });
+    this.anims.create({
+      key: "florista",
+      frames: this.anims.generateFrameNumbers("florista",{
+        start:0,
+        end:6
+      }),
+      frameRate: 4,
+      repeat: -1
+    })
+    this.anims.create({
+      key: "hijo_florista",
+      frames: this.anims.generateFrameNumbers("hijoFlorista", {
+        start: 0,
+        end: 6,
+      }),
+      frameRate: 4,
+      repeat: -1,
+    });
+    this.anims.create({
+      key:"cliente_bombones1",
+      frames: this.anims.generateFrameNumbers("cliente_bombones1",{
+        start: 0,
+        end: 6
+      }),
+      frameRate: 5,
+      repeat:-1,
+    })
+    this.anims.create({
+      key:"cliente_bombones_2",
+      frames: this.anims.generateFrameNumbers("cliente_bombones_2",{
+        start:0,
+        end: 6,
+      }),
+      frameRate: 4,
+      repeat: -1
+    })      
+    this.anims.create({
+      key: "jarron",
+      frames: this.anims.generateFrameNumbers("jarron",{
+        start:0,
+        end:5
+      }),
+      frameRate: 6,
+      repeat: -1
+    })
+    this.anims.create({
+      key: "encargad_anticuario",
+      frames: this.anims.generateFrameNumbers("encargado_anticuario", {
+        start: 0,
+        end: 6,
+      }),
+      frameRate: 4,
+      repeat: -1,
+    });
+    this.anims.create({
+      key: "pomponina_idle",
+      frames: this.anims.generateFrameNumbers("pomponina_idle",{
+        start:0,
+        end:12
+      }),
+      frameRate: 4,
+      repeat: -1
+    });
+    this.anims.create({
+      key: "pomponina",
+      frames: this.anims.generateFrameNumbers("pomponina", {
+        start: 0,
+        end: 9,
+      }),
+      frameRate: 8,
+      repeat: -1,
+    });
+    this.scene.anims.create({
+      key:"pomponina_at",
+      frames: this.scene.anims.generateFrameNumbers("pomponina_at",{
+        start:0,
+        end: 9,
+      }),
+      frameRate: 12,
+      repeat:-1,
+    });
+      
+  }
+ 
 }
 export default Bootloader;
