@@ -2,7 +2,6 @@ export default class Pigmalion extends Phaser.GameObjects.Container {
   constructor(scene, x, y, lives) {
     super(scene, x, y);
     
-    //this.originY = 0;
     
     scene.add.existing(this);
     scene.physics.world.enable(this);
@@ -11,7 +10,6 @@ export default class Pigmalion extends Phaser.GameObjects.Container {
     this.body.setSize(100,30,true);
    
     
-    //this.anim = type;
    
    
     this.scene.anims.create({
@@ -34,21 +32,7 @@ export default class Pigmalion extends Phaser.GameObjects.Container {
     console.log(this);
 
 
-  //this.body.setSize(100,30);
-   
   
-  //  this.sprite = this.scene.physics.add.sprite(0,0,"pigmalion")  
-  //  this.sprite.immovable = false;
-  //  this.add([this.sprite]);
-  
-
-  //   this.collider = this.scene.physics.add.sprite(0,this.sprite.height/2);
-  //   this.collider.setSize(80,20,true);
-  //   this.collider.immovable = false;
-  //   this.collider.setCollideWorldBounds(false);  
-  //   scene.physics.world.enable(this.collider);
-  //   console.log(this);
-  //   this.add([this.collider]);
     
   }
 
