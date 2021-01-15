@@ -18,76 +18,72 @@ PVLI UCM PROJECT 2020/21
 
 Versión 1.2 - 19 de septiembre de 2019
 
-+-------------------------------+--------------------------------+
-| **Resumen:**                  |                                |
-+===============================+================================+
+
+| **Resumen**                  |                                |
+|-------------------------------|:------------------------------:|
 | **Géneros:** Rol.             | **Modos:** Individual          |
-+-------------------------------+--------------------------------+
-| **Público objetivo:** ...\    | **Plataformas:** PC, buscador. |
-| *Edad, sexo, región e idioma* |                                |
-+-------------------------------+--------------------------------+
+| **Público objetivo:** ...\  *Edad, sexo, región e idioma*  | **Plataformas:** PC, buscador. |
 | **Características:** Top Down |                                |
-|                               |                                |
-| Elecciones                    |                                |
-+-------------------------------+--------------------------------+
 
-**Descripción**
 
+
+# Descripcion
   ----------------------------------------
-  **Logotipo y portada del juego**![][1]
+  **Logotipo y portada del juego !**
   ----------------------------------------
 
-**[1. Aspectos generales] 3**
+**1. Aspectos generales**
 
-**[2. Menús] 3**
+**2. Menús**
 
-> [2.1 Menú de inicio] 3
->
-> [2.2 Menú de pausa] 3
->
-> [2.3 Menú de interacción con los muñecos] 3
++ 2.1 Menú de inicio
 
-**[3. Configuración, interfaz y controles] 4**
++ 2.2 Menú de pausa
 
-> [3.1 Configuración] 4
->
-> [3.2 Interfaz y control] 4
++ 2.3 Menú de interacción con los muñecos
 
-**[4. Jugabilidad] 4**
+**3. Configuración, interfaz y controles**
 
-> [4.1 Mecánica] 4
->
-> [4.1.1 Movimiento e interacción] 4
->
-> [4.1.2 Enfrentamiento contra enemigos] 4
->
-> [4.1.3 Objetos] 5
->
-> [4.2 Dinámica] 5
->
-> [4.2.1 Dinámica puzzles] 5
->
-> [4.2.2 Dinámica muñecos] 6
->
-> [4.3 Estética] 6
++ 3.1 Configuración 
 
-**[5. Contenido] 7**
++ 3.2 Interfaz y control 
 
-> [5.1 Historia] 7
->
-> [5.2 Mapa] 7
->
-> [5.3.Personajes] 8
->
-> [Juan] 8
->
-> [Pomponina] 14
->
-> [Don Lindo] 22
->
-> [Agalzapo] 29
 
-#  
+**4. Jugabilidad**
+
++ 4.1 Mecánica
+
++ 4.1.1 Movimiento e interacción
+
++ 4.1.2 Enfrentamiento contra enemigos
+
++ 4.1.3 Objetos
+
++ 4.2 Dinámica
+
++ 4.2.1 Dinámica puzzles
+
++ 4.2.2 Dinámica muñecos
+
++ 4.3 Estética 
+
+**5. Contenido**
+
++ 5.1 Historia
+
++ 5.2 Mapa
+
++ 5.3.Personajes
+
++ Juan
+
++ Pomponina
+
++ Don Lindo
+
++ Agalzapo 
+
+
 
 # 1. Aspectos generales
 
@@ -183,7 +179,7 @@ Tras esquivar todos los ataques, volveremos a la primera fase del enfrentamiento
 
 Se obtendrán al completar los puzzles (o parte de ellos) a lo largo del mapa y se podrán usar, una vez conseguidos, en la opción "**Hablar**".
 
-## 4.2 Dinámica
+# 4.2 Dinámica
 
 ### 4.2.1 Dinámica puzzles
 
@@ -233,7 +229,7 @@ Como se ha explicado en la dinámica, la historia podrá seguir las siguientes r
 
 El mapa será un mundo abierto, marcado por tres diferentes zonas, más una zona central (el teatro). Cada zona trata un solo muñeco, así como sus puzzles.
 
-## ![][4] 
+![][4] 
 
 ## 5.3.Personajes
 
@@ -247,17 +243,18 @@ Cosas comunes a todos los personajes:
 
 Dependiendo del personaje, además, se podrá abrir un submenú de cosas que ofrecer que el jugador puede obtener a través de quests de cada personaje
 
-###  Juan![][5]
+## Juan
+![][5]
 
-> DESCRIPCIÓN:
+### DESCRIPCIÓN:
 
 Personalidad burlesca
 
 Este muñeco fue creado con la intención de hacer comedia. No puede hablar porque fue uno de los primeros muñecos creados por pigmalión. lo único que puede decir es "Cu cu". Dependiendo de la entonación que le ponga puede significar burla, amenaza, enfado\....
 
-> En el juego. Además de acompañar cada cucu con una descripción de la intención del cucu se puede distinguir cada cucu dependiendo de la fuente de éste.
->
-> Todos los muñecos le hacen burla y no es muy querido.
+ En el juego. Además de acompañar cada cucu con una descripción de la intención del cucu se puede distinguir cada cucu dependiendo de la fuente de éste.
+
+ Todos los muñecos le hacen burla y no es muy querido.
 
 **Conversaciones**
 
@@ -273,27 +270,27 @@ Matar:
 
 -Juan: cu cu
 
-**INFORMACIÓN**
+### INFORMACIÓN
 
-**(Disfraz de payaso)**
+**Disfraz de payaso**
 
--(Buena): Chiste.
+-Buena: Chiste.
 
 -Pigmalión. pensando(Al principio Juan se reía por cualquier tontería, no se cuanto tiempo llevo sin verle sonreír).
 
-**(Caja de Juan)**
+**Caja de Juan**
 
--(Mala): Reírse de él
+-Mala: Reírse de él
 
--Pigmalión. pensando (En el teatro siempre estábamos riéndonos de él, fuimos demasiado crueles)
+-Pigmalión. pensando En el teatro siempre estábamos riéndonos de él, fuimos demasiado crueles
 
-**(NPC calle)**
+**NPC calle**
 
--(Buena): Animarle
+-Buena: Animarle
 
 -NPC: "He visto un señor vestido raro ir dirección hacia el rastro estuvo un rato en la verbena, parecía estar disfrutando como un niño pequeño, no paraba de reir.
 
-**(NPC calle)**
+**NPC calle**
 
 \- Info muñecos humanos: hay una madre con el carrito de su bebe. Al hablar con ella sale un diálogo que dice que dice que su bebe no paraba de llorar hasta que vino una persona muy rara y lo calmó jugando con él, diciéndole CUCU. Al preguntarle por esa persona le dice que volvió por donde vino.
 
@@ -319,17 +316,11 @@ OPCIONES DE CHAT
 
 Una vez seleccionada esta opción Pigmalión dice al azar uno de estos:
 
-1\.
+1\. -Pigmalión: ¿Sabes cómo se queda un mago después de comer? Cucu: ...Pigmalión: Magordito
 
--Pigmalión: ¿Sabes cómo se queda un mago después de comer? Cucu: ...Pigmalión: Magordito
+2\. - Pigmalión: ¿Cómo se despiden los químicos? -Cucu: ... -Pigmalión: Ácido un placer.
 
-2\.
-
-\- Pigmalión: ¿Cómo se despiden los químicos? -Cucu: ... -Pigmalión: Ácido un placer.
-
-3\.
-
--Pigmalión: ¿Sabes qué le dice un .gif a un .jpg? -Cucu: ... -Pigmalión: ¡Anímate hombre!
+3\. - Pigmalión: ¿Sabes qué le dice un .gif a un .jpg? -Cucu: ... -Pigmalión: ¡Anímate hombre!
 
 \- **(Mala): Reírse de él**
 
@@ -365,28 +356,24 @@ Una vez seleccionada esta opción Pigmalión dice al azar uno de estos:
 
 -   Cucu: 👍.
 
-    1.  
+# 
 
-```{=html}
-<!-- -->
-```
+
 -   ¿Sabias que Un caracol **puede dormir por 3 años.?**
 
 -   Cucu: 👍.
 
-    1.  
+#    
 
-```{=html}
-<!-- -->
-```
 -   ¿Sabías que Fast and Furious 8 está disponible para Netflix EEUU pero no para Netflix ESPAÑA?
 
 -   Cucu: 👍.
 
-  TABLA DE PUNTOS DE PERSUASIÓN                                          
-  ------------------------------- ------------ -------------- ---------- ------------
-  **TOTAL**                       **Chiste**   **Animarle**   **Dato**   **Reírse**
-  100                             +10          +15            +0         -5
+### TABLA DE PUNTOS DE PERSUASIÓN                                          
+------------------------------- ------------ -------------- ---------- ------------
+**TOTAL**                       **Chiste**   **Animarle**   **Dato**   **Reírse**
+
+     100    +10     +15     +0   -5
 
 **MINIJUEGO (Descripción de la mecánica del muñeco):**
 
@@ -450,174 +437,177 @@ una función de títeres.
 
 dos títeres, uno de ellos es igual que cucu
 
-###  Pomponina![][12]
+##  Pomponina
 
-**CONVERSACIONES**
+![][12]
 
-**[POMPONINA]{.ul}:** No sé por qué has venido hasta mí, no pienso volver contigo.
+### CONVERSACIONES
 
-**[PIGMALIÓN]{.ul}**: No seas boba, no tienes ningún sitio a dónde ir.
+**POMPONINA:** No sé por qué has venido hasta mí, no pienso volver contigo.
 
-**[POMPONINA]{.ul}:** ¡Me da igual! encontraré a alguien que me lleve consigo. Además, seguramente será más divertido que tú.
+**PIGMALIÓN**: No seas boba, no tienes ningún sitio a dónde ir.
 
-**[PIGMALIÓN]{.ul}**: Tu sitio es aquí, en el teatro, conmigo y tus compañeros
+**POMPONINA:** ¡Me da igual! encontraré a alguien que me lleve consigo. Además, seguramente será más divertido que tú.
 
-**[POMPONINA]{.ul}:** No me interesa el teatro, no me interesan mis compañeros, y mucho menos me interesas tú.
+**PIGMALIÓN**: Tu sitio es aquí, en el teatro, conmigo y tus compañeros
 
-**SI SE SALVA A POMPONINA:**
+**POMPONINA:** No me interesa el teatro, no me interesan mis compañeros, y mucho menos me interesas tú.
 
-**[POMPONINA:]{.ul}** Creo que después de tanto tiempo al fin empezamos a entendernos. Te daré otra oportunidad, pero más te vale que me trates como a la estrella que soy.
+### SI SE SALVA A POMPONINA:
 
-**SI SE MATA A POMPONINA:**
+**POMPONINA:** Creo que después de tanto tiempo al fin empezamos a entendernos. Te daré otra oportunidad, pero más te vale que me trates como a la estrella que soy.
 
-**[POMPONINA:]{.ul}** No puede acabar así\...todavía necesita...mi\...ayuda\...
+### SI SE MATA A POMPONINA:
+
+**POMPONINA:** No puede acabar así\...todavía necesita...mi\...ayuda\...
 
 **INFORMACIÓN**
 
 -   **ESPEJO**
 
-    -   **[PIGMALIÓN PENSANDO]{.ul}**: Pomponina estaba siempre mirándose al espejo, le gustaba estar arreglada, y mucho más que le dijeran lo guapa que estaba.
+    -   **[PIGMALIÓN PENSANDO**: Pomponina estaba siempre mirándose al espejo, le gustaba estar arreglada, y mucho más que le dijeran lo guapa que estaba.
 
 -   **ABANICO ROTO (PUZZLE) (DESBLOQUEA OPCIÓN CHAT)**
 
-    -   **[PIGMALIÓN PENSANDO]{.ul}**: Quizás se podría arreglar en alguna parte.
+    -   **PIGMALIÓN PENSANDO**: Quizás se podría arreglar en alguna parte.
 
 -   **COLLAR (PUZZLE) (DESBLOQUEA OPCIÓN DE CHAT)**
 
-    -   **[PIGMALIÓN PENSANDO]{.ul}**: Le gustará como cualquier otra joya, Pomponina es muy básica.
+    -   **PIGMALIÓN PENSANDO**: Le gustará como cualquier otra joya, Pomponina es muy básica.
 
 -   **CAJA DE BOMBONES (PUZZLE) (DESBLOQUEA OPCIÓN CHAT)**
 
-    -   **[PIGMALIÓN PENSANDO]{.ul}**: Podría darle estos bombones a Pomponina.
+    -   **PIGMALIÓN PENSANDO**: Podría darle estos bombones a Pomponina.
 
 -   **RAMO DE ROSAS MALO(PUZZLE) (DESBLOQUEA OPCIÓN CHAT)**
 
-    -   **[PIGMALIÓN PENSANDO]{.ul}**: A Pomponina siempre le han gustado las rosas.
+    -   **PIGMALIÓN PENSANDO**: A Pomponina siempre le han gustado las rosas.
 
 -   **RAMO DE ROSAS (PUZZLE) (DESBLOQUEA OPCIÓN CHAT)**
 
-    -   **[PIGMALIÓN PENSANDO]{.ul}**: Debería llevárselo a su hijo, pero a Pomponina siempre le han gustado mucho las rosas\...
+    -   **PIGMALIÓN PENSANDO**: Debería llevárselo a su hijo, pero a Pomponina siempre le han gustado mucho las rosas\...
 
 -   **RAMO DE ROSAS ROSAS(PUZZLE) (DESBLOQUEA OPCIÓN CHAT)**
 
-    -   **[PIGMALIÓN PENSANDO]{.ul}**: Las rosas favoritas de Pomponina son las de color rosa. Estoy seguro de que le encantarían.
+    -   **PIGMALIÓN PENSANDO**: Las rosas favoritas de Pomponina son las de color rosa. Estoy seguro de que le encantarían.
 
 **OPCIONES DE CHAT**
 
 -   **(BUENA): Halagar (desbloqueada) Se escoge aleatoriamente una opción. Se puede repetir.**
 
-    -   **[PIGMALIÓN:]{.ul}** ¡Cuidado! No debes ponerte bajo el sol
+    -   **PIGMALIÓN:** ¡Cuidado! No debes ponerte bajo el sol
 
-    -   **[POMPONINA]{.ul}:** ¿Se puede saber por qué me dices eso ahora?
+        -   **POMPONINA:** ¿Se puede saber por qué me dices eso ahora?
 
-    -   **[PIGMALIÓN:]{.ul}**Porque te derrites bombón
+    -   **PIGMALIÓN:** Porque te derrites bombón
 
-    -   **[POMPONINA]{.ul}:** Tendré cuidado, a nadie le gustan los bombones derretidos
+        -   **POMPONINA:** Tendré cuidado, a nadie le gustan los bombones derretidos
 
-    -   **[PIGMALIÓN:]{.ul}** ¿No serás un compuesto de Fósforo, Erbio, Hierro, Carbono y Tántalo?
+    -   **PIGMALIÓN:** ¿No serás un compuesto de Fósforo, Erbio, Hierro, Carbono y Tántalo?
 
-    -   **[POMPONINA]{.ul}:** ...
+        -   **POMPONINA:** ...
 
-    -   **[PIGMALIÓN:]{.ul}** Porque eres PErFeCTa
+    -   **PIGMALIÓN:** Porque eres PErFeCTa
 
-    -   **[POMPONINA]{.ul}:** Me encantan tus halagos tan creativos aunque no los entienda.
+        -   **POMPONINA:** Me encantan tus halagos tan creativos aunque no los entienda.
 
-    -   **[PIGMALIÓN:]{.ul}** Tanto gentile e tanto onesta pare
+    -   **PIGMALIÓN:** Tanto gentile e tanto onesta pare
 
-> la donna mia quand'ella altrui saluta,
->
-> ch'ogne lingua deven tremando muta,
->
-> e li occhi no l'ardiscon di guardare.
+        - la donna mia quand'ella altrui saluta,
 
--   **[POMPONINA]{.ul}:** Come parli italiano elegante
+        - ch'ogne lingua deven tremando muta,
 
-```{=html}
-<!-- -->
-```
+        - e li occhi no l'ardiscon di guardare.
+
+-   **POMPONINA:** Come parli italiano elegante
+
+
 -   **(INDIFERENTE): Ordenar (desbloqueada) Se escoge aleatoriamente una opción. Se puede repetir.**
 
-    -   **[PIGMALIÓN:]{.ul}** Vuelve a tu caja.
+    -   **PIGMALIÓN:** Vuelve a tu caja.
 
-    -   **[POMPONINA]{.ul}:** ¡No me da la gana!
+    -   **POMPONINA:** ¡No me da la gana!
 
-    -   **[PIGMALIÓN:]{.ul}** Para de seguir con tus tonterías y vuelve ya.
+    -   **PIGMALIÓN:** Para de seguir con tus tonterías y vuelve ya.
 
-    -   **[POMPONINA]{.ul}:** No quiero, no voy a seguir haciéndote caso.
+    -   **POMPONINA:** No quiero, no voy a seguir haciéndote caso.
 
-    -   **[PIGMALIÓN:]{.ul}** No sé a qué estás esperando, pero tienes que volver a ensayar.
+    -   **PIGMALIÓN:** No sé a qué estás esperando, pero tienes que volver a ensayar.
 
-    -   **[POMPONINA]{.ul}:** Yo ya no voy a volver a participar en tus nefastas farsas.
+    -   **POMPONINA:** Yo ya no voy a volver a participar en tus nefastas farsas.
 
-```{=html}
-<!-- -->
-```
+
 -   **(MALA): Amenazar (desbloqueada) Se escoge aleatoriamente una opción. Se puede repetir.**
 
-    -   **[PIGMALIÓN:]{.ul}** vas a tener un castigo muy gordo como no vengas conmigo
+    -   **PIGMALIÓN:** vas a tener un castigo muy gordo como no vengas conmigo
 
-    -   **[POMPONINA]{.ul}:** siempre estás igual, estoy cansada de tus castigos, no pienso volver
+    -   **POMPONINA:** siempre estás igual, estoy cansada de tus castigos, no pienso volver
 
-    -   **[PIGMALIÓN:]{.ul}** Como no vengas ahora mismo no te volveré a hacer regalos
+    -   **PIGMALIÓN:** Como no vengas ahora mismo no te volveré a hacer regalos
 
-    -   **[POMPONINA]{.ul}:** Con mi belleza habrá cientos de personas que me harán regalos mejores que los tuyos
+    -   **POMPONINA:** Con mi belleza habrá cientos de personas que me harán regalos mejores que los tuyos
 
-    -   **[PIGMALIÓN:]{.ul}** Voy a tomar serias represalias contra ti
+    -   **PIGMALIÓN:** Voy a tomar serias represalias contra ti
 
-    -   **[POMPONINA]{.ul}:** Tú mismo, sabes que soy indispensable para ti.
+    -   **POMPONINA:** Tú mismo, sabes que soy indispensable para ti.
 
 -   **(MUY BUENA): Ofrecer bombones (desbloquear por puzzle)**
 
-    -   **[PIGMALIÓN:]{.ul}** (Ofrecer caja de bombones) Toma. Esto me lo dió una anciana a la que ayudaste para que te lo trajese.
+    -   **PIGMALIÓN:** (Ofrecer caja de bombones) Toma. Esto me lo dió una anciana a la que ayudaste para que te lo trajese.
 
-    -   **[POMPONINA]{.ul}:** (Lo acepta) (!) ¿Ha conseguido mantener el negocio?
+    -   **POMPONINA:** (Lo acepta) (!) ¿Ha conseguido mantener el negocio?
 
-    -   **[PIGMALIÓN:]{.ul}** Sí, y todo gracias a tí. Esa es la razón por la que creo que nos podemos entender.
+    -   **PIGMALIÓN:** Sí, y todo gracias a tí. Esa es la razón por la que creo que nos podemos entender.
 
-    -   **[POMPONINA]{.ul}:** Gracias por traérmelo. (\...) ¿De verdad no estás enfadado?
+    -   **POMPONINA:** Gracias por traérmelo. (\...) ¿De verdad no estás enfadado?
 
-    -   **[PIGMALIÓN:]{.ul}** No, de hecho nunca he estado tan orgulloso de ti como ahora.
+    -   **PIGMALIÓN:** No, de hecho nunca he estado tan orgulloso de ti como ahora.
 
 **NOTA: Todos los ramos de rosas se llamarán "Ramo de rosas" para el jugador. Éste no distinguirá los tipos de ramos por el nombre.**
 
 **- (MUY BUENA): Ofrecer ramo de rosas rosas (desbloquear por puzzle)**
 
--   **[PIGMALIÓN:]{.ul}** (Ofrecer ramo de rosas) Pensé que una forma de disculparme
+-   **PIGMALIÓN:** (Ofrecer ramo de rosas) Pensé que una forma de disculparme
 
--   **[POMPONINA]{.ul}:** (Lo acepta) Oh, ¡Qué bien! Mi abanico se me había roto y necesitaba uno nuevo.
+-   **POMPONINA:** (Lo acepta) Oh, ¡Qué bien! Mi abanico se me había roto y necesitaba uno nuevo.
 
 **- (BUENA): Ofrecer ramo de rosas (desbloquear por puzzle)**
 
--   **[PIGMALIÓN:]{.ul}** (Ofrecer ramo de rosas) Te he traído estas rosas. Como siempre te han gustado pensé que te alegrarían.
+-   **PIGMALIÓN:** (Ofrecer ramo de rosas) Te he traído estas rosas. Como siempre te han gustado pensé que te alegrarían.
 
--   **[POMPONINA]{.ul}:** Ohh, son muy bonitas, quizás podríamos llegar a entendernos.
+-   **POMPONINA:** Ohh, son muy bonitas, quizás podríamos llegar a entendernos.
 
 **- (MALA): Ofrecer ramo de rosas malo (desbloquear por puzzle)**
 
--   **[PIGMALIÓN:]{.ul}** (Ofrecer ramo de rosas) Te he traído estas rosas. Como siempre te han gustado pensé que te alegrarían.
+-   **PIGMALIÓN:** (Ofrecer ramo de rosas) Te he traído estas rosas. Como siempre te han gustado pensé que te alegrarían.
 
--   **[POMPONINA]{.ul}:** (Sonríe) ¡Claro que me gustan! (Se enfada) ¡CUANDO NO SON TAN FEAS COMO ESTAS!
+-   **POMPONINA:** (Sonríe) ¡Claro que me gustan! (Se enfada) ¡CUANDO NO SON TAN FEAS COMO ESTAS!
 
 -   **(BUENA): Ofrecer abanico**
 
-    -   **[PIGMALIÓN:]{.ul}** (Ofrecer abanico) Encontré tu abanico roto. Como le tenías tanto cariño decidí ir a un anticuario para que lo reparasen.
+    -   **PIGMALIÓN:** (Ofrecer abanico) Encontré tu abanico roto. Como le tenías tanto cariño decidí ir a un anticuario para que lo reparasen.
 
-    -   **[POMPONINA]{.ul}:** (Lo acepta) Ohh ¡qué detalle! Muchas gracias, Pigmalión. Parece que te importo más de lo que pensaba.
+    -   **POMPONINA:** (Lo acepta) Ohh ¡qué detalle! Muchas gracias, Pigmalión. Parece que te importo más de lo que pensaba.
 
 -   **(MALA): Ofrecer collar**
 
-    -   **[PIGMALIÓN:]{.ul}** (Ofrecer collar) Te he traído un collar. A las chicas os encantan estas cosas, ¿no?
+    -   **PIGMALIÓN:** (Ofrecer collar) Te he traído un collar. A las chicas os encantan estas cosas, ¿no?
 
-    -   **[POMPONINA]{.ul}:** ¡No! Te he dicho muchísimas veces que no me gustan los collares! Si vas a tener un detalle deberías darme algo especial para mí, no cualquier baratija que encuentres por ahí.
+    -   **POMPONINA:** ¡No! Te he dicho muchísimas veces que no me gustan los collares! Si vas a tener un detalle deberías darme algo especial para mí, no cualquier baratija que encuentres por ahí.
 
-Se mostrarán las tres opciones desbloqueables además de un botón para ofrecer cosas, una vez le das al botón de ofrecer cosas se sustituirán las opciones anteriores por las de ofrecer los diferentes objetos que el jugador haya recogido. En caso de que no los haya conseguido los objetos se mostrarán en gris
+Se mostrarán las tres opciones desbloqueables además de un botón para ofrecer cosas, una vez le das al botón de ofrecer cosas se sustituirán las opciones anteriores por las de ofrecer los diferentes objetos que el jugador haya recogido. En caso de que no los haya conseguido los objetos se mostrarán en gris.
 
-  TABLA DE PUNTOS DE PERSUASIÓN                                                                        
+
+ TABLA DE PUNTOS DE PERSUASIÓN                                                                        
   ------------------------------- ---------------------- -------------- ------------- ---------------- -------------
-  **TOTAL**                       **Ramo rosas rosas**   **Bombones**   **Abanico**   **Ramo Rosas**   **Halagar**
-                                  +40                    +30            +30           +20              +12
-  **100**                         **Ordenar**            **Amenazar**   **Collar**    **Ramo malo**    
-                                  0                      -5             -20           -30              
+**TOTAL**                       **Ramo rosas rosas**   **Bombones**   **Abanico**   **Ramo Rosas**   **Halagar**
+    
+     100         +40             +30        +30      +20       +12
+**-**                         **Ordenar**            **Amenazar**   **Collar**    **Ramo malo** 
+
+         0        -5     -20      -30              
+
+
 
 **MAPA**
 
@@ -679,57 +669,57 @@ Si Pigmalión decide dársela gratis, ya sea en la primera o en la segunda oport
 
 **(Está Pomponina frente al mostrador en el interior de la tienda. La anciana está al otro lado)**
 
-**[POMPONINA]{.ul}:** Hola. Quería una caja de bombones. ¿Cuánto es?
+**POMPONINA:** Hola. Quería una caja de bombones. ¿Cuánto es?
 
-**[ANCIANA]{.ul}:** *(Tiene expresión triste y alicaída, habla en un tono apagado-Pone la caja encima del mostrador)* Toma cielo, te la puedes quedar.
+**ANCIANA:** *(Tiene expresión triste y alicaída, habla en un tono apagado-Pone la caja encima del mostrador)* Toma cielo, te la puedes quedar.
 
-**[POMPONINA]{.ul}:** ¿Me los das así sin más? Normalmente los hombres me hacen tributos por mi belleza para tratar de conquistarme, pero ¿por qué me los darías tú?
+**POMPONINA:** ¿Me los das así sin más? Normalmente los hombres me hacen tributos por mi belleza para tratar de conquistarme, pero ¿por qué me los darías tú?
 
-**[ANCIANA]{.ul}:** *(Suelta una pequeña risa)* ¡Qué aires, señorita! En fin, el caso es que ya nadie viene a mi tienda, y me temo que tendré que cerrar el negocio, qué remedio\...
+**ANCIANA:** *(Suelta una pequeña risa)* ¡Qué aires, señorita! En fin, el caso es que ya nadie viene a mi tienda, y me temo que tendré que cerrar el negocio, qué remedio\...
 
-**[POMPONINA]{.ul}:** ¿Y por qué ha dejado de venir la gente? ¡Todo parece riquísimo!
+**POMPONINA:** ¿Y por qué ha dejado de venir la gente? ¡Todo parece riquísimo!
 
-**[ANCIANA]{.ul}:** El mundo avanza, y supongo que ya nadie quiere los dulces de una vieja como yo. Todo es culpa de esas dichosas máquinas, que todo lo que producen es más barato y mejor que lo tradicional, o al menos eso piensan algunos. Tú todavía eres joven, pero yo he vivido mucho. El tiempo no se detiene y algunas nos quedamos estancadas en él.
+**ANCIANA:** El mundo avanza, y supongo que ya nadie quiere los dulces de una vieja como yo. Todo es culpa de esas dichosas máquinas, que todo lo que producen es más barato y mejor que lo tradicional, o al menos eso piensan algunos. Tú todavía eres joven, pero yo he vivido mucho. El tiempo no se detiene y algunas nos quedamos estancadas en él.
 
-**[POMPONINA]{.ul}:** ¿Y no hay nadie que pueda ayudar?
+**POMPONINA:** ¿Y no hay nadie que pueda ayudar?
 
-**[ANCIANA]{.ul}:** Mi marido me ayudaba mucho, era la mayor alegría de mi mundo. Pero desgraciadamente murió hace ya tres años.
+**ANCIANA:** Mi marido me ayudaba mucho, era la mayor alegría de mi mundo. Pero desgraciadamente murió hace ya tres años.
 
-**[POMPONINA]{.ul}:** ¡Pues búscate otro!
+**POMPONINA:** ¡Pues búscate otro!
 
-**[ANCIANA]{.ul}:** *(Se ríe)* Qué inocente eres, chiquilla. Me recuerdas a mi de joven, cuando era guapa y estaba llena de energía, igual que tú. *(Pausa, suspira)* Es imposible que encuentre a alguien que me quiera, ya estoy demasiado vieja. *(Fija su mirada en la suya, las cejas caídas (cansancio/tristeza)* Permíteme darte un consejo: disfruta mientras puedas de tu juventud. Cuando pasan los años, la gente se olvida de tí, ya dejas de interesar a los demás, y si quieres sobrevivir debes dejar atrás los deseos de libertad y de ilusión en los que has creído.
+**ANCIANA:** *(Se ríe)* Qué inocente eres, chiquilla. Me recuerdas a mi de joven, cuando era guapa y estaba llena de energía, igual que tú. *(Pausa, suspira)* Es imposible que encuentre a alguien que me quiera, ya estoy demasiado vieja. *(Fija su mirada en la suya, las cejas caídas (cansancio/tristeza)* Permíteme darte un consejo: disfruta mientras puedas de tu juventud. Cuando pasan los años, la gente se olvida de tí, ya dejas de interesar a los demás, y si quieres sobrevivir debes dejar atrás los deseos de libertad y de ilusión en los que has creído.
 
-**[POMPONINA]{.ul}:** *(El semblante de Pomponina se torna consternado)*
+**POMPONINA:** *(El semblante de Pomponina se torna consternado)*
 
-**[ANCIANA]{.ul}:** *(Con un tono alegre)* Ay pero no te pongas así, perdona si te he asustado. Solo intentaba ayudarte, pero he acabado con mis desvaríos, como siempre\...
+**ANCIANA:** *(Con un tono alegre)* Ay pero no te pongas así, perdona si te he asustado. Solo intentaba ayudarte, pero he acabado con mis desvaríos, como siempre\...
 
-**[POMPONINA]{.ul}:** ¡Es que me parece muy triste que todo acabe así! ¿Cómo algo tan bonito como es este mundo puede tornarse en algo tan frío y solitario? Es demasiado cruel, ¡tienes que ponerle un bonito final a esta triste historia!
+**POMPONINA:** ¡Es que me parece muy triste que todo acabe así! ¿Cómo algo tan bonito como es este mundo puede tornarse en algo tan frío y solitario? Es demasiado cruel, ¡tienes que ponerle un bonito final a esta triste historia!
 
-**[ANCIANA]{.ul}:** No te preocupes por mí. Haz como los demás y déjame con mis problemas, ya me las arreglaré, de verdad.
+**ANCIANA:** No te preocupes por mí. Haz como los demás y déjame con mis problemas, ya me las arreglaré, de verdad.
 
-**[POMPONINA]{.ul}:** *(Mirada triste y pensativa - Después se le ilumina el rostro)* Pues yo todavía tengo esperanza en que todo puede ir a mejor para tí. Pero me tienes que prometer que vas a seguir con la tienda una semana más al menos.
+**POMPONINA:** *(Mirada triste y pensativa - Después se le ilumina el rostro)* Pues yo todavía tengo esperanza en que todo puede ir a mejor para tí. Pero me tienes que prometer que vas a seguir con la tienda una semana más al menos.
 
-**[ANCIANA]{.ul}:** *(La mira con ternura)* Si de verdad te hace tanta ilusión, está bien. Lo haré por tí.
+**ANCIANA:** *(La mira con ternura)* Si de verdad te hace tanta ilusión, está bien. Lo haré por tí.
 
-**[POMPONINA]{.ul}:** *(Llena de alegría)* ¡Genial! Pues para que la cosa empiece bien quería 5 cajas de bombones. *(Saca todo el dinero que llevaba)*
+**POMPONINA:** *(Llena de alegría)* ¡Genial! Pues para que la cosa empiece bien quería 5 cajas de bombones. *(Saca todo el dinero que llevaba)*
 
-**[ANCIANA]{.ul}:** *(Se le contagia la ilusión de Pomponina, responde alegre)* ¡Pero son muchas cajas para ti sola!
+**ANCIANA:** *(Se le contagia la ilusión de Pomponina, responde alegre)* ¡Pero son muchas cajas para ti sola!
 
-**[POMPONINA]{.ul}:** ¡Te aseguro que no! ¡Me encantan los bombones! *(Dice riéndose)*
+**POMPONINA:** ¡Te aseguro que no! ¡Me encantan los bombones! *(Dice riéndose)*
 
-**[ANCIANA]{.ul}:** *(Sigue alegre)* Está bien. ¡Pues que los disfrutes mucho! ¡Y muchas gracias por todo!
+**ANCIANA:** *(Sigue alegre)* Está bien. ¡Pues que los disfrutes mucho! ¡Y muchas gracias por todo!
 
 **Fuera flashback**
 
-**[ANCIANA]{.ul}:** Y así fue como conocí a la chica que buscas.
+**ANCIANA:** Y así fue como conocí a la chica que buscas.
 
-**[ANCIANA]{.ul}:** *(Sonríe con ternura)* Desde ese día empezó a venir mucha gente. Todos decían que la chica más hermosa del mundo les había hablado de un sitio fantástico y que tenían que probarlo. Además, les había dado una muestra proveniente del lugar la cual les encantó.
+**ANCIANA:** *(Sonríe con ternura)* Desde ese día empezó a venir mucha gente. Todos decían que la chica más hermosa del mundo les había hablado de un sitio fantástico y que tenían que probarlo. Además, les había dado una muestra proveniente del lugar la cual les encantó.
 
-**[ANCIANA]{.ul}:** Me da pena pensar que al final no pudiese probarlos. Con la de gente que ha venido, estoy segura de que les dió casi todos los bombones. *(Hace una pausa)* ¿Podrías hacerme un favor? Cuando te la encuentres, dale esta caja de bombones. Y dale las gracias de mi parte.
+**ANCIANA:** Me da pena pensar que al final no pudiese probarlos. Con la de gente que ha venido, estoy segura de que les dió casi todos los bombones. *(Hace una pausa)* ¿Podrías hacerme un favor? Cuando te la encuentres, dale esta caja de bombones. Y dale las gracias de mi parte.
 
-**[PIGMALIÓN:]{.ul}** Después de haberte devuelto tu negocio entiendo que quieras agradecérselo de alguna forma.
+**PIGMALIÓN:** Después de haberte devuelto tu negocio entiendo que quieras agradecérselo de alguna forma.
 
-**[ANCIANA]{.ul}:** *(sonríe y niega con la cabeza)* No le doy las gracias por eso. Se las doy por devolverme la esperanza.
+**ANCIANA:** *(sonríe y niega con la cabeza)* No le doy las gracias por eso. Se las doy por devolverme la esperanza.
 
 4.  Tras esto le podremos dar a Pomponina la caja de bombones.
 
@@ -746,156 +736,143 @@ Cuando Pomponina tenga la vida reducida a la mitad, lanzará tres tornados en ve
 
 **CONVERSACIONES**
 
-**[PIGMALIÓN:]{.ul}** Don Lindo, tú que eres de los muñecos más sensatos, vuelve al teatro.
+**PIGMALIÓN:** Don Lindo, tú que eres de los muñecos más sensatos, vuelve al teatro.
 
-**[DON LINDO:]{.ul}** No, sin el amor de Pomponina no voy a ninguna parte.
+**DON LINDO:** No, sin el amor de Pomponina no voy a ninguna parte.
 
-**[PIGMALIÓN]{.ul}:** No tienes que depender de ningún muñeco, Don Lindo.
+**PIGMALIÓN:** No tienes que depender de ningún muñeco, Don Lindo.
 
-**[DON LINDO]{.ul}:** No, no y no. No me iré a ninguna parte sin su amor, y menos contigo.
+**DON LINDO:** No, no y no. No me iré a ninguna parte sin su amor, y menos contigo.
 
 **SI SE SALVA A DON LINDO:**
 
-**[DON LINDO:]{.ul}** Bueno, creo que mi sitio está ahí en el teatro, haciendo la música de tus farsas. En verdad lo echo de menos.
+**DON LINDO:** Bueno, creo que mi sitio está ahí en el teatro, haciendo la música de tus farsas. En verdad lo echo de menos.
 
 **SI SE MATA A DON LINDO:**
 
-**[DON LINDO:]{.ul}** Vaya... Creo que ahora tendré que tocar con mi ukelele en algún otro lugar... Espero que Pomponina, por mucho que me duela, no esté allí viéndome, que se quede aquí... a salvo.
+**DON LINDO:** Vaya... Creo que ahora tendré que tocar con mi ukelele en algún otro lugar... Espero que Pomponina, por mucho que me duela, no esté allí viéndome, que se quede aquí... a salvo.
 
 **INFORMACIÓN**
 
 -   **FOTO DE POMPONINA CON UN CORAZÓN DIBUJADO:**
 
-    -   **[PIGMALIÓN PENSANDO:]{.ul}** Nunca imaginé que un muñeco se podría enamorar de otro.
+    -   **PIGMALIÓN PENSANDO:** Nunca imaginé que un muñeco se podría enamorar de otro.
 
 -   **RAMO DE FLORES CON UN PAPEL QUE PONGA "PARA POMPONINA":**
 
-    -   **[PIGMALIÓN PENSANDO:]{.ul}** No puedo entender cómo uno de mis muñecos ha podido llegar a sentir una emoción tan humana.
+    -   **PIGMALIÓN PENSANDO:** No puedo entender cómo uno de mis muñecos ha podido llegar a sentir una emoción tan humana.
 
 -   **GORRO (PUZZLE) (DESBLOQUEA OPCIÓN CHAT)**
 
-    -   **[PIGMALIÓN PENSANDO:]{.ul}** Nunca le he regalado nada, espero que con el gorro le quite importancia a su peluca.
+    -   **PIGMALIÓN PENSANDO:** Nunca le he regalado nada, espero que con el gorro le quite importancia a su peluca.
 
 -   **UKELELE (PUZZLE) (DESBLOQUEA OPCIÓN CHAT)**
 
-    -   **[PIGMALIÓN PENSANDO:]{.ul}** Seguro que agradecerá recibir un ukelele. Lástima que el suyo lo hayan roto.
+    -   **PIGMALIÓN PENSANDO:** Seguro que agradecerá recibir un ukelele. Lástima que el suyo lo hayan roto.
 
 -   **CARTERA: (PUZZLE) (DESBLOQUEA OPCIÓN CHAT)**
 
-    -   **[PIGMALIÓN PENSANDO:]{.ul}** Tendría que devolvérsela a su dueño. O puedo comprarle algo a Don Lindo. Incluso ofrecersela. A todo el mundo le gusta el dinero.
+    -   **PIGMALIÓN PENSANDO:** Tendría que devolvérsela a su dueño. O puedo comprarle algo a Don Lindo. Incluso ofrecersela. A todo el mundo le gusta el dinero.
 
 -   **CORBATA: (PUZZLE) (DESBLOQUEA OPCIÓN CHAT)**
 
-    -   ºº**[PIGMALIÓN PENSANDO:]{.ul}** Corbata cutre, perfecta para él.
+    -   **PIGMALIÓN PENSANDO:** Corbata cutre, perfecta para él.
 
 **OPCIONES DE CHAT**
 
 -   **(BUENA): Música (desbloqueada) Se escoge aleatoriamente una opción. Se puede repetir.**
 
-    -   **[PIGMALIÓN]{.ul}**: Tienes que volver conmigo, las farsas necesitan de tu música.
+    -   **PIGMALIÓN**: Tienes que volver conmigo, las farsas necesitan de tu música.
 
-    -   **[DON LINDO:]{.ul}** ¿Tan importante es mi música?
+    -   **DON LINDO:** ¿Tan importante es mi música?
 
-    -   **[PIGMALIÓN]{.ul}**: Vuelve al teatro y pasamos un rato tocando algún instrumento de los que te gustan.
+    -   **PIGMALIÓN:** Vuelve al teatro y pasamos un rato tocando algún instrumento de los que te gustan.
 
-    -   **[DON LINDO:]{.ul}** Quizá no sea mala idea.
+    -   **DON LINDO:** Quizá no sea mala idea.
 
-```{=html}
-<!-- -->
-```
 -   **(INDIFERENTE): Gritar (desbloqueada)**
 
-    -   **[PIGMALIÓN:]{.ul}** ¡QUE VENGAS CONMIGO!
+    -   **PIGMALIÓN:** ¡QUE VENGAS CONMIGO!
 
-    -   **[DON LINDO:]{.ul}** ¡QUE NO QUIERO!
+    -   **DON LINDO:** ¡QUE NO QUIERO!
 
-```{=html}
-<!-- -->
-```
 -   **(MALA): Pomponina (desbloqueada) Se escoge aleatoriamente una opción. Se puede repetir.**
 
-    -   **[PIGMALIÓN]{.ul}**: Asume de una vez que Pomponina pasa de ti.
+    -   **PIGMALIÓN:** Asume de una vez que Pomponina pasa de ti.
 
-    -   **[DON LINDO:]{.ul}** ¡Cómo osas!
+    -   **DON LINDO:** ¡Cómo osas!
 
-    -   **[PIGMALIÓN:]{.ul}** Ya hay que ser cutre para arrastrarse tanto por Pomponina.
+    -   **PIGMALIÓN:** Ya hay que ser cutre para arrastrarse tanto por Pomponina.
 
-    -   **[DON LINDO:]{.ul}** Tú no eres nadie para decir cómo conseguir los encantos de la hermosa Pomponina.
+    -   **DON LINDO:** Tú no eres nadie para decir cómo conseguir los encantos de la hermosa Pomponina.
 
-    -   **[PIGMALIÓN:]{.ul}** No te mereces a Pomponina, no estás a su altura.
+    -   **PIGMALIÓN:** No te mereces a Pomponina, no estás a su altura.
 
-    -   **[DON LINDO:]{.ul}** Cállate, apestoso.
+    -   **DON LINDO:** Cállate, apestoso.
 
 -   **(MALA): Persuadir (desbloqueada) Se escoge aleatoriamente una opción. Se puede repetir.**
 
-    -   **[PIGMALIÓN]{.ul}**: Si no vienes conmigo te quitaré la peluca y te quedarás calvo.
+    -   **PIGMALIÓN:** Si no vienes conmigo te quitaré la peluca y te quedarás calvo.
 
-    -   **[DON LINDO:]{.ul}** Si me voy por mi cuenta podré comprar todas las pelucas que quiera.
+    -   **DON LINDO:** Si me voy por mi cuenta podré comprar todas las pelucas que quiera.
 
-    -   **[PIGMALIÓN]{.ul}**: Te aprecio mucho, Don Lindo, siempre fuiste una de mis creaciones más especiales.
+    -   **PIGMALIÓN:**: Te aprecio mucho, Don Lindo, siempre fuiste una de mis creaciones más especiales.
 
-    -   **[DON LINDO:]{.ul}** Si me quisieses tanto me habrías hecho con pelo, como a los demás.
+    -   **DON LINDO:** Si me quisieses tanto me habrías hecho con pelo, como a los demás.
 
-    -   **[PIGMALIÓN:]{.ul}** Ponponina va a venir conmigo, se pondrá muy triste si ve que la has abandonado.
+    -   **PIGMALIÓN:** Ponponina va a venir conmigo, se pondrá muy triste si ve que la has abandonado.
 
-    -   **[DON LINDO:]{.ul}** ¡Mentiroso, mentiroso! Pomponina nunca volvería contigo, ella querría escaparse para vivir una vida a mi lado. No te creo.
+    -   **DON LINDO:** ¡Mentiroso, mentiroso! Pomponina nunca volvería contigo, ella querría escaparse para vivir una vida a mi lado. No te creo.
 
-```{=html}
-<!-- -->
-```
+
 -   **(MUY BUENA) Regalar gorro (desbloquear por puzzle)**
 
-    -   **[PIGMALIÓN:]{.ul}** Me han regalado un gorro, he pensado que te podría gustar tenerlo.
+    -   **PIGMALIÓN:** Me han regalado un gorro, he pensado que te podría gustar tenerlo.
 
-    -   **[DON LINDO:]{.ul}** He de decir que esta vez tienes razón. ¡Me gusta! Gracias.
-
-```{=html}
-<!-- -->
-```
--   
+    -   **DON LINDO:** He de decir que esta vez tienes razón. ¡Me gusta! Gracias.
 
 -   **(MUY BUENA) Dar ukelele (desbloquear por puzzle)**
 
-    -   **[PIGMALIÓN:]{.ul}** Siento decirte que unos gamberros han roto tu ukelele. Pero he podido conseguirte uno.
+    -   **PIGMALIÓN:** Siento decirte que unos gamberros han roto tu ukelele. Pero he podido conseguirte uno.
 
-    -   **[DON LINDO:]{.ul}** Gracias Pigmalión. Sabes que significa mucho para mí.
+    -   **DON LINDO:** Gracias Pigmalión. Sabes que significa mucho para mí.
 
 -   **(MALA) Regalar corbata(desbloquear por puzzle)**
 
-    -   **[PIGMALIÓN:]{.ul}** He comprado una corbata, creo que es de tu estilo.
+    -   **PIGMALIÓN:** He comprado una corbata, creo que es de tu estilo.
 
-    -   **[DON LINDO:]{.ul}** Ooh... si te soy sincero... llevaba tiempo sin ver algo tan horrible. Sigues sin saber nada de nosotros, "tus muñecos". Decepcionante.
+    -   **DON LINDO:** Ooh... si te soy sincero... llevaba tiempo sin ver algo tan horrible. Sigues sin saber nada de nosotros, "tus muñecos". Decepcionante.
 
 -   **(MALA) Dar cartera (desbloquear por puzzle)**
 
-    -   **[PIGMALIÓN:]{.ul}** Seguro que aceptas esta cartera con dinero para volver al teatro..
+    -   **PIGMALIÓN:** Seguro que aceptas esta cartera con dinero para volver al teatro..
 
-    -   **[DON LINDO:]{.ul}** A ver si te das cuenta de que no todo gira en torno al dinero, garrapata sin patas.
+    -   **DON LINDO:** A ver si te das cuenta de que no todo gira en torno al dinero, garrapata sin patas.
 
   TABLA DE PUNTOS DE PERSUASIÓN                                                 
-  ------------------------------- --------------- --------------- ------------- -------------
+  ------------------------------- --------------- --------------- ------------- ------------
   **TOTAL**                       **Ukelele**     **Gorro**       **Musica**    **Gritar**
-                                  +50             +40             +12           0
-  **100**                         **Persuadir**   **Pomponina**   **Corbata**   **Cartera**
-                                  -5              -10             -20           -30
+        100     +50     +40    +12    0
+  **-**                          **Persuadir**   **Pomponina**   **Corbata**   **Cartera**
+            -5        -10       -20     -30
 
 **MAPA**
 
 -   **Zonas y ambientación**
 
-> **Plaza central.** Habrá un NPC, si interactuamos con él, dirá que tiene frío.![][18]
->
-> **Tienda de ropa.** Habrá un NPC al que le podremos preguntar por don Lindo.
->
-> **Floristería.** Tienda de música. Podremos adquirir un ukelele. (Conecta con la zona de Pomponina)
->
-> **Taberna.** El tabernero será quien nos lleve al flashback de Don Lindo.
->
-> **Zona Residencial.** Veremos a un chaval siendo acosado por un grupo de jóvenes. También veremos otro NPC que tiene frío. (Conecta con la zona de Cucu)
->
-> **Calle vacía.** Una foto de Pomponina y una rotonda, sin más. Zona paupérrima del mapa.
->
-> **Don Lindo.**
+ **Plaza central.** Habrá un NPC, si interactuamos con él, dirá que tiene frío.![][18]
+
+ **Tienda de ropa.** Habrá un NPC al que le podremos preguntar por don Lindo.
+
+ **Floristería.** Tienda de música. Podremos adquirir un ukelele. (Conecta con la zona de Pomponina)
+
+ **Taberna.** El tabernero será quien nos lleve al flashback de Don Lindo.
+
+ **Zona Residencial.** Veremos a un chaval siendo acosado por un grupo de jóvenes. También veremos otro NPC que tiene frío. (Conecta con la zona de Cucu)
+
+ **Calle vacía.** Una foto de Pomponina y una rotonda, sin más. Zona paupérrima del mapa.
+
+ **Don Lindo.**
 
 La zona de Don Lindo estará ambientada en un barrio pobre de Madrid, rozando la máxima pobreza.
 
@@ -909,29 +886,29 @@ Las personas, caracterizadas por tener un punto de vista de la vida un tanto dis
 
 1.  Si hablamos con el dependiente de la tienda de ropa, le preguntaremos acerca de Don Lindo. Amablemente nos dirá que en este momento está muy liado, va con el tiempo justo y que no nos puede ayudar, pues tiene que repartir unos gorros, de forma gratuita a los habitantes de la zona.
 
-    -   **[PIGMALIÓN:]{.ul}** Perdona, ¿has visto por aquí a un tipo con traje y corbata, y que además parece que lleva una peluca?
+    -   **PIGMALIÓN:** Perdona, ¿has visto por aquí a un tipo con traje y corbata, y que además parece que lleva una peluca?
 
-    -   **[DEPENDIENTE:]{.ul}** Me quiere sonar sí, pero ahora mismo no lo termino de recordar. Además, estoy muy liado. Tengo que ordenar toda la tienda y repartir estos gorros. ¿Te importaría echarme una mano con ellos? Mientras intentaré pensar en el hombre que me has dicho.
+    -   **DEPENDIENTE:** Me quiere sonar sí, pero ahora mismo no lo termino de recordar. Además, estoy muy liado. Tengo que ordenar toda la tienda y repartir estos gorros. ¿Te importaría echarme una mano con ellos? Mientras intentaré pensar en el hombre que me has dicho.
 
-    -   **[PIGMALIÓN:]{.ul}** Está bien, ¿a quién tengo que dárselos?
+    -   **PIGMALIÓN:** Está bien, ¿a quién tengo que dárselos?
 
-    -   **[DEPENDIENTE:]{.ul}** A cualquier persona que veas que tiene frío por la calle, se acerca el invierno y, si entre todos colaboramos, haremos que sea menos duro.
+    -   **DEPENDIENTE:** A cualquier persona que veas que tiene frío por la calle, se acerca el invierno y, si entre todos colaboramos, haremos que sea menos duro.
 
 2.  Repartiremos los gorros a los NPCs que tienen frío.
 
-    -   **[PIGMALIÓN:]{.ul}** Hola. Creo que este gorro es para ti.
+    -   **PIGMALIÓN:** Hola. Creo que este gorro es para ti.
 
-    -   **[NPC CON FRÍO:]{.ul}** Muchísimas gracias. No sabes lo bien que me viene.
+    -   **NPC CON FRÍO:** Muchísimas gracias. No sabes lo bien que me viene.
 
 3.  Si volvemos a la tienda, el dependiente nos dirá que Don Lindo estuvo hablando con él, que por eso iba justo de tiempo y, sin dar detalles de la conversación, nos ofrece un gorro para él, diciendo que se la ha olvidado dárselo a él antes.
 
-    -   **[PIGMALIÓN:]{.ul}** Ya los he repartido.
+    -   **PIGMALIÓN:** Ya los he repartido.
 
-    -   **[DEPENDIENTE:]{.ul}** ¡Muchísimas gracias! Supongo que antes te referías a Don Lindo, ¿me equivoco?
+    -   **DEPENDIENTE:** ¡Muchísimas gracias! Supongo que antes te referías a Don Lindo, ¿me equivoco?
 
-    -   **[PIGMALIÓN:]{.ul}** En absoluto.
+    -   **PIGMALIÓN:** En absoluto.
 
-    -   **[DEPENDIENTE:]{.ul}** Se pasó por aquí de casualidad, estuvimos hablando,un buen rato. Me comentaba cosas de un teatro y de una mujer por la que está muy enamorado por lo visto. Hasta tocó algo con un ukelele. Sin embargo, nos entretuvimos mucho y ha sido la causa por la que voy tan mal de tiempo. Sin darme cuenta, se me olvidó darle a él un gorro. ¿Te importaría dárselo de mi parte? Me da pena haberme olvidado de dárselo.
+    -   **DEPENDIENTE:** Se pasó por aquí de casualidad, estuvimos hablando,un buen rato. Me comentaba cosas de un teatro y de una mujer por la que está muy enamorado por lo visto. Hasta tocó algo con un ukelele. Sin embargo, nos entretuvimos mucho y ha sido la causa por la que voy tan mal de tiempo. Sin darme cuenta, se me olvidó darle a él un gorro. ¿Te importaría dárselo de mi parte? Me da pena haberme olvidado de dárselo.
 
 NOTA: Podemos ir a la tienda con la cartera, de esta forma compraremos una corbata.
 
@@ -939,45 +916,45 @@ NOTA: Podemos ir a la tienda con la cartera, de esta forma compraremos una corba
 
 1.  Hablando por primera vez con el Tabernero, éste nos comentará simplemente que Don Lindo les dejó un momento el Ukelele mientras se iba a hacer algo, no especifica el qué. Sin embargo unos gamberros entraron a la taberna y lo rompieron.
 
-    -   **[TABERNERO:]{.ul}** ¡Malditos gamberros!
+    -   **TABERNERO:** ¡Malditos gamberros!
 
-    -   **[PIGMALIÓN:]{.ul}** ¿Qué sucede?
+    -   **PIGMALIÓN:** ¿Qué sucede?
 
-    -   **[TABERNERO:]{.ul}** Pues mira, vino un hombre muy majo por aquí, como todos, con sus problemas, pero se notaba que era muy buena persona. Estuvimos charlando un rato y luego nos amenizó el día tocando un poco de música con un ukelele. Sin embargo, tenía que irse y, nos pidió que le guardásemos su ukelele, pero unos gamberros entraron y lo rompieron.
+    -   **TABERNERO:** Pues mira, vino un hombre muy majo por aquí, como todos, con sus problemas, pero se notaba que era muy buena persona. Estuvimos charlando un rato y luego nos amenizó el día tocando un poco de música con un ukelele. Sin embargo, tenía que irse y, nos pidió que le guardásemos su ukelele, pero unos gamberros entraron y lo rompieron.
 
-    -   **[PIGMALIÓN:]{.ul}** ¡Menudos sinvergüenzas!
+    -   **PIGMALIÓN:** ¡Menudos sinvergüenzas!
 
-    -   **[TABERNERO:]{.ul}** Completamente. Siempre están haciendo de las suyas... Ojalá alguien le pare los pies alguna vez.
+    -   **TABERNERO:** Completamente. Siempre están haciendo de las suyas... Ojalá alguien le pare los pies alguna vez.
 
-    -   **[PIGMALIÓN PENSANDO:]{.ul}** ¿Dónde podría conseguir un ukelele nuevo? A Don Lindo no le gustará ver que le han roto el suyo y no tener nada con lo que tocar.
+    -   **PIGMALIÓN PENSANDO:** ¿Dónde podría conseguir un ukelele nuevo? A Don Lindo no le gustará ver que le han roto el suyo y no tener nada con lo que tocar.
 
 2.  Pigmalion si va a la tienda de música, la dependiente le dirá a Pigmalión que ahora mismo está cerrado ya que ha perdido su cartera y no puede hacerse cargo de la tienda.
 
-    -   **[PIGMALIÓN:]{.ul}** Hola. Venía a comprar un...
+    -   **PIGMALIÓN:** Hola. Venía a comprar un...
 
-    -   **[DEPENDIENTE:]{.ul}** ¡Está cerrado!
+    -   **DEPENDIENTE:** ¡Está cerrado!
 
-    -   **[PIGMALIÓN:]{.ul}** Pero si no es hora de cerrar.
+    -   **PIGMALIÓN:** Pero si no es hora de cerrar.
 
-    -   **[DEPENDIENTE:]{.ul}** ¡He dicho que está cerrado! Acaban de venir unos gamberros y se han llevado mi cartera. No pienso atender a nadie.
+    -   **DEPENDIENTE:** ¡He dicho que está cerrado! Acaban de venir unos gamberros y se han llevado mi cartera. No pienso atender a nadie.
 
-    -   **[PIGMALIÓN PENSANDO:]{.ul}** Creo que alguien debería pararle los pies a esos impresentables.
+    -   **PIGMALIÓN PENSANDO:** Creo que alguien debería pararle los pies a esos impresentables.
 
 3.  En la Zona Residencial, si interactuamos con el chaval que está siendo acosado, espantaremos a los acosadores y el chaval te dará la cartera de la dependiente.
 
-    -   **[PIGMALIÓN:]{.ul}** Eh vosotros, sinvergüenzas, ¡dejad al joven en paz!
+    -   **PIGMALIÓN:** Eh vosotros, sinvergüenzas, ¡dejad al joven en paz!
 
     -   (LOS GAMBERROS SE VAN)
 
-    -   **[JOVEN:]{.ul}** Muchísimas gracias buen hombre. Les he visto con una cartera que no es suya, sino de la dependiente de la tienda de música.
+    -   **JOVEN:** Muchísimas gracias buen hombre. Les he visto con una cartera que no es suya, sino de la dependiente de la tienda de música.
 
-    -   **[PIGMALIÓN:]{.ul}** La has cogido de vuelta y han ido a por ti, ¿verdad?
+    -   **PIGMALIÓN:** La has cogido de vuelta y han ido a por ti, ¿verdad?
 
-    -   **[JOVEN:]{.ul}** Efectivamente. ¿Podrías llevársela de vuelta?
+    -   **JOVEN:** Efectivamente. ¿Podrías llevársela de vuelta?
 
 4.  Al volver a la tienda de música, como agradecimiento, la dependiente nos regalará.
 
-    -   **[DEPENDIENTE:]{.ul}** ¡Muchísimas gracias por traérmela de vuelta! Si te soy sincera, la daba por perdida. Toma este ukelele como agradecimiento.
+    -   **DEPENDIENTE:** ¡Muchísimas gracias por traérmela de vuelta! Si te soy sincera, la daba por perdida. Toma este ukelele como agradecimiento.
 
 NOTA: Si el jugador coge la cartera puede directamente ofrecérsela a Don Lindo, sin devolvérsela a la dependienta.
 
@@ -987,55 +964,56 @@ NOTA: Con el ukelele podemos volver a hablar con el Tabernero y veremos el **fla
 
 **FLASHBACK**
 
-**[TABERNERO:]{.ul}** Buenos días, ¿deseas tomar algo?
+**TABERNERO:** Buenos días, ¿deseas tomar algo?
 
-**[DON LINDO:]{.ul}** Nada que no sea el amor de Pomponina, mi querido amigo.
+**DON LINDO:** Nada que no sea el amor de Pomponina, mi querido amigo.
 
-**[TABERNERO:]{.ul}** Bueno, amigo mío. Su caso no es nuevo por aquí.
+**TABERNERO:** Bueno, amigo mío. Su caso no es nuevo por aquí.
 
-**[DON LINDO:]{.ul}** Imposible, nadie ha pasado por aquí pensando en alguien con tal magnífica belleza.
+**DON LINDO:** Imposible, nadie ha pasado por aquí pensando en alguien con tal magnífica belleza.
 
-**[TABERNERO:]{.ul}** ¿Y por qué no va a por ella?
+**TABERNERO:** ¿Y por qué no va a por ella?
 
-**[DON LINDO:]{.ul}** ¿Me has visto bien? Me hicieron mal, ni siquiera tengo pelo, me pusieron una peluca en vez de hacerme un pelo decente. Pomponina y yo no estamos a la misma altura.
+**DON LINDO:** ¿Me has visto bien? Me hicieron mal, ni siquiera tengo pelo, me pusieron una peluca en vez de hacerme un pelo decente. Pomponina y yo no estamos a la misma altura.
 
-**[TABERNERO:]{.ul}** Le das demasiada importancia al físico. Lo importante está en el interior.
+**TABERNERO:** Le das demasiada importancia al físico. Lo importante está en el interior.
 
-**[DON LINDO:]{.ul}** Con ella no es así desgraciadamente.
+**DON LINDO:** Con ella no es así desgraciadamente.
 
-**[TABERNERO:]{.ul}** Todos por aquí tenemos otros problemas, pero podemos quitarles importancia un rato tomando algo. ¿Te pongo una cerveza? Invita la casa.
+**TABERNERO:** Todos por aquí tenemos otros problemas, pero podemos quitarles importancia un rato tomando algo. ¿Te pongo una cerveza? Invita la casa.
 
-**[DON LINDO:]{.ul}** ¿Por qué tanta amabilidad, si está claro que necesitáis el dinero más que nadie por esta zona?
+**DON LINDO:** ¿Por qué tanta amabilidad, si está claro que necesitáis el dinero más que nadie por esta zona?
 
-**[TABERNERO:]{.ul}** Cierto es, pero por aquí, a pesar de todo, intentamos ayudarnos siempre que podemos.
+**TABERNERO:** Cierto es, pero por aquí, a pesar de todo, intentamos ayudarnos siempre que podemos.
 
-**[DON LINDO:]{.ul}** Pero, te estás perjudicando.
+**DON LINDO:** Pero, te estás perjudicando.
 
-**[TABERNERO:]{.ul}** No lo niego, pero prefiero ver a mis vecinos felices, además, todos por aquí actuamos igual. Hoy por ti, mañana por mí. Aunque no lo voy a negar, a veces las cosas se ponen muy complicadas.
+**TABERNERO:** No lo niego, pero prefiero ver a mis vecinos felices, además, todos por aquí actuamos igual. Hoy por ti, mañana por mí. Aunque no lo voy a negar, a veces las cosas se ponen muy complicadas.
 
-**[DON LINDO:]{.ul}** De donde vengo, hemos sido bastante egoístas, lo intenté, pero no puede hacer que mis antiguos amigos cambiaran la mentalidad.
+**DON LINDO:** De donde vengo, hemos sido bastante egoístas, lo intenté, pero no puede hacer que mis antiguos amigos cambiaran la mentalidad.
 
-**[TABERNERO:]{.ul}** Aquí la vida la vemos de una forma distinta, es así como a pesar de las dificultades, nos intentamos apoyar todo lo posible. Es más, tú encajarías muy bien aquí, se ve que en el fondo, actuarías como nosotros.
+**TABERNERO:** Aquí la vida la vemos de una forma distinta, es así como a pesar de las dificultades, nos intentamos apoyar todo lo posible. Es más, tú encajarías muy bien aquí, se ve que en el fondo, actuarías como nosotros.
 
-**[DON LINDO:]{.ul}** Nunca se me ha presentado la oportunidad allí de ayudar con algo, pues los desagradecidos de mis compañeros no se lo merecían. Pero si me lo permites, podría tocar algo con mi ukelele.
+**DON LINDO:** Nunca se me ha presentado la oportunidad allí de ayudar con algo, pues los desagradecidos de mis compañeros no se lo merecían. Pero si me lo permites, podría tocar algo con mi ukelele.
 
-**[TABERNERO:]{.ul}** Sería maravilloso.
+**TABERNERO:** Sería maravilloso.
 
 (MÚSICA DE UKELELE)
 
-**[TABERNERO:]{.ul}** Eres una buena persona, seguro que esa Pomponina no se ha dado cuenta de lo que puede tener. Amigo mío, debes hacerle saber lo que se está perdiendo contigo.
+**TABERNERO:** Eres una buena persona, seguro que esa Pomponina no se ha dado cuenta de lo que puede tener. Amigo mío, debes hacerle saber lo que se está perdiendo contigo.
 
-**[DON LINDO:]{.ul}** Eso es, tengo que ir y demostrárselo. Ahora mismo voy. ¿Te importa si te dejo aquí mi ukelele?
+**DON LINDO:** Eso es, tengo que ir y demostrárselo. Ahora mismo voy. ¿Te importa si te dejo aquí mi ukelele?
 
-**[TABERNERO:]{.ul}** Sin problema. Mucho ánimo amigo mío.
+**TABERNERO:** Sin problema. Mucho ánimo amigo mío.
 
 **MINIJUEGO**
 
 Don Lindo atacará a Pigmalión lanzando dos notas musicales que rebotarán por las cuatro paredes de la sala. Pigmalión deberá tratar de esquivarlas para pasar de fase, lo cual sucederá después de un tiempo. Mientras rebotan las dos notas, Don Lindo no hará nada más a menos que esté enfadado. ![][19]
 
-Cuando la salud de Don Lindo baje a la mitad, además de las dos notas rebotantes, usará su mal genio para crear explosiones en la zona de pigmalión. La zona que va a explotar se verá como un círculo de un color distinto al del suelo, lo que permitirá al jugador tener tiempo para esquivarlo y que no sea arbitrario. En caso de impacto también le quitarán vida al jugador. Estas explosiones aparecerán durante toda la fase, pero nunca habrá dos explosiones en proceso simultáneamente, si no que se dejará un pequeño espacio de tiempo de dos o tres segundos entre cada una. (Según el tiempo de aviso con lo del círculo habrá que reducirlo más o menos).![][20]
+Cuando la salud de Don Lindo baje a la mitad, además de las dos notas rebotantes, usará su mal genio para crear explosiones en la zona de pigmalión. La zona que va a explotar se verá como un círculo de un color distinto al del suelo, lo que permitirá al jugador tener tiempo para esquivarlo y que no sea arbitrario. En caso de impacto también le quitarán vida al jugador. Estas explosiones aparecerán durante toda la fase, pero nunca habrá dos explosiones en proceso simultáneamente, si no que se dejará un pequeño espacio de tiempo de dos o tres segundos entre cada una. (Según el tiempo de aviso con lo del círculo habrá que reducirlo más o menos).
+-![][20]
 
-(Al acabar con el último muñeco:
+Al acabar con el último muñeco:
 
 Llega paloma mensajera del duque diciendo que la obra va a empezar, que vuelva rápido y qué ha hecho con los muñecos.
 
@@ -1047,11 +1025,11 @@ Pigmalión piensa:
 
 -   Normal: 2 muertos 1 vivo: No tengo ganas de hacer la obra, sin mis muñecos no me veo capaz de hacerla.
 
-> 1 muerto 2 vivos: Tengo que llegar rápido para modificar la obra, me pesa no haber sido capaz de convencer a \*Insertar nombre\*
+ 1 muerto 2 vivos: Tengo que llegar rápido para modificar la obra, me pesa no haber sido capaz de convencer a \*Insertar nombre\*
 
 ### Agalzapo
 
-> (Al acabar con el último muñeco:
+ Al acabar con el último muñeco:
 
 Llega paloma mensajera del duque diciendo que la obra va a empezar, que vuelva rápido y qué ha hecho con los muñecos.
 
@@ -1063,9 +1041,9 @@ Pigmalión piensa:
 
 -   Normal: 2 muertos 1 vivo: No tengo ganas de hacer la obra, sin mis muñecos no me veo capaz de hacerla.
 
-> 1 muerto 2 vivos: Tengo que llegar rápido para modificar la obra, me pesa no haber sido capaz de convencer a \*Insertar nombre\*
+- 1 muerto 2 vivos: Tengo que llegar rápido para modificar la obra, me pesa no haber sido capaz de convencer a \*Insertar nombre\*
 
-DESCRIPCIÓN: (En qué muñeco nos basamos, personalidad, cómo encontrarlo)
+#### DESCRIPCIÓN: (En qué muñeco nos basamos, personalidad, cómo encontrarlo)
 
 enjuto,anguloso, con cierto aspecto clerical,peinado corto, echado hacia atrás, rostro fino, afeitado, agudo,inteligente ,cejas mefistofelicas, ojos vivisimos, redondos y hundidos, nariz descarnada, aguileña, boca sutil y astuta. Va muy sencillo, de oscuro.
 
@@ -1111,7 +1089,7 @@ Pigmalion : ¿Cómo has entrado / ¿Que haces aquí?
 
 Urdemalas : Vengo a vengar a mis compañeros
 
-> \*Urdemalas pega un tiro con la escopeta, y justo cuando suena el sonido del disparo, Pigmalion se despierta\*
+ \*Urdemalas pega un tiro con la escopeta, y justo cuando suena el sonido del disparo, Pigmalion se despierta\*
 
 \*Suena toc toc toc de nuevo\*
 
@@ -1133,13 +1111,13 @@ Urdemalas : Vengo a vengar a mis compañeros
 
 **OPCIONES DE CHAT**
 
-> No hay opciones de chat.
->
-> En caso de que el jugador elija esta opción, se mostrará un mensaje diciendo:
->
-> -Ya es muy tarde para hacer eso
->
-> El mensaje puede salir en pantalla como dicho por urdemalas o dicho por nadie.
+ No hay opciones de chat.
+
+ En caso de que el jugador elija esta opción, se mostrará un mensaje diciendo:
+
+ -Ya es muy tarde para hacer eso
+
+ El mensaje puede salir en pantalla como dicho por urdemalas o dicho por nadie.
 
 MINIJUEGO
 
@@ -1185,43 +1163,8 @@ Urdemalas dispara tres proyectiles, uno en linea recta hacia el jugador y otros 
 
 -   *Cuphead, StudioMDHR (2017)*
 
-**IDEAS POST CLASE VIERNES**
 
-Los cambios generales aceptados tras la clase de PVLI son:
 
-Un mundo abierto conexo el cual se sigue componiendo por pantallas estáticas que a su vez están recogidas en zonas. Cada zona está relacionada con un muñeco, por lo que habrá personajes y objetos relacionados con cada muñeco única y exclusivamente en su zona. Sin embargo, ahora las zonas tendrán conexiones entre sí, y el jugador podrá ir a por los muñecos en cualquier orden.
-
-Otro cambio al mundo es que va a tener cambios en su interior, va a ser dinámico. Los muñecos habrán tenido impacto en los lugares por los que han pasado, así como en sus habitantes. A medida que avancemos el mundo irá evolucionando.
-
-Moralidad: se va a profundizar en la moralidad y la narrativa. El jugador podrá interactuar mucho más con los personajes y la historia y podrá fijarse en ciertos detalles que nos hablarán sobre los muñecos. A medida que el jugador tome decisiones, su aspecto cambiará.
-
-El foco principal de la historia será la dualidad moral por parte del jugador.
-
-El mapa estará "dividido" en zonas , en general interconectadas entre ellas.
-
-Los muñecos habrán tenido un impacto en la zona sobre la que hayan pasado, y habrán elementos y personajes que darán a notar cómo ellos han pasado por ahí.
-
-El punto de estos elementos será el diluir la barrera entre muñecos y humanos, con el fin de no dejar muy claro al jugador que opciones morales elegir, además de proporcionar información acerca del muñeco que haya en esa zona, lo cual ayudará al jugador dentro de la batalla a elegir las opciones correctas de diálogo.
-
-A lo largo del mapa, además de (a lo mejor) puzzles, habrán mini decisiones morales. Estas pueden ser, por ejemplo, dependientes de las respuestas que el jugador de a ciertos npcs o mini eventos donde el jugador pueda hacer algo para hacer el bien o simplemente dejarlo pasar e ignorarlo. Dentro de estos podemos hacer que la mayoría sean irrelevantes, y sean introducidos solo para darle más vida al mundo y darle al jugador más sensación de inmersión, y otros pocos donde las decisiones que tomes si que afecten al desarrollo del juego y a su final.
-
-Este duelo moral (lo que más pesa son las decisiones tomadas con los muñecos) se verá reflejado en las vestimentas de Pigmalión, ya que, cada vez que el jugador mate a un muñeco, su ropa se verá un poco más sucia, desarreglada y también pueden meterse cambios en la forma de caminar del protagonista y en la paleta de colores del mundo (podemos hacer que el mundo se vea un poco más descolorido cada vez, con filtros), mientras que si el jugador decide llevar una ruta buena, se puede hacer lo contrario.
-
-Lo mismo con el tema del público; si matas a mucho la gente está descontenta/ se va y si salvas a más la gente está más contenta o se va aumentando (esto depende de si lo hacemos in-game o en html).
-
-Manejo de los finales con diagramas de estado, donde esté bien explicado qué decisiones llevan a cierto final.
-
-Los finales que tenemos hasta ahora me parecen bien:
-
-Genocida: todos muertos, pelea final.(matas a todos y pasas del mundo)
-
-Neutral: Salvas a unos y a los que salvas huyen(neutro)
-
-Pacifista: Todos los muñecos vuelven contigo y hay final feliz(salvas a todos y haces todos los eventos morales)
-
-Ahora que hay más elementos dentro del juego, se pueden meter más interacciones o incluso que npcs actúen antes y después de una batalla, por ejemplo, que después de matar a cucu en caso de que se haya hecho aparezca un niño corriendo llorando diciendo que se divertía mucho con el.
-
-Remodelar los elementos que dan info acerca de los muñecos para adaptarlos al mundo
 
   [1]: media/image19.png {width="4.583333333333333in" height="4.583333333333333in"}
   [1. Aspectos generales]: #aspectos-generales
