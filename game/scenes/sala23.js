@@ -13,6 +13,9 @@ export default class Sala23 extends SalaBase {
 
   create() {
     super.create();   
+    this.tiendamusica = new Prop (this, 1150, 500,"tiendademusica",this.player,80,50,false);
+    this.dependientamusica = new Prop(this,this.sys.game.canvas.width/2,this.sys.game.canvas.height / 5*3,"dependientamusica",this.player,60,50,true);
+    this.dependientamusica.play("dependientamusica",true);
   }
 
   update() {

@@ -72,10 +72,14 @@ class Bootloader extends Phaser.Scene {
     this.load.image("taberna","./resources/sprites/don_lindo/taberna.png");
     this.load.image("fotopomponina","./resources/sprites/don_lindo/foto_pomponina.png");
     this.load.image("tiendaderopa","./resources/sprites/don_lindo/tienda_de_ropa.png");
+    this.load.image("tiendademusica","./resources/sprites/don_lindo/tienda_musica.png");
 
 
 
-
+    this.load.spritesheet("dependientamusica", "./resources/sprites/don_lindo/dependienta_musica.png",{
+      frameWidth: 192,
+      frameHeight: 192
+    });
     this.load.spritesheet("bullying", "./resources/sprites/don_lindo/bullying.png",{
       frameWidth: 288,
       frameHeight: 288
@@ -243,6 +247,16 @@ class Bootloader extends Phaser.Scene {
       frameRate: 4,
       repeat: -1,
     })
+    this.anims.create({
+      key: "dependientamusica",
+      frames: this.anims.generateFrameNumbers("dependientamusica", {
+        start: 0,
+        end: 15,
+      }),
+      frameRate: 4,
+      repeat: -1,
+    })
+
     this.anims.create({
       key: "frio2",
       frames: this.anims.generateFrameNumbers("frio2", {
