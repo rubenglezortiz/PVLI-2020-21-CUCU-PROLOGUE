@@ -1,6 +1,9 @@
 export const objs = {
     OBJECTS:{
-        NumObjs: 4,
+        NumObjs: 4,        
+        
+
+        //Pomponina
         llaveFlorista: 0,
         repartoBombones: 1,
         bombonesRepartidos1: 2,
@@ -12,7 +15,16 @@ export const objs = {
         collar: 8,
         abanicoRoto: 9,
         abanico: 10,
-        llaveComoda: 11
+        llaveComoda: 11,
+
+        //DonLindo
+        cartera: 12,
+        gorro:13,
+        ukelele: 14,
+        corbata:15,
+        gorroRepartido1:16,
+        gorroRepartido2:17,
+        gorrosARepartir:18
         }
     }
     

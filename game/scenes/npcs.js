@@ -1,34 +1,44 @@
 export const npcs = {
 NPCS:{
-    bebe:"bebe",
+    //Puzzle Don Lindo
+    npcConFrio1: "npcFrio1",
+    fotoPomponina: "foto_pomponina",
+    dependiente_ropa: "dependiente_ropa",
+    bullying: "bullying",
+    
+    //Puzzle Pomponina
     comoda:"comoda",
     abuela:"abuela",
     cliente:"cliente",
     cliente2:"cliente2",
-    encargadoAnticuario:"encargadoAnticuario",
-    hijoFlorista:"hijoFlorista",
+    encargadoAnticuario:"encargado_anticuario",
+    hijoFlorista:"hijo_florista",
     florista:"florista",
     jarron:"jarron",
     fuente:"fuente", //provisional
-    // Combate Pomponina
-    collarCombate:"collarCombate",
-    floresRosasCombate:"floresRosasCombate",
-    rosasCombate:"rosasCombate",
-    bombonesCombate:"bombonesCombate",
-    abanicoCombate:"abanicoCombate",
-    ordenarCombate:"ordenarCombate",
-    amenazarCombate:"amenazarCombate",
-    halagarCombate:"halagarCombate",
+    //Combate Pomponina
+    collarCombate:"collar_combate",
+    floresRosasCombate:"flores_rosas_combate",
+    rosasCombate:"rosas_combate",
+    bombonesCombate:"bombones_combate",
+    abanicoCombate:"abanico_combate",
+    ordenarCombate:"ordenar_combate",
+    amenazarCombate:"amenazar_combate",
+    halagarCombate:"halagar_combate",
+
+    //Puzzle Cucu
+    bebe:"bebe",
+
     // Combate Cucu
-    chisteCombate:"chisteCombate",
-    animarleCombate:"animarleCombate",
-    datoCombate:"datoCombate",
-    reirseCombate:"reirseCombate",
+    chisteCombate:"chiste_combate",
+    animarleCombate:"animarle_combate",
+    datoCombate:"dato_combate",
+    reirseCombate:"reirse_combate",
     
+    // Finales Urdemalas
     urdemalas0:"urdemalas0",
     urdemalas1:"urdemalas1",
     urdemalas2:"urdemalas2"
-
     }
 
 

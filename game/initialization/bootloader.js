@@ -8,7 +8,7 @@ class Bootloader extends Phaser.Scene {
 
   preload() {
     this.load.on("complete", () => {
-      this.scene.start(cst.SCENES.SALA0, {posx: 700, posy :400, lives:10,objs:[false,false,false,false],runInf:new RunInfo()});
+      this.scene.start(cst.SCENES.SALA24, {posx: 700, posy :400, lives:10,objs:[false,false,false,false],runInf:new RunInfo()});
     });
 
 
@@ -25,7 +25,7 @@ class Bootloader extends Phaser.Scene {
     this.load.image("cajaCerrada","./resources/sprites/teatro_general/caja_cerrada.png");
     this.load.image("tecla_e", "./resources/sprites/interaccion/tecla_e.png");
 
-
+    //#region 
     //-----SPRITES CUCU-----
     //caminos
     this.load.image("cucucamino1" , "./resources/sprites/caminos/cucu/camino_piedra_1.png" );
@@ -63,8 +63,9 @@ class Bootloader extends Phaser.Scene {
       frameWidth: 100,
       frameHeight:108
     });
+    //#endregion
     
-
+    //#region 
     //-----SPRITES DON LINDO-----
     //caminos
     this.load.image("donlindocamino1" , "./resources/sprites/caminos/don_lindo/camino_baldosas_1.png" );
@@ -78,16 +79,25 @@ class Bootloader extends Phaser.Scene {
     this.load.image("fotopomponina","./resources/sprites/don_lindo/foto_pomponina.png");
     this.load.image("tiendaderopa","./resources/sprites/don_lindo/tienda_de_ropa.png");
     this.load.image("tiendademusica","./resources/sprites/don_lindo/tienda_musica.png");
-
-
-
     this.load.spritesheet("dependientamusica", "./resources/sprites/don_lindo/dependienta_musica.png",{
+      frameWidth: 192,
+      frameHeight: 192
+    });
+    this.load.spritesheet("dependiente_ropa", "./resources/sprites/don_lindo/dependiente.png",{
       frameWidth: 192,
       frameHeight: 192
     });
     this.load.spritesheet("bullying", "./resources/sprites/don_lindo/bullying.png",{
       frameWidth: 288,
       frameHeight: 288
+    });
+    this.load.spritesheet("bullying2", "./resources/sprites/don_lindo/bullying2.png",{
+      frameWidth: 288,
+      frameHeight: 288
+    });
+    this.load.spritesheet("bullying3", "./resources/sprites/don_lindo/bullying3.png",{
+      frameWidth: 192,
+      frameHeight: 192
     });
     this.load.spritesheet("frio1", "./resources/sprites/don_lindo/npcFrio1.png",{
       frameWidth: 192,
@@ -97,14 +107,14 @@ class Bootloader extends Phaser.Scene {
       frameWidth: 192,
       frameHeight: 192
     });
-
-
+    
     this.load.spritesheet("donlindoidle", "./resources/sprites/don_lindo/donlindoidle.png",{
       frameWidth: 192,
       frameHeight: 192
     });   
+    //#endregion
 
-
+    //#region 
     //-----SPRITES POMPONINA-----
     //caminos
     this.load.image("pomponinacamino1" , "./resources/sprites/caminos/pomponina/camino_marmol_1.png" );
@@ -163,8 +173,8 @@ class Bootloader extends Phaser.Scene {
       frameWidth: 125,
       frameHeight: 88
     });
-    
-   
+    //#endregion
+  
     //-----SPRITES MENU COMBATE-----
     this.load.image("mc","./resources/sprites/menu_ataque/menu_comb.png");
     this.load.image("attack_button", "./resources/sprites/menu_ataque/boton_atacar.png");
@@ -195,6 +205,7 @@ class Bootloader extends Phaser.Scene {
 
   create(){
     //-----ANIMACIONES-----
+    //#region 
     //cucu
     this.anims.create({
       key: "chulapos",
@@ -241,13 +252,14 @@ class Bootloader extends Phaser.Scene {
       frameRate: 15,
       repeat: -1,
     });
+    //#endregion
     
     //donLindo
     this.anims.create({
       key: "frio1",
       frames: this.anims.generateFrameNumbers("frio1", {
         start: 0,
-        end: 15,
+        end: 13,
       }),
       frameRate: 4,
       repeat: -1,
@@ -256,7 +268,16 @@ class Bootloader extends Phaser.Scene {
       key: "dependientamusica",
       frames: this.anims.generateFrameNumbers("dependientamusica", {
         start: 0,
-        end: 15,
+        end: 5,
+      }),
+      frameRate: 4,
+      repeat: -1,
+    })
+    this.anims.create({
+      key: "dependiente_ropa",
+      frames: this.anims.generateFrameNumbers("dependiente_ropa", {
+        start: 0,
+        end: 5,
       }),
       frameRate: 4,
       repeat: -1,
@@ -275,7 +296,25 @@ class Bootloader extends Phaser.Scene {
       key: "bullying",
       frames: this.anims.generateFrameNumbers("bullying", {
         start: 0,
-        end: 20,
+        end: 18,
+      }),
+      frameRate: 8,
+      repeat: -1,
+    })
+    this.anims.create({
+      key: "bullying2",
+      frames: this.anims.generateFrameNumbers("bullying2", {
+        start: 0,
+        end: 7,
+      }),
+      frameRate: 6,
+      repeat: 0,
+    })
+    this.anims.create({
+      key: "bullying3",
+      frames: this.anims.generateFrameNumbers("bullying3", {
+        start: 0,
+        end: 10,
       }),
       frameRate: 8,
       repeat: -1,
