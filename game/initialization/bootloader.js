@@ -8,7 +8,19 @@ class Bootloader extends Phaser.Scene {
 
   preload() {
     this.load.on("complete", () => {
-      this.scene.start(cst.SCENES.SALA24, {posx: 700, posy :400, lives:10,objs:[false,false,false,false],runInf:new RunInfo()});
+      this.musicConfig = {
+        mute: false,
+        volume: 0.2,
+        rate:1,
+        detune:0,
+        seek:0,
+        loop:true,
+        delay: 0
+       }
+       
+       this.ambiente = this.sound.add('ambiente', this.musicConfig);
+       this.ambiente.play();
+      this.scene.start(cst.SCENES.SALA0, {posx: 700, posy :400, lives:10,objs:[false,false,false,false],runInf:new RunInfo()});      
     });
 
 
@@ -199,7 +211,9 @@ class Bootloader extends Phaser.Scene {
 
     //-------AUDIO------------
     this.load.audio("chotis","./././resources/audio/chotis.mp3");
-
+    this.load.audio("ambiente","./././resources/audio/musica_de_ambiente.mp3");
+    this.load.audio("combate","./././resources/audio/combate.mp3");
+    this.load.audio("circo","./././resources/audio/circo.mp3");
 
   }
 
