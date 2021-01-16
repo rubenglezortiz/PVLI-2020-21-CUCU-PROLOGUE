@@ -67,6 +67,11 @@ class Bootloader extends Phaser.Scene {
 
     //-----SPRITES DON LINDO-----
     //caminos
+    this.load.image("donlindocamino1" , "./resources/sprites/caminos/don_lindo/camino_baldosas_1.png" );
+    this.load.image("donlindocamino2" , "./resources/sprites/caminos/don_lindo/camino_baldosas_2.png" );
+    this.load.image("donlindocamino3" , "./resources/sprites/caminos/don_lindo/camino_baldosas_3.png" );
+    this.load.image("donlindocamino4" , "./resources/sprites/caminos/don_lindo/camino_baldosas_4.png" );
+    this.load.image("donlindocamino5" , "./resources/sprites/caminos/don_lindo/camino_baldosas_5.png" );
     //decorado
     this.load.image("casa","./resources/sprites/don_lindo/casa.png");
     this.load.image("taberna","./resources/sprites/don_lindo/taberna.png");

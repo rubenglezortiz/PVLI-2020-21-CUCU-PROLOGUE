@@ -14,7 +14,8 @@ export default class Sala21 extends SalaBase {
 
   create() {
     super.create();
-    this.casa=new Prop(this,200,200,"casa",this.player,60,50,false);
+    this.camino= this.add.image(this.sys.game.canvas.width / 2 + 15,this.sys.game.canvas.height / 2,"donlindocamino5")
+    this.casa=new Prop(this,400,200,"casa",this.player,60,50,false);
   }
     
   update() {
