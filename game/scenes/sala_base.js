@@ -32,7 +32,7 @@ export default class SalaBase extends Phaser.Scene {
     this.arriba = this.physics.add.sprite(this.window.w/2,0);
     this.abajo = this.physics.add.sprite(this.window.w/2,800);
     //para guardar estas variables al crearlo y le cueste menos acceder a ellas
-    
+    this.sound.sounds[0].resume();
     
    
     this.player = new Pigmalion(
@@ -84,7 +84,7 @@ export default class SalaBase extends Phaser.Scene {
     if (this._direcciones[0] !== 0 && this.physics.overlap(this.player.sprite, this.izquierda)) {
       
       this.player.x = this.window.w - this.player.sprite.width;
-
+      this.acabarSonidos();
 
       this.scene.start(this._direcciones[0], {
         posx: this.player.x,
@@ -97,7 +97,7 @@ export default class SalaBase extends Phaser.Scene {
     if (this._direcciones[1] !== 0 && this.physics.overlap(this.player.sprite, this.arriba)) {
      
       this.player.y = this.window.h - this.player.sprite.height/2;
-
+      this.acabarSonidos();
       this.scene.start(this._direcciones[1], {
         posx: this.player.x,
         posy: this.player.y,
@@ -109,7 +109,7 @@ export default class SalaBase extends Phaser.Scene {
     if (this._direcciones[2] !== 0 && this.physics.overlap(this.player.sprite, this.derecha)) {
        
        this.player.x = this.player.sprite.width/2;
-
+       this.acabarSonidos();
        this.scene.start(this._direcciones[2], {
         posx: this.player.x,
         posy: this.player.y,
@@ -121,8 +121,8 @@ export default class SalaBase extends Phaser.Scene {
     if (this._direcciones[3] !== 0 && this.physics.overlap(this.player.sprite, this.abajo)) {
       
       this.player.y = this.player.sprite.height;
-
-
+      this.acabarSonidos();
+      
       this.scene.start(this._direcciones[3], {
         posx: this.player.x,
         posy: this.player.y,
@@ -132,5 +132,16 @@ export default class SalaBase extends Phaser.Scene {
       });
     }
 
+  }
+
+
+  acabarSonidos = function(){
+    //la que está en el 0 no se quiere borrar ya que es la música de ambiente
+    for(let x = 1; x < this.sound.sounds.length; x++){
+      //this.sound.sounds[x].stop();
+      this.sound.remove(this.sound.sounds[x]);
+    }
+    this.sound.sounds[0].isPlaying = true;
+    console.log(this.sound);
   }
 }

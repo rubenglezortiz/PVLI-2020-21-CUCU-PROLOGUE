@@ -20,11 +20,10 @@ export default class Sala13 extends SalaBase {
     this.chulapos.play("chulapos", true);
     this.caballo = new Prop(this,700,350,"caballo",this.player,60,50,false);    
 
-    this.chotis = this.sound.add('chotis');
-    
-     this.musicConfig = {
+
+    this.musicConfig = {
       mute: false,
-      volume: 1,
+      volume: 0.2,
       rate:1,
       detune:0,
       seek:0,
@@ -32,7 +31,10 @@ export default class Sala13 extends SalaBase {
       delay: 0
      }
 
-     this.chotis.play(this.musicConfig);
+
+     this.sound.sounds[0].stop();
+     this.chotis = this.sound.add('chotis', this.musicConfig);
+     this.chotis.play(this.chotis);
     }
 
   update() {

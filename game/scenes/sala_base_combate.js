@@ -16,7 +16,7 @@ export default class SalaBaseCombate extends SalaBase {
   create() {
     super.create();
     this.monecoAttacks = this.add.group();
-    this.monecoLP = 100;
+    this.monecoLP = 3;
     this.monecoPP = 99;
     this.monecoMercy = false;
     this.physics.add.overlap(this.player, this.monecoAttacks);
@@ -27,6 +27,28 @@ export default class SalaBaseCombate extends SalaBase {
     );
     this.colliderP.setSize(300, this.sys.game.canvas.height, true);
     this.physics.add.collider(this.colliderP, this.player.collider);
+    
+    
+    this.musicConfig = {
+      mute: false,
+      volume: 0.2,
+      rate:1,
+      detune:0,
+      seek:0,
+      loop:true,
+      delay: 0
+     }
+     
+   
+     this.sound.stopAll(); 
+    if(this._nombreSala === cst.SCENES.SALA18CUCU){
+      this.circo = this.sound.add('circo', this.musicConfig);
+      this.circo.play();
+    }
+    else {
+      this.combate = this.sound.add('combate', this.musicConfig);
+      this.combate.play();
+    }
   }
 
   update(time, delta) {
@@ -92,6 +114,12 @@ export default class SalaBaseCombate extends SalaBase {
   }
 
   finishVS() {    
+
+    //para reanudar la musica de ambiente
+    this.sound.stopAll();
+    this.ambiente = this.sound.add('ambiente', this.musicConfig);
+    this.ambiente.play();
+
     if(this.m!==3){
       this.scene.start(cst.SCENES.SALA0, {
         posx: this.player.x,
