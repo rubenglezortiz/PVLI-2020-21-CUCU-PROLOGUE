@@ -13,7 +13,7 @@ export default class LindoShoot extends Phaser.GameObjects.Sprite {
 
   preUpdate(t, dt) {
     super.preUpdate(t, dt);
-    if(this.scene.physics.overlap(this,this.player)) this.destroy();
+    if(this.scene.physics.overlap(this,this.player.sprite)) this.destroy();
   }
 
   //ESTO, TAL CUAL LO TIENE POMPONINA ---> HERENCIA

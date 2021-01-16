@@ -1,5 +1,5 @@
 export default class Prop extends Phaser.GameObjects.Sprite {
-  constructor(scene, x, y, nombreSprite, player, wC, yC, interactive, interFunct) {
+  constructor(scene, x, y, nombreSprite, player, wC, yC, interactive, interFunct, sala) {
     super(scene, x, y, nombreSprite);
     this.anchoPC = wC;
     this.posYC = yC;
@@ -10,6 +10,7 @@ export default class Prop extends Phaser.GameObjects.Sprite {
     this.pigmalion = player;
     this.posYE=this.y-this.height;
     this.interFunction = interFunct;
+    this.salaObj = sala;
 
     //20 va a ser la altura de todos
     //colliderP es el collider estático que tineen la mayoria de
@@ -38,11 +39,11 @@ export default class Prop extends Phaser.GameObjects.Sprite {
     
 
     if (this.int){      
-      if (this.scene.physics.overlap(this, this.pigmalion)){
+      if (this.scene.physics.overlap(this, this.pigmalion.sprite)){
         this.propE.visible = true;
         this.propE.depth=this.depth;
         if (Phaser.Input.Keyboard.JustDown(this.e)){
-          if(this.interFunction !== undefined)this.interFunction();
+          if(this.interFunction !== undefined)this.interFunction.apply(this.salaObj);
           console.log("hablo");
         }
       }

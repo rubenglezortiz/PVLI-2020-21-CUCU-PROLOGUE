@@ -15,7 +15,7 @@ export default class PomponinaAttack extends Phaser.GameObjects.Sprite {
   preUpdate(t, dt) {
     super.preUpdate(t, dt);   
 
-    if(this.scene.physics.overlap(this,this.player)) this.destroy();
+    if(this.scene.physics.overlap(this,this.player.sprite)) this.destroy();
     if (this.x < this.width/2+1) this.destroy();    
   }
 

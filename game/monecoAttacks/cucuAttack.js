@@ -30,7 +30,7 @@ export default class CucuAttack extends Phaser.GameObjects.Sprite {
     super.preUpdate(t, dt);
     if (this.t === "cucuat") this.anims.play("cucu_at1", true);
     else this.anims.play("cucu_at2", true);
-    if(this.scene.physics.overlap(this,this.player)) this.destroy();
+    if(this.scene.physics.overlap(this,this.player.sprite)) this.destroy();
     if (this.x < 0) this.destroy();  
   }
 }

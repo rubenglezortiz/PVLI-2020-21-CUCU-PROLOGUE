@@ -17,19 +17,29 @@ export default class Sala36 extends SalaBase {
     super.create();
     this.camino=this.add.image(this.sys.game.canvas.width/2, this.sys.game.canvas.height/2, "pomponinacamino2");
     this.camino.flipX=true;
-    this.comoda=new Prop(this,this.sys.game.canvas.width-200,this.sys.game.canvas.height/2,"comoda",this.player,60,50,true);
+    this.comoda=new Prop(this,this.sys.game.canvas.width-200,this.sys.game.canvas.height/2,"comoda",this.player,60,50,true, this.interactuarComoda, this);
   }
 
   update() {
     super.update();
-    if(this.physics.overlap(this.player, this.comoda)) {
-      if (Phaser.Input.Keyboard.JustDown(this.e)) {
-        eventsCenter.emit("thisKey", this._nombreSala);
+//     if(this.physics.overlap(this.player, this.comoda)) {
+//       if (Phaser.Input.Keyboard.JustDown(this.e)) {
+//         eventsCenter.emit("thisKey", this._nombreSala);
+//         this.scene.launch("dialogo", {npc:"comoda",prevKey:cst.SCENES.SALA36,objs:this.objetos});
+//         this.scene.pause();
+//         this.player.resetInput();
+//         if (this.objetos[objs.OBJECTS.llaveComoda]) this.objetos[objs.OBJECTS.abanicoRoto] = true;
+//   }
+// }
+  }
+
+
+  interactuarComoda = function(){
+    eventsCenter.emit("thisKey", this._nombreSala);
         this.scene.launch("dialogo", {npc:"comoda",prevKey:cst.SCENES.SALA36,objs:this.objetos});
         this.scene.pause();
         this.player.resetInput();
         if (this.objetos[objs.OBJECTS.llaveComoda]) this.objetos[objs.OBJECTS.abanicoRoto] = true;
   }
 }
-  }
-}
+
