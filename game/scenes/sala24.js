@@ -10,7 +10,7 @@ export default class Sala24 extends SalaBase {
   init(datos) {
     super.init(datos);
   }
-s
+
   create() {
     super.create();
     this.camino= this.add.image(this.sys.game.canvas.width / 2 + 15,this.sys.game.canvas.height / 2,"donlindocamino5")

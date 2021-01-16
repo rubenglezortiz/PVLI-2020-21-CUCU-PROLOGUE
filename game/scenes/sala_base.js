@@ -136,12 +136,14 @@ export default class SalaBase extends Phaser.Scene {
 
 
   acabarSonidos = function(){
+
+    
     //la que está en el 0 no se quiere borrar ya que es la música de ambiente
     for(let x = 1; x < this.sound.sounds.length; x++){
       //this.sound.sounds[x].stop();
       this.sound.remove(this.sound.sounds[x]);
     }
-    this.sound.sounds[0].isPlaying = true;
+    this.sound.sounds[0].resume();
     console.log(this.sound);
   }
 }
