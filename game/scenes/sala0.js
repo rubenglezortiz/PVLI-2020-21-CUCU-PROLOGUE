@@ -18,7 +18,7 @@ export default class Sala0 extends SalaBase {
     this.camino = this.add.image(700, 400, "cucucamino4");
     this.camino.depth = 1;
     this.objA = [];
-    this.infoA = [{ x: 300, y: 250, moneco:"cucuIdle" },{ x: 1100, y: 250, moneco: "donLindo" },{ x: 300, y: 850,moneco: "pomponinaIdle" },];
+    this.infoA = [{ x: 300, y: 250, moneco:"cucu_idl" },{ x: 1100, y: 250, moneco: "don_lindo_idl" },{ x: 300, y: 850,moneco: "pomponina_idl" },];
     this.cajas();
 
 
