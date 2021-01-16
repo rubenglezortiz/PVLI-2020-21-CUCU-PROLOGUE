@@ -13,6 +13,7 @@ export default class Sala26 extends SalaBase {
 
   create() {
     super.create();
+    this.fotoPomponina = new Prop (this, 300,300,"fotopomponina",this.player,60,50,true);
   }
 
   update() {

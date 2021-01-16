@@ -2,6 +2,7 @@ import { cst } from "./cst.js";
 import SalaBaseCombate from "./sala_base_combate.js";
 import DonLindoAttack from "../monecoAttacks/donLindoAttack.js";
 import Explosion from "../monecoAttacks/explosion.js";
+import Prop from "../gameobject/prop.js";
 
 export default class Sala28donlindo extends SalaBaseCombate {
   constructor() {
@@ -14,7 +15,8 @@ export default class Sala28donlindo extends SalaBaseCombate {
   
   create() {   
     super.create();
-    //ANIMACIÓN Y DECORADO
+    this.donLindo = new Prop(this,1200,this.sys.game.canvas.height/2,"donlindoidle",this.player,60,50,false);
+    this.donLindo.play("donlindoidle",true);
     this.startVS();
   }
 

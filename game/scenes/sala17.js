@@ -39,6 +39,7 @@ export default class Sala17 extends SalaBase {
   }
 
   comienzaCombate = function(){
+    if (this._runInfo._monecos[0] === 0){
     this.scene.start(cst.SCENES.SALA18CUCU, {
       posx: 200,
       posy: this.sys.game.canvas.height / 2 + this.player.height / 2,
@@ -46,6 +47,7 @@ export default class Sala17 extends SalaBase {
       objs: this.objetos,
       runInf:this._runInfo
     });
+   }
   }
 
 }

@@ -70,6 +70,12 @@ class Bootloader extends Phaser.Scene {
     //decorado
     this.load.image("casa","./resources/sprites/don_lindo/casa.png");
     this.load.image("taberna","./resources/sprites/don_lindo/taberna.png");
+    this.load.image("fotopomponina","./resources/sprites/don_lindo/foto_pomponina.png");
+    this.load.image("tiendaderopa","./resources/sprites/don_lindo/tienda_de_ropa.png");
+
+
+
+
     this.load.spritesheet("bullying", "./resources/sprites/don_lindo/bullying.png",{
       frameWidth: 288,
       frameHeight: 288
@@ -83,6 +89,11 @@ class Bootloader extends Phaser.Scene {
       frameHeight: 192
     });
 
+
+    this.load.spritesheet("donlindoidle", "./resources/sprites/don_lindo/donlindoidle.png",{
+      frameWidth: 192,
+      frameHeight: 192
+    });   
 
 
     //-----SPRITES POMPONINA-----
@@ -250,6 +261,15 @@ class Bootloader extends Phaser.Scene {
       frameRate: 8,
       repeat: -1,
     })
+    this.anims.create({
+      key:"donlindoidle",
+      frames: this.anims.generateFrameNumbers("donlindoidle",{
+        start:0,
+        end: 9,
+      }),
+      frameRate: 10,
+      repeat:-1,
+    });
 
     //pomponina
     this.anims.create({
@@ -351,6 +371,7 @@ class Bootloader extends Phaser.Scene {
       frameRate: 12,
       repeat:-1,
     });
+    
       
   }
  

@@ -6,7 +6,7 @@ export default class Prop extends Phaser.GameObjects.Sprite {
     scene.add.existing(this);
     scene.physics.world.enable(this);
     this.body.immovable = true;
-    this.body.setCollideWorldBounds(true);
+    this.body.setCollideWorldBounds(false);
     this.pigmalion = player;
     this.posYE=this.y-this.height;
     this.interFunction = interFunct;

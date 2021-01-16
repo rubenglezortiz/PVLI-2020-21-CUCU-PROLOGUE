@@ -13,7 +13,10 @@ export default class Sala27 extends SalaBase {
 
   create() {
     super.create();
-    this.e = this.input.keyboard.addKey("E");
+    if (this._runInfo._monecos[1] === 0) {
+      this.cucu = new Prop(this,this.sys.game.canvas.width/2,this.sys.game.canvas.height / 5*3,"donlindoidle",this.player,60,50,true, this.comienzaCombate, this);
+      this.cucu.play("donlindoidle",true);
+    }
     
   }
 
@@ -32,5 +35,17 @@ export default class Sala27 extends SalaBase {
     //     }
     //   }
     // }
+  }
+
+  comienzaCombate = function(){
+    if (this._runInfo._monecos[1] === 0){
+    this.scene.start(cst.SCENES.SALA28DONLINDO, {
+      posx: 200,
+      posy: this.sys.game.canvas.height / 2 + this.player.height / 2,
+      lives: this.player.lives,
+      objs: this.objetos,
+      runInf:this._runInfo
+    });
+   }
   }
 }
