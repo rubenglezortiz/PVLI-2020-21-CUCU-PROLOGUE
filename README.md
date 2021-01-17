@@ -28,9 +28,11 @@ Versión 1.2 - 19 de septiembre de 2019
 
 
 # Descripcion
-  ----------------------------------------
+----------------------------------------
   **Logotipo y portada del juego !**
   ----------------------------------------
+
+![Portada](.\resources\myMediaFolder\media\image13.png)
 
 **1. Aspectos generales**
 
@@ -113,7 +115,11 @@ Este menú aparece al acercarse a un personaje y pulsar el botón de interacció
 
 -   **Salvarle**: si los PM están a cero, al darle se acaba la pelea y perdonas al muñeco , salvándolo. Si no están a 0, aparece el minijuego y el jugador pierde su turno.
 
-Al acabar de interaccionar con el muñeco (haberle matado o salvado) se cierra el menú. El jugador se encontrará donde interactuó con el muñeco, solo que este ya no estará ahí.![][2]
+Al acabar de interaccionar con el muñeco (haberle matado o salvado) se cierra el menú. El jugador se encontrará donde interactuó con el muñeco, solo que este ya no estará ahí.
+
+
+
+![Combate](.\resources\myMediaFolder\media\image20.png)
 
 #  
 
@@ -157,7 +163,7 @@ La primera fase del combate consta de una toma de decisiones, nombradas en el pu
 
 **Atacar:** Cuando elijamos esta acción, aparecerá un minijuego con el que se establecerá la cantidad de daño a infligir. Aparecerá un rectángulo horizontal con dos barras verticales que se moverán desde las esquinas hasta el centro a diferente velocidad. El jugador, presionando la tecla "Espacio", parará las barras. Cuanto más cerca estén, más daño se hará.
 
-![][3]
+![Combate](.\resources\myMediaFolder\media\image24.png)
 
 **Hablar:** El jugador tendrá diferentes opciones para hablar con los muñecos, en función de qué puzzles haya resuelto a lo largo del mapa, podrá elegir más opciones. Las opciones serán beneficiosas o perjudiciales. Si el jugador elige una opción mala, la segunda fase más complicada en el siguiente turno, si elige una buena, subirán los Puntos de Persuasión, una medida invisible al jugador, que cuando llegue al máximo, el combate acabará salvando al muñeco. También hay opciones que no acarrean ningún efecto.
 
@@ -229,7 +235,7 @@ Como se ha explicado en la dinámica, la historia podrá seguir las siguientes r
 
 El mapa será un mundo abierto, marcado por tres diferentes zonas, más una zona central (el teatro). Cada zona trata un solo muñeco, así como sus puzzles.
 
-![][4] 
+![Mapa](.\resources\myMediaFolder\media\image23.png) 
 
 ## 5.3.Personajes
 
@@ -244,7 +250,7 @@ Cosas comunes a todos los personajes:
 Dependiendo del personaje, además, se podrá abrir un submenú de cosas que ofrecer que el jugador puede obtener a través de quests de cada personaje
 
 ## Juan
-![][5]
+![Cucu](.\resources\myMediaFolder\media\image17.png)
 
 ### DESCRIPCIÓN:
 
@@ -377,7 +383,7 @@ Una vez seleccionada esta opción Pigmalión dice al azar uno de estos:
 
 **MINIJUEGO (Descripción de la mecánica del muñeco):**
 
-![][6]
+![img](.\resources\myMediaFolder\media\image11.png)
 
 El minijuego se parece a este jefe del cuphead, sustituyendo los HA por CU que vayan en grupos de dos.
 
@@ -387,11 +393,11 @@ El muñeco le lanzará proyectiles, los cuales se verán como "CU CU",
 
 al ser lo único que puede decir el muñeco. Si estos impactan en el jugador, éste pierde vida y su personaje se vuelve invulnerable por 2 segundos, parpadeando, mientras que si impactan contra el muro de la izquierda, desaparecen. Al principio los cucus salen juntos, como en la siguiente imagen:
 
-![][7]
+![Combate](.\resources\myMediaFolder\media\image9.png)
 
 Pero según se va avanzando en el minijuego puede lanzarlos sin que los dos CUs vayan seguidos.
 
-![][8]
+![Combate](.\resources\myMediaFolder\media\image19.png)
 
 Si se opta por atacar al muñeco, en vez de intentar hablar y hacerle entrar en razón, al bajarle la mitad de la vida, aparecen uno nuevo CUCUs, que son como los primeros, uno detrás de otro, pero estos al llegar a la pared, en vez de desaparecer, rebotan y vuelven con el muñeco. Para diferenciar estos CUCUs de los demás, tendrán una fuente distinta (la que usa el muñeco cuando está enfadado) y serán más lentos.
 
@@ -401,9 +407,9 @@ Opción mala: x2 Daño Juan : CUCU!
 
 **ZONA de CUCU**
 
-![][9]
+![Mapa](.\resources\myMediaFolder\media\image12.png)
 
-![][10]
+![img](.\resources\myMediaFolder\media\image16.png)
 
 Esta zona va a estar diferenciada de las demás porque las calles van a estar decoradas de fiesta, como esta:
 
@@ -421,7 +427,7 @@ Acordarse de lo de poner la canción de la plaza mayor pero que suene bajo y por
 
 2- Calle normal, un par de mesas con gente comiendo a un lado y al otro una madre con su bebe (mirar info de CUCU).
 
-3- Plaza Mayor: (Al entrar empieza a sonar la canción Madrid, Madrid, MAdrid de Placido Domingo https://www.youtube.com/watch?v=KWNZ_w3c3ls&ab_channel=Nisusline)Aquí está la estatua para reconocerla y al lado un par de NPC vestido de chulapos y chulapas dando circulos (bailando). Además hay otros NPC mirando, al preguntarles dicen que vieron a una persona muy rara(vestido como un payaso) que estuvo un rato mirando y cogió la calle que va al rastro. (mirar info)![][11]
+3- Plaza Mayor: (Al entrar empieza a sonar la canción Madrid, Madrid, MAdrid de Placido Domingo https://www.youtube.com/watch?v=KWNZ_w3c3ls&ab_channel=Nisusline)Aquí está la estatua para reconocerla y al lado un par de NPC vestido de chulapos y chulapas dando circulos (bailando). Además hay otros NPC mirando, al preguntarles dicen que vieron a una persona muy rara(vestido como un payaso) que estuvo un rato mirando y cogió la calle que va al rastro. (mirar info)![img](.\resources\myMediaFolder\media\image1.png)
 
 4- Calle normal, conexión con la zona azul.
 
@@ -439,7 +445,7 @@ dos títeres, uno de ellos es igual que cucu
 
 ##  Pomponina
 
-![][12]
+![Pomponina](.\resources\myMediaFolder\media\image6.png)
 
 ### CONVERSACIONES
 
@@ -599,7 +605,7 @@ Se mostrarán las tres opciones desbloqueables además de un botón para ofrecer
 
 
  TABLA DE PUNTOS DE PERSUASIÓN                                                                        
-  ------------------------------- ---------------------- -------------- ------------- ---------------- -------------
+------------------------------- ---------------------- -------------- ------------- ---------------- -------------
 **TOTAL**                       **Ramo rosas rosas**   **Bombones**   **Abanico**   **Ramo Rosas**   **Halagar**
     
      100         +40             +30        +30      +20       +12
@@ -613,7 +619,7 @@ Se mostrarán las tres opciones desbloqueables además de un botón para ofrecer
 
 **- Zonas y ambientación**
 
-![][13]
+![Mapa](.\resources\myMediaFolder\media\image3.png)
 
 1.  **Tienda de bombones.** Aquí estará la anciana que lleva la tienda y que nos hará un encargo.
 
@@ -631,7 +637,7 @@ Se mostrarán las tres opciones desbloqueables además de un botón para ofrecer
 
 La zona de Pomponina va a estar ambientada en la alta sociedad burguesa de la ciudad. Habrá elementos tales como farolas elegantes, árboles y jardines cuidados, alguna fuente, etc. La gente de la zona iría con traje, bombines, monóculos, vestidos, etc, a excepción de algunos personajes más humildes, los cuales están allí trabajando para la clase alta.
 
-![][14]
+![img](C:\Users\ARIALBLAK\Desktop\jueguito\PVLI-2020-21-CUCU-PROLOGUE\resources\myMediaFolder\media\image7.png))
 
 **PUZZLES**
 
@@ -728,9 +734,13 @@ Si Pigmalión decide dársela gratis, ya sea en la primera o en la segunda oport
 Pomponina lanzará abanico tornados. Éstos se comportarán como simples proyectiles que no avanzarán en línea recta, sino en zig-zag ya que rebotarán en las paredes al chocar contra ellas.
 
 Cuando Pomponina tenga la vida reducida a la mitad, lanzará tres tornados en vez de uno, con la misma mecánica para los tornados de los lados, siendo el del centro un proyectil que avanzará de forma recta.\
-![][15]![][16]
+![Combate](.\resources\myMediaFolder\media\image14.png)
 
-### Don Lindo![][17]
+![Combate](.\resources\myMediaFolder\media\image10.png)
+
+### Don Lindo
+
+### ![DonLindo](.\resources\myMediaFolder\media\image18.png)
 
 ### 
 
@@ -860,7 +870,9 @@ Cuando Pomponina tenga la vida reducida a la mitad, lanzará tres tornados en ve
 
 -   **Zonas y ambientación**
 
- **Plaza central.** Habrá un NPC, si interactuamos con él, dirá que tiene frío.![][18]
+![Mapa](C:\Users\ARIALBLAK\Desktop\jueguito\PVLI-2020-21-CUCU-PROLOGUE\resources\myMediaFolder\media\image5.png)
+
+ **Plaza central.** Habrá un NPC, si interactuamos con él, dirá que tiene frío.
 
  **Tienda de ropa.** Habrá un NPC al que le podremos preguntar por don Lindo.
 
@@ -1133,7 +1145,7 @@ En la segunda fase, Urdemalas utiliza los ataques de sus compañeros muñecos en
 
 Veanse sus esquemas y descripciones detalladas en 4.3.1 en sus respectivas descripciones.
 
-![][21]
+![Combate](.\resources\myMediaFolder\media\image2.png)
 
 Urdemalas en su tercera fase, y al verse al borde de su muerte, saca la escopeta, con la cual tiene tres modos de disparo, entre los cuales irá alternando.
 
@@ -1141,19 +1153,19 @@ Urdemalas en su tercera fase, y al verse al borde de su muerte, saca la escopeta
 
 Este será dos disparos rápidos hacia el jugador y de daño aumentado. Apuntando a la posición en la que se encuentre Pigmalión a la hora de disparar cada cartucho.
 
-![][22]
+![Combate](.\resources\myMediaFolder\media\image21.png))
 
 -Perdigones
 
 Urdemalas dispara la escopeta, disparando numerosos perdigones en un cono
 
-![][23]
+![Combate](.\resources\myMediaFolder\media\image8.png)
 
 -Disparos que rebotan
 
 Urdemalas dispara tres proyectiles, uno en linea recta hacia el jugador y otros dos en cono (uno a cada lado del disparo central). Los disparos en cono rebotarán en las paredes un número limitado de veces.
 
-![][24]
+![Combate](.\resources\myMediaFolder\media\image4.png)
 
 **Referencias**
 
@@ -1164,54 +1176,3 @@ Urdemalas dispara tres proyectiles, uno en linea recta hacia el jugador y otros 
 -   *Cuphead, StudioMDHR (2017)*
 
 
-
-
-  [1]: media/image19.png {width="4.583333333333333in" height="4.583333333333333in"}
-  [1. Aspectos generales]: #aspectos-generales
-  [2. Menús]: #menús
-  [2.1 Menú de inicio]: #menú-de-inicio
-  [2.2 Menú de pausa]: #menú-de-pausa
-  [2.3 Menú de interacción con los muñecos]: #menú-de-interacción-con-los-muñecos
-  [3. Configuración, interfaz y controles]: #configuración-interfaz-y-controles
-  [3.1 Configuración]: #configuración
-  [3.2 Interfaz y control]: #interfaz-y-control
-  [4. Jugabilidad]: #jugabilidad
-  [4.1 Mecánica]: #mecánica
-  [4.1.1 Movimiento e interacción]: #movimiento-e-interacción
-  [4.1.2 Enfrentamiento contra enemigos]: #enfrentamiento-contra-enemigos
-  [4.1.3 Objetos]: #objetos
-  [4.2 Dinámica]: #dinámica
-  [4.2.1 Dinámica puzzles]: #dinámica-puzzles
-  [4.2.2 Dinámica muñecos]: #dinámica-muñecos
-  [4.3 Estética]: #estética
-  [5. Contenido]: #contenido
-  [5.1 Historia]: #historia
-  [5.2 Mapa]: #mapa
-  [5.3.Personajes]: #personajes
-  [Juan]: #juan
-  [Pomponina]: #pomponina
-  [Don Lindo]: #don-lindo
-  [Agalzapo]: #agalzapo
-  [2]: media/image16.png {width="4.837849956255468in" height="2.057292213473316in"}
-  [3]: media/image11.png {width="5.354166666666667in" height="1.0729166666666667in"}
-  [4]: media/image5.png {width="5.739583333333333in" height="4.5625in"}
-  [5]: media/image22.png {width="2.776042213473316in" height="2.776042213473316in"}
-  [6]: media/image13.png {width="2.3906255468066493in" height="1.3938692038495188in"}
-  [7]: media/image4.png {width="6.267716535433071in" height="2.9166666666666665in"}
-  [8]: media/image23.png {width="6.283464566929134in" height="2.9166666666666665in"}
-  [9]: media/image10.png {width="6.239583333333333in" height="4.489583333333333in"}
-  [10]: media/image14.png {width="3.0052088801399823in" height="2.2514107611548555in"}
-  [11]: media/image6.png {width="3.4583333333333335in" height="3.1354166666666665in"}
-  [12]: media/image3.png {width="2.2098917322834644in" height="2.2098917322834644in"}
-  [13]: media/image8.png {width="6.283464566929134in" height="2.9027777777777777in"}
-  [14]: media/image9.png {width="4.592817147856518in" height="3.4427088801399823in"}
-  [15]: media/image20.png {width="6.283464566929134in" height="2.75in"}
-  [16]: media/image15.png {width="6.283464566929134in" height="2.75in"}
-  [17]: media/image18.png {width="2.3022069116360453in" height="2.30869094488189in"}
-  [18]: media/image1.png {width="6.187623578302712in" height="4.242312992125984in"}
-  [19]: media/image24.png {width="3.832338145231846in" height="1.8385422134733158in"}
-  [20]: media/image12.gif {width="0.2656255468066492in" height="0.2808038057742782in"}
-  [21]: media/image17.png {width="6.267716535433071in" height="2.6944444444444446in"}
-  [22]: media/image2.png {width="6.267716535433071in" height="3.0694444444444446in"}
-  [23]: media/image21.png {width="6.267716535433071in" height="2.888888888888889in"}
-  [24]: media/image7.png {width="6.267716535433071in" height="2.763888888888889in"}
