@@ -33,7 +33,7 @@ export default class SalaBase extends Phaser.Scene {
     this.abajo = this.physics.add.sprite(this.window.w/2,800);
     //para guardar estas variables al crearlo y le cueste menos acceder a ellas
     this.sound.sounds[0].resume();
-    
+    console.log(this.sound);
    
     this.player = new Pigmalion(
       this,
@@ -153,6 +153,5 @@ export default class SalaBase extends Phaser.Scene {
     //   duration: 2000
     // })
     
-    console.log(this.sound);
   }
 }

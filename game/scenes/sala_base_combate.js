@@ -124,9 +124,12 @@ export default class SalaBaseCombate extends SalaBase {
   }
 
   finishVS() {    
-
-    //para reanudar la musica de ambiente
-    this.sound.stopAll();
+    //borra tdods los sonidos y vuelve a cargar el de ambiente
+    for(let x = 0; x < this.sound.sounds.length; ){
+      this.sound.sounds[x].stop();
+      this.sound.remove(this.sound.sounds[x]);
+    }
+   
     this.ambiente = this.sound.add('ambiente', this.musicConfig);
     this.ambiente.play();
 

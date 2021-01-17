@@ -38,7 +38,8 @@ export default class Sala13 extends SalaBase {
        ease: 'Power1',
        duration: 2000
      })
-     //this.sound.sounds[0].pause();
+     //hay que lanzar este pasue dentro de 2 segundos
+     this.sound.sounds[0].pause();
      
      this.chotis = this.sound.add('chotis', this.musicConfig);
      this.chotis.play(this.chotis);
