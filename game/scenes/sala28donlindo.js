@@ -84,6 +84,5 @@ export default class Sala28donlindo extends SalaBaseCombate {
     console.log(this.sound)
     this.expolosion = new Explosion(this,"bomba",this.player);
     this.monecoAttacks.add(this.expl)
-    this.expolosion.setScale(4);
   }
 }
