@@ -27,8 +27,9 @@ export default class Sala38pomponina extends SalaBaseCombate {
       loop:false,
       delay: 0
      }
-    this.startVS();
     this.tornado=this.sound.add("tornado",this.musicConfig);
+    this.startVS();
+    
   }
 
   update() {

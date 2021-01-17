@@ -18,9 +18,9 @@ class Bootloader extends Phaser.Scene {
         delay: 0
        }
        
-       this.ambiente = this.sound.add('ambiente', this.musicConfig);
-       this.ambiente.play();
-      this.scene.start(cst.SCENES.SALA0, {posx: 700, posy :400, lives:10,objs:[false,false,false,false],runInf:new RunInfo()});      
+      this.ambiente = this.sound.add('ambiente', this.musicConfig);
+      this.ambiente.play();
+      this.scene.start(cst.SCENES.SALA27, {posx: 700, posy :400, lives:10,objs:[false,false,false,false],runInf:new RunInfo()});      
     });
 
 
@@ -35,7 +35,10 @@ class Bootloader extends Phaser.Scene {
     this.load.image("tablones", "./resources/sprites/teatro_general/tablones.png");   
     this.load.image("caja", "./resources/sprites/teatro_general/caja.png");
     this.load.image("caja_cerrada","./resources/sprites/teatro_general/caja_cerrada.png");
-    this.load.image("tecla_e", "./resources/sprites/interaccion/tecla_e.png");
+    this.load.spritesheet("e", "./resources/sprites/interaccion/e.png", {
+      frameWidth: 96,
+      frameHeight: 96,
+    });
 
     //#region 
     //-----SPRITES CUCU-----
@@ -119,11 +122,27 @@ class Bootloader extends Phaser.Scene {
       frameWidth: 192,
       frameHeight: 192
     });
-    
-    this.load.spritesheet("donlindoidle", "./resources/sprites/don_lindo/donlindoidle.png",{
+    this.load.spritesheet("bomba", "./resources/sprites/don_lindo/bomba.png",{
+      frameWidth: 80,
+      frameHeight: 80
+    }); 
+    this.load.spritesheet("nota", "./resources/sprites/don_lindo/nota.png",{
+      frameWidth: 96,
+      frameHeight: 96
+    }); 
+    this.load.spritesheet("donlindo_idl", "./resources/sprites/don_lindo/donlindoidle.png",{
       frameWidth: 192,
       frameHeight: 192
     });   
+    this.load.spritesheet("donlindo_chaqueta", "./resources/sprites/don_lindo/donlindochaqueta.png",{
+      frameWidth: 192,
+      frameHeight: 192
+    });  
+    this.load.spritesheet("donlindo", "./resources/sprites/don_lindo/donlindo.png",{
+      frameWidth: 192,
+      frameHeight: 192
+    });  
+    
     //#endregion
 
     //#region 
@@ -187,6 +206,7 @@ class Bootloader extends Phaser.Scene {
     });
     //#endregion
   
+    //#region 
     //-----SPRITES MENU COMBATE-----
     this.load.image("mc","./resources/sprites/menu_ataque/menu_comb.png");
     this.load.image("attack_button", "./resources/sprites/menu_ataque/boton_atacar.png");
@@ -207,22 +227,38 @@ class Bootloader extends Phaser.Scene {
     this.load.image("rosas_button", "./resources/sprites/menu_ataque/boton_rosas.png");
     this.load.image("bar","./resources/sprites/menu_ataque/barra_final.png");
     this.load.image("move_bar","./resources/sprites/menu_ataque/barra_movil.png");
-
+    //#endregion
 
     //-------AUDIO------------
+    //canciones
     this.load.audio("chotis","./resources/audio/chotis.mp3");
-    this.load.audio("ambiente","./resources/audio/musica_de_ambiente.mp3");
-    this.load.audio("tornado","./resources/audio/tornado.wav");
-
+    this.load.audio("ambiente","./resources/audio/musica_de_ambiente.mp3");    
     this.load.audio("urdemalas","./resources/audio/urdemalas.mp3");
     this.load.audio("cucu","./resources/audio/cucu.mp3");
     this.load.audio("donlindo","./resources/audio/donlindo.mp3");
     this.load.audio("pomponina","./resources/audio/pomponina.mp3");
 
+    //audios
+    this.load.audio("tornado","./resources/audio/tornado.wav");
+    this.load.audio("cu","./resources/audio/cucu.wav");
+    this.load.audio("nota","./resources/audio/nota.wav");
+    this.load.audio("interaccion","./resources/audio/interacion.wav");
+    this.load.audio("explosion","./resources/audio/explosion.wav");
+
   }
 
   create(){
     //-----ANIMACIONES-----
+    this.anims.create({
+      key: "e",
+      frames: this.anims.generateFrameNumbers("e", {
+        start: 0,
+        end: 5,
+      }),
+      frameRate: 6,
+      repeat: -1,
+    })
+
     //#region 
     //cucu
     this.anims.create({
@@ -339,14 +375,50 @@ class Bootloader extends Phaser.Scene {
       repeat: -1,
     })
     this.anims.create({
-      key:"donlindoidle",
-      frames: this.anims.generateFrameNumbers("donlindoidle",{
+      key: "nota",
+      frames: this.anims.generateFrameNumbers("nota", {
+        start: 0,
+        end: 7,
+      }),
+      frameRate: 20,
+      repeat: -1,
+    });
+    this.anims.create({
+      key: "bomba",
+      frames: this.anims.generateFrameNumbers("bomba", {
+        start: 0,
+        end: 34,
+      }),
+      frameRate: 20,
+      repeat: 0,
+    });
+    this.anims.create({
+      key:"donlindo_idl",
+      frames: this.anims.generateFrameNumbers("donlindo_idl",{
         start:0,
-        end: 9,
+        end: 12,
       }),
       frameRate: 10,
       repeat:-1,
     });
+    this.anims.create({
+      key:"donlindo_chaqueta",
+      frames: this.anims.generateFrameNumbers("donlindo_chaqueta",{
+        start:0,
+        end: 12,
+      }),
+      frameRate: 10,
+      repeat:0,
+    })
+    this.anims.create({
+      key:"donlindo",
+      frames: this.anims.generateFrameNumbers("donlindo",{
+        start:0,
+        end: 26,
+      }),
+      frameRate: 10,
+      repeat:-1,
+    })
     //#endregion
 
     //#region 

@@ -1,3 +1,4 @@
+import E from "./e.js"
 export default class Prop extends Phaser.GameObjects.Sprite {
   constructor(scene, x, y, nombreSprite, player, wC, yC, interactive, interFunct, sala) {
     super(scene, x, y, nombreSprite);
@@ -23,7 +24,8 @@ export default class Prop extends Phaser.GameObjects.Sprite {
    
     //esto es para el triger en el que sale una E para interactuar
     if (this.int) {
-      this.propE = this.scene.add.image(x, y - this.height/2,"tecla_e");
+      this.propE = new E(this.scene,x, y - this.height/2);
+      // this.propE = this.scene.add.image(x, y - this.height/2,"e");
       this.propE.y -= this.propE.height/2;
       this.propE.depth = 6
       this.e = this.scene.input.keyboard.addKey("E", false);
@@ -41,6 +43,7 @@ export default class Prop extends Phaser.GameObjects.Sprite {
     if (this.int){      
       if (this.scene.physics.overlap(this, this.pigmalion.sprite)){
         this.propE.visible = true;
+        // this.propE.anims.play("e");
         this.propE.depth=this.depth;
         if (Phaser.Input.Keyboard.JustDown(this.e)){
           if(this.interFunction !== undefined)this.interFunction.apply(this.salaObj);
