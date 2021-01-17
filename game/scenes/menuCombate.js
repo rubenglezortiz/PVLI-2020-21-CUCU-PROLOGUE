@@ -2,6 +2,7 @@ import eventsCenter from "../eventsCenter.js";
 import rod from "./rod.js";
 import { objs } from "./objeto.js";
 import { cst } from "./cst.js";
+import { npcs } from "./npcs.js";
 export default class MenuCombate extends Phaser.Scene {
   constructor(datos) {
     super({ key: "mc" });
@@ -111,28 +112,28 @@ export default class MenuCombate extends Phaser.Scene {
       this.talkOption1.on("pointerdown", (pointer) => { // Chiste
         this.persuasion = 10;
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:"chisteCombate",prevKey:cst.SCENES.SALA18CUCU,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:npcs.NPCS.chisteCombate,prevKey:cst.SCENES.SALA18CUCU,objs:this.objetos});
         eventsCenter.emit("persuade", this.persuasion);
         this.parar();
         });
       this.talkOption2.on("pointerdown", (pointer) => { // Animarle
         this.persuasion = 15;
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:"animarleCombate",prevKey:cst.SCENES.SALA18CUCU,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:npcs.NPCS.animarleCombate,prevKey:cst.SCENES.SALA18CUCU,objs:this.objetos});
         eventsCenter.emit("persuade", this.persuasion);
         this.parar();
       });
       this.talkOption3.on("pointerdown", (pointer) => { // Dato
         this.persuasion = 0;
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:"datoCombate",prevKey:cst.SCENES.SALA18CUCU,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:npcs.NPCS.datoCombate,prevKey:cst.SCENES.SALA18CUCU,objs:this.objetos});
         eventsCenter.emit("persuade", this.persuasion);
         this.parar();
       });
       this.talkOption4.on("pointerdown", (pointer) => { // Reírse de él
         this.persuasion = -5;
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:"reirseCombate",prevKey:cst.SCENES.SALA18CUCU,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:npcs.NPCS.reirseCombate,prevKey:cst.SCENES.SALA18CUCU,objs:this.objetos});
         eventsCenter.emit("persuade", this.persuasion);
         this.parar();
       });
@@ -200,7 +201,7 @@ export default class MenuCombate extends Phaser.Scene {
       this.talkOption1.on("pointerdown", (pointer) => { // Rosas rosas
         this.persuasion = 40;
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:"floresRosasCombate",prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:npcs.NPCS.floresRosasCombate,prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
         eventsCenter.emit("persuade", this.persuasion);
         this.objetos[objs.OBJECTS.floresRosas] = false;
         this.parar();
@@ -208,7 +209,7 @@ export default class MenuCombate extends Phaser.Scene {
       this.talkOption2.on("pointerdown", (pointer) => { // Bombones
         this.persuasion = 30;
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:"bombonesCombate",prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:npcs.NPCS.bombonesCombate,prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
         eventsCenter.emit("persuade", this.persuasion);
         this.objetos[objs.OBJECTS.bombonesPomponina] = false;
         this.parar();
@@ -216,7 +217,7 @@ export default class MenuCombate extends Phaser.Scene {
       this.talkOption3.on("pointerdown", (pointer) => { // Abanico
         this.persuasion = 30;
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:"abanicoCombate",prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:npcs.NPCS.abanicoCombate,prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
         eventsCenter.emit("persuade", this.persuasion);
         this.objetos[objs.OBJECTS.abanico] = false;
         this.parar();
@@ -224,7 +225,7 @@ export default class MenuCombate extends Phaser.Scene {
       this.talkOption4.on("pointerdown", (pointer) => { // Ramo rosas
         this.persuasion = 20;
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:"rosasCombate",prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:npcs.NPCS.rosasCombate,prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
         eventsCenter.emit("persuade", this.persuasion);
         this.objetos[objs.OBJECTS.floresHijo] = false;
         this.parar();
@@ -232,7 +233,7 @@ export default class MenuCombate extends Phaser.Scene {
       this.talkOption5.on("pointerdown", (pointer) => { // Collar
         this.persuasion = -20;
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:"collarCombate",prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:npcs.NPCS.collarCombate,prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
         eventsCenter.emit("persuade", this.persuasion);
         this.objetos[objs.OBJECTS.collar] = false;
         this.parar();
@@ -240,21 +241,21 @@ export default class MenuCombate extends Phaser.Scene {
       this.talkOption6.on("pointerdown", (pointer) => { // Ordenar
         this.persuasion = 0;
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:"ordenarCombate",prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:npcs.NPCS.ordenarCombate,prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
         eventsCenter.emit("persuade", this.persuasion);
         this.parar();
       });
       this.talkOption7.on("pointerdown", (pointer) => { // Amenazar
         this.persuasion = -5;
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:"amenazarCombate",prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:npcs.NPCS.amenazarCombate,prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
         eventsCenter.emit("persuade", this.persuasion);
         this.parar();
       });
       this.talkOption8.on("pointerdown", (pointer) => { // Halagar
         this.persuasion = 12;
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:"halagarCombate",prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:npcs.NPCS.halagarCombate,prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
         eventsCenter.emit("persuade", this.persuasion);
         this.parar();
       });
