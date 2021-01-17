@@ -18,7 +18,17 @@ export default class Sala38pomponina extends SalaBaseCombate {
     this.camino.angle=90;
     this.pomponina=new Prop(this,1200,this.sys.game.canvas.height/2,"pomponina",this.player,60,50,false);
     this.pomponina.play("pomponina",true);
+    this.musicConfig = {
+      mute: false,
+      volume: 0.4,
+      rate:1,
+      detune:0,
+      seek:0,
+      loop:false,
+      delay: 0
+     }
     this.startVS();
+    this.tornado=this.sound.add("tornado",this.musicConfig);
   }
 
   update() {
@@ -57,11 +67,13 @@ export default class Sala38pomponina extends SalaBaseCombate {
 
   attack1(){
     this.pompAt = new PomponinaAttack(this, this.sys.game.canvas.width, this.sys.game.canvas.height / 2, "pomponina_at", this.player,Phaser.Math.Between(0,1));
+    this.tornado.play()
   }
   attack2(){
     for (let i = 0; i < 2; i++) {
       this.pompAt = new PomponinaAttack(this, this.sys.game.canvas.width, this.sys.game.canvas.height / 2, "pomponina_at", this.player,i%2);
     }
+    this.tornado.play()
   }
 }
 

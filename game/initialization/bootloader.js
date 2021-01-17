@@ -34,7 +34,7 @@ class Bootloader extends Phaser.Scene {
     this.load.image("telonGrande", "./resources/sprites/teatro_general/telon_grande.png");
     this.load.image("tablones", "./resources/sprites/teatro_general/tablones.png");   
     this.load.image("caja", "./resources/sprites/teatro_general/caja.png");
-    this.load.image("cajaCerrada","./resources/sprites/teatro_general/caja_cerrada.png");
+    this.load.image("caja_cerrada","./resources/sprites/teatro_general/caja_cerrada.png");
     this.load.image("tecla_e", "./resources/sprites/interaccion/tecla_e.png");
 
     //#region 
@@ -210,10 +210,11 @@ class Bootloader extends Phaser.Scene {
 
 
     //-------AUDIO------------
-    this.load.audio("chotis","./././resources/audio/chotis.mp3");
-    this.load.audio("ambiente","./././resources/audio/musica_de_ambiente.mp3");
-    this.load.audio("combate","./././resources/audio/combate.mp3");
-    this.load.audio("circo","./././resources/audio/circo.mp3");
+    this.load.audio("chotis","./resources/audio/chotis.mp3");
+    this.load.audio("ambiente","./resources/audio/musica_de_ambiente.mp3");
+    this.load.audio("combate","./resources/audio/combate.mp3");
+    this.load.audio("circo","./resources/audio/circo.mp3");
+    this.load.audio("tornado","./resources/audio/tornado.wav");
 
   }
 
@@ -268,6 +269,7 @@ class Bootloader extends Phaser.Scene {
     });
     //#endregion
     
+    //#region 
     //donLindo
     this.anims.create({
       key: "frio1",
@@ -342,7 +344,9 @@ class Bootloader extends Phaser.Scene {
       frameRate: 10,
       repeat:-1,
     });
+    //#endregion
 
+    //#region 
     //pomponina
     this.anims.create({
       key:"abuela",
@@ -443,9 +447,7 @@ class Bootloader extends Phaser.Scene {
       frameRate: 12,
       repeat:-1,
     });
-    
-      
+    //#endregion
   }
- 
 }
 export default Bootloader;
