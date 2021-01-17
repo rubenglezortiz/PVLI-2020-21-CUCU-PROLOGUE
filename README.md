@@ -32,7 +32,7 @@ Versión 1.2 - 19 de septiembre de 2019
   **Logotipo y portada del juego !**
   ----------------------------------------
 
-![Portada](.\resources\myMediaFolder\media\image13.png)
+![Portada](./resources/myMediaFolder/media/image13.png)
 
 **1. Aspectos generales**
 
@@ -119,7 +119,7 @@ Al acabar de interaccionar con el muñeco (haberle matado o salvado) se cierra e
 
 
 
-![Combate](.\resources\myMediaFolder\media\image20.png)
+![Combate](./resources/myMediaFolder/media/image20.png)
 
 #  
 
@@ -163,7 +163,7 @@ La primera fase del combate consta de una toma de decisiones, nombradas en el pu
 
 **Atacar:** Cuando elijamos esta acción, aparecerá un minijuego con el que se establecerá la cantidad de daño a infligir. Aparecerá un rectángulo horizontal con dos barras verticales que se moverán desde las esquinas hasta el centro a diferente velocidad. El jugador, presionando la tecla "Espacio", parará las barras. Cuanto más cerca estén, más daño se hará.
 
-![Combate](.\resources\myMediaFolder\media\image24.png)
+![Combate](./resources/myMediaFolder/media/image24.png)
 
 **Hablar:** El jugador tendrá diferentes opciones para hablar con los muñecos, en función de qué puzzles haya resuelto a lo largo del mapa, podrá elegir más opciones. Las opciones serán beneficiosas o perjudiciales. Si el jugador elige una opción mala, la segunda fase más complicada en el siguiente turno, si elige una buena, subirán los Puntos de Persuasión, una medida invisible al jugador, que cuando llegue al máximo, el combate acabará salvando al muñeco. También hay opciones que no acarrean ningún efecto.
 
@@ -235,7 +235,7 @@ Como se ha explicado en la dinámica, la historia podrá seguir las siguientes r
 
 El mapa será un mundo abierto, marcado por tres diferentes zonas, más una zona central (el teatro). Cada zona trata un solo muñeco, así como sus puzzles.
 
-![Mapa](.\resources\myMediaFolder\media\image23.png) 
+![Mapa](./resources/myMediaFolder/media/image23.png) 
 
 ## 5.3.Personajes
 
@@ -250,7 +250,7 @@ Cosas comunes a todos los personajes:
 Dependiendo del personaje, además, se podrá abrir un submenú de cosas que ofrecer que el jugador puede obtener a través de quests de cada personaje
 
 ## Juan
-![Cucu](.\resources\myMediaFolder\media\image17.png)
+![Cucu](./resources/myMediaFolder/media/image17.png)
 
 ### DESCRIPCIÓN:
 
@@ -383,7 +383,7 @@ Una vez seleccionada esta opción Pigmalión dice al azar uno de estos:
 
 **MINIJUEGO (Descripción de la mecánica del muñeco):**
 
-![img](.\resources\myMediaFolder\media\image11.png)
+![img](./resources/myMediaFolder/media/image11.png)
 
 El minijuego se parece a este jefe del cuphead, sustituyendo los HA por CU que vayan en grupos de dos.
 
@@ -393,11 +393,11 @@ El muñeco le lanzará proyectiles, los cuales se verán como "CU CU",
 
 al ser lo único que puede decir el muñeco. Si estos impactan en el jugador, éste pierde vida y su personaje se vuelve invulnerable por 2 segundos, parpadeando, mientras que si impactan contra el muro de la izquierda, desaparecen. Al principio los cucus salen juntos, como en la siguiente imagen:
 
-![Combate](.\resources\myMediaFolder\media\image9.png)
+![Combate](./resources/myMediaFolder/media/image9.png)
 
 Pero según se va avanzando en el minijuego puede lanzarlos sin que los dos CUs vayan seguidos.
 
-![Combate](.\resources\myMediaFolder\media\image19.png)
+![Combate](./resources/myMediaFolder/media/image19.png)
 
 Si se opta por atacar al muñeco, en vez de intentar hablar y hacerle entrar en razón, al bajarle la mitad de la vida, aparecen uno nuevo CUCUs, que son como los primeros, uno detrás de otro, pero estos al llegar a la pared, en vez de desaparecer, rebotan y vuelven con el muñeco. Para diferenciar estos CUCUs de los demás, tendrán una fuente distinta (la que usa el muñeco cuando está enfadado) y serán más lentos.
 
@@ -407,9 +407,9 @@ Opción mala: x2 Daño Juan : CUCU!
 
 **ZONA de CUCU**
 
-![Mapa](.\resources\myMediaFolder\media\image12.png)
+![Mapa](./resources/myMediaFolder/media/image12.png)
 
-![img](.\resources\myMediaFolder\media\image16.png)
+![img](./resources/myMediaFolder/media/image16.png)
 
 Esta zona va a estar diferenciada de las demás porque las calles van a estar decoradas de fiesta, como esta:
 
@@ -427,7 +427,7 @@ Acordarse de lo de poner la canción de la plaza mayor pero que suene bajo y por
 
 2- Calle normal, un par de mesas con gente comiendo a un lado y al otro una madre con su bebe (mirar info de CUCU).
 
-3- Plaza Mayor: (Al entrar empieza a sonar la canción Madrid, Madrid, MAdrid de Placido Domingo https://www.youtube.com/watch?v=KWNZ_w3c3ls&ab_channel=Nisusline)Aquí está la estatua para reconocerla y al lado un par de NPC vestido de chulapos y chulapas dando circulos (bailando). Además hay otros NPC mirando, al preguntarles dicen que vieron a una persona muy rara(vestido como un payaso) que estuvo un rato mirando y cogió la calle que va al rastro. (mirar info)![img](.\resources\myMediaFolder\media\image1.png)
+3- Plaza Mayor: (Al entrar empieza a sonar la canción Madrid, Madrid, MAdrid de Placido Domingo https://www.youtube.com/watch?v=KWNZ_w3c3ls&ab_channel=Nisusline)Aquí está la estatua para reconocerla y al lado un par de NPC vestido de chulapos y chulapas dando circulos (bailando). Además hay otros NPC mirando, al preguntarles dicen que vieron a una persona muy rara(vestido como un payaso) que estuvo un rato mirando y cogió la calle que va al rastro. (mirar info)![img](./resources/myMediaFolder/media/image1.png)
 
 4- Calle normal, conexión con la zona azul.
 
@@ -445,7 +445,7 @@ dos títeres, uno de ellos es igual que cucu
 
 ##  Pomponina
 
-![Pomponina](.\resources\myMediaFolder\media\image6.png)
+![Pomponina](./resources/myMediaFolder/media/image6.png)
 
 ### CONVERSACIONES
 
@@ -619,7 +619,7 @@ Se mostrarán las tres opciones desbloqueables además de un botón para ofrecer
 
 **- Zonas y ambientación**
 
-![Mapa](.\resources\myMediaFolder\media\image3.png)
+![Mapa](./resources/myMediaFolder/media/image3.png)
 
 1.  **Tienda de bombones.** Aquí estará la anciana que lleva la tienda y que nos hará un encargo.
 
@@ -637,7 +637,7 @@ Se mostrarán las tres opciones desbloqueables además de un botón para ofrecer
 
 La zona de Pomponina va a estar ambientada en la alta sociedad burguesa de la ciudad. Habrá elementos tales como farolas elegantes, árboles y jardines cuidados, alguna fuente, etc. La gente de la zona iría con traje, bombines, monóculos, vestidos, etc, a excepción de algunos personajes más humildes, los cuales están allí trabajando para la clase alta.
 
-![img](C:\Users\ARIALBLAK\Desktop\jueguito\PVLI-2020-21-CUCU-PROLOGUE\resources\myMediaFolder\media\image7.png))
+![img](./resources/myMediaFolder/media/image7.png))
 
 **PUZZLES**
 
@@ -734,13 +734,13 @@ Si Pigmalión decide dársela gratis, ya sea en la primera o en la segunda oport
 Pomponina lanzará abanico tornados. Éstos se comportarán como simples proyectiles que no avanzarán en línea recta, sino en zig-zag ya que rebotarán en las paredes al chocar contra ellas.
 
 Cuando Pomponina tenga la vida reducida a la mitad, lanzará tres tornados en vez de uno, con la misma mecánica para los tornados de los lados, siendo el del centro un proyectil que avanzará de forma recta.\
-![Combate](.\resources\myMediaFolder\media\image14.png)
+![Combate](./resources/myMediaFolder/media/image14.png)
 
-![Combate](.\resources\myMediaFolder\media\image10.png)
+![Combate](./resources/myMediaFolder/media/image10.png)
 
 ### Don Lindo
 
-### ![DonLindo](.\resources\myMediaFolder\media\image18.png)
+### ![DonLindo](./resources/myMediaFolder/media/image18.png)
 
 ### 
 
@@ -870,7 +870,7 @@ Cuando Pomponina tenga la vida reducida a la mitad, lanzará tres tornados en ve
 
 -   **Zonas y ambientación**
 
-![Mapa](C:\Users\ARIALBLAK\Desktop\jueguito\PVLI-2020-21-CUCU-PROLOGUE\resources\myMediaFolder\media\image5.png)
+![Mapa](./resources/myMediaFolder/media/image5.png)
 
  **Plaza central.** Habrá un NPC, si interactuamos con él, dirá que tiene frío.
 
@@ -1145,7 +1145,7 @@ En la segunda fase, Urdemalas utiliza los ataques de sus compañeros muñecos en
 
 Veanse sus esquemas y descripciones detalladas en 4.3.1 en sus respectivas descripciones.
 
-![Combate](.\resources\myMediaFolder\media\image2.png)
+![Combate](./resources/myMediaFolder/media/image2.png)
 
 Urdemalas en su tercera fase, y al verse al borde de su muerte, saca la escopeta, con la cual tiene tres modos de disparo, entre los cuales irá alternando.
 
@@ -1153,19 +1153,19 @@ Urdemalas en su tercera fase, y al verse al borde de su muerte, saca la escopeta
 
 Este será dos disparos rápidos hacia el jugador y de daño aumentado. Apuntando a la posición en la que se encuentre Pigmalión a la hora de disparar cada cartucho.
 
-![Combate](.\resources\myMediaFolder\media\image21.png))
+![Combate](./resources/myMediaFolder/media/image21.png))
 
 -Perdigones
 
 Urdemalas dispara la escopeta, disparando numerosos perdigones en un cono
 
-![Combate](.\resources\myMediaFolder\media\image8.png)
+![Combate](./resources/myMediaFolder/media/image8.png)
 
 -Disparos que rebotan
 
 Urdemalas dispara tres proyectiles, uno en linea recta hacia el jugador y otros dos en cono (uno a cada lado del disparo central). Los disparos en cono rebotarán en las paredes un número limitado de veces.
 
-![Combate](.\resources\myMediaFolder\media\image4.png)
+![Combate](./resources/myMediaFolder/media/image4.png)
 
 **Referencias**
 
