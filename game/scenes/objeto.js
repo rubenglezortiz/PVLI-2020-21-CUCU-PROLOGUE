@@ -1,6 +1,6 @@
 export const objs = {
     OBJECTS:{
-        NumObjs: 4,        
+        NumObjs: 4,       
         
 
         //Pomponina

@@ -51,7 +51,7 @@ export default class Dialogo extends Phaser.Scene {
       "PIGMALIÓN: ¡Cuidado! No debes ponerte bajo el sol.",
       "POMPONINA:  ¿Se puede saber por qué me dices\n eso ahora?",
       "PIGMALIÓN:Porque te derrites, bombón.",
-      "POMPONINA:  Tendré cuidado, a nadie le gustan \n los bombones derretidos.",
+      "POMPONINA:  Tendré cuidado, a nadie le gustan \nlos bombones derretidos.",
     ];
     this.amenazarCombate = [
       "PIGMALIÓN: Vas a tener un castigo muy gordo \n como no vengas conmigo",
