@@ -21,26 +21,6 @@ export default class Sala0 extends SalaBase {
     this.infoA = [{ x: 300, y: 250, moneco:"cucu_idl" },{ x: 1100, y: 250, moneco: "don_lindo_idl" },{ x: 300, y: 650,moneco: "pomponina_idl" },];
     this.cajas();
 
-
-    this.anims.create({
-      key: "cucu_idl",
-      frames: this.anims.generateFrameNumbers("cucu_idl", {
-        start: 0,
-        end: 6,
-      }),
-      frameRate: 4,
-      repeat: -1,
-    });
-    //ANIMACION DON LINDO CRRUUUUUUK
-    this.anims.create({
-      key: "pomponina_idl",
-      frames: this.anims.generateFrameNumbers("pomponina_idl", {
-        start: 0,
-        end: 6,
-      }),
-      frameRate: 4,
-      repeat: -1,
-    });
   }
 
   update() {
@@ -68,7 +48,7 @@ export default class Sala0 extends SalaBase {
           this.saved++;
         }      
     }
-
+    this.cajaUrd=new Prop(this,1100,650,"caja_urdemalas",this.play,60,50,false) //DEBERÍA SER INTERACTUABLE. SI NO LO ÉS, ECHADLE LA CULPA A RUBÉN
     if(this.noPlayed===0){
       if(this.killed===3){
         console.log("inicio combate urdemalas");

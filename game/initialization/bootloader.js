@@ -20,7 +20,7 @@ class Bootloader extends Phaser.Scene {
        
       this.ambiente = this.sound.add('ambiente', this.musicConfig);
       this.ambiente.play();
-      this.scene.start(cst.SCENES.SALA17, {posx: 700, posy :400, lives:10,objs:[false,false,false,false],runInf:new RunInfo()});      
+      this.scene.start(cst.SCENES.SALA0, {posx: 700, posy :400, lives:10,objs:[false,false,false,false],runInf:new RunInfo()});      
     });
 
 
@@ -35,6 +35,7 @@ class Bootloader extends Phaser.Scene {
     this.load.image("tablones", "./resources/sprites/teatro_general/tablones.png");   
     this.load.image("caja", "./resources/sprites/teatro_general/caja.png");
     this.load.image("caja_cerrada","./resources/sprites/teatro_general/caja_cerrada.png");
+    this.load.image("caja_urdemalas","./resources/sprites/teatro_general/caja_urdemalas.png");
     this.load.spritesheet("e", "./resources/sprites/interaccion/e.png", {
       frameWidth: 96,
       frameHeight: 96,
@@ -229,6 +230,15 @@ class Bootloader extends Phaser.Scene {
     this.load.image("move_bar","./resources/sprites/menu_ataque/barra_movil.png");
     //#endregion
 
+    //URDEMALAS
+    this.load.spritesheet("urdemalas_idl", "./resources/sprites/urdemalas/urdemalasidl.png", {
+      frameWidth: 192,
+      frameHeight: 192,
+    });
+    this.load.spritesheet("urdemalas", "./resources/sprites/urdemalas/urdemalas.png", {
+      frameWidth: 32,
+      frameHeight: 32,
+    });
     //-------AUDIO------------
     //canciones
     this.load.audio("chotis","./resources/audio/chotis.mp3");
@@ -420,6 +430,25 @@ class Bootloader extends Phaser.Scene {
       repeat:-1,
     })
     //#endregion
+
+    this.anims.create({
+      key:"urdemalas_idl",
+      frames: this.anims.generateFrameNumbers("urdemalas_idl",{
+        start:0,
+        end: 3,
+      }),
+      frameRate: 4,
+      repeat:-1,
+    })
+    this.anims.create({
+      key:"urdemalas",
+      frames: this.anims.generateFrameNumbers("urdemalas",{
+        start:0,
+        end: 7,
+      }),
+      frameRate: 4,
+      repeat:-1,
+    })
 
     //#region 
     //pomponina

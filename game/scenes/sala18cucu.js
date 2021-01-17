@@ -11,7 +11,6 @@ export default class Sala18Cucu extends SalaBaseCombate {
   init(datos) {
     super.init(datos);
     console.log(this);
-    
   }
 
   create() {
@@ -67,15 +66,15 @@ export default class Sala18Cucu extends SalaBaseCombate {
   }
 
   attack1(){    
-    this.cucuAt = new CucuAttack(this, "cucu_at1", this.player);
+    this.cucuAt = new CucuAttack(this, "cucu_at1", 500, this.player);
     this.cu.play();
   }
 
   attack2(){    
-    this.cucuAt1 = new CucuAttack(this, "cucu_at2", this.player);
+    this.cucuAt1 = new CucuAttack(this, "cucu_at2", 600, this.player);
     this.cu.play();
     this.timerAttack2 = this.time.delayedCall(350, () => {
-      this.cucuAt2 = new CucuAttack(this, "cucu_at2", this.player);
+      this.cucuAt2 = new CucuAttack(this, "cucu_at2", 600, this.player);
       this.cu.play();
     });
   }

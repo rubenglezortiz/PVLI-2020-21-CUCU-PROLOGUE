@@ -5,6 +5,7 @@ import CucuAttack from "../monecoAttacks/cucuAttack.js";
 import DonLindoAttack from "../monecoAttacks/donLindoAttack.js";
 import PomponinaAttack from "../monecoAttacks/pomponinaAttack.js";
 import Explosion from "../monecoAttacks/explosion.js";
+import Prop from "../gameobject/prop.js";
 
 
 export default class Sala0Urdemalas extends SalaBaseCombate{
@@ -19,6 +20,8 @@ export default class Sala0Urdemalas extends SalaBaseCombate{
 
   create(){
     super.create();
+    this.urdemalas= new Prop(this,this.sys.game.canvas.width-200,this.sys.game.canvas.height/2+60,"urdemalas",this.player,60,50,true);
+    this.urdemalas.play("urdemalas");
     this.startVS();
   }
 
