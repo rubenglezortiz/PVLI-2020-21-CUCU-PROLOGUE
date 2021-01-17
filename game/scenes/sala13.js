@@ -32,7 +32,14 @@ export default class Sala13 extends SalaBase {
      }
 
 
-     this.sound.sounds[0].pause();
+     this.tweens.add({
+       targets: this.sound.sounds[0],
+       volume: 0,
+       ease: 'Power1',
+       duration: 2000
+     })
+     //this.sound.sounds[0].pause();
+     
      this.chotis = this.sound.add('chotis', this.musicConfig);
      this.chotis.play(this.chotis);
     }

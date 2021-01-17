@@ -18,7 +18,7 @@ export default class Sala24 extends SalaBase {
     this.camino= this.add.image(this.sys.game.canvas.width / 2 + 15,this.sys.game.canvas.height / 2,"donlindocamino5")
     this.camino.flipX=true; 
     this.bullying = new Prop (this, 300,300,"bullying",this.player,60,50,true,this.interactuarBully,this);
-    this.frio = new Prop (this, 1000, 800,"frio1",this.player,60,50,true);
+    this.frio = new Prop (this, 1000, 600,"frio1",this.player,60,50,true);
     if(!this.objetos[objs.OBJECTS.cartera])
     this.bullying.play("bullying",true);
     else this.bullying.play("bullying3",true)

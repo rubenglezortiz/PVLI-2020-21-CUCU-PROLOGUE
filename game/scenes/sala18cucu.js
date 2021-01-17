@@ -17,7 +17,7 @@ export default class Sala18Cucu extends SalaBaseCombate {
   create() {
     super.create();
     this.camino = this.add.image(700, 400, "cucucamino5");
-    this.carreta = new Prop(this,1500,100,"carreta",this.player,60,50,false);
+    this.carreta = new Prop(this,1200,this.sys.game.canvas.height / 2 - 100,"carreta",this.player,60,50,false);
     this.cucu = new Prop(this,1200,this.sys.game.canvas.height/2,"cucu_idl",this.player,60,50,false);
     this.cucu.play("cucu",true);
     this.startVS();

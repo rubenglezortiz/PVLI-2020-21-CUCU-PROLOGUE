@@ -26,12 +26,12 @@ export default class SalaBaseCombate extends SalaBase {
       this.sys.game.canvas.height / 2
     );
     this.colliderP.setSize(300, this.sys.game.canvas.height, true);
-    this.physics.add.collider(this.colliderP, this.player.collider);
+    this.physics.add.collider(this.colliderP, this.player);
     
     
     this.musicConfig = {
       mute: false,
-      volume: 0.2,
+      volume: 0.1,
       rate:1,
       detune:0,
       seek:0,
@@ -42,12 +42,16 @@ export default class SalaBaseCombate extends SalaBase {
    
      this.sound.stopAll(); 
     if(this._nombreSala === cst.SCENES.SALA18CUCU){
-      this.circo = this.sound.add('circo', this.musicConfig);
+      this.circo = this.sound.add('cucu', this.musicConfig);
       this.circo.play();
     }
-    else {
-      this.combate = this.sound.add('combate', this.musicConfig);
-      this.combate.play();
+    else if(this._nombreSala === cst.SCENES.SALA28DONLINDO){
+      this.donlind = this.sound.add('donlindo', this.musicConfig);
+      this.donlind.play();
+    }
+    else if(this._nombreSala === cst.SCENES.SALA38POMPONINA){
+      this.pomp = this.sound.add('pomponina', this.musicConfig);
+      this.pomp.play();
     }
   }
 

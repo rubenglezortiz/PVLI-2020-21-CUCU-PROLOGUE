@@ -143,7 +143,16 @@ export default class SalaBase extends Phaser.Scene {
       //this.sound.sounds[x].stop();
       this.sound.remove(this.sound.sounds[x]);
     }
+
     this.sound.sounds[0].resume();
+    this.sound.sounds[0].volume = 0.2;
+    // this.tweens.add({
+    //   targets: this.sound.sounds[0],
+    //   volume: 0.2,
+    //   ease: 'Power1',
+    //   duration: 2000
+    // })
+    
     console.log(this.sound);
   }
 }

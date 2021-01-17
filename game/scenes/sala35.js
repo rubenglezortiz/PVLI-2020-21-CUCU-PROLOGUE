@@ -14,7 +14,7 @@ export default class Sala35 extends SalaBase {
   create() {
     super.create();
     this.camino = this.add.image(this.sys.game.canvas.width / 2 + 15,this.sys.game.canvas.height / 2,"pomponinacamino5");
-    this.anticuario = new Prop(this,this.sys.game.canvas.width / 2 + 100,0,"anticuario",this.player,100,100,false);
+    this.anticuario = new Prop(this,this.sys.game.canvas.width / 2 + 100,200,"anticuario",this.player,80,50,false);
     this.encargado = new Prop(this,this.sys.game.canvas.width / 2,500,"encargado_anticuario",this.player,100,50,true,this.hablarEncargado,this);
     this.encargado.play("encargado_anticuario", true);
   }

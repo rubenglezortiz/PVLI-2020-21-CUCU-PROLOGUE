@@ -32,7 +32,7 @@ export default class Explosion extends Phaser.GameObjects.Sprite {
   preUpdate(time, delta) {
     super.preUpdate(time, delta);
     this.anims.play("bomb", true);
-    if (this.scene.physics.overlap(this, this.player,sprite)) this.destroy();
+    if (this.scene.physics.overlap(this, this.player)) this.destroy();
   }
 
   bomb() {
