@@ -42,7 +42,7 @@ export default class SalaBaseCombate extends SalaBase {
    
      this.sound.stopAll(); 
     if(this._nombreSala === cst.SCENES.SALA18CUCU){
-      this.circo = this.sound.add('cucu', this.musicConfig);
+      this.circo = this.sound.add("cucu", this.musicConfig);
       this.circo.play();
     }
     else if(this._nombreSala === cst.SCENES.SALA28DONLINDO){
@@ -57,7 +57,7 @@ export default class SalaBaseCombate extends SalaBase {
 
   update(time, delta) {
     super.update();   
-    if (this.physics.overlap(this.player, this.monecoAttacks)) {
+    if (this.physics.overlap(this.player.sprite, this.monecoAttacks)) {
       this.player.lives--;
       console.log(this.player.lives);
     } 

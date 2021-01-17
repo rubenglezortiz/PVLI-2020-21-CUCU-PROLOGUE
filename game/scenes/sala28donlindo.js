@@ -15,13 +15,28 @@ export default class Sala28donlindo extends SalaBaseCombate {
   
   create() {   
     super.create();
-    this.donLindo = new Prop(this,1200,this.sys.game.canvas.height/2,"donlindoidle",this.player,60,50,false);
-    this.donLindo.play("donlindoidle",true);
+    this.donLindo = new Prop(this,1200,this.sys.game.canvas.height/2,"donlindo_idl",this.player,60,50,false);
+    this.donLindo.play("donlindo_chaqueta",false).on("animationcomplete",()=>{this.donLindo.play("donlindo")});   
+    // this.bullying.play("bullying2",false).on("animationcomplete",()=>{this.bullying.play("bullying3",true)});    
+
+    this.musicConfig = {
+      mute: false,
+      volume: 0.4,
+      rate:1,
+      detune:0,
+      seek:0,
+      loop:false,
+      delay: 0
+    }
+    this.expl=this.sound.add("explosion",this.musicConfig);
+    this.nota=this.sound.add("nota",this.musicConfig);
+    
     this.startVS();
   }
 
   update() {
-    super.update();   
+    super.update();
+   
   }
 
   startVS() {
@@ -60,10 +75,15 @@ export default class Sala28donlindo extends SalaBaseCombate {
 
   attack1(){
     this.donLindoAt = new DonLindoAttack(this, this.sys.game.canvas.width, this.sys.game.canvas.height / 2,"shoot", this.player);
+    this.monecoAttacks.add(this.donLindoAt);
+    this.nota.play();
   }
 
   attack2(){
-    this.expl = new Explosion(this,"pigmalion",this.player);
-    
+    this.expl.play();
+    console.log(this.sound)
+    this.expolosion = new Explosion(this,"bomba",this.player);
+    this.monecoAttacks.add(this.expl)
+    this.expolosion.setScale(4);
   }
 }

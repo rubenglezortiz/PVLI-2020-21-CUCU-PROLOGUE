@@ -9,6 +9,7 @@ export default class LindoShoot extends Phaser.GameObjects.Sprite {
     this.player=pigmalion;
    
     this.scene.monecoAttacks.add(this);
+    this.anims.play("nota");
   }
 
   preUpdate(t, dt) {
