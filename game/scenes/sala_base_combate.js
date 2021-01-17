@@ -53,10 +53,16 @@ export default class SalaBaseCombate extends SalaBase {
       this.pomp = this.sound.add('pomponina', this.musicConfig);
       this.pomp.play();
     }
+
+
+
+    this.text = this.add.text(50, 20, "Vidas: " + this.player.lives);
+    this.text.setFontSize(80);
   }
 
   update(time, delta) {
     super.update();   
+    this.text.setText("Vidas: " + this.player.lives)
     if (this.physics.overlap(this.player.sprite, this.monecoAttacks)) {
       this.player.lives--;
       console.log(this.player.lives);
