@@ -53,10 +53,16 @@ export default class SalaBaseCombate extends SalaBase {
       this.pomp = this.sound.add('pomponina', this.musicConfig);
       this.pomp.play();
     }
+
+
+
+    this.text = this.add.text(50, 20, "Vidas: " + this.player.lives);
+    this.text.setFontSize(80);
   }
 
   update(time, delta) {
     super.update();   
+    this.text.setText("Vidas: " + this.player.lives)
     if (this.physics.overlap(this.player.sprite, this.monecoAttacks)) {
       this.player.lives--;
       console.log(this.player.lives);
@@ -118,9 +124,12 @@ export default class SalaBaseCombate extends SalaBase {
   }
 
   finishVS() {    
-
-    //para reanudar la musica de ambiente
-    this.sound.stopAll();
+    //borra tdods los sonidos y vuelve a cargar el de ambiente
+    for(let x = 0; x < this.sound.sounds.length; ){
+      this.sound.sounds[x].stop();
+      this.sound.remove(this.sound.sounds[x]);
+    }
+   
     this.ambiente = this.sound.add('ambiente', this.musicConfig);
     this.ambiente.play();
 
