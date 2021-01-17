@@ -19,7 +19,13 @@ export default class Sala33 extends SalaBase {
     this.floristeria= new Prop(this,this.sys.canvas.width/2,100,"floristeria",this.player,80,50,false)
     this.florista=new Prop(this, this.sys.canvas.width/2,350,"florista",this.player,60,45,true, this.hablarFlorista, this);
     this.florista.play("florista",true);
-    this.jarron=new Prop(this, this.sys.canvas.width-300,this.sys.canvas.height-100,"jarron",this.player,60,45,true, this.mirarJarron, this);
+    if(this._runInfo._props_interactuables[1] === 0){
+      this.jarron=new Prop(this, this.sys.canvas.width-300,this.sys.canvas.height-100,"jarron",this.player,60,45,true, this.mirarJarron, this);
+    }
+    else{
+      this.jarron=new Prop(this, this.sys.canvas.width-300,this.sys.canvas.height-100,"jarron",this.player,60,45,false);
+    }
+  
     this.jarron.play("jarron",true);
    
   }
@@ -33,6 +39,8 @@ export default class Sala33 extends SalaBase {
   mirarJarron = function(){
     eventsCenter.emit("thisKey", this._nombreSala);
     this.objetos[objs.OBJECTS.llaveFlorista] = true;
+    this._runInfo._props_interactuables[1] = 1;
+    this.jarron.int = false;
     this.scene.launch("dialogo", {npc:"jarron",prevKey:cst.SCENES.SALA33,objs:this.objetos});
     this.scene.pause();
     this.player.resetInput();

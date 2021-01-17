@@ -15,7 +15,12 @@ export default class Sala32 extends SalaBase {
   create() {
     super.create();
     this.camino = this.add.image(this.sys.game.canvas.width / 2 + 15,this.sys.game.canvas.height / 2,"pomponinacamino6");
-    this.fuente = new Prop(this,this.sys.game.canvas.width / 2,this.sys.game.canvas.height / 2,"fuente",this.player,60,45,true, this.interactuarFuente,  this);
+    if(this._runInfo._props_interactuables[0] === 0){
+      this.fuente = new Prop(this,this.sys.game.canvas.width / 2,this.sys.game.canvas.height / 2,"fuente",this.player,60,45,true, this.interactuarFuente,  this);
+    }
+    else{
+      this.fuente = new Prop(this,this.sys.game.canvas.width / 2,this.sys.game.canvas.height / 2,"fuente",this.player,60,45,false);
+    }
     this.fuente.play("fuente", true);
     this.hijoFlorista = new Prop(this,this.sys.game.canvas.width / 2,600,"hijo_florista",this.player,60,50,true,this.hablarHijoFlorista, this);
     this.hijoFlorista.play("hijo_florista", true);
@@ -61,6 +66,8 @@ export default class Sala32 extends SalaBase {
       prevKey: cst.SCENES.SALA32,
       objs: this.objetos,
     });
+    this._runInfo._props_interactuables[0] = 1;
+    this.fuente.int = false;
     this.scene.pause();
     this.player.resetInput();
     this.objetos[objs.OBJECTS.llaveComoda] = true;

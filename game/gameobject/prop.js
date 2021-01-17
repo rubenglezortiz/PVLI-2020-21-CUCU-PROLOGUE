@@ -52,5 +52,6 @@ export default class Prop extends Phaser.GameObjects.Sprite {
       }
       else this.propE.visible = false;      
     }
+    else if(!this.int && this.propE !== undefined)this.propE.visible = false;   
   }
 }
