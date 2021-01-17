@@ -74,7 +74,7 @@ export default class Sala28donlindo extends SalaBaseCombate {
   }
 
   attack1(){
-    this.donLindoAt = new DonLindoAttack(this, this.sys.game.canvas.width, this.sys.game.canvas.height / 2,"shoot", this.player);
+    this.donLindoAt = new DonLindoAttack(this, this.sys.game.canvas.width, this.sys.game.canvas.height / 2,"nota", this.player);
     this.monecoAttacks.add(this.donLindoAt);
     this.nota.play();
   }
