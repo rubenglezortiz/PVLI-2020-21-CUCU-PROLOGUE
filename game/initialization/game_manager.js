@@ -42,6 +42,7 @@ var config = {
 
   width: 1400,
   height: 800,
+  
   pixelArt: true,
   input: {
     gamepad: true,
@@ -49,6 +50,11 @@ var config = {
   scale: {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
+    parent: 'GameContainer',
+    max:{
+      width: 1400,
+      height: 800,
+    }
   },
   scene: [
     Bootloader,

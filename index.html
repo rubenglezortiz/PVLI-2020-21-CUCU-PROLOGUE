@@ -21,12 +21,11 @@
       <div class  = "container">
         <nav>
         <!-- <img src = ""> -->
-        <ul id = "session">
-          <li><a href="#">Controls</a></li>
+        <ul id = "session">          
           <li><a href="#about">About the game</a></li>
-          <li><a href="#game">Game</a></li>
+          <li class = "juego"><a href="#juego">Game</a></li>
           <li><a href="https://github.com/rubenglezortiz/PVLI-2020-21-CUCU-PROLOGUE" target="_blank">GitHub</a></li>
-          <li><a href="#participantes">Credits</a></li>
+          <li><a href="#credits">Credits</a></li>
         </ul>
       </div>
     </nav>
@@ -40,18 +39,25 @@
     </div> -->
 
     <h1>Pigmalion</h1>
+    
+    
+
+    
+    
+      <div id="GameContainer"></div>
+    
 
     <script src="./game/initialization/game_manager.js" type="module"></script>
   </div>
 
 
-<div class = "barrita"></div>
+<div id="about" class = "barrita"></div>
 
 <div class = "containertext">
 
 <div class = "atg">
 
-    <span id="about"class = "text1">About the game</span>
+    <span class = "text1">About the game</span>
     <span class = "text2">Es un juego de rol con una perspectiva top-down. El personaje podrá moverse en todas direcciones. Algunas de las características claves del mismo son: el diálogo del jugador con los demás personajes, dado que la trama tendrá un peso importante en el juego, y el combate, que se basará en un sistema de minijuegos distintos entre sí basados en esquivar proyectiles.
     </span>
 
@@ -62,7 +68,7 @@
 <div class = "barrita"></div>
 <div class = "atg">
   <h3 id="participantes" class = "text1">Participantes</h3>
-  <ul class = "text3">
+  <ul id = "credits" class = "text3">
     <li >Jonathan Sebastián Andrade Gordillo</li>
     <li >Manuel Adeliño Consuegra</li>
     <li >Rodrigo Tobar Guillén</li>
@@ -70,10 +76,10 @@
   </ul>
 </div>
 <div class = "barrita"></div>
-     <script>
+     <!-- <script>
       let img = document.getElementsByClassName("imagen");
-      img[0].id = "game";
-    </script>
+      img[0].id = "abt";
+    </script> -->
 
 
   </body>
