@@ -42,12 +42,15 @@ export default class Sala36 extends SalaBase {
 
   interactuarComoda = function(){
     eventsCenter.emit("thisKey", this._nombreSala);
-    this._runInfo._props_interactuables[2] =1;
-        this.comoda.int = false;
+    
         this.scene.launch("dialogo", {npc:"comoda",prevKey:cst.SCENES.SALA36,objs:this.objetos});
         this.scene.pause();
         this.player.resetInput();
-        if (this.objetos[objs.OBJECTS.llaveComoda]) this.objetos[objs.OBJECTS.abanicoRoto] = true;
+        if (this.objetos[objs.OBJECTS.llaveComoda]){
+          this.objetos[objs.OBJECTS.abanicoRoto] = true;
+          this.comoda.int = false;
+          this._runInfo._props_interactuables[2] =1;
+        } 
   }
 }
 
