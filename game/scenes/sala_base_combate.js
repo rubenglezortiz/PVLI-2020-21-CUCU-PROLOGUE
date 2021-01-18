@@ -74,11 +74,37 @@ export default class SalaBaseCombate extends SalaBase {
     }
 
     if(this.monecoLP<=0){
+      switch (this.m)
+      {
+        case 0:
+          eventsCenter.emit("thisKey", this._nombreSala);
+          this.scene.launch("dialogo", {
+            npc: "salvar_cucu",
+            prevKey: cst.SCENES.SalaBaseCombate,
+            objs: this.objetos,
+          });
+          this.scene.pause();
+          this.player.resetInput();
+        break;
+      }
       this.finishVS();
       if(this.m!==3)
         this._runInfo._monecos[this.m] = 1;
     }
     if(this.monecoMercy){
+      switch (this.m)
+      {
+        case 0:
+          eventsCenter.emit("thisKey", cst.SCENES.SALA18CUCU);
+          this.scene.launch("dialogo", {
+            npc: "salvar_cucu",
+            prevKey: cst.SCENES.SALA18CUCU,
+            objs: this.objetos,
+          });
+          this.scene.pause();
+          this.player.resetInput();
+        break;
+      }
       if(this.m!==3)
         this._runInfo._monecos[this.m] = 2;
       this.finishVS();

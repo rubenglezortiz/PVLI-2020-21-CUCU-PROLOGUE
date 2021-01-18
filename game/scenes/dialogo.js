@@ -24,6 +24,13 @@ export default class Dialogo extends Phaser.Scene {
 
     this.bebe = ["agugutata."];
     // Diálogos del combate contra Pomponina
+    this.pomponina = [
+    "POMPONINA: No sé por qué has venido hasta mí,\n no pienso volver contigo.",
+    "PIGMALIÓN: No seas boba, no tienes ningún\n sitio a dónde ir.",
+    "POMPONINA: ¡Me da igual! encontraré a alguien\n que me lleve consigo. Además, seguramente será\n más divertido que tú.",
+    "PIGMALIÓN: Tu sitio es aquí, en el teatro,\n conmigo y tus compañeros.",
+    "POMPONINA: No me interesa el teatro, no me \ninteresan mis compañeros, y mucho menos me\n interesas tú.",
+    ]
     this.rosasCombate = [
       "PIGMALIÓN: Te he traído estas rosas. Como \nsiempre te han gustado pensé que te alegrarían.",
       "POMPONINA:  Ohh, son muy bonitas, quizás \npodríamos llegar a entendernos.",
@@ -63,7 +70,14 @@ export default class Dialogo extends Phaser.Scene {
     ];
 
     // Diálogos del combate contra Cucu
-
+    this.cucu = [
+      "CUCU: (!) ¡CU CU!",
+      "PIGMALIÓN: ¡¿Por que te has escapado, zoquete?!",
+      "CUCU: cu cu...",
+      "PIGMALIÓN: Con que te vas a comportar así ahora, ¿eh?",
+      "CUCU:  ¡CU CU! (le saca la lengua)",
+      "Pigmalión: ¡Pues que así sea!"
+    ];
     this.chisteCombate = [
       "PIGMALIÓN: ¿Sabes cómo se queda un mago\n después de comer?",
       "CUCU: …",
@@ -81,7 +95,17 @@ export default class Dialogo extends Phaser.Scene {
       "PIGMALIÓN: JAJAJAJAJAJA CUCU, ¡QUÉ TONTO!",
       "CUCU: >:C",
     ];
-
+    this.salvarCucu = [
+      "PIGMALIÓN: Menos mal que te vuelves conmigo, eres \nel único capaz de hacer reír a la gente.",
+      "CUCU: CUCU :3"
+    ]
+    //Diálogos del combate contra Don Lindo
+    this.donlindo = [
+      "PIGMALIÓN: Don Lindo, tú que eres de los\n muñecos más sensatos, vuelve al teatro.",
+      "DON LINDO: No, sin el amor de Pomponina no voy\n a ninguna parte.",
+      "PIGMALIÓN: No tienes que depender de ningún\n muñeco, Don Lindo.",
+      "DON LINDO: No, no y no. No me iré a ninguna\n parte sin su amor, y menos contigo."
+    ]
 
     //PUZZLES DON LINDO
     this.bully = ["PIGMALIÓN: Eh tú, sinvergüenza,\n¡deja al joven en paz!",
@@ -424,6 +448,19 @@ export default class Dialogo extends Phaser.Scene {
         }
         break;
       //CASOS COMBATE POMPONINA
+      case npcs.NPCS.pomponina:
+        if (this.iterator != this.pomponina.length)
+          this.text.setText(this.pomponina[this.iterator]);
+        else {
+          this.scene.start(cst.SCENES.SALA38POMPONINA, {
+            posx: 200,
+            posy: this.sys.game.canvas.height / 2, //+ this.player.height / 2,
+            lives: 10,//this.player.lives,
+            objs: this.objetos,
+            runInf:this._runInfo
+          });
+        }
+        break;
       case npcs.NPCS.collarCombate:
         if (this.iterator != this.collarCombate.length)
           this.text.setText(this.collarCombate[this.iterator]);
@@ -482,6 +519,19 @@ export default class Dialogo extends Phaser.Scene {
         break;
 
       // CASOS COMBATE CUCU
+      case npcs.NPCS.cucu:
+        if (this.iterator != this.cucu.length)
+          this.text.setText(this.cucu[this.iterator]);
+        else {
+            this.scene.start(cst.SCENES.SALA18CUCU, {
+              posx: 200,
+              posy: this.sys.game.canvas.height / 2, //+ this.player.height / 2,
+              lives: 10,//this.player.lives,
+              objs: this.objetos,
+              runInf:this._runInfo
+            });
+        }
+        break;
       case npcs.NPCS.chisteCombate:
         if (this.iterator != this.chisteCombate.length)
           this.text.setText(this.chisteCombate[this.iterator]);
@@ -507,7 +557,11 @@ export default class Dialogo extends Phaser.Scene {
         if (this.iterator != this.reirseCombate.length)
           this.text.setText(this.reirseCombate[this.iterator]);
         else this.end();
-        
+        break;
+      case npcs.NPCS.salvarCucu:
+        if (this.iterator != this.salvarCucu.length)
+          this.text.setText(this.salvarCucu[this.iterator]);
+        else this.end();
         break;
         case npcs.NPCS.bullying:
           if(this.iterator != this.bully.length)
@@ -516,6 +570,20 @@ export default class Dialogo extends Phaser.Scene {
           
 
           break;
+      // CASOS COMBATE DON LINDO
+      case npcs.NPCS.don_lindo:
+        if (this.iterator != this.donlindo.length)
+          this.text.setText(this.donlindo[this.iterator]);
+        else {
+            this.scene.start(cst.SCENES.SALA28DONLINDO, {
+              posx: 200,
+              posy: this.sys.game.canvas.height / 2, //+ this.player.height / 2,
+              lives: 10,//this.player.lives,
+              objs: this.objetos,
+              runInf:this._runInfo
+            });
+        }
+        break;
       default:
         console.log("error en el switch de diálogo");
         break;
