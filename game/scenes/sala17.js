@@ -1,7 +1,7 @@
 import SalaBase from "./sala_base.js";
 import Prop from "../gameobject/prop.js";
 import { cst } from "./cst.js";
-
+import eventsCenter from "../eventsCenter.js"
 export default class Sala17 extends SalaBase {
   constructor() {
     super(cst.SCENES.SALA17, [0, cst.SCENES.SALA16, 0, 0], false);
@@ -39,15 +39,17 @@ export default class Sala17 extends SalaBase {
   }
 
   comienzaCombate = function(){
-    if (this._runInfo._monecos[0] === 0){
-    this.scene.start(cst.SCENES.SALA18CUCU, {
-      posx: 200,
-      posy: this.sys.game.canvas.height / 2 + this.player.height / 2,
-      lives: this.player.lives,
+    eventsCenter.emit("thisKey", this._nombreSala);
+    this.scene.launch("dialogo", {
+      npc: "cucu",
+      prevKey: cst.SCENES17,
       objs: this.objetos,
-      runInf:this._runInfo
+      runInfo: this._runInfo,
+      player: this.player,
     });
-   }
+    this.scene.pause();
+    this.scene.sendToBack();
+    this.player.resetInput();
   }
 
 }

@@ -30,7 +30,7 @@ export default class Sala28donlindo extends SalaBaseCombate {
     }
     this.expl=this.sound.add("explosion",this.musicConfig);
     this.nota=this.sound.add("nota",this.musicConfig);
-    
+
     this.startVS();
   }
 

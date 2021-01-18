@@ -17,6 +17,7 @@ NPCS:{
     jarron:"jarron",
     fuente:"fuente", //provisional
     //Combate Pomponina
+    pomponina:"pomponina",
     collarCombate:"collar_combate",
     floresRosasCombate:"flores_rosas_combate",
     rosasCombate:"rosas_combate",
@@ -30,11 +31,14 @@ NPCS:{
     bebe:"bebe",
 
     // Combate Cucu
+    cucu:"cucu",
+    salvar_cucu:"salvar_cucu",
     chisteCombate:"chiste_combate",
     animarleCombate:"animarle_combate",
     datoCombate:"dato_combate",
     reirseCombate:"reirse_combate",
-    
+    // Combate Don Lindo
+    don_lindo:"don_lindo",
     // Finales Urdemalas
     urdemalas0:"urdemalas0",
     urdemalas1:"urdemalas1",

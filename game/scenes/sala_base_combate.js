@@ -53,9 +53,6 @@ export default class SalaBaseCombate extends SalaBase {
       this.pomp = this.sound.add('pomponina', this.musicConfig);
       this.pomp.play();
     }
-
-
-
     this.text = this.add.text(50, 20, "Vidas: " + this.player.lives);
     this.text.setFontSize(80);
   }
@@ -77,11 +74,6 @@ export default class SalaBaseCombate extends SalaBase {
       this.finishVS();
       if(this.m!==3)
         this._runInfo._monecos[this.m] = 1;
-    }
-    if(this.monecoMercy){
-      if(this.m!==3)
-        this._runInfo._monecos[this.m] = 2;
-      this.finishVS();
     }
   }
 
@@ -118,9 +110,12 @@ export default class SalaBaseCombate extends SalaBase {
 
   mercy(mercy) {
     //HABRÍA QUE AJUSTAR PARÁMETROS, VER SI SE SALVA EL MUNECO ETC.
-    if (mercy) {
-      this.monecoMercy=true;
-    }
+    // if (mercy) {
+    //   this.monecoMercy=true;
+    // }
+    this.finishVS();
+      if(this.m!==3)
+        this._runInfo._monecos[this.m] = 2;
   }
 
   finishVS() {    
