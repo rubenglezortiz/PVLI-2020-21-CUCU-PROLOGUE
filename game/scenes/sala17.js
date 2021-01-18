@@ -42,7 +42,7 @@ export default class Sala17 extends SalaBase {
     eventsCenter.emit("thisKey", this._nombreSala);
     this.scene.launch("dialogo", {
       npc: "cucu",
-      prevKey: cst.SCENES17,
+      prevKey: cst.SCENES.SALA17,
       objs: this.objetos,
       runInfo: this._runInfo,
       player: this.player,

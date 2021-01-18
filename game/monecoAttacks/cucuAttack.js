@@ -1,16 +1,13 @@
 import eventsCenter from "../eventsCenter.js";
 export default class CucuAttack extends Phaser.GameObjects.Sprite {
-  constructor(scene, anim, velocity, pigmalion) {
+  constructor(scene, anim, y, velocity, pigmalion) {
     super(scene, scene.sys.game.canvas.width,  scene.sys.game.canvas.height/2,anim);
     scene.add.existing(this);
     scene.physics.add.existing(this);
     scene.physics.world.enable(this);
     this.player = pigmalion;
     //aunque arriba se le pponga una pos en y aqui se cambia
-      this.y =Phaser.Math.Between(
-      this.player.y - this.player.height * 1.5,
-      this.player.y + this.player.height * 1.5
-    );
+      
 
     
     this.scene.physics.add.overlap(this,this.player);

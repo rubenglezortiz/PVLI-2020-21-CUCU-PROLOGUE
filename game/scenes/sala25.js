@@ -23,4 +23,11 @@ export default class Sala25 extends SalaBase {
   update() {
     super.update();
   }
+
+  talkTabernero = function(){
+
+
+    
+  }
+
 }

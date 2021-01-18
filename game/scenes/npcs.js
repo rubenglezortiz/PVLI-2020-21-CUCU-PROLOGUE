@@ -1,5 +1,9 @@
 export const npcs = {
 NPCS:{
+    //Puzzle Cucu
+    bebe:"bebe",
+    tienda_disfraces:"tienda_disfraces",
+    chulapos:"chulapos",
     //Puzzle Don Lindo
     npcConFrio1: "npcFrio1",
     fotoPomponina: "foto_pomponina",
@@ -27,11 +31,7 @@ NPCS:{
     amenazarCombate:"amenazar_combate",
     halagarCombate:"halagar_combate",
     salvar_pomponina:"salvar_pomponina",
-    matar_pomponina:"matar_pomponina",
-    //Puzzle Cucu
-    bebe:"bebe",
-    tienda_disfraces:"tienda_disfraces",
-    chulapos:"chulapos",
+    matar_pomponina:"matar_pomponina",    
     // Combate Cucu
     cucu:"cucu",
     salvar_cucu:"salvar_cucu",
@@ -49,6 +49,4 @@ NPCS:{
     urdemalas1:"urdemalas1",
     urdemalas2:"urdemalas2"
     }
-
-
 }

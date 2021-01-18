@@ -32,7 +32,7 @@ export default class Sala22 extends SalaBase {
     eventsCenter.emit("thisKey", this._nombreSala);
     this.scene.launch("dialogo", {npc:npcs.NPCS.dependiente_ropa, prevKey:cst.SCENES.SALA22,objs:this.objetos});
     this.scene.pause();
-    this.player.resetInput();
+    this.player.resetInput();    
     this.objetos[objs.OBJECTS.gorrosARepartir] = true;
   }
   
