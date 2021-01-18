@@ -22,7 +22,16 @@ export default class Dialogo extends Phaser.Scene {
     this.menu = this.add.image(700, 500, "mc");
     this.menu.setAlpha(0.5);
 
-    this.bebe = ["agugutata."];
+    this.bebe = [
+      "BEBÉ: Jijijiji. ¡Cucu, cucu!",
+      "PIGMALIÓN: Parece que Cucu ha pasado por aquí,\nse nota que ha estado jugando con el bebé."
+  ];
+    this.tiendaDisfraces = [
+      "PIGMALIÓN: Al principio Cucu se reía por\ncualquier tontería, no sé cuánto tiempo llevo\nsin verle sonreír."
+    ]
+    this.chulapos = [
+      "SEÑOR: “He visto un señor vestido raro ir en\ndirección hacia el rastro. Estuvo un rato en\nla verbena, parecía estar disfrutando como\nun niño pequeño, no paraba de reir."
+    ]
     // Diálogos del combate contra Pomponina
     this.rosasCombate = [
       "PIGMALIÓN: Te he traído estas rosas. Como\nsiempre te han gustado pensé que te alegrarían.",
@@ -33,8 +42,8 @@ export default class Dialogo extends Phaser.Scene {
       "POMPONINA: ¡Son rosas! ¡Son mis favoritas!\n Muchas gracias, Pigmalión.",
     ];
     this.collarCombate = [
-      "PIGMALIÓN: Te he traído un collar. A las\n chicas os encantan estas cosas, ¿no?",
-      "POMPONINA: ¡No! Te he dicho muchísimas veces\nque no me gustan los collares! Si vas a tener\nun detalle deberías darme algo especial\npara mí, no cualquier baratija que encuentres\npor ahí.",
+      "PIGMALIÓN: Te he traído un collar. A las \nchicas os encantan estas cosas, ¿no?",
+      "POMPONINA: ¡No! Te he dicho muchísimas veces \nque no me gustan los collares! Si vas a tener\nun detalle deberías darme algo especial\npara mí, no cualquier baratija que encuentres\npor ahí.",
     ];
     this.bombonesCombate = [
       "PIGMALIÓN: Toma. Esto me lo dió una anciana a\nla que ayudaste para que te lo trajese.",
@@ -61,7 +70,12 @@ export default class Dialogo extends Phaser.Scene {
       "PIGMALIÓN: Vuelve a tu caja.",
       "POMPONINA:  ¡No me da la gana! ",
     ];
-
+    this.salvarPomponina = [
+      "POMPONINA: Creo que después de tanto tiempo al\n fin empezamos a entendernos. Te daré otra oportunidad,\npero más te vale que me trates como a la\nestrella que soy."
+    ]
+    this.matarPomponina = [
+      "POMPONINA: No puede acabar así...todavía\nnecesita…mi...ayuda..."
+    ]
     // Diálogos del combate contra Cucu
 
     this.chisteCombate = [
@@ -81,6 +95,27 @@ export default class Dialogo extends Phaser.Scene {
       "PIGMALIÓN: JAJAJAJAJAJA CUCU, ¡QUÉ TONTO!",
       "CUCU: >:C",
     ];
+    this.salvarCucu = [
+      "PIGMALIÓN: Menos mal que te vuelves conmigo,\neres el único capaz de hacer reír a la gente.",
+      "CUCU: CUCU :3"
+    ];
+    this.matarCucu = [
+      "Pigmalión: Fuistes de mis primeros muñecos, se\nnota lo inferior que eres. Ahora podré\nrehacerte y mejorarte.",
+      "Juan: cu cu"
+    ]
+    //Diálogos del combate contra Don Lindo
+    this.donlindo = [
+      "PIGMALIÓN: Don Lindo, tú que eres de los\n muñecos más sensatos, vuelve al teatro.",
+      "DON LINDO: No, sin el amor de Pomponina no voy\n a ninguna parte.",
+      "PIGMALIÓN: No tienes que depender de ningún\n muñeco, Don Lindo.",
+      "DON LINDO: No, no y no. No me iré a ninguna\n parte sin su amor, y menos contigo."
+    ]
+    this.salvarDonLindo = [
+      "DON LINDO: Bueno, creo que mi sitio está ahí en\nel teatro, haciendo la música de tus farsas.\n En verdad lo echo de menos."
+    ]
+    this.matarDonLindo = [
+      "DON LINDO: Vaya… Creo que ahora tendré que\ntocar con mi ukelele en algún otro lugar… \nEspero que Pomponina, por mucho que me duela,\nno esté allí viéndome, que se quede aquí…\nsaa salvo."
+    ]
 
     //PUZZLES DON LINDO
     this.tabernero=[
@@ -190,18 +225,12 @@ export default class Dialogo extends Phaser.Scene {
         "DON LINDO: A ver si te das cuenta de que no todo gira\nen torno al dinero, garrapata sin patas."        
       ];
 
-      
-
-
-
-      if ( //ESTO Q EEEEES??
-        this.objetos[objs.OBJECTS.bombonesRepartidos1] &&
-        this.objetos[objs.OBJECTS.bombonesRepartidos2]
-      )
-          
-
-       // PUZZLES POMPONINA
-        //#region
+     
+        // PUZZLES POMPONINA
+        if (
+          this.objetos[objs.OBJECTS.bombonesRepartidos1] &&
+          this.objetos[objs.OBJECTS.bombonesRepartidos2]
+        )
         this.abuela = [
           "Pigmalión: Ya he repartido las cajas. Tome el dinero.",
           "Abuela: Muchas gracias por su ayuda, joven.",
