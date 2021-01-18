@@ -17,15 +17,21 @@ export default class Sala33 extends SalaBase {
     super.create();
     this.camino= this.add.image(0,this.sys.game.canvas.height / 2,"pomponinacamino1")
     this.floristeria= new Prop(this,this.sys.canvas.width/2,100,"floristeria",this.player,80,50,false)
-    this.florista=new Prop(this, this.sys.canvas.width/2,350,"florista",this.player,60,45,true, this.hablarFlorista, this);
-    this.florista.play("florista",true);
     if(this._runInfo._props_interactuables[1] === 0){
       this.jarron=new Prop(this, this.sys.canvas.width-300,this.sys.canvas.height-100,"jarron",this.player,60,45,true, this.mirarJarron, this);
     }
     else{
       this.jarron=new Prop(this, this.sys.canvas.width-300,this.sys.canvas.height-100,"jarron",this.player,60,45,false);
     }
-  
+
+    if(this._runInfo._props_interactuables[5] === 0){
+      this.florista=new Prop(this, this.sys.canvas.width/2,350,"florista",this.player,60,45,true, this.hablarFlorista, this);
+    }
+    else{
+      this.florista=new Prop(this, this.sys.canvas.width/2,350,"florista",this.player,60,45,false);
+
+    }
+    this.florista.play("florista",true);
     this.jarron.play("jarron",true);
    
   }
@@ -53,7 +59,10 @@ export default class Sala33 extends SalaBase {
     this.player.resetInput();
     if (this.objetos[objs.OBJECTS.llaveFlorista])
       this.objetos[objs.OBJECTS.floresHijo] = true;
-    if (this.objetos[objs.OBJECTS.hijoAyudado])
+    if (this.objetos[objs.OBJECTS.hijoAyudado]){
       this.objetos[objs.OBJECTS.floresRosas] = true;
+      this.florista.int = false;
+      this._runInfo._props_interactuables[5] =1;
+    }
   }
 }
