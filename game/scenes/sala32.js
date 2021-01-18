@@ -24,7 +24,14 @@ export default class Sala32 extends SalaBase {
     this.fuente.play("fuente", true);
     this.hijoFlorista = new Prop(this,this.sys.game.canvas.width / 2,600,"hijo_florista",this.player,60,50,true,this.hablarHijoFlorista, this);
     this.hijoFlorista.play("hijo_florista", true);
-    this.cliente = new Prop(this,1150,700,"cliente_bombones1",this.player,60,50,true,this.hablarCliente, this);
+    
+    if(this._runInfo._props_interactuables[4] === 0){
+      this.cliente = new Prop(this,1150,700,"cliente_bombones1",this.player,60,50,true,this.hablarCliente, this);
+    }
+    else{
+      this.cliente = new Prop(this,1150,700,"cliente_bombones1",this.player,60,50,false);
+
+    }
     this.cliente.play("cliente_bombones1", true);
   }
 
@@ -42,8 +49,12 @@ export default class Sala32 extends SalaBase {
     });
     this.scene.pause();
     this.player.resetInput();
-    if (this.objetos[objs.OBJECTS.repartoBombones])
-        this.objetos[objs.OBJECTS.bombonesRepartidos1] = true;
+    if (this.objetos[objs.OBJECTS.repartoBombones]){
+      this.cliente.int = false;
+      this._runInfo._props_interactuables[4] =1;
+      this.objetos[objs.OBJECTS.bombonesRepartidos1] = true;
+    }
+        
   }
 
   hablarHijoFlorista = function(){

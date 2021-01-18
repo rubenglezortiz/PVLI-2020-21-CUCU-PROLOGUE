@@ -235,19 +235,19 @@ export default class Dialogo extends Phaser.Scene {
           "Abuela: Muchas gracias por su ayuda, joven.",
           "Me recuerda usted a la joven que está buscando.",
           "Me ayudó mucho cuando la conocí.",
-          "Me dijo que se fue a una casa al fondo de la calle.",
+          "Me dijo que se fue a una casa al fondo de\nla calle.",
           "Si la ve, ¿le dará estos bombones de mi parte?",
-          "Pigmalión: Por supuesto. Y gracias por la información.",
+          "Pigmalión: Por supuesto. Y gracias por la\ninformación.",
         ];
       else
         this.abuela = [
           "Pigmalión: Buenas tardes.",
           "Abuela: Buenas tardes, caballero. ¿Qué desea?",
-          "Pigmalión: Le quería preguntar si ha visto a una joven\ncon el pelo rubio y rizado y con un vestido azul.",
+          "Pigmalión: Le quería preguntar si ha visto\n a una joven con el pelo rubio y rizado\ny con un vestido azul.",
           "Abuela: Hmm a lo mejor.",
           "Pero antes de decirle lo que sé,",
-          "¿podría ayudarme a repartir estas cajas de bombones, por favor?",
-          "Pigmalión: Trato hecho, volveré tras repartirlas.",
+          "¿podría ayudarme a repartir estas cajas\nde bombones, por favor?",
+          "Pigmalión: Trato hecho, volveré tras\nrepartirlas.",
           "Abuela: Muchas gracias. Es usted muy amable.",
         ];
 
@@ -258,7 +258,7 @@ export default class Dialogo extends Phaser.Scene {
       ];
     else
       this.cliente = [
-        "Pigmalión: Usted ha pedido estos bombones, ¿verdad?",
+        "Pigmalión: Usted ha pedido estos bombones,\n¿verdad?",
         "Transeúnte: ¡Al fin! Muchas gracias, caballero.",
         "Aquí tiene el dinero.",
       ];

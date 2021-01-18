@@ -16,7 +16,12 @@ export default class Sala34 extends SalaBase {
   create() {
     super.create(); 
     this.camino= this.add.image(this.sys.game.canvas.width / 2+15,this.sys.game.canvas.height / 2,"pomponinacamino5")
-    this.clienteBombones=new Prop(this, 300, this.sys.game.canvas.height-150,"cliente_bombones2",this.player,60,50,true, this.hablarCLiente2, this);
+    if(this._runInfo._props_interactuables[3] === 0){
+      this.clienteBombones=new Prop(this, 300, this.sys.game.canvas.height-150,"cliente_bombones2",this.player,60,50,true, this.hablarCLiente2, this);
+    }
+    else{
+      this.clienteBombones=new Prop(this, 300, this.sys.game.canvas.height-150,"cliente_bombones2",this.player,60,50,false);
+    }
     this.clienteBombones.play("cliente_bombones2",true);
  } 
 
@@ -39,7 +44,11 @@ export default class Sala34 extends SalaBase {
     this.scene.launch("dialogo", {npc:"cliente2",prevKey:cst.SCENES.SALA34,objs:this.objetos});
     this.scene.pause();
     this.player.resetInput();
-    if (this.objetos[objs.OBJECTS.repartoBombones])
+    if (this.objetos[objs.OBJECTS.repartoBombones]){
       this.objetos[objs.OBJECTS.bombonesRepartidos2] = true;
+      this.clienteBombones.int = false;
+      this._runInfo._props_interactuables[3] =1;
+    }
+     
   }
 }
