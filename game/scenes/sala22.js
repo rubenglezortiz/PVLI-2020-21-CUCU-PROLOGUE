@@ -17,7 +17,7 @@ export default class Sala22 extends SalaBase {
     this.camino= this.add.image(this.sys.game.canvas.width / 2 + 15,this.sys.game.canvas.height / 2,"donlindocamino3")
     this.frio = new Prop (this, 400, 600,"frio2",this.player,60,50,true);
     this.tiendaropa = new Prop (this, 1150, 200,"tiendaderopa",this.player,80,50,false);
-    this.dependienteropa= new Prop(this,1150,350,"dependiente_ropa",this.player,60,50,true);
+    this.dependienteropa= new Prop(this,1150,350,"dependiente_ropa",this.player,60,50,true,this.interactuarDepRopa,this);
     this.dependienteropa.play("dependiente_ropa",true);
     this.frio.play("frio2",true);
   }  
