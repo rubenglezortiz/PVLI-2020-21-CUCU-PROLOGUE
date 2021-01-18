@@ -24,7 +24,16 @@ export default class Dialogo extends Phaser.Scene {
     this.menu = this.add.image(700, 500, "mc");
     this.menu.setAlpha(0.5);
 
-    this.bebe = ["agugutata."];
+    this.bebe = [
+      "BEBÉ: Jijijiji. ¡Cucu, cucu!",
+      "PIGMALIÓN: Parece que Cucu ha pasado por aquí,\nse nota que ha estado jugando con el bebé."
+  ];
+    this.tiendaDisfraces = [
+      "PIGMALIÓN: Al principio Cucu se reía por\ncualquier tontería, no sé cuánto tiempo llevo\nsin verle sonreír."
+    ]
+    this.chulapos = [
+      "SEÑOR: “He visto un señor vestido raro ir en\ndirección hacia el rastro. Estuvo un rato en \nla verbena, parecía estar disfrutando como\nun niño pequeño, no paraba de reir."
+    ]
     // Diálogos del combate contra Pomponina
     this.pomponina = [
       "POMPONINA: No sé por qué has venido hasta mí,\nno pienso volver contigo.",
@@ -411,80 +420,81 @@ export default class Dialogo extends Phaser.Scene {
       case npcs.NPCS.bebe:
         if (this.iterator != this.bebe.length)
           this.text.setText(this.bebe[this.iterator]);
-        else {
-          this.end();
-        }
+        else this.end();
         break;
+
+        case npcs.NPCS.tienda_disfraces:
+        if (this.iterator != this.tiendaDisfraces.length)
+          this.text.setText(this.tiendaDisfraces[this.iterator]);
+        else this.end();
+        break;
+
       case npcs.NPCS.caja:
         if (this.iterator != this.caja.length)
           this.text.setText(this.caja[this.iterator]);
-        else {
-          this.end();
-        }
+        else this.end();
         break;
+
+        case npcs.NPCS.chulapos:
+          if (this.iterator != this.chulapos.length)
+            this.text.setText(this.chulapos[this.iterator]);
+          else this.end();
+          break;
+
       case npcs.NPCS.abuela:
         if (this.iterator != this.abuela.length)
           this.text.setText(this.abuela[this.iterator]);
-        else {
-          this.end();
-        }
+        else this.end();
         break;
+
       case npcs.NPCS.cliente:
         if (this.iterator != this.cliente.length)
           this.text.setText(this.cliente[this.iterator]);
-        else {
-          this.end();
-        }
+        else this.end();
         break;
+
       case npcs.NPCS.cliente2:
         if (this.iterator != this.cliente2.length)
           this.text.setText(this.cliente2[this.iterator]);
-        else {
-          this.end();
-        }
+        else this.end();
         break;
+
       case npcs.NPCS.encargadoAnticuario:
         if (this.iterator != this.encargadoAnticuario.length)
           this.text.setText(this.encargadoAnticuario[this.iterator]);
-        else {
-          this.end();
-        }
+        else this.end();
         break;
+
       case npcs.NPCS.hijoFlorista:
         if (this.iterator != this.hijoFlorista.length)
           this.text.setText(this.hijoFlorista[this.iterator]);
-        else {
-          this.end();
-        }
+        else this.end();
         break;
+
       case npcs.NPCS.florista:
         if (this.iterator != this.florista.length)
           this.text.setText(this.florista[this.iterator]);
-        else {
-          this.end();
-        }
+        else this.end();
         break;
+
       case npcs.NPCS.jarron:
         if (this.iterator != this.jarron.length)
           this.text.setText(this.jarron[this.iterator]);
-        else {
-          this.end();
-        }
+        else this.end();
         break;
+
       case npcs.NPCS.fuente:
         if (this.iterator != this.fuente.length)
           this.text.setText(this.fuente[this.iterator]);
-        else {
-          this.end();
-        }
+        else this.end();
         break;
+
       case npcs.NPCS.comoda:
         if (this.iterator != this.comoda.length)
           this.text.setText(this.comoda[this.iterator]);
-        else {
-          this.end();
-        }
+        else this.end();
         break;
+
       case npcs.NPCS.urdemalas0:
         if (this.iterator != this.finalNeutral.length)
           this.text.setText(this.finalNeutral[this.iterator]);
@@ -493,6 +503,7 @@ export default class Dialogo extends Phaser.Scene {
           this.end();
         }
         break;
+
       case npcs.NPCS.urdemalas1:
         if (this.iterator != this.finalGenocida.length)
           this.text.setText(this.finalGenocida[this.iterator]);
@@ -508,6 +519,7 @@ export default class Dialogo extends Phaser.Scene {
           });
         }
         break;
+
       case npcs.NPCS.urdemalas2:
         if (this.iterator != this.finalPacifista.length)
           this.text.setText(this.finalPacifista[this.iterator]);
@@ -516,6 +528,7 @@ export default class Dialogo extends Phaser.Scene {
           this.end();
         }
         break;
+
         // Casos combate don lindo
         case npcs.NPCS.don_lindo:
         if (this.iterator != this.donlindo.length)
@@ -528,13 +541,13 @@ export default class Dialogo extends Phaser.Scene {
               lives: this.player.lives,
               objs: this.objetos,
               runInf:this.runInfo
-              
             });
             this.scene.pause();
             this.scene.sendToBack();
            }
         }
         break;
+
         case npcs.NPCS.salvar_don_lindo:
         if (this.iterator != this.salvarDonLindo.length)
           this.text.setText(this.salvarDonLindo[this.iterator]);
@@ -551,6 +564,7 @@ export default class Dialogo extends Phaser.Scene {
         this.scene.sendToBack();
         }
         break;
+
         case npcs.NPCS.matar_don_lindo:
           if (this.iterator != this.matarDonLindo.length)
             this.text.setText(this.matarDonLindo[this.iterator]);
@@ -567,6 +581,7 @@ export default class Dialogo extends Phaser.Scene {
           this.scene.sendToBack();
           }
           break;
+
       //CASOS COMBATE POMPONINA
       case npcs.NPCS.pomponina:
         if (this.iterator != this.pomponina.length)
@@ -586,61 +601,52 @@ export default class Dialogo extends Phaser.Scene {
            }
         }
         break;
+
       case npcs.NPCS.collarCombate:
         if (this.iterator != this.collarCombate.length)
           this.text.setText(this.collarCombate[this.iterator]);
-        else {
-          this.end();
-        }
+        else this.end();
         break;
+
       case npcs.NPCS.bombonesCombate:
         if (this.iterator != this.bombonesCombate.length)
           this.text.setText(this.bombonesCombate[this.iterator]);
-        else {
-          this.end();
-        }
+        else this.end();
         break;
+
       case npcs.NPCS.abanicoCombate:
         if (this.iterator != this.abanicoCombate.length)
           this.text.setText(this.abanicoCombate[this.iterator]);
-        else {
-          this.end();
-        }
+        else this.end();
         break;
+
       case npcs.NPCS.halagarCombate:
         if (this.iterator != this.halagarCombate.length)
           this.text.setText(this.halagarCombate[this.iterator]);
-        else {
-          this.end();
-        }
+        else this.end();
         break;
+
       case npcs.NPCS.ordenarCombate:
         if (this.iterator != this.ordenarCombate.length)
           this.text.setText(this.ordenarCombate[this.iterator]);
-        else {
-          this.end();
-        }
+        else this.end();
         break;
       case npcs.NPCS.amenazarCombate:
         if (this.iterator != this.amenazarCombate.length)
           this.text.setText(this.amenazarCombate[this.iterator]);
-        else {
-          this.end();
-        }
+        else this.end();
         break;
+
       case npcs.NPCS.floresRosasCombate:
         if (this.iterator != this.floresRosasCombate.length)
           this.text.setText(this.floresRosasCombate[this.iterator]);
-        else {
-          this.end();
-        }
+        else this.end();
         break;
+
       case npcs.NPCS.rosasCombate:
         if (this.iterator != this.rosasCombate.length)
           this.text.setText(this.rosasCombate[this.iterator]);
-        else {
-          this.end();
-        }
+        else this.end();
         break;
         case npcs.NPCS.salvar_pomponina:
           if (this.iterator != this.salvarPomponina.length)
@@ -658,6 +664,7 @@ export default class Dialogo extends Phaser.Scene {
           this.scene.sendToBack();
         }
           break;
+
           case npcs.NPCS.matar_pomponina:
           if (this.iterator != this.matarPomponina.length)
             this.text.setText(this.matarPomponina[this.iterator]);
@@ -674,6 +681,7 @@ export default class Dialogo extends Phaser.Scene {
           this.scene.sendToBack();
           }
           break;
+
       // CASOS COMBATE CUCU
       case npcs.NPCS.cucu:
         if (this.iterator != this.cucu.length)
@@ -693,32 +701,31 @@ export default class Dialogo extends Phaser.Scene {
            }
         }
         break;
+
       case npcs.NPCS.chisteCombate:
         if (this.iterator != this.chisteCombate.length)
           this.text.setText(this.chisteCombate[this.iterator]);
-        else {
-          this.end();
-        }
+        else this.end();
         break;
+
       case npcs.NPCS.animarleCombate:
         if (this.iterator != this.animarleCombate.length)
           this.text.setText(this.animarleCombate[this.iterator]);
-        else {
-          this.end();
-        }
+        else this.end();
         break;
+
       case npcs.NPCS.datoCombate:
         if (this.iterator != this.datoCombate.length)
           this.text.setText(this.datoCombate[this.iterator]);
-        else {
-          this.end();
-        }
+        else this.end();
         break;
+
       case npcs.NPCS.reirseCombate:
         if (this.iterator != this.reirseCombate.length)
           this.text.setText(this.reirseCombate[this.iterator]);
         else this.end();
         break;
+
         case npcs.NPCS.salvar_cucu:
         if (this.iterator != this.salvarCucu.length)
           this.text.setText(this.salvarCucu[this.iterator]);
@@ -757,6 +764,7 @@ export default class Dialogo extends Phaser.Scene {
           this.text.setText(this.bully[this.iterator]);
           else this.end();
           break;
+
       default:
         console.log("error en el switch de diálogo");
         break;

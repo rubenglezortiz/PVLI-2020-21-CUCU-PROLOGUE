@@ -30,7 +30,8 @@ NPCS:{
     matar_pomponina:"matar_pomponina",
     //Puzzle Cucu
     bebe:"bebe",
-
+    tienda_disfraces:"tienda_disfraces",
+    chulapos:"chulapos",
     // Combate Cucu
     cucu:"cucu",
     salvar_cucu:"salvar_cucu",

@@ -1,7 +1,7 @@
 import SalaBase from "./sala_base.js";
 import Prop from "../gameobject/prop.js";
 import { cst } from "./cst.js";
-
+import eventsCenter from "../eventsCenter.js"
 export default class Sala13 extends SalaBase {
   constructor() {
     super(cst.SCENES.SALA13,[0, cst.SCENES.SALA14, 0, cst.SCENES.SALA11],false);
@@ -16,11 +16,9 @@ export default class Sala13 extends SalaBase {
     this.camino = this.add.image(800, 400, "cucucamino1");
     this.camino.depth = 1;
     this.camino.angle = 90;
-    this.chulapos = new Prop(this,1100,300,"chulapos",this.player,60,50,true);
+    this.chulapos = new Prop(this,1100,300,"chulapos",this.player,60,50,true,this.hablar,this);
     this.chulapos.play("chulapos", true);
     this.caballo = new Prop(this,700,350,"caballo",this.player,60,50,false);    
-
-
     this.musicConfig = {
       mute: false,
       volume: 0.2,
@@ -53,4 +51,14 @@ export default class Sala13 extends SalaBase {
       }
     } 
   }
+  hablar = function () {
+    eventsCenter.emit("thisKey", this._nombreSala);
+    this.scene.launch("dialogo", {
+      npc: "chulapos",
+      prevKey: cst.SCENES.SALA13,
+      objs: this.objetos,
+    });
+    this.scene.pause();
+    this.player.resetInput();
+  };
 }
