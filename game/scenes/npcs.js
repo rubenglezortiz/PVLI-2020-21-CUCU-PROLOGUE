@@ -26,7 +26,8 @@ NPCS:{
     ordenarCombate:"ordenar_combate",
     amenazarCombate:"amenazar_combate",
     halagarCombate:"halagar_combate",
-
+    salvar_pomponina:"salvar_pomponina",
+    matar_pomponina:"matar_pomponina",
     //Puzzle Cucu
     bebe:"bebe",
 
@@ -37,8 +38,11 @@ NPCS:{
     animarleCombate:"animarle_combate",
     datoCombate:"dato_combate",
     reirseCombate:"reirse_combate",
+    matar_cucu:"matar_cucu",
     // Combate Don Lindo
     don_lindo:"don_lindo",
+    salvar_don_lindo:"salvar_don_lindo",
+    matar_don_lindo:"matar_don_lindo",
     // Finales Urdemalas
     urdemalas0:"urdemalas0",
     urdemalas1:"urdemalas1",

@@ -71,6 +71,42 @@ export default class SalaBaseCombate extends SalaBase {
     }
 
     if(this.monecoLP<=0){
+      switch(this.m)
+    {
+      case 0:
+    eventsCenter.emit("thisKey", this._nombreSala);
+    this.scene.launch("dialogo", {
+      npc: "matar_cucu",
+      prevKey: cst.SCENES.SalaBaseCombate,
+      objs: this.objetos,
+      runInfo: this._runInfo,
+      player: this.player,
+    });
+    break;
+    case 1:
+    eventsCenter.emit("thisKey", this._nombreSala);
+    this.scene.launch("dialogo", {
+      npc: "matar_don_lindo",
+      prevKey: cst.SCENES.SalaBaseCombate,
+      objs: this.objetos,
+      runInfo: this._runInfo,
+      player: this.player,
+    });
+    break;
+  
+  case 2:
+    eventsCenter.emit("thisKey", this._nombreSala);
+    this.scene.launch("dialogo", {
+      npc: "matar_pomponina",
+      prevKey: cst.SCENES.SalaBaseCombate,
+      objs: this.objetos,
+      runInfo: this._runInfo,
+      player: this.player,
+    });
+    break;
+  }
+      this.scene.pause();
+      this.player.resetInput();
       this.finishVS();
       if(this.m!==3)
         this._runInfo._monecos[this.m] = 1;
@@ -113,6 +149,42 @@ export default class SalaBaseCombate extends SalaBase {
     // if (mercy) {
     //   this.monecoMercy=true;
     // }
+    switch(this.m)
+    {
+      case 0:
+    eventsCenter.emit("thisKey", this._nombreSala);
+    this.scene.launch("dialogo", {
+      npc: "salvar_cucu",
+      prevKey: cst.SCENES.SalaBaseCombate,
+      objs: this.objetos,
+      runInfo: this._runInfo,
+      player: this.player,
+    });
+    break;
+    case 1:
+    eventsCenter.emit("thisKey", this._nombreSala);
+    this.scene.launch("dialogo", {
+      npc: "salvar_don_lindo",
+      prevKey: cst.SCENES.SalaBaseCombate,
+      objs: this.objetos,
+      runInfo: this._runInfo,
+      player: this.player,
+    });
+    break;
+  
+  case 2:
+    eventsCenter.emit("thisKey", this._nombreSala);
+    this.scene.launch("dialogo", {
+      npc: "salvar_pomponina",
+      prevKey: cst.SCENES.SalaBaseCombate,
+      objs: this.objetos,
+      runInfo: this._runInfo,
+      player: this.player,
+    });
+    break;
+  }
+  this.scene.pause();
+    this.player.resetInput();
     this.finishVS();
       if(this.m!==3)
         this._runInfo._monecos[this.m] = 2;
@@ -127,18 +199,7 @@ export default class SalaBaseCombate extends SalaBase {
    
     this.ambiente = this.sound.add('ambiente', this.musicConfig);
     this.ambiente.play();
-
-    if(this.m!==3){
-      this.scene.start(cst.SCENES.SALA0, {
-        posx: this.player.x,
-        posy: this.player.y,
-        lives: this.player.lives,
-        objs: this.objetos,
-        runInf: this._runInfo,
-      });
-    }
-    else{
-      console.log("fin del juego")
-    }
+    this.scene.sendToBack();
+    
   }
 }

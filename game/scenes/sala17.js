@@ -48,7 +48,7 @@ export default class Sala17 extends SalaBase {
       player: this.player,
     });
     this.scene.pause();
-    this.scene.sendToBack();
+    //this.scene.sendToBack();
     this.player.resetInput();
   }
 

@@ -22,7 +22,7 @@ export default class SalaBase extends Phaser.Scene {
 
 
   create() {
-    
+    this.scene.bringToTop();
     this.window = new Object();
     this.window.w = this.sys.game.canvas.width;
     this.window.h = this.sys.game.canvas.height;
