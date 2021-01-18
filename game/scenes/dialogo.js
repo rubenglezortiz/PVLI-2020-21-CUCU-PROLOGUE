@@ -151,7 +151,7 @@ export default class Dialogo extends Phaser.Scene {
     else
       this.dependienteRopa = [
         "PIGMALIÓN: Perdona, ¿has visto por aquí a un tipo con traje y corbata,\ny que además parece que lleva una peluca?",
-        "DEPENDIENTE: Me quiere sonar sí, pero ahora mismo no lo termino de recordar. Además, estoy muy liado.Tengo que ordenar toda la tienda y repartir estos gorros. \n¿Te importaría echarme una mano con ellos?\nMientras intentaré pensar en el hombre que me has dicho.",
+        "DEPENDIENTE: Me quiere sonar sí, pero ahora mismo no lo termino de recordar.\nAdemás, estoy muy liado.Tengo que ordenar toda la tienda y repartir estos gorros.\n¿Te importaría echarme una mano con ellos?\nMientras intentaré pensar en el hombre que me has dicho.",
         "PIGMALIÓN: Está bien, ¿a quién tengo que dárselos?",
         "DEPENDIENTE: A cualquier persona que veas que tiene frío por la calle,\nse acerca el invierno y, si entre todos colaboramos,\nharemos que el invierno sea menos duro.",
       ];
@@ -173,12 +173,11 @@ export default class Dialogo extends Phaser.Scene {
       ]
     }
 
-    if(!objs.OBJECTS.gorroRepartido1)
+    if(!this.objetos[objs.OBJECTS.gorroRepartido1] && this.objetos[objs.OBJECTS.gorrosARepartir] )
     this.frio1 = [];
-    else this.frio1 = ["¡TRANSEUNTE: Que frío!"]
+    else this.frio1 = ["¡TRANSEUNTE: Que frío!"];
 
-    if(!objs.OBJECTS.gorroRepartido2)
-    this.frio2 = [];
+    if(!this.objetos[objs.OBJECTS.gorroRepartido2] && this.objetos[objs.OBJECTS.gorrosARepartir]) this.frio2 = ["ola"];   
     else this.frio2 = ["¡TRANSEUNTE: ¡ Hace tanto frío que puede \nque nieve!"]
 
     //COMBATE DON LINDO
@@ -409,7 +408,7 @@ export default class Dialogo extends Phaser.Scene {
       this.iterator++;
     }
     switch (this.npc) {
-      case npcs.NPCS.this.bebe:
+      case npcs.NPCS.bebe:
         if (this.iterator != this.bebe.length)
           this.text.setText(this.bebe[this.iterator]);
         else {
