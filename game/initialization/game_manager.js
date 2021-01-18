@@ -44,7 +44,6 @@ var config = {
   height: 800,
   
   pixelArt: true,
-  zoom:4,
   input: {
     gamepad: true,
   },

@@ -5,7 +5,7 @@ NPCS:{
     fotoPomponina: "foto_pomponina",
     dependiente_ropa: "dependiente_ropa",
     bullying: "bullying",
-    
+    frio2 : "frio2",
     //Puzzle Pomponina
     comoda:"comoda",
     abuela:"abuela",

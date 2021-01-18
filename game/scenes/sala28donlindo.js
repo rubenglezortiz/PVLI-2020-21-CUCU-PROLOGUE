@@ -17,8 +17,7 @@ export default class Sala28donlindo extends SalaBaseCombate {
     super.create();
     this.donLindo = new Prop(this,1200,this.sys.game.canvas.height/2,"donlindo_idl",this.player,60,50,false);
     this.donLindo.play("donlindo_chaqueta",false).on("animationcomplete",()=>{this.donLindo.play("donlindo")});   
-    // this.bullying.play("bullying2",false).on("animationcomplete",()=>{this.bullying.play("bullying3",true)});    
-
+   
     this.musicConfig = {
       mute: false,
       volume: 0.4,

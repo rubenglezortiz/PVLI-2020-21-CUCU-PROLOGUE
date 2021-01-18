@@ -20,7 +20,7 @@ class Bootloader extends Phaser.Scene {
        
       this.ambiente = this.sound.add('ambiente', this.musicConfig);
       this.ambiente.play();
-      this.scene.start(cst.SCENES.SALA0, {posx: 700, posy :400, lives:10,objs:[false,false,false,false],runInf:new RunInfo()});      
+      this.scene.start(cst.SCENES.SALA25, {posx: 700, posy :400, lives:10,objs:[false,false,false,false],runInf:new RunInfo()});      
     });
 
 
@@ -124,8 +124,8 @@ class Bootloader extends Phaser.Scene {
       frameHeight: 192
     });
     this.load.spritesheet("tabernero", "./resources/sprites/don_lindo/tabernero.png",{
-      frameWidth: 32,
-      frameHeight: 32
+      frameWidth: 192,
+      frameHeight: 192
     }); 
     this.load.spritesheet("bomba", "./resources/sprites/don_lindo/bomba.png",{
       frameWidth: 80,

@@ -1,7 +1,9 @@
 import SalaBase from "./sala_base.js";
 import { cst } from "./cst.js";
 import Prop from "../gameobject/prop.js";
+import eventsCenter from "../eventsCenter.js";
 import{npcs} from "./npcs.js";
+import { objs } from "./objeto.js";
 
 export default class Sala22 extends SalaBase {
   constructor() {
@@ -28,21 +30,30 @@ export default class Sala22 extends SalaBase {
 
   interactuarDepRopa = function(){
     eventsCenter.emit("thisKey", this._nombreSala);
-    this.scene.launch("dialogo", {npc:npcs.NPCS.dependiente_ropa, prevKey:cst.SCENES.SALA12,objs:this.objetos});
+    this.scene.launch("dialogo", {npc:npcs.NPCS.dependiente_ropa, prevKey:cst.SCENES.SALA22,objs:this.objetos});
     this.scene.pause();
     this.player.resetInput();
+    this.objetos[objs.OBJECTS.gorrosARepartir] = true;
   }
   
   interactuarFuente = function(){
     eventsCenter.emit("thisKey", this._nombreSala);
     this.scene.launch("dialogo", {
       npc: "fuente",
-      prevKey: cst.SCENES.SALA32,
+      prevKey: cst.SCENES.SALA22,
       objs: this.objetos,
     });
     this.scene.pause();
     this.player.resetInput();
     this.objetos[objs.OBJECTS.llaveComoda] = true;
     console.log("objeto recibido de la fuente");
+  }
+
+  interactuarPersonaFrio = function(){
+    eventsCenter.emit("thisKey", this._nombreSala);
+    this.scene.launch("dialogo", {npc:npcs.NPCS.frio2, prevKey:cst.SCENES.SALA22,objs:this.objetos});
+    this.scene.pause();
+    this.player.resetInput();
+    this.objetos[objs.OBJECTS.gorrosARepartir] = true;
   }
 }
