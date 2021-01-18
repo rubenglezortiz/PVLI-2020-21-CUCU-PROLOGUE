@@ -84,21 +84,25 @@ export default class Dialogo extends Phaser.Scene {
 
 
     //PUZZLES DON LINDO
+    this.tabernero=[
+      "TABERNERO: ¡Malditos gamberros!",
+      "PIGMALIÓN: ¿Qué sucede?",
+      "TABERNERO: Pues mira, vino un hombre muy majo por aquí, como todos, con sus problemas, pero se notaba que era muy buena persona.\nEstuvimos charlando un rato y luego nos amenizó el día tocando\nun poco de música con un ukelele.",
+      "TABERNERO: Sin embargo, tenía que irse y,\nnos pidió que le guardásemos su ukelele,\npero unos gamberros entraron y lo rompieron.",
+      "PIGMALIÓN: ¡Menudos sinvergüenzas!",
+      "TABERNERO: Completamente. Siempre están haciendo de las suyas…\nOjalá alguien le pare los pies alguna vez.",
+      "PIGMALIÓN PENSANDO: ¿Dónde podría conseguir un ukelele nuevo?\nA Don Lindo no le gustará ver que le han roto\nel suyo y no tener nada con lo que tocar."
+    ];
     this.bully = ["PIGMALIÓN: Eh tú, sinvergüenza,\n¡deja al joven en paz!",
       "(EL GAMBERRO SE VA)",
       "JOVEN: Muchísimas gracias buen hombre.\nLe he visto con una cartera que no es suya,\nsino de la dependiente de la tienda de música.",
       "PIGMALIÓN: La has cogido de vuelta y \nhan ido a por ti, ¿verdad?",
       "JOVEN: Efectivamente. ¿Podrías llevársela\nde vuelta?",
+      "PIGMALION (PENSANDO): Podría devolvérsela\n o podría ofrecérsela a Don Lindo...",
       'HAS RECIBIDO UNA "CARTERA"'    
     ];
     
-
-    if(this.objetos[objs.OBJECTS.corbata]){
-      this.dependienteRopa = [
-        "Aún sigo muy liado. No puedo atenderte"
-      ];
-    }
-    else if (this.objetos[objs.OBJECTS.gorroRepartido1] &&
+    if (this.objetos[objs.OBJECTS.gorroRepartido1] &&
       this.objetos[objs.OBJECTS.gorroRepartido1]
     )
       this.dependienteRopa = [
@@ -107,15 +111,7 @@ export default class Dialogo extends Phaser.Scene {
         "PIGMALIÓN: En absoluto.",
         "DEPENDIENTE: Se pasó por aquí de casualidad, estuvimos hablando,un buen rato.\nMe comentaba cosas de un teatro y de una mujer por la que está muy enamorado\npor lo visto.\nHasta tocó algo con un ukelele.\nSin embargo, nos entretuvimos mucho y ha sido la causa\npor la que voy tan mal de tiempo.\nSin darme cuenta, se me olvidó darle a él un gorro.\n¿Te importaría dárselo de mi parte?\nMe da pena haberme olvidado de dárselo.",
         'HAS RECIBIDO UN "GORRO"',
-      ];
-    else if (this.objetos[objs.OBJECTS.cae])
-      this.dependienteRopa = [
-        "PIGMALIÓN: Hola. Quería una corbata",
-        "DEPENDIENTE: Perdona, ahora mismo estoy muy liado.\nengo que ordenar toda la tienda y repartir estos gorros.",
-        "PIGMALION: Sólo quiero una corbata, puedo pagarte el doble.\nIgualmente, no sería mi dinero.",
-        "DEPENDIENTE: No creo que estés haciendo lo corrrecto.\nPero al fin y al cabo, ¿quién seré yo para judgar",
-        'HAS RECIBIDO UNA "CORBATA"',
-      ];
+      ];    
     else
       this.dependienteRopa = [
         "PIGMALIÓN: Perdona, ¿has visto por aquí a un tipo con traje y corbata, y que además parece que lleva una peluca?",
@@ -123,13 +119,69 @@ export default class Dialogo extends Phaser.Scene {
         "PIGMALIÓN: Está bien, ¿a quién tengo que dárselos?",
         "DEPENDIENTE: A cualquier persona que veas que tiene frío por la calle,\n se acerca el invierno y, si entre todos colaboramos,\n haremos que el invierno sea menos duro.",
       ];
+      
+    if(this.objetos[objs.OBJECTS.cartera]){
+      this.dependientaMusica=[
+        "DEPENDIENTA: ¡Muchísimas gracias por traérmela de vuelta!\nSi te soy sincera, la daba por perdida.\nToma este ukelele como agradecimiento",
+        "PIGMALIÓN (PENSANDO). Seguro que se lo puedo dar\n a Don Lindo. Le encantará",
+        'HAS RECIBIDO UN "UKELELE"'
+      ]
+    }
+    else{
+      this.dependientaMusica=[
+        "PIGMALIÓN: Hola. Venía a comprar un…",
+        "DEPENDIENTA: ¡Está cerrado!",
+        "PIGMALIÓN: Pero si no es hora de cerrar.",
+        "DEPENDIENTA: ¡He dicho que está cerrado! Acaban de venir unos gamberros\ny se han llevado mi cartera. No pienso atender a nadie.",
+        "PIGMALIÓN PENSANDO: Creo que alguien debería pararle los pies a esos impresentables."
+      ]
+    }
 
-    // if (this.objetos[objs.OBJECTS.gorrosARepartir])
-    // this.npcConFrio1 = []
-    // else if ()
-    // else 
-      
-      
+    
+
+    //COMBATE DON LINDO
+
+      this.musica = [
+        "PIGMALIÓN: Tienes que volver conmigo, las farsas necesitan de tu música.",
+        "DON LINDO: ¿Tan importante es mi música?",
+        "PIGMALIÓN: Vuelve al teatro y pasamos un rato tocando algún instrumento de los que te gustan.",
+        "DON LINDO: Quizá no sea mala idea."
+      ];
+      this.gritar = [
+        "PIGMALIÓN: ¡QUE VENGAS CONMIGO!",
+        "DON LINDO: ¡QUE NO QUIERO!"        
+      ];
+      this.pomponina = [
+        "PIGMALIÓN: Asume de una vez que Pomponina pasa de ti.",
+        "DON LINDO: ¡Cómo osas!",
+        "PIGMALIÓN: Ya hay que ser cutre para arrastrarse tanto por Pomponina.",
+        "DON LINDO: Tú no eres nadie para decir cómo conseguir los encantos de la hermosa Pomponina.",
+        "PIGMALIÓN: No te mereces a Pomponina, no estás a su altura.",
+        "DON LINDO: Cállate, apestoso. "
+      ]
+      this.donlindo_persuadir = [
+        "PIGMALIÓN: Si no vienes conmigo te quitaré la peluca y te quedarás calvo.",
+        "DON LINDO: Si me voy por mi cuenta podré comprar todas las pelucas que quiera.",
+        "PIGMALIÓN: Te aprecio mucho, Don Lindo, siempre fuiste una de mis creaciones más especiales.",
+        "DON LINDO: Si me quisieses tanto me habrías hecho con pelo, como a los demás.",
+        "PIGMALIÓN: Ponponina va a venir conmigo, se pondrá muy triste si ve que la has abandonado.",
+        "DON LINDO: ¡Mentiroso, mentiroso! Pomponina nunca\nvolvería contigo, ella querría escaparse\npara vivir una vida a mi lado.\nNo te creo."
+
+      ];
+      this.gorro =[
+        "PIGMALIÓN: Me han regalado un gorro, he pensado que te podría gustar tenerlo.",
+        "DON LINDO: He de decir que esta vez tienes razón. ¡Me gusta! Gracias."
+      ];
+
+      this.ukelele = [
+        "PIGMALIÓN: Siento decirte que unos gamberros han roto tu ukelele.\nPero he podido conseguirte uno.",
+        "DON LINDO: Gracias Pigmalión. Sabes que significa mucho para mí."
+      ];
+
+      this.cartera = [
+        "PIGMALIÓN: Seguro que aceptas esta cartera con dinero para volver al teatro..",
+        "DON LINDO: A ver si te das cuenta de que no todo gira \nen torno al dinero, garrapata sin patas."        
+      ];
 
       if (
         this.objetos[objs.OBJECTS.bombonesRepartidos1] &&
@@ -296,9 +348,9 @@ export default class Dialogo extends Phaser.Scene {
       "URDEMALAS: Pero no la vuelvas a cagar, ¿entendido?",
     ];
     this.finalGenocida = [
-      "URDEMALAS: Después de todo lo que hemos hecho por ti...",
+      "URDEMALAS: Después de todo lo que hemos\nhecho por ti...",
       "de lo que hemos tragado... ",
-      "encima nos cazas como si de ganado nos tratasemos...",
+      "encima nos cazas como si de ganado\nnos tratasemos...",
       "¿Es que no significamos nada para ti?",
       "Me las vas a pagar.",
     ];
@@ -513,8 +565,6 @@ export default class Dialogo extends Phaser.Scene {
           if(this.iterator != this.bully.length)
           this.text.setText(this.bully[this.iterator]);
           else this.end();
-          
-
           break;
       default:
         console.log("error en el switch de diálogo");

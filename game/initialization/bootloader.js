@@ -123,6 +123,10 @@ class Bootloader extends Phaser.Scene {
       frameWidth: 192,
       frameHeight: 192
     });
+    this.load.spritesheet("tabernero", "./resources/sprites/don_lindo/tabernero.png",{
+      frameWidth: 32,
+      frameHeight: 32
+    }); 
     this.load.spritesheet("bomba", "./resources/sprites/don_lindo/bomba.png",{
       frameWidth: 80,
       frameHeight: 80
@@ -353,6 +357,15 @@ class Bootloader extends Phaser.Scene {
       frames: this.anims.generateFrameNumbers("frio2", {
         start: 0,
         end: 15,
+      }),
+      frameRate: 4,
+      repeat: -1,
+    })
+    this.anims.create({
+      key: "tabernero",
+      frames: this.anims.generateFrameNumbers("tabernero", {
+        start: 0,
+        end: 5,
       }),
       frameRate: 4,
       repeat: -1,
