@@ -32,7 +32,7 @@ export default class Dialogo extends Phaser.Scene {
       "PIGMALIÓN: Al principio Cucu se reía por\ncualquier tontería, no sé cuánto tiempo llevo\nsin verle sonreír."
     ]
     this.chulapos = [
-      "SEÑOR: “He visto un señor vestido raro ir en\ndirección hacia el rastro. Estuvo un rato en \nla verbena, parecía estar disfrutando como\nun niño pequeño, no paraba de reir."
+      "SEÑOR: “He visto un señor vestido raro ir en\ndirección hacia el rastro. Estuvo un rato en\nla verbena, parecía estar disfrutando como\nun niño pequeño, no paraba de reir."
     ]
     // Diálogos del combate contra Pomponina
     this.pomponina = [
@@ -51,8 +51,8 @@ export default class Dialogo extends Phaser.Scene {
       "POMPONINA: ¡Son rosas! ¡Son mis favoritas!\n Muchas gracias, Pigmalión.",
     ];
     this.collarCombate = [
-      "PIGMALIÓN: Te he traído un collar. A las \n chicas os encantan estas cosas, ¿no?",
-      "POMPONINA: ¡No! Te he dicho muchísimas veces \nque no me gustan los collares! Si vas a tener \nun detalle deberías darme algo especial \npara mí, no cualquier baratija que encuentres \npor ahí.",
+      "PIGMALIÓN: Te he traído un collar. A las \nchicas os encantan estas cosas, ¿no?",
+      "POMPONINA: ¡No! Te he dicho muchísimas veces \nque no me gustan los collares! Si vas a tener\nun detalle deberías darme algo especial\npara mí, no cualquier baratija que encuentres\npor ahí.",
     ];
     this.bombonesCombate = [
       "PIGMALIÓN: Toma. Esto me lo dió una anciana a \nla que ayudaste para que te lo trajese.",
@@ -62,28 +62,28 @@ export default class Dialogo extends Phaser.Scene {
       "PIGMALIÓN: No, de hecho nunca he estado tan \norgulloso de ti como ahora.",
     ];
     this.abanicoCombate = [
-      "PIGMALIÓN: Encontré tu abanico roto.  Como le\n tenías tanto cariño  decidí llevarlo \na reparar.",
+      "PIGMALIÓN: Encontré tu abanico roto.  Como le\ntenías tanto cariño  decidí llevarlo \na reparar.",
       "POMPONINA: ¡Oh, qué detalle!  Muchas gracias, \nPigmalión. Parece  que te importo más \nde lo que pensaba.",
     ];
     this.halagarCombate = [
       "PIGMALIÓN: ¡Cuidado! No debes ponerte bajo el\n sol.",
       "POMPONINA: ¿Se puede saber por qué me dices\n eso ahora?",
       "PIGMALIÓN: Porque te derrites, bombón.",
-      "POMPONINA: Tendré cuidado, a nadie le gustan \nlos bombones derretidos.",
+      "POMPONINA: Tendré cuidado, a nadie le gustan\nlos bombones derretidos.",
     ];
     this.amenazarCombate = [
-      "PIGMALIÓN: Vas a tener un castigo muy gordo \n como no vengas conmigo",
-      "POMPONINA: siempre estás igual, estoy cansada \n de tus castigos, no pienso volver.",
+      "PIGMALIÓN: Vas a tener un castigo muy gordo\nomo no vengas conmigo",
+      "POMPONINA: siempre estás igual, estoy cansada\nde tus castigos, no pienso volver.",
     ];
     this.ordenarCombate = [
       "PIGMALIÓN: Vuelve a tu caja.",
       "POMPONINA:  ¡No me da la gana! ",
     ];
     this.salvarPomponina = [
-      "POMPONINA: Creo que después de tanto tiempo al\n fin empezamos a entendernos. Te daré otra oportunidad,\n pero más te vale que me trates como a la\n estrella que soy."
+      "POMPONINA: Creo que después de tanto tiempo al\n fin empezamos a entendernos. Te daré otra oportunidad,\npero más te vale que me trates como a la\nestrella que soy."
     ]
     this.matarPomponina = [
-      "POMPONINA: No puede acabar así...todavía\n necesita…mi...ayuda..."
+      "POMPONINA: No puede acabar así...todavía\nnecesita…mi...ayuda..."
     ]
     // Diálogos del combate contra Cucu
     this.cucu = [
@@ -132,6 +132,7 @@ export default class Dialogo extends Phaser.Scene {
     this.matarDonLindo = [
       "DON LINDO: Vaya… Creo que ahora tendré que\ntocar con mi ukelele en algún otro lugar… \nEspero que Pomponina, por mucho que me duela,\nno esté allí viéndome, que se quede aquí…\nsaa salvo."
     ]
+
     //PUZZLES DON LINDO
     this.tabernero=[
       "TABERNERO: ¡Malditos gamberros!",
@@ -184,9 +185,7 @@ export default class Dialogo extends Phaser.Scene {
         "DEPENDIENTA: ¡He dicho que está cerrado! Acaban de venir unos gamberros\ny se han llevado mi cartera. No pienso atender a nadie.",
         "PIGMALIÓN PENSANDO: Creo que alguien debería pararle los pies a esos impresentables."
       ]
-    }
-
-    
+    }    
 
     //COMBATE DON LINDO
 
@@ -234,7 +233,6 @@ export default class Dialogo extends Phaser.Scene {
 
      
         // PUZZLES POMPONINA
-        //#region
         if (
           this.objetos[objs.OBJECTS.bombonesRepartidos1] &&
           this.objetos[objs.OBJECTS.bombonesRepartidos2]
