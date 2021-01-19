@@ -18,7 +18,13 @@ export default class Sala24 extends SalaBase {
     this.camino= this.add.image(this.sys.game.canvas.width / 2 + 15,this.sys.game.canvas.height / 2,"donlindocamino5")
     this.camino.flipX=true; 
     this.bullying = new Prop (this, 300,300,"bullying",this.player,60,50,true,this.interactuarBully,this);
-    this.frio = new Prop (this, 1000, 600,"frio1",this.player,60,50,true,this.interactuarPersonaFrio1,this);
+    if(this._runInfo._props_interactuables[7] === 0){
+      this.frio = new Prop (this, 1000, 600,"frio1",this.player,60,50,true,this.interactuarPersonaFrio1,this);
+    }
+    else{
+      this.frio = new Prop (this, 1000, 600,"frio1",this.player,60,50,false);
+
+    }
     if(!this.objetos[objs.OBJECTS.cartera])
     this.bullying.play("bullying",true);
     else this.bullying.play("bullying3",true)
@@ -34,8 +40,12 @@ export default class Sala24 extends SalaBase {
     this.scene.launch("dialogo", {npc:npcs.NPCS.frio1, prevKey:cst.SCENES.SALA24,objs:this.objetos});
     this.scene.pause();
     this.player.resetInput();
-    if(this.objetos[objs.OBJECTS.gorrosARepartir])
-    this.objetos[objs.OBJECTS.gorroRepartido1] = true;
+    if(this.objetos[objs.OBJECTS.gorrosARepartir]){
+      this.objetos[objs.OBJECTS.gorroRepartido1] = true;
+      this.frio.int = false;
+      this._runInfo._props_interactuables[7] = 1;
+    }
+    
   }
 
   interactuarBully = function(){

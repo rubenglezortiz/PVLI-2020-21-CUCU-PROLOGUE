@@ -19,13 +19,11 @@ export default class Sala35 extends SalaBase {
 
     if(this._runInfo._props_interactuables[6] === 0){
       this.encargado = new Prop(this,this.sys.game.canvas.width / 2,500,"encargado_anticuario",this.player,100,50,true,this.hablarEncargado,this);
-      this.encargado.int = false;
-      this._runInfo._props_interactuables[6] =1;
+      
     }
     else{
       this.encargado = new Prop(this,this.sys.game.canvas.width / 2,500,"encargado_anticuario",this.player,100,50,false);
-      this.encargado.int = false;
-      this._runInfo._props_interactuables[6] =1;
+     
     }
     this.encargado.play("encargado_anticuario", true);
   }
@@ -46,9 +44,13 @@ export default class Sala35 extends SalaBase {
         this.player.resetInput();
         if (!this.objetos[objs.OBJECTS.abanicoRoto]){
           this.objetos[objs.OBJECTS.collar] = true;
+          this.encargado.int = false;
+          this._runInfo._props_interactuables[6] = 1;
         }
         else{
           this.objetos[objs.OBJECTS.abanico] = true;
+          this.encargado.int = false;
+          this._runInfo._props_interactuables[6] = 1;
         } 
   }
 }

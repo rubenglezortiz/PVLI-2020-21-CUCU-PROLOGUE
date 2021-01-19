@@ -17,7 +17,12 @@ export default class Sala22 extends SalaBase {
   create() {
     super.create();
     this.camino= this.add.image(this.sys.game.canvas.width / 2 + 15,this.sys.game.canvas.height / 2,"donlindocamino3")
-    this.frio = new Prop (this, 400, 600,"frio2",this.player,60,50,true,this.interactuarPersonaFrio,this);
+    if(this._runInfo._props_interactuables[8] === 0){
+      this.frio = new Prop (this, 400, 600,"frio2",this.player,60,50,true,this.interactuarPersonaFrio,this);
+    }
+    else{
+      this.frio = new Prop (this, 400, 600,"frio2",this.player,60,50,false);
+    }
     this.tiendaropa = new Prop (this, 1150, 200,"tiendaderopa",this.player,80,50,false);
     this.dependienteropa= new Prop(this,1150,350,"dependiente_ropa",this.player,60,50,true,this.interactuarDepRopa,this);
     this.dependienteropa.play("dependiente_ropa",true);
@@ -34,7 +39,6 @@ export default class Sala22 extends SalaBase {
     this.scene.pause();
     this.player.resetInput();    
     this.objetos[objs.OBJECTS.gorrosARepartir] = true;
-    console.log("objeto recibido de la fuente");
   }
   
   interactuarPersonaFrio = function(){
@@ -42,7 +46,10 @@ export default class Sala22 extends SalaBase {
     this.scene.launch("dialogo", {npc:npcs.NPCS.frio2, prevKey:cst.SCENES.SALA22,objs:this.objetos});
     this.scene.pause();
     this.player.resetInput();
-    if(this.objetos[objs.OBJECTS.gorrosARepartir])
+    if(this.objetos[objs.OBJECTS.gorrosARepartir]){
+      this.frio.int = false;
+      this._runInfo._props_interactuables[8] = 1;
     this.objetos[objs.OBJECTS.gorroRepartido2] = true;
+    }
   }
 }
