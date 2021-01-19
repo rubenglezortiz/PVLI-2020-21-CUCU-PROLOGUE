@@ -140,53 +140,45 @@ export default class MenuCombate extends Phaser.Scene {
     }
       else if (this.moneco === 1) // Botones de hablar para Don Lindo, esto es solo la plantilla
       {
-      if (this.objetos[objs.OBJECTS.floresRosas])
-      this.talkOption1 = this.add.sprite(200, 500, "talkButton").setInteractive();
+      if (this.objetos[objs.OBJECTS.ukelele])
+      this.talkOption1 = this.add.sprite(200, 500, "ukelele_button").setInteractive();
       else
       {
-        this.talkOption1 = this.add.sprite(200, 500, "talkButton");
+        this.talkOption1 = this.add.sprite(200, 500, "ukelele_button");
         this.talkOption1.setAlpha(0.5);
       }
-      if (this.objetos[objs.OBJECTS.bombonesPomponina])
+      if (this.objetos[objs.OBJECTS.gorro])
       {
-        this.talkOption2 = this.add.sprite(550, 500, "talkButton").setInteractive();
+        this.talkOption2 = this.add.sprite(550, 500, "gorro_button").setInteractive();
       }
       else 
       {
-        this.talkOption2 = this.add.sprite(550, 500, "talkButton")
+        this.talkOption2 = this.add.sprite(550, 500, "gorro_button")
         this.talkOption2.setAlpha(0.5);
       }
-      if (this.objetos[objs.OBJECTS.abanico])
+      if (this.objetos[objs.OBJECTS.corbata])
       {
-      this.talkOption3 = this.add.sprite(850, 500, "talkButton").setInteractive();
+      this.talkOption3 = this.add.sprite(850, 500, "corbata_button").setInteractive();
       }
       else
       {
-      this.talkOption3 = this.add.sprite(850, 500, "talkButton");
+      this.talkOption3 = this.add.sprite(850, 500, "corbata_button");
       this.talkOption3.setAlpha(0.5);
       }
-      if (this.objetos[objs.OBJECTS.floresHijo])
+      if (this.objetos[objs.OBJECTS.cartera])
       {
-        this.talkOption4 = this.add.sprite(1200, 500, "talkButton").setInteractive();
+        this.talkOption4 = this.add.sprite(1200, 500, "cartera_button").setInteractive();
       }
       else 
       {
-        this.talkOption4 = this.add.sprite(1200, 500, "talkButton")
+        this.talkOption4 = this.add.sprite(1200, 500, "cartera_button")
         this.talkOption4.setAlpha(0.5);
       }
 
-      if (this.objetos[objs.OBJECTS.collar])
-      {
-        this.talkOption5 = this.add.sprite(200, 700, "talkButton").setInteractive();
-      }
-      else 
-      {
-        this.talkOption5 = this.add.sprite(200, 700, "talkButton")
-        this.talkOption5.setAlpha(0.5);
-      }
-        this.talkOption6 = this.add.sprite(550, 700, "talkButton").setInteractive();
-        this.talkOption7 = this.add.sprite(850, 700, "talkButton").setInteractive();
-        this.talkOption8 = this.add.sprite(1200, 700, "talkButton").setInteractive();
+        this.talkOption5 = this.add.sprite(200, 700, "musica_button").setInteractive();
+        this.talkOption6 = this.add.sprite(550, 700, "gritar_button").setInteractive();
+        this.talkOption7 = this.add.sprite(850, 700, "persuadir_button").setInteractive();
+        this.talkOption8 = this.add.sprite(1200, 700, "pomponina_button").setInteractive();
 
       this.talkOptionsVec = [
         this.talkOption1,
@@ -198,64 +190,64 @@ export default class MenuCombate extends Phaser.Scene {
         this.talkOption7,
         this.talkOption8
       ];
-      this.talkOption1.on("pointerdown", (pointer) => { // Rosas rosas
-        this.persuasion = 40;
+      this.talkOption1.on("pointerdown", (pointer) => { // Ukelele
+        this.persuasion = 50;
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:npcs.NPCS.floresRosasCombate,prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:npcs.NPCS.floresRosasCombate,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
         eventsCenter.emit("persuade", this.persuasion);
         this.objetos[objs.OBJECTS.floresRosas] = false;
         this.parar();
         });
-      this.talkOption2.on("pointerdown", (pointer) => { // Bombones
-        this.persuasion = 30;
+      this.talkOption2.on("pointerdown", (pointer) => { // Gorro
+        this.persuasion = 40;
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:npcs.NPCS.bombonesCombate,prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:npcs.NPCS.bombonesCombate,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
         eventsCenter.emit("persuade", this.persuasion);
         this.objetos[objs.OBJECTS.bombonesPomponina] = false;
         this.parar();
       });
-      this.talkOption3.on("pointerdown", (pointer) => { // Abanico
-        this.persuasion = 30;
+      this.talkOption3.on("pointerdown", (pointer) => { // Corbata
+        this.persuasion = -20;
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:npcs.NPCS.abanicoCombate,prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:npcs.NPCS.abanicoCombate,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
         eventsCenter.emit("persuade", this.persuasion);
         this.objetos[objs.OBJECTS.abanico] = false;
         this.parar();
       });
-      this.talkOption4.on("pointerdown", (pointer) => { // Ramo rosas
-        this.persuasion = 20;
+      this.talkOption4.on("pointerdown", (pointer) => { // Cartera
+        this.persuasion = -30;
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:npcs.NPCS.rosasCombate,prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:npcs.NPCS.rosasCombate,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
         eventsCenter.emit("persuade", this.persuasion);
         this.objetos[objs.OBJECTS.floresHijo] = false;
         this.parar();
       });
-      this.talkOption5.on("pointerdown", (pointer) => { // Collar
-        this.persuasion = -20;
+      this.talkOption5.on("pointerdown", (pointer) => { // Música
+        this.persuasion = +12;
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:npcs.NPCS.collarCombate,prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:npcs.NPCS.collarCombate,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
         eventsCenter.emit("persuade", this.persuasion);
         this.objetos[objs.OBJECTS.collar] = false;
         this.parar();
       });
-      this.talkOption6.on("pointerdown", (pointer) => { // Ordenar
+      this.talkOption6.on("pointerdown", (pointer) => { // Gritar
         this.persuasion = 0;
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:npcs.NPCS.ordenarCombate,prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:npcs.NPCS.ordenarCombate,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
         eventsCenter.emit("persuade", this.persuasion);
         this.parar();
       });
-      this.talkOption7.on("pointerdown", (pointer) => { // Amenazar
+      this.talkOption7.on("pointerdown", (pointer) => { // Persuadir
         this.persuasion = -5;
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:npcs.NPCS.amenazarCombate,prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:npcs.NPCS.amenazarCombate,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
         eventsCenter.emit("persuade", this.persuasion);
         this.parar();
       });
-      this.talkOption8.on("pointerdown", (pointer) => { // Halagar
-        this.persuasion = 12;
+      this.talkOption8.on("pointerdown", (pointer) => { // Pomponina
+        this.persuasion = -10;
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:npcs.NPCS.halagarCombate,prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:npcs.NPCS.halagarCombate,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
         eventsCenter.emit("persuade", this.persuasion);
         this.parar();
       });

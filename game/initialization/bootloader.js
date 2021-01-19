@@ -232,7 +232,16 @@ class Bootloader extends Phaser.Scene {
     this.load.image("rosas_button", "./resources/sprites/menu_ataque/boton_rosas.png");
     this.load.image("bar","./resources/sprites/menu_ataque/barra_final.png");
     this.load.image("move_bar","./resources/sprites/menu_ataque/barra_movil.png");
+    this.load.image("ukelele_button", "./resources/sprites/menu_ataque/boton_ukelele.png");
+    this.load.image("gorro_button", "./resources/sprites/menu_ataque/boton_gorro.png");
+    this.load.image("musica_button", "./resources/sprites/menu_ataque/boton_musica.png");
+    this.load.image("gritar_button", "./resources/sprites/menu_ataque/boton_gritar.png");
+    this.load.image("persuadir_button", "./resources/sprites/menu_ataque/boton_persuadir.png");
+    this.load.image("pomponina_button", "./resources/sprites/menu_ataque/boton_pomponina.png");
+    this.load.image("corbata_button", "./resources/sprites/menu_ataque/boton_corbata.png");
+    this.load.image("cartera_button", "./resources/sprites/menu_ataque/boton_cartera.png");
     //#endregion
+
 
     //URDEMALAS
     this.load.spritesheet("urdemalas_idl", "./resources/sprites/urdemalas/urdemalasidl.png", {
