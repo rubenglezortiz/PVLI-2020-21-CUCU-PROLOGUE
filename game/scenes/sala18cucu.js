@@ -70,6 +70,7 @@ export default class Sala18Cucu extends SalaBaseCombate {
   }
 
   attack2(){    
+    
     this.cucuAt1 = new CucuAttack(this, "cucu_at2", Phaser.Math.Between(this.player.y - this.player.height * 1.5, this.player.y + this.player.height * 1.5), 600, this.player);
     this.cu.play();
     this.timerAttack2 = this.time.delayedCall(350, () => {

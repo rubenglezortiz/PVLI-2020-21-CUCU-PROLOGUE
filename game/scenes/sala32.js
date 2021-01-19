@@ -3,6 +3,7 @@ import { cst } from "./cst.js";
 import Prop from "../gameobject/prop.js";
 import eventsCenter from "../eventsCenter.js";
 import { objs } from "./objeto.js";
+import {npcs} from "./npcs.js"
 export default class Sala32 extends SalaBase {
   constructor() {
     super(cst.SCENES.SALA32,[cst.SCENES.SALA31,cst.SCENES.SALA35,cst.SCENES.SALA33,cst.SCENES.SALA23,],false);
@@ -59,7 +60,7 @@ export default class Sala32 extends SalaBase {
   hablarHijoFlorista = function(){
     eventsCenter.emit("thisKey", this._nombreSala);
     this.scene.launch("dialogo", {
-      npc: "hijoFlorista",
+      npc:  npcs.NPCS.hijoFlorista,
       prevKey: cst.SCENES.SALA32,
       objs: this.objetos,
     });
@@ -72,7 +73,7 @@ export default class Sala32 extends SalaBase {
   interactuarFuente = function(){
     eventsCenter.emit("thisKey", this._nombreSala);
     this.scene.launch("dialogo", {
-      npc: "fuente",
+      npc: npcs.NPCS.fuente,
       prevKey: cst.SCENES.SALA32,
       objs: this.objetos,
     });

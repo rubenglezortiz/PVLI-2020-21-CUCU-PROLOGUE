@@ -20,7 +20,7 @@ class Bootloader extends Phaser.Scene {
        
       this.ambiente = this.sound.add('ambiente', this.musicConfig);
       this.ambiente.play();
-      this.scene.start(cst.SCENES.SALAINICIAL, {posx: 700, posy :400, lives:10,objs:new Array(objs.OBJECTS.NumObjs).fill(false),runInf:new RunInfo()});      
+      this.scene.start(cst.SCENES.SALA0URDEMALAS, {posx: 700, posy :400, lives:10,objs:new Array(objs.OBJECTS.NumObjs).fill(false),runInf:new RunInfo()});      
     });
 
 
@@ -249,8 +249,8 @@ class Bootloader extends Phaser.Scene {
       frameHeight: 192,
     });
     this.load.spritesheet("urdemalas", "./resources/sprites/urdemalas/urdemalas.png", {
-      frameWidth: 32,
-      frameHeight: 32,
+      frameWidth: 288,
+      frameHeight: 324,
     });
     //-------AUDIO------------
     //canciones

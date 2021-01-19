@@ -14,7 +14,7 @@ export default class Dialogo extends Phaser.Scene {
     this.prevKey = datos.prevKey;
     this.objetos = datos.objs;
     this._runInfo = datos.runInf;
-    this.lives= datos.lives;
+    this.lives = datos.lives;
     this.player = datos.player;
   }
   create() {
@@ -27,7 +27,18 @@ export default class Dialogo extends Phaser.Scene {
     this.menu = this.add.image(700, 500, "mc");
     this.menu.setAlpha(0.5);
 
-    this.inicial = ["ejemplo", "ejmplo2", "mekeromorir"];
+    this.inicial = [
+      'CUCU"S\nPulsa "E" para comenzar',
+      'PIGMALIÓN: Hola, querido espectador.\n(pulsa "E" para continuar\n e interactuar con el entorno)',
+      "PIGMALIÓN: Te doy la bienvenida a CUCU's",
+      "PIGMALIÓN: Una obra de teatro protagonizada\npor mí y por mis muñecos",
+      "PIGMALIÓN: Sin embargo, todos ellos\nhan escapado.",
+      "PIGMALIÓN: Últimamente nuestra relación\nse ha tensado y, sinceramente, no\nsé que debo hacer con ellos...",
+      "PIGMALIÓN: matarlos para reconfigurarlos\no intentar saber por qué se están\ncomportanodo de tal forma.",
+      'PIGMALIÓN: Para encontrarlos deberé ir por\nlas distintas zonas de Madrid recorriendo\nsus calles\n"Movimiento: WASD"',
+      "PIGMALIÓN: También deberé buscar toda\ninformación posible",
+      "PIGMALIÓN: Espero que puedan disfrutar\npronto de la obra",
+    ];
     //-----CUCU-----
     //#region
     //Diálogo inicial

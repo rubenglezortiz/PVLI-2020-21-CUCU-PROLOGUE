@@ -68,6 +68,13 @@ export default class SalaBaseCombate extends SalaBase {
     if(this.player.lives===0){
       this.player.lives=10;
       this.finishVS();
+      this.scene.start(cst.SCENES.SALA0, {
+        posx: this.player.x,
+        posy: this.player.y,
+        lives: this.lives,
+        objs: this.objetos,
+        runInf: this._runInfo,
+      });
     }
 
     if(this.monecoLP<=0){
@@ -200,6 +207,7 @@ export default class SalaBaseCombate extends SalaBase {
     this.ambiente = this.sound.add('ambiente', this.musicConfig);
     this.ambiente.play();
     this.scene.sendToBack();
+    this.lives=10;
     
   }
 }
