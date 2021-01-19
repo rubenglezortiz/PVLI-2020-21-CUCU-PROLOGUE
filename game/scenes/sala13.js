@@ -2,6 +2,7 @@ import SalaBase from "./sala_base.js";
 import Prop from "../gameobject/prop.js";
 import { cst } from "./cst.js";
 import eventsCenter from "../eventsCenter.js"
+import {npcs} from "./npcs.js"
 export default class Sala13 extends SalaBase {
   constructor() {
     super(cst.SCENES.SALA13,[0, cst.SCENES.SALA14, 0, cst.SCENES.SALA11],false);
@@ -54,7 +55,7 @@ export default class Sala13 extends SalaBase {
   hablar = function () {
     eventsCenter.emit("thisKey", this._nombreSala);
     this.scene.launch("dialogo", {
-      npc: "chulapos",
+      npc: npcs.NPCS.chulapos,
       prevKey: cst.SCENES.SALA13,
       objs: this.objetos,
     });

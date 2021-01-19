@@ -25,7 +25,7 @@ export default class Sala15 extends SalaBase {
 hablar = function () {
   eventsCenter.emit("thisKey", this._nombreSala);
   this.scene.launch("dialogo", {
-    npc: "tienda_disfraces",
+    npc: npcs.npcs,
     prevKey: cst.SCENES.SALA15,
     objs: this.objetos,
   });

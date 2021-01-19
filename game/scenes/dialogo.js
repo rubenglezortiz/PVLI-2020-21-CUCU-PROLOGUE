@@ -142,7 +142,7 @@ export default class Dialogo extends Phaser.Scene {
     ];
     this.corbata = [
       "PIGMALIÓN: He comprado una corbata, creo que\nes de tu estilo.",
-      "DON LINDO: Ooh… si te soy sincero… llevaba\ntiempo sin ver algo tan horrible. Sigues sin saber\nnada de nosotros, “tus muñecos”.\nDecepcionante."
+      "DON LINDO: Ooh… si te soy sincero… llevaba\ntiempo sin ver algo tan horrible. Sigues sin saber\nnada de nosotros, “tus muñecos”.\nDecepcionante.",
     ];
     //Diálogos final de combate
     this.salvarDonLindo = [
@@ -558,10 +558,12 @@ export default class Dialogo extends Phaser.Scene {
         if (this.iterator != this.tiendaDisfraces.length)
           this.text.setText(this.tiendaDisfraces[this.iterator]);
         else this.end();
+        break;
       case npcs.NPCS.chulapos:
         if (this.iterator != this.chulapos.length)
           this.text.setText(this.chulapos[this.iterator]);
         else this.end();
+        break;
       //#endregion
 
       //-----DON LINDO-----
@@ -620,7 +622,7 @@ export default class Dialogo extends Phaser.Scene {
           this.text.setText(this.cartera[this.iterator]);
         else this.end();
         break;
-        case npcs.NPCS.corbata:
+      case npcs.NPCS.corbata:
         if (this.iterator != this.corbata.length)
           this.text.setText(this.corbata[this.iterator]);
         else this.end();
