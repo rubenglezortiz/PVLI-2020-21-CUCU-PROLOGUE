@@ -602,7 +602,7 @@ export default class Dialogo extends Phaser.Scene {
             posy: this.player.y,
             lives: this.player.lives,
             objs: this.objetos,
-            runInf: this.runInfo,
+            runInf: this.runInf,
           });
           this.scene.pause();
           this.scene.sendToBack();
