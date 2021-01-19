@@ -20,7 +20,7 @@ class Bootloader extends Phaser.Scene {
        
       this.ambiente = this.sound.add('ambiente', this.musicConfig);
       this.ambiente.play();
-      this.scene.start(cst.SCENES.SALA0URDEMALAS, {posx: 700, posy :400, lives:10,objs:new Array(objs.OBJECTS.NumObjs).fill(false),runInf:new RunInfo()});      
+      this.scene.start(cst.SCENES.SALA0, {posx: 700, posy :400, lives:10,objs:new Array(objs.OBJECTS.NumObjs).fill(false),runInf:new RunInfo()});      
     });
 
 
@@ -36,6 +36,7 @@ class Bootloader extends Phaser.Scene {
     this.load.image("caja", "./resources/sprites/teatro_general/caja.png");
     this.load.image("caja_cerrada","./resources/sprites/teatro_general/caja_cerrada.png");
     this.load.image("caja_urdemalas","./resources/sprites/teatro_general/caja_urdemalas.png");
+    this.load.image("game_over", "./resources/sprites/teatro_general/telon_grande2.png")
     this.load.spritesheet("e", "./resources/sprites/interaccion/e.png", {
       frameWidth: 96,
       frameHeight: 96,

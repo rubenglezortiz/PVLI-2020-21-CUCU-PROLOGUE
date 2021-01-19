@@ -435,12 +435,13 @@ export default class Dialogo extends Phaser.Scene {
       "URDEMALAS: Lo que has hecho tendrá\nconsecuencias.",
     ];
     this.finalPacifista = [
-      "URDEMALAS: Atónito me encuentro, de que alguien como tú,\ndespués de todo este tiempo y todo lo\nque nos has hecho, nos hayas por fin entendido.",
-      "PIGMALIÓN : ¡Urdemalas! ¡Por ti estaba preguntándome!.\nMe alegro de que estés bien",
-      "URDEMALAS: Lo cierto es que estaba decidido a irme.",
-      "URDEMALAS: Pero después de ver cómo tratabas a mis compañeros,",
-      "URDEMALAS: creo que te daré una segunda oportunidad.",
-      "URDEMALAS: Pero no la vuelvas a cagar, ¿entendido?",
+      "URDEMALAS: Atónito me encuentro, que alguien\ncomo tú, después de todo este tiempo\ny todo lo que nos has hecho, nos hayas por\nfin entendido.",
+      "PIGMALIÓN : ¡Urdemalas!",
+      "PIGMALIÓN: ¡Por ti estaba preguntándome!.\nMe alegro de que estés bien",
+      "URDEMALAS: Lo cierto es que estaba decidido\na irme.",
+      "URDEMALAS: Pero después de ver cómo tratabas\na mis compañeros,",
+      "URDEMALAS: creo que te daré una segunda\noportunidad.",
+      "URDEMALAS: Pero no la vuelvas a cagar,\n¿entendido?",
     ];
     this.finalGenocida = [
       "URDEMALAS: Después de todo lo que hemos\nhecho por ti...",
@@ -840,10 +841,9 @@ export default class Dialogo extends Phaser.Scene {
         if (this.iterator != this.finalNeutral.length)
           this.text.setText(this.finalNeutral[this.iterator]);
         else {
-          this.scene.start(cst.SCENES.SALAFINAL);
+          this.scene.start(cst.SCENES.GAMEOVER);
           this.scene.pause();
           this.scene.sendToBack();
-          // this.end();
         }
         break;
       case npcs.NPCS.urdemalas1:
@@ -865,8 +865,9 @@ export default class Dialogo extends Phaser.Scene {
         if (this.iterator != this.finalPacifista.length)
           this.text.setText(this.finalPacifista[this.iterator]);
         else {
-          this.scene.start(cst.SCENES.SALAFINAL);
-          this.end();
+          this.scene.start(cst.SCENES.GAMEOVER);
+          this.scene.pause();
+          this.scene.sendToBack();
         }
         break;
 

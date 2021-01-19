@@ -15,8 +15,7 @@ export default class SalaBase extends Phaser.Scene {
     this.posx = datos.posx;
     this.posy = datos.posy;
     this.lives = datos.lives;
-    this._runInfo = datos.runInf;
-    
+    this._runInfo = datos.runInf;    
   }
 
 
@@ -58,9 +57,6 @@ export default class SalaBase extends Phaser.Scene {
     this.colliderDr= this.physics.add.staticSprite(this.window.w ,this.window.h/2);
     this.colliderDr.setSize(10 , this.window.h , true);
     this.bounds.add(this.colliderDr);
-
-    
-    
     
     this.physics.add.collider(this.bounds, this.player);
 
@@ -134,8 +130,6 @@ export default class SalaBase extends Phaser.Scene {
 
 
   acabarSonidos = function(){
-
-    
     //la que está en el 0 no se quiere borrar ya que es la música de ambiente
     for(let x = 1; x < this.sound.sounds.length; x++){
       //this.sound.sounds[x].stop();
@@ -144,12 +138,5 @@ export default class SalaBase extends Phaser.Scene {
 
     this.sound.sounds[0].resume();
     this.sound.sounds[0].volume = 0.2;
-    // this.tweens.add({
-    //   targets: this.sound.sounds[0],
-    //   volume: 0.2,
-    //   ease: 'Power1',
-    //   duration: 2000
-    // })
-    
   }
 }
