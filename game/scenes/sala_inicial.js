@@ -1,4 +1,3 @@
-import Prop from "../gameobject/prop.js";
 import SalaBase from "./sala_base.js";
 import { cst } from "./cst.js";
 import { npcs } from "./npcs.js";

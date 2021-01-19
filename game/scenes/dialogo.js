@@ -435,15 +435,15 @@ export default class Dialogo extends Phaser.Scene {
       "PIGMALIÓN : ¡Urdemalas! ¡Por ti estaba preguntándome!.\nMe alegro de que estés bien",
       "URDEMALAS: Lo cierto es que estaba decidido a irme.",
       "URDEMALAS: Pero después de ver cómo tratabas a mis compañeros,",
-      "creo que te daré una segunda oportunidad.",
+      "URDEMALAS: creo que te daré una segunda oportunidad.",
       "URDEMALAS: Pero no la vuelvas a cagar, ¿entendido?",
     ];
     this.finalGenocida = [
       "URDEMALAS: Después de todo lo que hemos\nhecho por ti...",
-      "de lo que hemos tragado... ",
-      "encima nos cazas como si de ganado\nnos tratasemos...",
-      "¿Es que no significamos nada para ti?",
-      "Me las vas a pagar.",
+      "URDEMALAS: de lo que hemos tragado... ",
+      "URDEMALAS: encima nos cazas como si de ganado\nnos tratasemos...",
+      "URDEMALAS: ¿Es que no significamos nada para ti?",
+      "URDEMALAS:Me las vas a pagar.",
     ];
     //#endregion
     this.iterator = 0;
@@ -829,8 +829,10 @@ export default class Dialogo extends Phaser.Scene {
         if (this.iterator != this.finalNeutral.length)
           this.text.setText(this.finalNeutral[this.iterator]);
         else {
-          //CARGA PANTALLA FINAL
-          this.end();
+          this.scene.start(cst.SCENES.SALAFINAL);
+          this.scene.pause();
+          this.scene.sendToBack();
+          // this.end();
         }
         break;
       case npcs.NPCS.urdemalas1:
@@ -852,7 +854,7 @@ export default class Dialogo extends Phaser.Scene {
         if (this.iterator != this.finalPacifista.length)
           this.text.setText(this.finalPacifista[this.iterator]);
         else {
-          //CARGA PANTALLA FINAL
+          this.scene.start(cst.SCENES.SALAFINAL);
           this.end();
         }
         break;

@@ -1,6 +1,7 @@
 import MenuCombate from "../scenes/menuCombate.js";
 
 import SalaInicial from "../scenes/sala_inicial.js";
+import SalaFinal from "../scenes/sala_final.js";
 import Sala0 from "../scenes/sala0.js";
 import Sala0Urdemalas from "../scenes/sala0urdemalas.js";
 
@@ -31,7 +32,7 @@ import Sala36 from "../scenes/sala36.js";
 import Sala37 from "../scenes/sala37.js";
 import Sala38pomponina from "../scenes/sala38pomponina.js";
 
-import FinalNeutral from "../scenes/salaFinal.js";
+import Final from "../scenes/salaFinal.js";
 
 import Dialogo from "../scenes/dialogo.js";
 import Bootloader from "./bootloader.js";
@@ -59,6 +60,7 @@ var config = {
   scene: [
     Bootloader,
     SalaInicial,
+    SalaFinal,
     Sala0,
     Sala0Urdemalas,
     Sala11,
@@ -85,7 +87,7 @@ var config = {
     Sala36,
     Sala37,
     Sala38pomponina,
-    FinalNeutral,
+    Final,
     MenuCombate,
     Dialogo,
   ],

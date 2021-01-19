@@ -67,14 +67,7 @@ export default class SalaBaseCombate extends SalaBase {
 
     if(this.player.lives===0){
       this.player.lives=10;
-      this.finishVS();
-      this.scene.start(cst.SCENES.SALA0, {
-        posx: this.player.x,
-        posy: this.player.y,
-        lives: this.lives,
-        objs: this.objetos,
-        runInf: this._runInfo,
-      });
+      this.finishVS();      
     }
 
     if(this.monecoLP<=0){

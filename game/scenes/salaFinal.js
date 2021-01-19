@@ -2,8 +2,9 @@ import Prop from "../gameobject/prop.js";
 import SalaBase from "./sala_base.js";
 import { cst } from "./cst.js";
 import eventsCenter from "../eventsCenter.js";
+import { npcs } from "./npcs.js";
 
-export default class FinalNeutral extends SalaBase {
+export default class Final extends SalaBase {
   // <-  ^   ->   v
   constructor() {
     super(cst.SCENES.FINAL,[0,0,0,0],false);
@@ -23,7 +24,7 @@ export default class FinalNeutral extends SalaBase {
     this.objA = [];
     this.infoA = [{ x: 300, y: 250, moneco:"cucu_idl" },{ x: 1100, y: 250, moneco: "donlindo_idl" },{ x: 300, y: 650,moneco: "pomponina_idl" },];
     this.cajas();
-    this.urdemalas= new Prop(this,this.sys.game.canvas.width-200,this.sys.game.canvas.height/2+60,"urdemalas_idl",this.player,60,50,true,this.iniciarCombate,this);
+    this.urdemalas= new Prop(this,this.sys.game.canvas.width-200,this.sys.game.canvas.height/2+60,"urdemalas_idl",this.player,60,50,true,this.evaluacion,this);
     this.urdemalas.play("urdemalas_idl");
   }
 
@@ -34,16 +35,6 @@ export default class FinalNeutral extends SalaBase {
       if(this._runInfo._monecos[i] === 2)
       this.objA[i].play(this.infoA[i].moneco,true);
     }
-
-    // if(this.physics.overlap(this.player, this.urdemalas)) {
-    //   if (Phaser.Input.Keyboard.JustDown(this.e)) {
-    //     eventsCenter.emit("thisKey", this._nombreSala);
-    //     this.scene.launch("dialogo", {npc:this.final,prevKey:cst.SCENES.FINAL,objs:this.objetos, runInfo:this._runInfo});
-    //     this.scene.pause();
-    //     this.player.resetInput();
-            
-    //   }
-    // }     
   }
 
   cajas() {
@@ -62,10 +53,11 @@ export default class FinalNeutral extends SalaBase {
         }
   }
   
-  iniciarCombate = function(){
+  evaluacion = function(){
+   
     eventsCenter.emit("thisKey", this._nombreSala);
-      this.scene.launch("dialogo", {npc:this.final,prevKey:cst.SCENES.FINAL,objs:this.objetos, runInfo:this._runInfo});
-      this.scene.pause();
-      this.player.resetInput();
+    this.scene.launch("dialogo", {npc: this.final,prevKey:cst.SCENES.FINAL,objs:this.objetos, runInf:this._runInfo});
+    this.scene.pause();
+    this.player.resetInput();
   }
 }

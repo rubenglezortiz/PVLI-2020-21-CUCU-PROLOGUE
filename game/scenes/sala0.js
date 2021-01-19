@@ -48,20 +48,15 @@ export default class Sala0 extends SalaBase {
           this.saved++;
         }      
     }
-    this.cajaUrd=new Prop(this,1100,650,"caja_urdemalas",this.play,60,50,false) //DEBERÍA SER INTERACTUABLE. SI NO LO ÉS, ECHADLE LA CULPA A RUBÉN
+    this.cajaUrd=new Prop(this,1100,650,"caja_urdemalas",this.play,60,50,false)
     if(this.noPlayed===0){
-      if(this.killed===3){
-        console.log("inicio combate urdemalas");
-        this.final=1;
-      }
-      else if(this.saved===3){
-        console.log("todos salvados :)");
-        this.final=2;
-      }
-      else{
-        console.log("has matado y salvado");
+      if(this.killed===3)   
+        this.final=1;      
+      else if(this.saved===3)  
+        this.final=2;      
+      else       
         this.final=0;
-      }
+      
       this.scene.start(cst.SCENES.FINAL, {
         posx: this.sys.game.canvas.width/2,
         posy: this.sys.game.canvas.height,
