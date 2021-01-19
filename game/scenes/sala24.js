@@ -55,4 +55,3 @@ export default class Sala24 extends SalaBase {
   }
 
 }
-//bullying2 bullying3

@@ -5,8 +5,9 @@ NPCS:{
     tienda_disfraces:"tienda_disfraces",
     chulapos:"chulapos",
     //Puzzle Don Lindo
-    npcConFrio1: "npcFrio1",
-    fotoPomponina: "foto_pomponina",
+    tabernero: "tabernero",
+    foto: "foto",
+    foto_pomponina: "foto_pomponina",
     dependiente_ropa: "dependiente_ropa",
     dependienta_musica: "dependienta_musica",
     bullying: "bullying",

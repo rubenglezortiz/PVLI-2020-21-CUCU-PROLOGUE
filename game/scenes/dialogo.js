@@ -209,6 +209,9 @@ export default class Dialogo extends Phaser.Scene {
     )
       this.frio2 = ["¡OH! ¡Muchas gracias!"];
     else this.frio2 = ["¡TRANSEUNTE: ¡ Hace tanto frío que puede \nque nieve!"];
+    this.foto = [
+      "PIGMALIÓN PENSANDO: Nunca imaginé que un muñeco se podría enamorar de otro."
+    ];
     //#endregion
 
     //-----POMPONINA-----
@@ -549,7 +552,7 @@ export default class Dialogo extends Phaser.Scene {
               posy: this.sys.game.canvas.height / 2 + this.player.height / 2,
               lives: this.player.lives,
               objs: this.objetos,
-              runInf: this.runfo,
+              runInf: this.runInfo,
             });
             this.scene.pause();
             this.scene.sendToBack();
@@ -654,6 +657,11 @@ export default class Dialogo extends Phaser.Scene {
           this.text.setText(this.frio2[this.iterator]);
         else this.end();
         break;
+      case npcs.NPCS.foto:
+        if (this.iterator != this.foto.length)
+        this.text.setText(this.foto[this.iterator]);
+      else this.end();
+      break;
         //#endregion
 
         //-----POMPONINA-----
@@ -794,6 +802,7 @@ export default class Dialogo extends Phaser.Scene {
           this.text.setText(this.comoda[this.iterator]);
         else this.end();
         break;
+        
         //#endregion
 
       case npcs.NPCS.urdemalas0:

@@ -20,7 +20,7 @@ export default class Sala25 extends SalaBase {
     this.camino= this.add.image(this.sys.game.canvas.width/2+90, -200,"donlindocamino1")
     this.camino.angle=90;
     this.taberna = new Prop(this,1050,300,"taberna",this.player,60,45,false);
-    this.tabernero= new Prop(this,1050,500,"tabernero",this.player,60,45,true)
+    this.tabernero= new Prop(this,1050,500,"tabernero",this.player,60,45,true,this.talkTabernero,this)
     this.tabernero.play("tabernero");
   }
 
@@ -30,11 +30,9 @@ export default class Sala25 extends SalaBase {
 
   talkTabernero = function(){
     eventsCenter.emit("thisKey", this._nombreSala);
-    this.scene.launch("dialogo", {npc:npcs.NPCS.frio1, prevKey:cst.SCENES.SALA24,objs:this.objetos});
+    this.scene.launch("dialogo", {npc:npcs.NPCS.tabernero, prevKey:cst.SCENES.SALA25,objs:this.objetos});
     this.scene.pause();
     this.player.resetInput();
-    if(this.objetos[objs.OBJECTS.gorrosARepartir])
-    this.objetos[objs.OBJECTS.gorroRepartido1] = true;
   }
 
 }

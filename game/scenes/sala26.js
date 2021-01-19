@@ -1,6 +1,10 @@
 import SalaBase from "./sala_base.js";
 import Prop from "../gameobject/prop.js";
 import { cst } from "./cst.js";
+import { npcs } from "./npcs.js";
+import { objs } from "./objeto.js";
+import eventsCenter from "../eventsCenter.js"
+
 
 export default class Sala26 extends SalaBase {
   constructor() {
@@ -15,10 +19,18 @@ export default class Sala26 extends SalaBase {
     super.create();
     this.camino= this.add.image(this.sys.game.canvas.width / 2 + 90,this.sys.game.canvas.height / 2,"donlindocamino1")
     this.camino.angle=90;
-    this.fotoPomponina = new Prop (this, 300,300,"fotopomponina",this.player,60,50,true);
+    this.fotoPomponina = new Prop (this, 300,300,"fotopomponina",this.player,60,50,true, this.fotoPomponina,this);
   }
 
   update() {
     super.update();
+  }
+
+  fotoPomponina = function(){
+    eventsCenter.emit("thisKey", this._nombreSala);
+    this.scene.launch("dialogo", {npc:npcs.NPCS.foto, prevKey:cst.SCENES.SALA26,objs:this.objetos});
+
+    this.scene.pause();
+    this.player.resetInput();
   }
 }

@@ -1,6 +1,6 @@
 export const objs = {
     OBJECTS:{
-        NumObjs: 19,       
+        NumObjs: 20,       
         //Pomponina
         llaveFlorista: 0,
         repartoBombones: 1,
@@ -22,7 +22,8 @@ export const objs = {
         corbata:15,
         gorroRepartido1:16,
         gorroRepartido2:17,
-        gorrosARepartir:18
+        gorrosARepartir:18,
+        fotoPomponina:19,
         }
     }
     
