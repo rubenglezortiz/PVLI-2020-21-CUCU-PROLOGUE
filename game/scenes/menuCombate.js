@@ -26,7 +26,12 @@ export default class MenuCombate extends Phaser.Scene {
     this.menu.setAlpha(0.5);
     this.mercy;
     this.attackButton = this.add.sprite(200, 150, "attack_button").setInteractive();
+    if (this.moneco !== 3)
     this.talkButton = this.add.sprite(550, 150, "talk_button").setInteractive();
+    else{
+      this.talkButton = this.add.sprite(550, 150, "talk_button");
+      this.talkButton.setAlpha(0.5);
+    } 
 
     eventsCenter.on("canMercy", this.setMercyButton, this);
     if (!this.mercy) 
@@ -62,8 +67,11 @@ export default class MenuCombate extends Phaser.Scene {
         eventsCenter.emit("back", this);
         this.attackButton.setInteractive();
         this.attackButton.setAlpha(1);
+        if (this.moneco !== 3)
+       { 
         this.talkButton.setInteractive();
         this.talkButton.setAlpha(1);
+       }
         if (this.mercy) {
           this.mercyButton.setInteractive();
           this.mercyButton.setAlpha(1);
@@ -413,8 +421,11 @@ export default class MenuCombate extends Phaser.Scene {
         });
         this.attackButton.setInteractive();
         this.attackButton.setAlpha(1);
-        this.talkButton.setInteractive();
-        this.talkButton.setAlpha(1);
+        if (this.moneco !== 3)
+        {
+          this.talkButton.setInteractive();
+          this.talkButton.setAlpha(1);
+        }
         if (this.mercy) {
           this.mercyButton.setInteractive();
           this.mercyButton.setAlpha(1);

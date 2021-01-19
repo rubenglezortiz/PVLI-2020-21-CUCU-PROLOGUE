@@ -46,7 +46,7 @@ export default class Dialogo extends Phaser.Scene {
       "CUCU: (!) ¡CU CU!",
       "PIGMALIÓN: ¡¿Por que te has escapado, zoquete?!",
       "CUCU: cu cu...",
-      "PIGMALIÓN: Con que te vas a comportar así ahora, ¿eh?",
+      "PIGMALIÓN: Con que te vas a comportar así\nahora, ¿eh?",
       "CUCU:  ¡CU CU! (saca la lengua)",
       "Pigmalión: ¡Pues que así sea!",
     ];
@@ -149,7 +149,7 @@ export default class Dialogo extends Phaser.Scene {
       "DON LINDO: Bueno, creo que mi sitio está ahí en\nel teatro, haciendo la música de tus farsas.\n En verdad lo echo de menos.",
     ];
     this.matarDonLindo = [
-      "DON LINDO: Vaya… Creo que ahora tendré que\ntocar con mi ukelele en algún otro lugar… \nEspero que Pomponina, por mucho que me duela,\nno esté allí viéndome, que se quede aquí…\nsaa salvo.",
+      "DON LINDO: Vaya… Creo que ahora tendré que\ntocar con mi ukelele en algún otro lugar… \nEspero que Pomponina, por mucho que me duela,\nno esté allí viéndome, que se quede aquí…\na salvo.",
     ];
     //Puzzles
     this.tabernero = [
@@ -228,11 +228,11 @@ export default class Dialogo extends Phaser.Scene {
     //#region
     //Diálogo inicial
     this.pomponina = [
-      "POMPONINA: No sé por qué has venido hasta mí,\n no pienso volver contigo.",
-      "PIGMALIÓN: No seas boba, no tienes ningún\n sitio a dónde ir.",
-      "POMPONINA: ¡Me da igual! encontraré a alguien\n que me lleve consigo. Además, seguramente será\n más divertido que tú.",
-      "PIGMALIÓN: Tu sitio es aquí, en el teatro,\n conmigo y tus compañeros.",
-      "POMPONINA: No me interesa el teatro, no me \ninteresan mis compañeros, y mucho menos me\n interesas tú.",
+      "POMPONINA: No sé por qué has venido hasta mí,\nno pienso volver contigo.",
+      "PIGMALIÓN: No seas boba, no tienes ningún\nsitio a dónde ir.",
+      "POMPONINA: ¡Me da igual! encontraré a alguien\nque me lleve consigo. Además, seguramente será\nmás divertido que tú.",
+      "PIGMALIÓN: Tu sitio es aquí, en el teatro,\nconmigo y tus compañeros.",
+      "POMPONINA: No me interesa el teatro, no me \ninteresan mis compañeros, y mucho menos me\ninteresas tú.",
     ];
     //Diálogos combate
     this.rosasCombate = [
@@ -447,8 +447,8 @@ export default class Dialogo extends Phaser.Scene {
       "URDEMALAS: Después de todo lo que hemos\nhecho por ti...",
       "URDEMALAS: de lo que hemos tragado... ",
       "URDEMALAS: encima nos cazas como si de ganado\nnos tratasemos...",
-      "URDEMALAS: ¿Es que no significamos nada para ti?",
-      "URDEMALAS:Me las vas a pagar.",
+      "URDEMALAS: ¿Es que no significamos nada para\nti?",
+      "URDEMALAS: Me las vas a pagar.",
     ];
     //#endregion
     this.iterator = 0;
