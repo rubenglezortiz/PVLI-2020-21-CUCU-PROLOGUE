@@ -2,6 +2,7 @@ import SalaBase from "./sala_base.js";
 import Prop from "../gameobject/prop.js";
 import eventsCenter from "../eventsCenter.js";
 import { cst } from "./cst.js";
+import{npcs} from "./npcs.js";
 import { objs } from "./objeto.js";
 export default class Sala31 extends SalaBase {
   constructor() {
@@ -42,7 +43,7 @@ export default class Sala31 extends SalaBase {
     eventsCenter.emit("thisKey", this._nombreSala);
     this.objetos[objs.OBJECTS.repartoBombones] = true;
     this.scene.launch("dialogo", {
-      npc: "abuela",
+      npc: npcs.NPCS.abuela,
       prevKey: cst.SCENES.SALA31,
       objs: this.objetos,
     });

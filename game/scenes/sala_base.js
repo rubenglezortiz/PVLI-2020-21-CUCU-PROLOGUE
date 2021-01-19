@@ -10,8 +10,7 @@ export default class SalaBase extends Phaser.Scene {
   }
 
 
-  init(datos) {
-    this.objetos = Array(objs.OBJECTS.NumObjs);
+  init(datos) {    
     this.objetos = datos.objs; 
     this.posx = datos.posx;
     this.posy = datos.posy;
@@ -39,8 +38,7 @@ export default class SalaBase extends Phaser.Scene {
       this,
       this.posx,
       this.posy,
-      this.lives,
-               
+      this.lives,               
     );
 
     this.bounds =  this.physics.add.staticGroup();

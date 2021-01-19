@@ -30,7 +30,6 @@ export default class Sala32 extends SalaBase {
     }
     else{
       this.cliente = new Prop(this,1150,700,"cliente_bombones1",this.player,60,50,false);
-
     }
     this.cliente.play("cliente_bombones1", true);
   }

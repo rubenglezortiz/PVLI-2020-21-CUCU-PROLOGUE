@@ -1,6 +1,10 @@
 import SalaBase from "./sala_base.js";
 import Prop from "../gameobject/prop.js";
 import { cst } from "./cst.js";
+import { npcs } from "./npcs.js";
+import eventsCenter from "../eventsCenter.js"
+import { objs } from "./objeto.js";
+
 
 export default class Sala25 extends SalaBase {
   constructor() {
@@ -25,9 +29,12 @@ export default class Sala25 extends SalaBase {
   }
 
   talkTabernero = function(){
-
-
-    
+    eventsCenter.emit("thisKey", this._nombreSala);
+    this.scene.launch("dialogo", {npc:npcs.NPCS.frio1, prevKey:cst.SCENES.SALA24,objs:this.objetos});
+    this.scene.pause();
+    this.player.resetInput();
+    if(this.objetos[objs.OBJECTS.gorrosARepartir])
+    this.objetos[objs.OBJECTS.gorroRepartido1] = true;
   }
 
 }

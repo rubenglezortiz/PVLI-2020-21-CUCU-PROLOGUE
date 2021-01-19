@@ -8,7 +8,9 @@ NPCS:{
     npcConFrio1: "npcFrio1",
     fotoPomponina: "foto_pomponina",
     dependiente_ropa: "dependiente_ropa",
+    dependienta_musica: "dependienta_musica",
     bullying: "bullying",
+    frio1: "frio1",
     frio2 : "frio2",
     //Puzzle Pomponina
     comoda:"comoda",

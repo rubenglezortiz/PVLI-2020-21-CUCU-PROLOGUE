@@ -34,26 +34,15 @@ export default class Sala22 extends SalaBase {
     this.scene.pause();
     this.player.resetInput();    
     this.objetos[objs.OBJECTS.gorrosARepartir] = true;
-  }
-  
-  interactuarFuente = function(){
-    eventsCenter.emit("thisKey", this._nombreSala);
-    this.scene.launch("dialogo", {
-      npc: "fuente",
-      prevKey: cst.SCENES.SALA22,
-      objs: this.objetos,
-    });
-    this.scene.pause();
-    this.player.resetInput();
-    this.objetos[objs.OBJECTS.llaveComoda] = true;
     console.log("objeto recibido de la fuente");
   }
-
+  
   interactuarPersonaFrio = function(){
     eventsCenter.emit("thisKey", this._nombreSala);
     this.scene.launch("dialogo", {npc:npcs.NPCS.frio2, prevKey:cst.SCENES.SALA22,objs:this.objetos});
     this.scene.pause();
     this.player.resetInput();
+    if(this.objetos[objs.OBJECTS.gorrosARepartir])
     this.objetos[objs.OBJECTS.gorroRepartido2] = true;
   }
 }

@@ -20,7 +20,7 @@ class Bootloader extends Phaser.Scene {
        
       this.ambiente = this.sound.add('ambiente', this.musicConfig);
       this.ambiente.play();
-      this.scene.start(cst.SCENES.SALA17, {posx: 700, posy :400, lives:10,objs:[false],runInf:new RunInfo()});      
+      this.scene.start(cst.SCENES.SALA22, {posx: 700, posy :400, lives:10,objs:new Array(19).fill(false),runInf:new RunInfo()});      
     });
 
 
