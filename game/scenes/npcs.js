@@ -23,7 +23,7 @@ NPCS:{
     hijoFlorista:"hijo_florista",
     florista:"florista",
     jarron:"jarron",
-    fuente:"fuente", //provisional
+    fuente:"fuente",
     //Combate Pomponina
     pomponina:"pomponina",
     collarCombate:"collar_combate",
@@ -48,6 +48,14 @@ NPCS:{
     don_lindo:"don_lindo",
     salvar_don_lindo:"salvar_don_lindo",
     matar_don_lindo:"matar_don_lindo",
+    musica:"musica",
+    gritar:"gritar",
+    foto_pomponina:"foto_pomponina",
+    donlindo_persuadir:"donlindo_persuadir",
+    gorro:"gorro",
+    ukelele:"ukelele",
+    corbata:"corbata",
+    cartera:"cartera",
     // Finales Urdemalas
     urdemalas0:"urdemalas0",
     urdemalas1:"urdemalas1",

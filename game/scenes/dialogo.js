@@ -101,9 +101,9 @@ export default class Dialogo extends Phaser.Scene {
     ];
     //Diálogos combate
     this.musica = [
-      "PIGMALIÓN: Tienes que volver conmigo, las farsas necesitan de tu música.",
+      "PIGMALIÓN: Tienes que volver conmigo, las farsas\nnecesitan de tu música.",
       "DON LINDO: ¿Tan importante es mi música?",
-      "PIGMALIÓN: Vuelve al teatro y pasamos un rato tocando\nalgún instrumento de los que te gustan.",
+      "PIGMALIÓN: Vuelve al teatro y pasamos un rato\ntocando algún instrumento de los que te gustan.",
       "DON LINDO: Quizá no sea mala idea.",
     ];
     this.gritar = [
@@ -111,34 +111,38 @@ export default class Dialogo extends Phaser.Scene {
       "DON LINDO: ¡QUE NO QUIERO!",
     ];
     this.foto_pomponina = [
-      "PIGMALIÓN: Asume de una vez que Pomponina pasa de ti.",
+      "PIGMALIÓN: Asume de una vez que Pomponina pasa\nde ti.",
       "DON LINDO: ¡Cómo osas!",
-      "PIGMALIÓN: Ya hay que ser cutre para arrastrarse tanto por Pomponina.",
-      "DON LINDO: Tú no eres nadie para decir cómo conseguir los\nencantos de la hermosa Pomponina.",
-      "PIGMALIÓN: No te mereces a Pomponina, no estás a su altura.",
+      "PIGMALIÓN: Ya hay que ser cutre para\narrastrarse tanto por Pomponina.",
+      "DON LINDO: Tú no eres nadie para decir cómo\nconseguir los encantos de la hermosa Pomponina.",
+      "PIGMALIÓN: No te mereces a Pomponina, no estás\na su altura.",
       "DON LINDO: Cállate, apestoso. ",
     ];
     this.donlindo_persuadir = [
-      "PIGMALIÓN: Si no vienes conmigo te quitaré la peluca\ny te quedarás calvo.",
-      "DON LINDO: Si me voy por mi cuenta podré comprar\ntodas las pelucas que quiera.",
-      "PIGMALIÓN: Te aprecio mucho, Don Lindo, siempre\nfuiste una de mis creaciones más especiales.",
-      "DON LINDO: Si me quisieses tanto me habrías hecho\ncon pelo, como a los demás.",
-      "PIGMALIÓN: Ponponina va a venir conmigo, se pondrá\nmuy triste si ve que la has abandonado.",
-      "DON LINDO: ¡Mentiroso, mentiroso! Pomponina nunca\nvolvería contigo, ella querría escaparse\npara vivir una vida a mi lado.\nNo te creo.",
+      "PIGMALIÓN: Si no vienes conmigo te quitaré la\npeluca y te quedarás calvo.",
+      "DON LINDO: Si me voy por mi cuenta podré\ncomprar todas las pelucas que quiera.",
+      "PIGMALIÓN: Te aprecio mucho, Don Lindo,\nsiempre fuiste una de mis creaciones más\nespeciales.",
+      "DON LINDO: Si me quisieses tanto me habrías\nhecho con pelo, como a los demás.",
+      "PIGMALIÓN: Ponponina va a venir conmigo, se\npondrá muy triste si ve que la has abandonado.",
+      "DON LINDO: ¡Mentiroso, mentiroso! Pomponina\nnunca volvería contigo, ella querría escaparse\npara vivir una vida a mi lado. No te creo.",
     ];
     this.gorro = [
-      "PIGMALIÓN: Me han regalado un gorro, he pensado\nque te podría gustar tenerlo.",
-      "DON LINDO: He de decir que esta vez tienes razón.\n¡Me gusta! Gracias.",
+      "PIGMALIÓN: Me han regalado un gorro, he\npensado que te podría gustar tenerlo.",
+      "DON LINDO: He de decir que esta vez tienes\nrazón. ¡Me gusta! Gracias.",
     ];
 
     this.ukelele = [
-      "PIGMALIÓN: Siento decirte que unos gamberros han roto tu ukelele.\nPero he podido conseguirte uno.",
-      "DON LINDO: Gracias Pigmalión. Sabes que significa mucho para mí.",
+      "PIGMALIÓN: Siento decirte que unos gamberros\nhan roto tu ukelele.Pero he podido\nconseguirte uno.",
+      "DON LINDO: Gracias Pigmalión. Sabes que\nsignifica mucho para mí.",
     ];
 
     this.cartera = [
-      "PIGMALIÓN: Seguro que aceptas esta cartera con dinero para volver al teatro..",
-      "DON LINDO: A ver si te das cuenta de que no todo gira\nen torno al dinero, garrapata sin patas.",
+      "PIGMALIÓN: Seguro que aceptas esta cartera con\ndinero para volver al teatro..",
+      "DON LINDO: A ver si te das cuenta de que no\ntodo gira en torno al dinero, garrapata\nsin patas.",
+    ];
+    this.corbata = [
+      "PIGMALIÓN: He comprado una corbata, creo que\nes de tu estilo.",
+      "DON LINDO: Ooh… si te soy sincero… llevaba\ntiempo sin ver algo tan horrible. Sigues sin saber\nnada de nosotros, “tus muñecos”.\nDecepcionante."
     ];
     //Diálogos final de combate
     this.salvarDonLindo = [
@@ -151,19 +155,19 @@ export default class Dialogo extends Phaser.Scene {
     this.tabernero = [
       "TABERNERO: ¡Malditos gamberros!",
       "PIGMALIÓN: ¿Qué sucede?",
-      "TABERNERO: Pues mira, vino un hombre muy majo por aquí, como todos, con sus\nproblemas, pero se notaba que era muy buena persona.\nEstuvimos charlando un rato y luego nos amenizó el día tocando\nun poco de música con un ukelele.",
+      "TABERNERO: Pues mira, vino un hombre muy majo\npor aquí, como todos, con sus\nproblemas, pero se notaba que era muy buena persona.\nEstuvimos charlando un rato y luego nos amenizó el día tocando\nun poco de música con un ukelele.",
       "TABERNERO: Sin embargo, tenía que irse y,\nnos pidió que le guardásemos su ukelele,\npero unos gamberros entraron y lo rompieron.",
       "PIGMALIÓN: ¡Menudos sinvergüenzas!",
-      "TABERNERO: Completamente. Siempre están haciendo de las suyas…\nOjalá alguien le pare los pies alguna vez.",
-      "PIGMALIÓN PENSANDO: ¿Dónde podría conseguir un ukelele nuevo?\nA Don Lindo no le gustará ver que le han roto\nel suyo y no tener nada con lo que tocar.",
+      "TABERNERO: Completamente. Siempre están\nhaciendo de las suyas… Ojalá alguien le pare\nlos pies alguna vez.",
+      "PIGMALIÓN PENSANDO: ¿Dónde podría conseguir un\nukelele nuevo? A Don Lindo no le gustará ver que le han roto\nel suyo y no tener nada con lo que tocar.",
     ];
     this.bullying = [
-      "PIGMALIÓN: Eh tú, sinvergüenza,\n¡deja al joven en paz!",
+      "PIGMALIÓN: Eh tú, sinvergüenza, ¡deja al joven\nen paz!",
       "(EL GAMBERRO SE VA)",
-      "JOVEN: Muchísimas gracias buen hombre.\nLe he visto con una cartera que no es suya,\nsino de la dependiente de la tienda de música.",
-      "PIGMALIÓN: La has cogido de vuelta y\nhan ido a por ti, ¿verdad?",
-      "JOVEN: Efectivamente. ¿Podrías llevársela\nde vuelta?",
-      "PIGMALION (PENSANDO): Podría devolvérsela\no podría ofrecérsela a Don Lindo...",
+      "JOVEN: Muchísimas gracias buen hombre. Le he\nvisto con una cartera que no es suya, sino\nde la dependiente de la tienda de música.",
+      "PIGMALIÓN: La has cogido de vuelta y han ido a por\nti, ¿verdad?",
+      "JOVEN: Efectivamente. ¿Podrías llevársela de\nvuelta?",
+      "PIGMALION (PENSANDO): Podría devolvérsela o\npodría ofrecérsela a Don Lindo...",
       'HAS RECIBIDO UNA "CARTERA"',
     ];
 
@@ -173,23 +177,23 @@ export default class Dialogo extends Phaser.Scene {
     )
       this.dependienteRopa = [
         "PIGMALIÓN: Ya los he repartido.",
-        "DEPENDIENTE: ¡Muchísimas gracias! Supongo que antes te referías a Don Lindo,\n¿me equivoco?",
+        "DEPENDIENTE: ¡Muchísimas gracias! Supongo que\nantes te referías a Don Lindo, ¿me equivoco?",
         "PIGMALIÓN: En absoluto.",
-        "DEPENDIENTE: Se pasó por aquí de casualidad, estuvimos hablando,un buen rato.\nMe comentaba cosas de un teatro y de una mujer por la que está muy enamorado\npor lo visto.\nHasta tocó algo con un ukelele.\nSin embargo, nos entretuvimos mucho y ha sido la causa\npor la que voy tan mal de tiempo.\nSin darme cuenta, se me olvidó darle a él un gorro.\n¿Te importaría dárselo de mi parte?\nMe da pena haberme olvidado de dárselo.",
+        "DEPENDIENTE: Se pasó por aquí de casualidad,\nestuvimos hablando,un buen rato.\nMe comentaba cosas de un teatro y de una mujer por la que está muy enamorado\npor lo visto. Hasta tocó algo con un ukelele.\nSin embargo, nos entretuvimos mucho y ha sido la causa\npor la que voy tan mal de tiempo.\nSin darme cuenta, se me olvidó darle a él un gorro.\n¿Te importaría dárselo de mi parte?\nMe da pena haberme olvidado de dárselo.",
         'HAS RECIBIDO UN "GORRO"',
       ];
     else
       this.dependienteRopa = [
-        "PIGMALIÓN: Perdona, ¿has visto por aquí a un tipo con traje y corbata,\ny que además parece que lleva una peluca?",
-        "DEPENDIENTE: Me quiere sonar sí, pero ahora mismo no lo termino de recordar.\nAdemás, estoy muy liado.Tengo que ordenar toda la tienda y repartir estos gorros.\n¿Te importaría echarme una mano con ellos?\nMientras intentaré pensar en el hombre que me has dicho.",
-        "PIGMALIÓN: Está bien, ¿a quién tengo que dárselos?",
-        "DEPENDIENTE: A cualquier persona que veas que tiene frío por la calle,\nse acerca el invierno y, si entre todos colaboramos,\nharemos que el invierno sea menos duro.",
+        "PIGMALIÓN: Perdona, ¿has visto por aquí a un\ntipo con traje y corbata, y que además\nparece que lleva una peluca?",
+        "DEPENDIENTE: Me quiere sonar sí, pero ahora\nmismo no lo termino de recordar.\nAdemás, estoy muy liado.Tengo que ordenar toda la tienda y repartir estos gorros.\n¿Te importaría echarme una mano con ellos?\nMientras intentaré pensar en el hombre que me has dicho.",
+        "PIGMALIÓN: Está bien, ¿a quién tengo que\ndárselos?",
+        "DEPENDIENTE: A cualquier persona que veas que\ntiene frío por la calle,\nse acerca el invierno y, si entre todos\ncolaboramos, haremos que el invierno sea menos\nduro.",
       ];
 
     if (this.objetos[objs.OBJECTS.ukelele]) {
       this.dependienta_musica = [
-        "DEPENDIENTA: ¡Muchísimas gracias por traérmela de vuelta!\nSi te soy sincera, la daba por perdida.\nToma este ukelele como agradecimiento",
-        "PIGMALIÓN (PENSANDO). Seguro que se lo puedo dar\na Don Lindo. Le encantará",
+        "DEPENDIENTA: ¡Muchísimas gracias por traérmela\nde vuelta! Si te soy sincera, la daba por perdida.\nToma este ukelele como agradecimiento",
+        "PIGMALIÓN (PENSANDO). Seguro que se lo puedo\ndar a Don Lindo. Le encantará",
         'HAS RECIBIDO UN "UKELELE"',
       ];
     } else {
@@ -197,8 +201,8 @@ export default class Dialogo extends Phaser.Scene {
         "PIGMALIÓN: Hola. Venía a comprar un…",
         "DEPENDIENTA: ¡Está cerrado!",
         "PIGMALIÓN: Pero si no es hora de cerrar.",
-        "DEPENDIENTA: ¡He dicho que está cerrado! Acaban de venir unos gamberros\ny se han llevado mi cartera. No pienso atender a nadie.",
-        "PIGMALIÓN PENSANDO: Creo que alguien debería pararle\nlos pies a esos impresentables.",
+        "DEPENDIENTA: ¡He dicho que está cerrado!\nAcaban de venir unos gamberros\ny se han llevado mi cartera. No pienso atender a nadie.",
+        "PIGMALIÓN PENSANDO: Creo que alguien debería\npararle los pies a esos impresentables.",
       ];
     }
 
@@ -206,17 +210,17 @@ export default class Dialogo extends Phaser.Scene {
       this.objetos[objs.OBJECTS.gorroRepartido1] &&
       this.objetos[objs.OBJECTS.gorrosARepartir]
     )
-      this.frio1 = ["¿Para mí? ¡Gracias!"];
-    else this.frio1 = ["¡TRANSEUNTE: Que frío!"];
+      this.frio1 = ["TRANSEUNTE: ¿Para mí? ¡Gracias!"];
+    else this.frio1 = ["TRANSEUNTE: ¡Que frío!"];
 
     if (
       this.objetos[objs.OBJECTS.gorroRepartido2] &&
       this.objetos[objs.OBJECTS.gorrosARepartir]
     )
-      this.frio2 = ["¡OH! ¡Muchas gracias!"];
-    else this.frio2 = ["¡TRANSEUNTE: ¡ Hace tanto frío que puede \nque nieve!"];
+      this.frio2 = ["TRANSEUNTE: ¡OH! ¡Muchas gracias!"];
+    else this.frio2 = ["¡TRANSEUNTE: ¡ Hace tanto frío que puede que\nnieve!"];
     this.foto = [
-      "PIGMALIÓN PENSANDO: Nunca imaginé que un muñeco se podría enamorar de otro.",
+      "PIGMALIÓN PENSANDO: Nunca imaginé que un\nmuñeco se podría enamorar de otro.",
     ];
     //#endregion
 
@@ -614,6 +618,11 @@ export default class Dialogo extends Phaser.Scene {
       case npcs.NPCS.cartera:
         if (this.iterator != this.cartera.length)
           this.text.setText(this.cartera[this.iterator]);
+        else this.end();
+        break;
+        case npcs.NPCS.corbata:
+        if (this.iterator != this.corbata.length)
+          this.text.setText(this.corbata[this.iterator]);
         else this.end();
         break;
       //Diálogos final

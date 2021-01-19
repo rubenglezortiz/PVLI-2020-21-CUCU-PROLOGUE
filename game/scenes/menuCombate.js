@@ -140,7 +140,7 @@ export default class MenuCombate extends Phaser.Scene {
         this.parar();
       });
     }
-      else if (this.moneco === 1) // Botones de hablar para Don Lindo, esto es solo la plantilla
+      else if (this.moneco === 1) // Botones de hablar para Don Lindo
       {
       if (this.objetos[objs.OBJECTS.ukelele])
       this.talkOption1 = this.add.sprite(200, 500, "ukelele_button").setInteractive();
@@ -195,61 +195,60 @@ export default class MenuCombate extends Phaser.Scene {
       this.talkOption1.on("pointerdown", (pointer) => { // Ukelele
         this.persuasion = 50;
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:npcs.NPCS.floresRosasCombate,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:npcs.NPCS.ukelele,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
         eventsCenter.emit("persuade", this.persuasion);
-        this.objetos[objs.OBJECTS.floresRosas] = false;
+        this.objetos[objs.OBJECTS.ukelele] = false;
         this.parar();
         });
       this.talkOption2.on("pointerdown", (pointer) => { // Gorro
         this.persuasion = 40;
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:npcs.NPCS.bombonesCombate,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:npcs.NPCS.gorro,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
         eventsCenter.emit("persuade", this.persuasion);
-        this.objetos[objs.OBJECTS.bombonesPomponina] = false;
+        this.objetos[objs.OBJECTS.gorro] = false;
         this.parar();
       });
       this.talkOption3.on("pointerdown", (pointer) => { // Corbata
         this.persuasion = -20;
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:npcs.NPCS.abanicoCombate,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:npcs.NPCS.corbata,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
         eventsCenter.emit("persuade", this.persuasion);
-        this.objetos[objs.OBJECTS.abanico] = false;
+        this.objetos[objs.OBJECTS.corbata] = false;
         this.parar();
       });
       this.talkOption4.on("pointerdown", (pointer) => { // Cartera
         this.persuasion = -30;
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:npcs.NPCS.rosasCombate,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:npcs.NPCS.cartera,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
         eventsCenter.emit("persuade", this.persuasion);
-        this.objetos[objs.OBJECTS.floresHijo] = false;
+        this.objetos[objs.OBJECTS.cartera] = false;
         this.parar();
       });
       this.talkOption5.on("pointerdown", (pointer) => { // Música
         this.persuasion = +12;
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:npcs.NPCS.collarCombate,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:npcs.NPCS.musica,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
         eventsCenter.emit("persuade", this.persuasion);
-        this.objetos[objs.OBJECTS.collar] = false;
         this.parar();
       });
       this.talkOption6.on("pointerdown", (pointer) => { // Gritar
         this.persuasion = 0;
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:npcs.NPCS.ordenarCombate,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:npcs.NPCS.gritar,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
         eventsCenter.emit("persuade", this.persuasion);
         this.parar();
       });
       this.talkOption7.on("pointerdown", (pointer) => { // Persuadir
         this.persuasion = -5;
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:npcs.NPCS.amenazarCombate,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:npcs.NPCS.donlindo_persuadir,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
         eventsCenter.emit("persuade", this.persuasion);
         this.parar();
       });
       this.talkOption8.on("pointerdown", (pointer) => { // Pomponina
         this.persuasion = -10;
         eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:npcs.NPCS.halagarCombate,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
+        this.scene.launch("dialogo", {npc:npcs.NPCS.foto_pomponina,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
         eventsCenter.emit("persuade", this.persuasion);
         this.parar();
       });
