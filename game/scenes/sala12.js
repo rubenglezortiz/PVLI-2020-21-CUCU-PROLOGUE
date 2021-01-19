@@ -13,13 +13,11 @@ export default class Sala12 extends SalaBase {
   }
 
   create() {
-    super.create();
-    
+    super.create();    
     this.bebe = new Prop(this, 1000, 300, "bebe", this.player,60, 50, true, this.hablaLlamar, this);
     this.add.image(300, 400, "mesa").setScale(7);
     this.camino = this.add.image(1400, 400, "cucucamino1");
     this.camino.depth = 1;
-    this.escribe = "Escribo";
   }
 
   update() {
@@ -31,5 +29,6 @@ export default class Sala12 extends SalaBase {
     this.scene.launch("dialogo", {npc:"bebe",prevKey:cst.SCENES.SALA12,objs:this.objetos});
     this.scene.pause();
     this.player.resetInput();
+    console.log(this);
   }
 }

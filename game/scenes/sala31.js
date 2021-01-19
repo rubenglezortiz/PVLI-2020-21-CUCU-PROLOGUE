@@ -27,16 +27,6 @@ export default class Sala31 extends SalaBase {
 
   update() {
     super.update();
-    //   if(this.physics.overlap(this.player, this.abuela)) {
-    //     if (Phaser.Input.Keyboard.JustDown(this.e)) {
-    //       eventsCenter.emit("thisKey", this._nombreSala);
-    //       this.objetos[objs.OBJECTS.repartoBombones] = true;
-    //       this.scene.launch("dialogo", {npc:"abuela",prevKey:cst.SCENES.SALA31,objs:this.objetos});
-    //       this.scene.pause();
-    //       this.player.resetInput();
-    //       if (this.objetos[objs.OBJECTS.bombonesRepartidos1] && this.objetos[objs.OBJECTS.bombonesRepartidos2])
-    //         this.objetos[objs.OBJECTS.bombonesPomponina] = true;
-    // }
   }
 
   hablar = function () {

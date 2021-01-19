@@ -23,8 +23,7 @@ export default class Sala37 extends SalaBase{
 
      update(){
         super.update();        
-      }
-   
+      }   
     
       comienzaCombate = function(){
         eventsCenter.emit("thisKey", this._nombreSala);
@@ -32,11 +31,10 @@ export default class Sala37 extends SalaBase{
           npc: "pomponina",
           prevKey: cst.SCENES37,
           objs: this.objetos,
-          runInfo: this._runInfo,
+          runInf: this._runInfo,
           player: this.player,
         });
         this.scene.pause();
-        //this.scene.sendToBack();
         this.player.resetInput();
       }
 

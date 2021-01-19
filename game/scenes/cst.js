@@ -1,5 +1,6 @@
 export const  cst = {
     SCENES:{
+        SALAINICIAL:"sala_inicial",
         SALA0: "sala0",
         SALA0URDEMALAS: "sala0urdemalas",
         SALA11: "sala11",

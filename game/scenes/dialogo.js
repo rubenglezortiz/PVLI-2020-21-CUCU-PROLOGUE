@@ -1,17 +1,11 @@
-import {
-  npcs
-} from "./npcs.js";
+import { npcs } from "./npcs.js";
 import eventsCenter from "../eventsCenter.js";
-import {
-  objs
-} from "./objeto.js";
-import {
-  cst
-} from "./cst.js";
+import { objs } from "./objeto.js";
+import { cst } from "./cst.js";
 export default class Dialogo extends Phaser.Scene {
   constructor() {
     super({
-      key: "dialogo"
+      key: "dialogo",
     });
   }
 
@@ -19,7 +13,8 @@ export default class Dialogo extends Phaser.Scene {
     this.npc = datos.npc;
     this.prevKey = datos.prevKey;
     this.objetos = datos.objs;
-    this.runInfo = datos.runInfo;
+    this._runInfo = datos.runInf;
+    this.lives= datos.lives;
     this.player = datos.player;
   }
   create() {
@@ -32,6 +27,7 @@ export default class Dialogo extends Phaser.Scene {
     this.menu = this.add.image(700, 500, "mc");
     this.menu.setAlpha(0.5);
 
+    this.inicial = ["ejemplo", "ejmplo2", "mekeromorir"];
     //-----CUCU-----
     //#region
     //Diálogo inicial
@@ -81,7 +77,7 @@ export default class Dialogo extends Phaser.Scene {
     this.chulapos = [
       "SEÑOR: “He visto un señor vestido raro ir en\ndirección hacia el rastro. Estuvo un rato en \nla verbena, parecía estar disfrutando como\nun niño pequeño, no paraba de reir.",
     ];
-    //#endregion    
+    //#endregion
 
     //-----DON LINDO-----
     //#region
@@ -171,15 +167,14 @@ export default class Dialogo extends Phaser.Scene {
         "DEPENDIENTE: Se pasó por aquí de casualidad, estuvimos hablando,un buen rato.\nMe comentaba cosas de un teatro y de una mujer por la que está muy enamorado\npor lo visto.\nHasta tocó algo con un ukelele.\nSin embargo, nos entretuvimos mucho y ha sido la causa\npor la que voy tan mal de tiempo.\nSin darme cuenta, se me olvidó darle a él un gorro.\n¿Te importaría dárselo de mi parte?\nMe da pena haberme olvidado de dárselo.",
         'HAS RECIBIDO UN "GORRO"',
       ];
-    
-      else
-        this.dependienteRopa = [
-          "PIGMALIÓN: Perdona, ¿has visto por aquí a un tipo con traje y corbata,\ny que además parece que lleva una peluca?",
-          "DEPENDIENTE: Me quiere sonar sí, pero ahora mismo no lo termino de recordar.\nAdemás, estoy muy liado.Tengo que ordenar toda la tienda y repartir estos gorros.\n¿Te importaría echarme una mano con ellos?\nMientras intentaré pensar en el hombre que me has dicho.",
-          "PIGMALIÓN: Está bien, ¿a quién tengo que dárselos?",
-          "DEPENDIENTE: A cualquier persona que veas que tiene frío por la calle,\nse acerca el invierno y, si entre todos colaboramos,\nharemos que el invierno sea menos duro.",
-        ];
-    
+    else
+      this.dependienteRopa = [
+        "PIGMALIÓN: Perdona, ¿has visto por aquí a un tipo con traje y corbata,\ny que además parece que lleva una peluca?",
+        "DEPENDIENTE: Me quiere sonar sí, pero ahora mismo no lo termino de recordar.\nAdemás, estoy muy liado.Tengo que ordenar toda la tienda y repartir estos gorros.\n¿Te importaría echarme una mano con ellos?\nMientras intentaré pensar en el hombre que me has dicho.",
+        "PIGMALIÓN: Está bien, ¿a quién tengo que dárselos?",
+        "DEPENDIENTE: A cualquier persona que veas que tiene frío por la calle,\nse acerca el invierno y, si entre todos colaboramos,\nharemos que el invierno sea menos duro.",
+      ];
+
     if (this.objetos[objs.OBJECTS.ukelele]) {
       this.dependienta_musica = [
         "DEPENDIENTA: ¡Muchísimas gracias por traérmela de vuelta!\nSi te soy sincera, la daba por perdida.\nToma este ukelele como agradecimiento",
@@ -210,7 +205,7 @@ export default class Dialogo extends Phaser.Scene {
       this.frio2 = ["¡OH! ¡Muchas gracias!"];
     else this.frio2 = ["¡TRANSEUNTE: ¡ Hace tanto frío que puede \nque nieve!"];
     this.foto = [
-      "PIGMALIÓN PENSANDO: Nunca imaginé que un muñeco se podría enamorar de otro."
+      "PIGMALIÓN PENSANDO: Nunca imaginé que un muñeco se podría enamorar de otro.",
     ];
     //#endregion
 
@@ -451,6 +446,21 @@ export default class Dialogo extends Phaser.Scene {
       this.iterator++;
     }
     switch (this.npc) {
+      case npcs.NPCS.inicial:
+        if (this.iterator != this.inicial.length)
+          this.text.setText(this.inicial[this.iterator]);
+        else {
+          this.end();
+          this.scene.start(cst.SCENES.SALA0, {
+            posx: this.player.x,
+            posy: this.player.y,
+            lives: this.lives,
+            objs: this.objetos,
+            runInf: this._runInfo,
+          });
+        }
+        break;
+
       //-----CUCU-----
       //#region
       //Diálogo inicial
@@ -458,20 +468,20 @@ export default class Dialogo extends Phaser.Scene {
         if (this.iterator != this.cucu.length)
           this.text.setText(this.cucu[this.iterator]);
         else {
-          if (this.runInfo._monecos[0] === 0) {
+          if (this._runInfo._monecos[0] === 0) {
             this.scene.start(cst.SCENES.SALA18CUCU, {
               posx: 200,
               posy: this.sys.game.canvas.height / 2 + this.player.height / 2,
               lives: this.player.lives,
               objs: this.objetos,
-              runInf: this.runInfo,
+              runInf: this._runInfo,
             });
             this.scene.pause();
             this.scene.sendToBack();
           }
         }
         break;
-        //Diálogos combate
+      //Diálogos combate
       case npcs.NPCS.chisteCombate:
         if (this.iterator != this.chisteCombate.length)
           this.text.setText(this.chisteCombate[this.iterator]);
@@ -492,7 +502,7 @@ export default class Dialogo extends Phaser.Scene {
           this.text.setText(this.reirseCombate[this.iterator]);
         else this.end();
         break;
-        //Diálogos final
+      //Diálogos final
       case npcs.NPCS.salvar_cucu:
         if (this.iterator != this.salvarCucu.length)
           this.text.setText(this.salvarCucu[this.iterator]);
@@ -502,7 +512,7 @@ export default class Dialogo extends Phaser.Scene {
             posy: this.player.y,
             lives: this.player.lives,
             objs: this.objetos,
-            runInf: this.runInfo,
+            runInf: this._runInfo,
           });
           this.scene.pause();
           this.scene.sendToBack();
@@ -517,13 +527,13 @@ export default class Dialogo extends Phaser.Scene {
             posy: this.player.y,
             lives: this.player.lives,
             objs: this.objetos,
-            runInf: this.runInfo,
+            runInf: this._runInfo,
           });
           this.scene.pause();
           this.scene.sendToBack();
         }
         break;
-        //Puzzles
+      //Puzzles
       case npcs.NPCS.bebe:
         if (this.iterator != this.bebe.length)
           this.text.setText(this.bebe[this.iterator]);
@@ -537,65 +547,65 @@ export default class Dialogo extends Phaser.Scene {
         if (this.iterator != this.chulapos.length)
           this.text.setText(this.chulapos[this.iterator]);
         else this.end();
-        //#endregion
+      //#endregion
 
-        //-----DON LINDO-----
-        //#region 
-        //Diálogo inicial
+      //-----DON LINDO-----
+      //#region
+      //Diálogo inicial
       case npcs.NPCS.don_lindo:
         if (this.iterator != this.donlindo.length)
           this.text.setText(this.donlindo[this.iterator]);
         else {
-          if (this.runInfo._monecos[1] === 0) {
+          if (this._runInfo._monecos[1] === 0) {
             this.scene.start(cst.SCENES.SALA28DONLINDO, {
               posx: 200,
               posy: this.sys.game.canvas.height / 2 + this.player.height / 2,
               lives: this.player.lives,
               objs: this.objetos,
-              runInf: this.runInfo,
+              runInf: this._runInfo,
             });
             this.scene.pause();
             this.scene.sendToBack();
           }
         }
         break;
-        //Diálogo de combate
-        case npcs.NPCS.musica:
-          if (this.iterator != this.musica.length)
-            this.text.setText(this.musica[this.iterator]);
-          else this.end();
-          break;
-        case npcs.NPCS.gritar:
-          if (this.iterator != this.gritar.length)
-            this.text.setText(this.gritar[this.iterator]);
-          else this.end();
-          break;
-        case npcs.NPCS.foto_pomponina:
-          if (this.iterator != this.foto_pomponina.length)
-            this.text.setText(this.foto_pomponina[this.iterator]);
-          else this.end();
-          break;
-        case npcs.NPCS.donlindo_persuadir:
-          if (this.iterator != this.donlindo_persuadir.length)
-            this.text.setText(this.donlindo_persuadir[this.iterator]);
-          else this.end();
-          break;
-        case npcs.NPCS.gorro:
-          if (this.iterator != this.gorro.length)
-            this.text.setText(this.gorro[this.iterator]);
-          else this.end();
-          break;
-        case npcs.NPCS.ukelele:
-            if (this.iterator != this.ukelele.length)
-              this.text.setText(this.ukelele[this.iterator]);
-            else this.end();
-            break;
-        case npcs.NPCS.cartera:
-          if (this.iterator != this.cartera.length)
-            this.text.setText(this.cartera[this.iterator]);
-          else this.end();
-          break;
-        //Diálogos final
+      //Diálogo de combate
+      case npcs.NPCS.musica:
+        if (this.iterator != this.musica.length)
+          this.text.setText(this.musica[this.iterator]);
+        else this.end();
+        break;
+      case npcs.NPCS.gritar:
+        if (this.iterator != this.gritar.length)
+          this.text.setText(this.gritar[this.iterator]);
+        else this.end();
+        break;
+      case npcs.NPCS.foto_pomponina:
+        if (this.iterator != this.foto_pomponina.length)
+          this.text.setText(this.foto_pomponina[this.iterator]);
+        else this.end();
+        break;
+      case npcs.NPCS.donlindo_persuadir:
+        if (this.iterator != this.donlindo_persuadir.length)
+          this.text.setText(this.donlindo_persuadir[this.iterator]);
+        else this.end();
+        break;
+      case npcs.NPCS.gorro:
+        if (this.iterator != this.gorro.length)
+          this.text.setText(this.gorro[this.iterator]);
+        else this.end();
+        break;
+      case npcs.NPCS.ukelele:
+        if (this.iterator != this.ukelele.length)
+          this.text.setText(this.ukelele[this.iterator]);
+        else this.end();
+        break;
+      case npcs.NPCS.cartera:
+        if (this.iterator != this.cartera.length)
+          this.text.setText(this.cartera[this.iterator]);
+        else this.end();
+        break;
+      //Diálogos final
       case npcs.NPCS.salvar_don_lindo:
         if (this.iterator != this.salvarDonLindo.length)
           this.text.setText(this.salvarDonLindo[this.iterator]);
@@ -620,18 +630,18 @@ export default class Dialogo extends Phaser.Scene {
             posy: this.player.y,
             lives: this.player.lives,
             objs: this.objetos,
-            runInf: this.runInfo,
+            runInf: this._runInfo,
           });
           this.scene.pause();
           this.scene.sendToBack();
         }
         break;
-        //Puzzles
-        case npcs.NPCS.tabernero:
-          if (this.iterator != this.tabernero.length)
-            this.text.setText(this.tabernero[this.iterator]);
-          else this.end();
-          break;
+      //Puzzles
+      case npcs.NPCS.tabernero:
+        if (this.iterator != this.tabernero.length)
+          this.text.setText(this.tabernero[this.iterator]);
+        else this.end();
+        break;
       case npcs.NPCS.bullying:
         if (this.iterator != this.bullying.length)
           this.text.setText(this.bullying[this.iterator]);
@@ -642,12 +652,12 @@ export default class Dialogo extends Phaser.Scene {
           this.text.setText(this.dependienteRopa[this.iterator]);
         else this.end();
         break;
-        case npcs.NPCS.dependienta_musica:
-          if (this.iterator != this.dependienta_musica.length)
-            this.text.setText(this.dependienta_musica[this.iterator]);
-          else this.end();
-          break;
-        case npcs.NPCS.frio1:
+      case npcs.NPCS.dependienta_musica:
+        if (this.iterator != this.dependienta_musica.length)
+          this.text.setText(this.dependienta_musica[this.iterator]);
+        else this.end();
+        break;
+      case npcs.NPCS.frio1:
         if (this.iterator != this.frio1.length)
           this.text.setText(this.frio1[this.iterator]);
         else this.end();
@@ -659,32 +669,32 @@ export default class Dialogo extends Phaser.Scene {
         break;
       case npcs.NPCS.foto:
         if (this.iterator != this.foto.length)
-        this.text.setText(this.foto[this.iterator]);
-      else this.end();
-      break;
-        //#endregion
+          this.text.setText(this.foto[this.iterator]);
+        else this.end();
+        break;
+      //#endregion
 
-        //-----POMPONINA-----
-        //#region 
-        //Diálogo inicial
+      //-----POMPONINA-----
+      //#region
+      //Diálogo inicial
       case npcs.NPCS.pomponina:
         if (this.iterator != this.pomponina.length)
           this.text.setText(this.pomponina[this.iterator]);
         else {
-          if (this.runInfo._monecos[2] === 0) {
+          if (this._runInfo._monecos[2] === 0) {
             this.scene.start(cst.SCENES.SALA38POMPONINA, {
               posx: 200,
               posy: this.sys.game.canvas.height / 2 + this.player.height / 2,
               lives: this.player.lives,
               objs: this.objetos,
-              runInf: this.runInfo,
+              runInf: this._runInfo,
             });
             this.scene.pause();
             this.scene.sendToBack();
           }
         }
         break;
-        //Diálogos combate
+      //Diálogos combate
       case npcs.NPCS.collarCombate:
         if (this.iterator != this.collarCombate.length)
           this.text.setText(this.collarCombate[this.iterator]);
@@ -725,7 +735,7 @@ export default class Dialogo extends Phaser.Scene {
           this.text.setText(this.rosasCombate[this.iterator]);
         else this.end();
         break;
-        //Diálogos final de combate
+      //Diálogos final de combate
       case npcs.NPCS.salvar_pomponina:
         if (this.iterator != this.salvarPomponina.length)
           this.text.setText(this.salvarPomponina[this.iterator]);
@@ -735,7 +745,7 @@ export default class Dialogo extends Phaser.Scene {
             posy: this.player.y,
             lives: this.player.lives,
             objs: this.objetos,
-            runInf: this.runInfo,
+            runInf: this._runInfo,
           });
           this.scene.pause();
           this.scene.sendToBack();
@@ -750,13 +760,13 @@ export default class Dialogo extends Phaser.Scene {
             posy: this.player.y,
             lives: this.player.lives,
             objs: this.objetos,
-            runInf: this.runInfo,
+            runInf: this._runInfo,
           });
           this.scene.pause();
           this.scene.sendToBack();
         }
         break;
-        //Puzzles
+      //Puzzles
       case npcs.NPCS.abuela:
         if (this.iterator != this.abuela.length)
           this.text.setText(this.abuela[this.iterator]);
@@ -802,8 +812,7 @@ export default class Dialogo extends Phaser.Scene {
           this.text.setText(this.comoda[this.iterator]);
         else this.end();
         break;
-        
-        //#endregion
+      //#endregion
 
       case npcs.NPCS.urdemalas0:
         if (this.iterator != this.finalNeutral.length)
@@ -824,7 +833,7 @@ export default class Dialogo extends Phaser.Scene {
             posy: this.sys.game.canvas.height / 2,
             lives: 10,
             objs: this.objetos,
-            runInfo: this.runInfo,
+            runInfo: this._runInfo,
           });
         }
         break;

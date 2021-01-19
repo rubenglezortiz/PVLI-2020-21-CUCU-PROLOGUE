@@ -23,13 +23,10 @@ export default class Sala24 extends SalaBase {
     this.bullying.play("bullying",true);
     else this.bullying.play("bullying3",true)
     this.frio.play("frio1");
-    
-   
   } 
   
   update() {
     super.update();
-    
   }
 
   interactuarPersonaFrio1 = function(){

@@ -52,8 +52,6 @@ export default class Sala0Urdemalas extends SalaBaseCombate{
 
 
   phase2(){
-    
-
     this.time.delayedCall(750, ()=> {this.attack2(Phaser.Math.Between(0,2))})
     this.timer = this.time.addEvent({
       delay:3000,
@@ -63,18 +61,10 @@ export default class Sala0Urdemalas extends SalaBaseCombate{
       },
       repeat: 2,
     });
-
-
-    
-   
-   
-
   }
 
 
   attack1(atRnd){
-  
-
     if(atRnd === 0){
       //Este random  no se puede meter porque en la fase dos hay que decirle desde aquí hacia donde ir
       this.at = new PomponinaAttack(this, this.sys.game.canvas.width, this.sys.game.canvas.height / 2, "pomponinaat", this.player,Phaser.Math.Between(0,1));
@@ -107,5 +97,4 @@ export default class Sala0Urdemalas extends SalaBaseCombate{
     });
     }
   }
-
 }

@@ -1,5 +1,6 @@
 export const npcs = {
 NPCS:{
+    inicial: "inicial",
     //Puzzle Cucu
     bebe:"bebe",
     tienda_disfraces:"tienda_disfraces",

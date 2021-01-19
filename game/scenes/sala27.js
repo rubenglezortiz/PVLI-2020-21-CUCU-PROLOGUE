@@ -31,7 +31,7 @@ export default class Sala27 extends SalaBase {
       npc: "don_lindo",
       prevKey: cst.SCENES27,
       objs: this.objetos,
-      runInfo: this._runInfo,
+      runInf: this._runInfo,
       player: this.player,
     });
     this.scene.pause();

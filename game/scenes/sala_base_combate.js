@@ -79,7 +79,7 @@ export default class SalaBaseCombate extends SalaBase {
       npc: "matar_cucu",
       prevKey: cst.SCENES.SalaBaseCombate,
       objs: this.objetos,
-      runInfo: this._runInfo,
+      runInf: this._runInfo,
       player: this.player,
     });
     break;
@@ -89,7 +89,7 @@ export default class SalaBaseCombate extends SalaBase {
       npc: "matar_don_lindo",
       prevKey: cst.SCENES.SalaBaseCombate,
       objs: this.objetos,
-      runInfo: this._runInfo,
+      runInf: this._runInfo,
       player: this.player,
     });
     break;
@@ -100,7 +100,7 @@ export default class SalaBaseCombate extends SalaBase {
       npc: "matar_pomponina",
       prevKey: cst.SCENES.SalaBaseCombate,
       objs: this.objetos,
-      runInfo: this._runInfo,
+      runInf: this._runInfo,
       player: this.player,
     });
     break;
@@ -157,7 +157,7 @@ export default class SalaBaseCombate extends SalaBase {
       npc: "salvar_cucu",
       prevKey: cst.SCENES.SalaBaseCombate,
       objs: this.objetos,
-      runInfo: this._runInfo,
+      runInf: this._runInfo,
       player: this.player,
     });
     break;
@@ -167,7 +167,7 @@ export default class SalaBaseCombate extends SalaBase {
       npc: "salvar_don_lindo",
       prevKey: cst.SCENES.SalaBaseCombate,
       objs: this.objetos,
-      runInfo: this._runInfo,
+      runInf: this._runInfo,
       player: this.player,
     });
     break;
@@ -178,7 +178,7 @@ export default class SalaBaseCombate extends SalaBase {
       npc: "salvar_pomponina",
       prevKey: cst.SCENES.SalaBaseCombate,
       objs: this.objetos,
-      runInfo: this._runInfo,
+      runInf: this._runInfo,
       player: this.player,
     });
     break;

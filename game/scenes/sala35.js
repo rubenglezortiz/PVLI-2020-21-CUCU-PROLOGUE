@@ -31,21 +31,6 @@ export default class Sala35 extends SalaBase {
 
   update() {
     super.update();
-    // if (this.physics.overlap(this.player, this.encargado)) {
-    //   if (Phaser.Input.Keyboard.JustDown(this.e)) {
-    //     eventsCenter.emit("thisKey", this._nombreSala);
-    //     this.scene.launch("dialogo", {
-    //       npc: "encargadoAnticuario",
-    //       prevKey: cst.SCENES.SALA35,
-    //       objs: this.objetos,
-    //     });
-    //     this.scene.pause();
-    //     this.player.resetInput();
-    //     if (!this.objetos[objs.OBJECTS.abanicoRoto])
-    //       this.objetos[objs.OBJECTS.collar] = true;
-    //     else this.objetos[objs.OBJECTS.abanico] = true;
-    //   }
-    // }
   }
 
 
