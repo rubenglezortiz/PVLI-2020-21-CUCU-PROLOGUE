@@ -17,7 +17,13 @@ export default class Sala24 extends SalaBase {
     super.create();
     this.camino= this.add.image(this.sys.game.canvas.width / 2 + 15,this.sys.game.canvas.height / 2,"donlindocamino5")
     this.camino.flipX=true; 
-    this.bullying = new Prop (this, 300,300,"bullying",this.player,60,50,true,this.interactuarBully,this);
+    if(this._runInfo._props_interactuables[9] === 0){
+      this.bullying = new Prop (this, 300,300,"bullying",this.player,60,50,true,this.interactuarBully,this);
+    }
+    else{
+      this.bullying = new Prop (this, 300,300,"bullying",this.player,60,50,false);
+    }
+
     if(this._runInfo._props_interactuables[7] === 0){
       this.frio = new Prop (this, 1000, 600,"frio1",this.player,60,50,true,this.interactuarPersonaFrio1,this);
     }
@@ -25,7 +31,7 @@ export default class Sala24 extends SalaBase {
       this.frio = new Prop (this, 1000, 600,"frio1",this.player,60,50,false);
 
     }
-    if(!this.objetos[objs.OBJECTS.cartera])
+    if(!this._runInfo._props_interactuables[9] === 0)
     this.bullying.play("bullying",true);
     else this.bullying.play("bullying3",true)
     this.frio.play("frio1");
@@ -58,6 +64,8 @@ export default class Sala24 extends SalaBase {
     this.scene.pause();
     this.player.resetInput();
     this.objetos[objs.OBJECTS.cartera] = true;   
+    this.bullying.int = false;
+    this._runInfo._props_interactuables[9] = 1;
     this.bullying.play("bullying2",false).on("animationcomplete",()=>{this.bullying.play("bullying3",true)});    
   }
 

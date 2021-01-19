@@ -22,7 +22,13 @@ export default class Sala23 extends SalaBase {
     super.create();
     this.camino = this.add.image(this.sys.game.canvas.width / 2 + 15,this.sys.game.canvas.height / 2,"donlindocamino4");
     this.camino.flipX = true;this.tiendamusica = new Prop(this,1150,500,"tiendademusica",this.player,80,50,false);
-    this.dependientamusica = new Prop(this,this.sys.game.canvas.width / 2,(this.sys.game.canvas.height / 5) * 3,"dependientamusica",this.player,60,50,true,this.interactuarDepMusica,this);
+    
+    if(this._runInfo._props_interactuables[10] === 0){
+      this.dependientamusica = new Prop(this,this.sys.game.canvas.width / 2,(this.sys.game.canvas.height / 5) * 3,"dependientamusica",this.player,60,50,true,this.interactuarDepMusica,this);
+    }
+    else{
+      this.dependientamusica = new Prop(this,this.sys.game.canvas.width / 2,(this.sys.game.canvas.height / 5) * 3,"dependientamusica",this.player,60,50,false);
+    }
     this.dependientamusica.play("dependientamusica", true);
   }
 
@@ -39,7 +45,12 @@ export default class Sala23 extends SalaBase {
     });
     this.scene.pause();
     this.player.resetInput();
-    if (this.objetos[objs.OBJECTS.cartera])
+    if (this.objetos[objs.OBJECTS.cartera]){
       this.objetos[objs.OBJECTS.ukelele] = true;
+      this.objetos[objs.OBJECTS.cartera] = false;
+      this.dependientamusica.int = false;
+      this._runInfo._props_interactuables[10] = 1;
+    }
+      
   };
 }
