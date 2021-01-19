@@ -92,7 +92,9 @@ export default class MenuCombate extends Phaser.Scene {
       });
     });
     
+    
     this.talkButton.on("pointerdown", (pointer) => { // Al pulsar el botón de hablar
+      if(this.moneco !== 3)
       this.buttonVec.forEach((button) => {
         button.disableInteractive();
         button.setAlpha(0.5);
@@ -374,6 +376,7 @@ export default class MenuCombate extends Phaser.Scene {
         this.parar();
       });
     }
+    if(this.moneco !== 3){
       this.talkOptionsVec.forEach((button) => {
         button.on("pointerover", (pointer) => {
           button.setAlpha(0.5);
@@ -419,6 +422,8 @@ export default class MenuCombate extends Phaser.Scene {
         }
         this.backButton2.destroy();
       });
+    }
+      
     });
     this.mercyButton.on("pointerdown", (pointer) => {
       eventsCenter.emit("isMercy", true);
