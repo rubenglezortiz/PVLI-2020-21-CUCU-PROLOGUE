@@ -41,18 +41,23 @@ export default class SalaBaseCombate extends SalaBase {
      
    
      this.sound.stopAll(); 
+
+
+    
     if(this._nombreSala === cst.SCENES.SALA18CUCU){
-      this.circo = this.sound.add("cucu", this.musicConfig);
-      this.circo.play();
+      this.cancion = this.sound.add("cucu", this.musicConfig);
     }
     else if(this._nombreSala === cst.SCENES.SALA28DONLINDO){
-      this.donlind = this.sound.add('donlindo', this.musicConfig);
-      this.donlind.play();
+      this.cancion = this.sound.add('donlindo', this.musicConfig);
     }
     else if(this._nombreSala === cst.SCENES.SALA38POMPONINA){
-      this.pomp = this.sound.add('pomponina', this.musicConfig);
-      this.pomp.play();
+      this.cancion= this.sound.add('pomponina', this.musicConfig);
     }
+    else{
+      this.cancion = this.sound.add('urdemalas', this.musicConfig);
+    }
+    this.cancion.play();
+
     this.text = this.add.text(50, 20, "Vidas: " + this.player.lives);
     this.text.setFontSize(80);
   }
