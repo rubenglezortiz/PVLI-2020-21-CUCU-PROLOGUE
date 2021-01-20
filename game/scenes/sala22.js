@@ -21,12 +21,18 @@ export default class Sala22 extends SalaBase {
       this.frio = new Prop (this, 400, 600,"frio2",this.player,60,50,true,this.interactuarPersonaFrio,this);
     }
     else{
-      this.frio = new Prop (this, 400, 600,"frio2",this.player,60,50,false);
+      this.frio = new Prop (this, 400, 600,"frio2gorro",this.player,60,50,false);
     }
     this.tiendaropa = new Prop (this, 1150, 200,"tiendaderopa",this.player,80,50,false);
     this.dependienteropa= new Prop(this,1150,350,"dependiente_ropa",this.player,60,50,true,this.interactuarDepRopa,this);
     this.dependienteropa.play("dependiente_ropa",true);
-    this.frio.play("frio2",true);
+
+    if(this._runInfo._props_interactuables[8] === 0){
+      this.frio.play("frio2");
+    }
+    else{
+      this.frio.play("frio2gorro");
+    }
   }  
 
   update() {
@@ -49,7 +55,8 @@ export default class Sala22 extends SalaBase {
     if(this.objetos[objs.OBJECTS.gorrosARepartir]){
       this.frio.int = false;
       this._runInfo._props_interactuables[8] = 1;
-    this.objetos[objs.OBJECTS.gorroRepartido2] = true;
+      this.objetos[objs.OBJECTS.gorroRepartido2] = true;
+      this.frio.play("frio2gorro");
     }
   }
 }

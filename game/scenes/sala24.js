@@ -28,7 +28,7 @@ export default class Sala24 extends SalaBase {
       this.frio = new Prop (this, 1000, 600,"frio1",this.player,60,50,true,this.interactuarPersonaFrio1,this);
     }
     else{
-      this.frio = new Prop (this, 1000, 600,"frio1",this.player,60,50,false);
+      this.frio = new Prop (this, 1000, 600,"frio1gorro",this.player,60,50,false);
 
     }
 
@@ -40,7 +40,14 @@ export default class Sala24 extends SalaBase {
     {
       this.bullying.play("bullying3",true)
     } 
-    this.frio.play("frio1");
+
+    if(this._runInfo._props_interactuables[7] === 0){
+      this.frio.play("frio1");
+    }
+    else{
+      this.frio.play("frio1gorro");
+    }
+   
 
     
   } 
@@ -58,6 +65,7 @@ export default class Sala24 extends SalaBase {
       this.objetos[objs.OBJECTS.gorroRepartido1] = true;
       this.frio.int = false;
       this._runInfo._props_interactuables[7] = 1;
+      this.frio.play("frio1gorro");
     }
     
   }

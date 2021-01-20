@@ -116,11 +116,19 @@ class Bootloader extends Phaser.Scene {
       frameWidth: 192,
       frameHeight: 192
     });
-    this.load.spritesheet("frio1", "./resources/sprites/don_lindo/npcFrio1.png",{
+    this.load.spritesheet("frio1", "./resources/sprites/don_lindo/npcfrio1.png",{
       frameWidth: 192,
       frameHeight: 192
     });
-    this.load.spritesheet("frio2", "./resources/sprites/don_lindo/npcFrio2.png",{
+    this.load.spritesheet("frio1gorro", "./resources/sprites/don_lindo/npcfrio1gorro.png",{
+      frameWidth: 192,
+      frameHeight: 192
+    });
+    this.load.spritesheet("frio2", "./resources/sprites/don_lindo/npcfrio2.png",{
+      frameWidth: 192,
+      frameHeight: 192
+    });
+    this.load.spritesheet("frio2gorro", "./resources/sprites/don_lindo/npcfrio2gorro.png",{
       frameWidth: 192,
       frameHeight: 192
     });
@@ -344,6 +352,15 @@ class Bootloader extends Phaser.Scene {
       repeat: -1,
     })
     this.anims.create({
+      key: "frio1gorro",
+      frames: this.anims.generateFrameNumbers("frio1gorro", {
+        start: 0,
+        end: 13,
+      }),
+      frameRate: 4,
+      repeat: -1,
+    })
+    this.anims.create({
       key: "dependientamusica",
       frames: this.anims.generateFrameNumbers("dependientamusica", {
         start: 0,
@@ -365,6 +382,15 @@ class Bootloader extends Phaser.Scene {
     this.anims.create({
       key: "frio2",
       frames: this.anims.generateFrameNumbers("frio2", {
+        start: 0,
+        end: 15,
+      }),
+      frameRate: 4,
+      repeat: -1,
+    })
+    this.anims.create({
+      key: "frio2gorro",
+      frames: this.anims.generateFrameNumbers("frio2gorro", {
         start: 0,
         end: 15,
       }),
