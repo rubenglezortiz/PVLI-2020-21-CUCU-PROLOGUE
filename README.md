@@ -1,14 +1,42 @@
-# PVLI-2020-21-CUCU-PROLOGUE
-PVLI UCM PROJECT 2020/21
+#                                                       Cucu's												
 
-# Desarrolladores
- - Manuel Adeliño Consuegra
- - Rodrigo Tobar Guillén 
- - Rubén González Ortiz
- - Jonathan Sebastián Andrade Gordillo
+------
+
+​																	
+
+## Desarrolladores
+
+- ## Los Moñecos
+
+   - Manuel Adeliño Consuegra
+
+   - Rodrigo Tobar Guillén 
+
+   - Rubén González Ortiz
+
+   - Jonathan Sebastián Andrade Gordillo
+
+     
+
+     ​	
+
+     
+
+     
+
+     #### 																			    Preview videojuego																														
+
+     ![](C:\Users\ARIALBLAK\Desktop\jueguito\PVLI-2020-21-CUCU-PROLOGUE\resources\myMediaFolder\media\imagenjuego.png)
+
+
+
+### Puede ver nuestro código en : https://github.com/rubenglezortiz/PVLI-2020-21-CUCU-PROLOGUE
+
+Y nuestro proceso de desarrollo en : 
 
 # GDD
-***CUCU: PROLOGUE***
+
+***CUCU's***
 
 **Documento de diseño de videojuego**
 
@@ -91,6 +119,8 @@ Versión 1.2 - 19 de septiembre de 2019
 
 Es un juego de rol con una perspectiva top-down. El personaje podrá moverse en todas direcciones. Algunas de las características claves del mismo son: el diálogo del jugador con los demás personajes, dado que la trama tendrá un peso importante en el juego, y el combate, que se basará en un sistema de minijuegos distintos entre sí basados en esquivar proyectiles.
 
+El objetivo principal del juego será eliminar/salvar a los muñecos escapados mientras evitas morir en combate, pudiendo darse diversos resultados dependiendo de tus acciones
+
 # 2. Menús
 
 ## 2.1 Menú de inicio
@@ -140,6 +170,12 @@ Interfaz dentro de combate:
 Vida del personaje y vida del enemigo en la esquina superior izquierda y derecha respectivamente.
 
 # 4. Jugabilidad
+
+## 4.0 Arquitectura
+
+El juego se estructura de la siguiente forma:
+
+![](C:\Users\ARIALBLAK\Desktop\jueguito\PVLI-2020-21-CUCU-PROLOGUE\resources\myMediaFolder\media\uml.png)
 
 ## 4.1 Mecánica 
 
@@ -1167,6 +1203,8 @@ Urdemalas dispara tres proyectiles, uno en linea recta hacia el jugador y otros 
 
 ![Combate](./resources/myMediaFolder/media/image4.png)
 
+
+
 **Referencias**
 
 -   *El Señor De Pigmalión, Jacinto Grau (1921)*
@@ -1176,3 +1214,11 @@ Urdemalas dispara tres proyectiles, uno en linea recta hacia el jugador y otros 
 -   *Cuphead, StudioMDHR (2017)*
 
 
+
+
+
+
+
+# PVLI-2020-21-CUCU's
+
+PVLI UCM PROJECT 2020/21
