@@ -116,19 +116,19 @@ class Bootloader extends Phaser.Scene {
       frameWidth: 192,
       frameHeight: 192
     });
-    this.load.spritesheet("frio1", "./resources/sprites/don_lindo/npcfrio1.png",{
+    this.load.spritesheet("frio1", "./resources/sprites/don_lindo/npc_frio1.png",{
       frameWidth: 192,
       frameHeight: 192
     });
-    this.load.spritesheet("frio1gorro", "./resources/sprites/don_lindo/npcfrio1gorro.png",{
+    this.load.spritesheet("frio1gorro", "./resources/sprites/don_lindo/npc_frio1_gorro.png",{
       frameWidth: 192,
       frameHeight: 192
     });
-    this.load.spritesheet("frio2", "./resources/sprites/don_lindo/npcfrio2.png",{
+    this.load.spritesheet("frio2", "./resources/sprites/don_lindo/npc_frio2.png",{
       frameWidth: 192,
       frameHeight: 192
     });
-    this.load.spritesheet("frio2gorro", "./resources/sprites/don_lindo/npcfrio2gorro.png",{
+    this.load.spritesheet("frio2gorro", "./resources/sprites/don_lindo/npc_frio2_gorro.png",{
       frameWidth: 192,
       frameHeight: 192
     });
