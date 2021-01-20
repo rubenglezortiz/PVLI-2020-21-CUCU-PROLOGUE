@@ -15,13 +15,13 @@ export default class Sala36 extends SalaBase {
 
   create() {
     super.create();
-    this.camino=this.add.image(this.sys.game.canvas.width/2, this.sys.game.canvas.height/2, "pomponinacamino2");
+    this.camino=this.add.image(this.window.w/2, this.window.h/2, "pomponinacamino2");
     this.camino.flipX=true;
     if(this._runInfo._props_interactuables[2] === 0){
-      this.comoda=new Prop(this,this.sys.game.canvas.width-200,this.sys.game.canvas.height/2,"comoda",this.player,60,50,true, this.interactuarComoda, this);
+      this.comoda=new Prop(this,this.window.w-200,this.window.h/2,"comoda",this.player,60,50,true, this.interactuarComoda, this);
     }
     else{
-      this.comoda=new Prop(this,this.sys.game.canvas.width-200,this.sys.game.canvas.height/2,"comoda",this.player,60,50,false);
+      this.comoda=new Prop(this,this.window.w-200,this.window.h/2,"comoda",this.player,60,50,false);
     }
     
   }

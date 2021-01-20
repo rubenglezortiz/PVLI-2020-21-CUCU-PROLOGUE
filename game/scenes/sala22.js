@@ -16,7 +16,7 @@ export default class Sala22 extends SalaBase {
 
   create() {
     super.create();
-    this.camino= this.add.image(this.sys.game.canvas.width / 2 + 15,this.sys.game.canvas.height / 2,"donlindocamino3")
+    this.camino= this.add.image(this.window.w / 2 + 15,this.window.h / 2,"donlindocamino3")
     if(this._runInfo._props_interactuables[8] === 0){
       this.frio = new Prop (this, 400, 600,"frio2",this.player,60,50,true,this.interactuarPersonaFrio,this);
     }

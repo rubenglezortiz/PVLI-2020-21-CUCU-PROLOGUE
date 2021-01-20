@@ -15,7 +15,7 @@ export default class Sala24 extends SalaBase {
 
   create() {
     super.create();
-    this.camino= this.add.image(this.sys.game.canvas.width / 2 + 15,this.sys.game.canvas.height / 2,"donlindocamino5")
+    this.camino= this.add.image(this.window.w / 2 + 15,this.window.h / 2,"donlindocamino5")
     this.camino.flipX=true; 
     if(this._runInfo._props_interactuables[9] === 0){
       this.bullying = new Prop (this, 300,300,"bullying",this.player,60,50,true,this.interactuarBully,this);
@@ -31,10 +31,18 @@ export default class Sala24 extends SalaBase {
       this.frio = new Prop (this, 1000, 600,"frio1",this.player,60,50,false);
 
     }
-    if(!this._runInfo._props_interactuables[9] === 0)
-    this.bullying.play("bullying",true);
-    else this.bullying.play("bullying3",true)
+
+    console.log(this);
+    if(this._runInfo._props_interactuables[9] === 0){
+      this.bullying.play("bullying",true);
+    }
+    else
+    {
+      this.bullying.play("bullying3",true)
+    } 
     this.frio.play("frio1");
+
+    
   } 
   
   update() {

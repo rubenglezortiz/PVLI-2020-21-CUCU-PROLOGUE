@@ -24,7 +24,7 @@ export default class Final extends SalaBase {
     this.objA = [];
     this.infoA = [{ x: 300, y: 250, moneco:"cucu_idl" },{ x: 1100, y: 250, moneco: "donlindo_idl" },{ x: 300, y: 650,moneco: "pomponina_idl" },];
     this.cajas();
-    this.urdemalas= new Prop(this,this.sys.game.canvas.width-200,this.sys.game.canvas.height/2+60,"urdemalas_idl",this.player,60,50,true,this.evaluacion,this);
+    this.urdemalas= new Prop(this,this.window.w-200,this.window.h/2+60,"urdemalas_idl",this.player,60,50,true,this.evaluacion,this);
     this.urdemalas.play("urdemalas_idl");
   }
 

@@ -104,11 +104,11 @@ export default class Sala0Urdemalas extends SalaBaseCombate{
   attack1(atRnd){
     if(atRnd === 0){
       //Este random  no se puede meter porque en la fase dos hay que decirle desde aquí hacia donde ir
-      this.at = new PomponinaAttack(this, this.sys.game.canvas.width, this.sys.game.canvas.height / 2, "pomponina_at", this.player,Phaser.Math.Between(0,1));
+      this.at = new PomponinaAttack(this, this.window.w, this.window.h / 2, "pomponina_at", this.player,Phaser.Math.Between(0,1));
       this.tornado.play();
     }
     else if(atRnd ===1){
-      this.at = new DonLindoAttack(this, this.sys.game.canvas.width, this.sys.game.canvas.height / 2,"nota", this.player);
+      this.at = new DonLindoAttack(this, this.window.w, this.window.h / 2,"nota", this.player);
       this.nota.play();
     }
     else{
@@ -121,12 +121,12 @@ export default class Sala0Urdemalas extends SalaBaseCombate{
   attack2(attackKind){
     if(attackKind === 0){
       for (let i = 0; i < 2; i++) {
-        this.pompAt = new PomponinaAttack(this, this.sys.game.canvas.width, this.sys.game.canvas.height / 2, "pomponina_at", this.player,i%2);
+        this.pompAt = new PomponinaAttack(this, this.window.w, this.window.h / 2, "pomponina_at", this.player,i%2);
         this.tornado.play();
       }
     }
     else if(attackKind===1){
-      this.at = new DonLindoAttack(this, this.sys.game.canvas.width, this.sys.game.canvas.height / 2,"nota", this.player);
+      this.at = new DonLindoAttack(this, this.window.w, this.window.h / 2,"nota", this.player);
       this.nota.play();
       this.timerAttack1 = this.time.delayedCall(2000, () => {
         this.expl.play();
@@ -138,7 +138,7 @@ export default class Sala0Urdemalas extends SalaBaseCombate{
       this.cucuAt1 = new CucuAttack(this, "cucu_at2", Phaser.Math.Between(this.player.y - this.player.height * 1.5, this.player.y + this.player.height * 1.5), 600, this.player);
       this.timerAttack2 = this.time.delayedCall(500, () => {
       this.cu.play();
-      this.cucuAt2 = new CucuAttack(this, "cucu_at2",Phaser.Math.Between(0, this.sys.game.canvas.height), 600, this.player);
+      this.cucuAt2 = new CucuAttack(this, "cucu_at2",Phaser.Math.Between(0, this.window.h), 600, this.player);
     });
     }
   }

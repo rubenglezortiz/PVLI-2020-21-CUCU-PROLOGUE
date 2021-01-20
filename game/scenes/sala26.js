@@ -17,7 +17,7 @@ export default class Sala26 extends SalaBase {
 
   create() {
     super.create();
-    this.camino= this.add.image(this.sys.game.canvas.width / 2 + 90,this.sys.game.canvas.height / 2,"donlindocamino1")
+    this.camino= this.add.image(this.window.w / 2 + 90,this.window.h/ 2,"donlindocamino1")
     this.camino.angle=90;
     this.fotoPomponina = new Prop (this, 300,300,"fotopomponina",this.player,60,50,true, this.fotoPomponina,this);
   }

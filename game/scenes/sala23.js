@@ -20,14 +20,14 @@ export default class Sala23 extends SalaBase {
 
   create() {
     super.create();
-    this.camino = this.add.image(this.sys.game.canvas.width / 2 + 15,this.sys.game.canvas.height / 2,"donlindocamino4");
+    this.camino = this.add.image(this.window.w / 2 + 15,this.window.h / 2,"donlindocamino4");
     this.camino.flipX = true;this.tiendamusica = new Prop(this,1150,500,"tiendademusica",this.player,80,50,false);
     
     if(this._runInfo._props_interactuables[10] === 0){
-      this.dependientamusica = new Prop(this,this.sys.game.canvas.width / 2,(this.sys.game.canvas.height / 5) * 3,"dependientamusica",this.player,60,50,true,this.interactuarDepMusica,this);
+      this.dependientamusica = new Prop(this,this.window.w / 2,(this.window.h / 5) * 3,"dependientamusica",this.player,60,50,true,this.interactuarDepMusica,this);
     }
     else{
-      this.dependientamusica = new Prop(this,this.sys.game.canvas.width / 2,(this.sys.game.canvas.height / 5) * 3,"dependientamusica",this.player,60,50,false);
+      this.dependientamusica = new Prop(this,this.window.w/ 2,(this.window.h / 5) * 3,"dependientamusica",this.player,60,50,false);
     }
     this.dependientamusica.play("dependientamusica", true);
   }

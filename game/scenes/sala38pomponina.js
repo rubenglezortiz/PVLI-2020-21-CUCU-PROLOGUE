@@ -14,7 +14,7 @@ export default class Sala38pomponina extends SalaBaseCombate {
   }
   create() {
     super.create();
-    this.pomponina=new Prop(this,1200,this.sys.game.canvas.height/2,"pomponina",this.player,60,50,false);
+    this.pomponina=new Prop(this,1200,this.window.h/2,"pomponina",this.player,60,50,false);
     this.pomponina.play("pomponina",true);
     this.musicConfig = {
       mute: false,
@@ -65,12 +65,12 @@ export default class Sala38pomponina extends SalaBaseCombate {
   }
 
   attack1(){
-    this.pompAt = new PomponinaAttack(this, this.sys.game.canvas.width, this.sys.game.canvas.height / 2, "pomponina_at", this.player,Phaser.Math.Between(0,1));
+    this.pompAt = new PomponinaAttack(this, this.window.w, this.window.h / 2, "pomponina_at", this.player,Phaser.Math.Between(0,1));
     this.tornado.play()
   }
   attack2(){
     for (let i = 0; i < 2; i++) {
-      this.pompAt = new PomponinaAttack(this, this.sys.game.canvas.width, this.sys.game.canvas.height / 2, "pomponina_at", this.player,i%2);
+      this.pompAt = new PomponinaAttack(this, this.window.w, this.window.h / 2, "pomponina_at", this.player,i%2);
     }
     this.tornado.play()
   }

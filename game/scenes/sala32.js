@@ -15,15 +15,15 @@ export default class Sala32 extends SalaBase {
 
   create() {
     super.create();
-    this.camino = this.add.image(this.sys.game.canvas.width / 2 + 15,this.sys.game.canvas.height / 2,"pomponinacamino6");
+    this.camino = this.add.image(this.window.w/ 2 + 15,this.window.h / 2,"pomponinacamino6");
     if(this._runInfo._props_interactuables[0] === 0){
-      this.fuente = new Prop(this,this.sys.game.canvas.width / 2,this.sys.game.canvas.height / 2,"fuente",this.player,60,45,true, this.interactuarFuente,  this);
+      this.fuente = new Prop(this,this.window.w / 2,this.window.h / 2,"fuente",this.player,60,45,true, this.interactuarFuente,  this);
     }
     else{
-      this.fuente = new Prop(this,this.sys.game.canvas.width / 2,this.sys.game.canvas.height / 2,"fuente",this.player,60,45,false);
+      this.fuente = new Prop(this,this.window.w / 2,this.window.h / 2,"fuente",this.player,60,45,false);
     }
     this.fuente.play("fuente", true);
-    this.hijoFlorista = new Prop(this,this.sys.game.canvas.width / 2,600,"hijo_florista",this.player,60,50,true,this.hablarHijoFlorista, this);
+    this.hijoFlorista = new Prop(this,this.window.w / 2,600,"hijo_florista",this.player,60,50,true,this.hablarHijoFlorista, this);
     this.hijoFlorista.play("hijo_florista", true);
     
     if(this._runInfo._props_interactuables[4] === 0){

@@ -13,7 +13,7 @@ export default class Sala11 extends SalaBase {
 
   create() {
     super.create();
-    this.camino = this.add.image(this.sys.game.canvas.width/2, this.sys.game.canvas.height/2, "cucucamino4");
+    this.camino = this.add.image(this.window.w/2, this.window.h/2, "cucucamino4");
     this.camino.depth = 1;
   }
 

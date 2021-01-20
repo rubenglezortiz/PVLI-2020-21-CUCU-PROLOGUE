@@ -53,6 +53,7 @@ export default class SalaBaseCombate extends SalaBase {
 
     this.text = this.add.text(50, 20, "Vidas: " + this.player.lives);
     this.text.setFontSize(80);
+    this.text.depth = this.window.h + 1;
   }
 
   update(time, delta) {

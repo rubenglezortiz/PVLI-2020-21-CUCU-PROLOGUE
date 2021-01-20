@@ -15,8 +15,8 @@ export default class Sala18Cucu extends SalaBaseCombate {
 
   create() {
     super.create();  
-    this.carreta = new Prop(this,1200,this.sys.game.canvas.height / 2 - 100,"carreta",this.player,60,50,false);
-    this.cucu = new Prop(this,1200,this.sys.game.canvas.height/2,"cucu_idl",this.player,60,50,false);
+    this.carreta = new Prop(this,1200,this.window.h / 2 - 100,"carreta",this.player,60,50,false);
+    this.cucu = new Prop(this,1200,this.window.h/2,"cucu_idl",this.player,60,50,false);
     this.cucu.play("cucu",true);
     this.musicConfig = {
       mute: false,
@@ -74,7 +74,7 @@ export default class Sala18Cucu extends SalaBaseCombate {
     this.cucuAt1 = new CucuAttack(this, "cucu_at2", Phaser.Math.Between(this.player.y - this.player.height * 1.5, this.player.y + this.player.height * 1.5), 600, this.player);
     this.cu.play();
     this.timerAttack2 = this.time.delayedCall(350, () => {
-      this.cucuAt2 = new CucuAttack(this, "cucu_at2",Phaser.Math.Between(0, this.sys.game.canvas.height), 600, this.player);
+      this.cucuAt2 = new CucuAttack(this, "cucu_at2",Phaser.Math.Between(0, this.window.h), 600, this.player);
       this.cu.play();
     });
   }  
