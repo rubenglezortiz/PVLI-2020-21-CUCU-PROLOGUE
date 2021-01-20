@@ -58,8 +58,8 @@ export default class Sala0 extends SalaBase {
         this.final=0;
       
       this.scene.start(cst.SCENES.FINAL, {
-        posx: this.sys.game.canvas.width/2,
-        posy: this.sys.game.canvas.height,
+        posx: this.window.w/2,
+        posy: this.window.h/2,
         lives: this.lives,
         objs: this.objetos,
         runInf: this._runInfo,

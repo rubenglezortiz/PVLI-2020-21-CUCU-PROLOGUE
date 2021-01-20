@@ -16,8 +16,8 @@ export default class SalaBaseCombate extends SalaBase {
   create() {
     super.create();
     this.monecoAttacks = this.add.group();
-    this.monecoLP = 3;
-    this.monecoPP = 99;
+    this.monecoLP = 100;
+    this.monecoPP = 0;
     this.monecoMercy = false;
     this.physics.add.overlap(this.player, this.monecoAttacks);
 
@@ -67,6 +67,14 @@ export default class SalaBaseCombate extends SalaBase {
     if (this.player.lives === 0) {
       this.player.lives = 10;
       this.finishVS();
+      this.scene.start(cst.SCENES.SALA0, {
+        posx: 700,
+        posy: 400,
+        lives: this.player.lives,
+        objs: this.objetos,
+        runInf: this._runInfo
+      })
+      
     }
 
     if (this.monecoLP <= 0) {
@@ -145,10 +153,7 @@ export default class SalaBaseCombate extends SalaBase {
   }
 
   mercy(mercy) {
-    //HABRÍA QUE AJUSTAR PARÁMETROS, VER SI SE SALVA EL MUNECO ETC.
-    // if (mercy) {
-    //   this.monecoMercy=true;
-    // }
+    
     switch (this.m) {
       case 0:
         eventsCenter.emit("thisKey", this._nombreSala);
