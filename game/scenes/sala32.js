@@ -17,13 +17,19 @@ export default class Sala32 extends SalaBase {
     super.create();
     this.camino = this.add.image(this.window.w/ 2 + 15,this.window.h / 2,"pomponinacamino6");
     if(this._runInfo._props_interactuables[0] === 0){
-      this.fuente = new Prop(this,this.window.w / 2,this.window.h / 2,"fuente",this.player,60,45,true, this.interactuarFuente,  this);
+      this.fuente = new Prop(this,this.window.w / 2,this.window.h / 2,"fuente",this.player,60,50,true, this.interactuarFuente,  this);
     }
     else{
-      this.fuente = new Prop(this,this.window.w / 2,this.window.h / 2,"fuente",this.player,60,45,false);
+      this.fuente = new Prop(this,this.window.w / 2,this.window.h / 2,"fuente",this.player,60,50,false);
     }
     this.fuente.play("fuente", true);
+
+    if(this._runInfo._props_interactuables[11] === 0){
     this.hijoFlorista = new Prop(this,this.window.w / 2,600,"hijo_florista",this.player,60,50,true,this.hablarHijoFlorista, this);
+    }
+    else{
+    this.hijoFlorista = new Prop(this,this.window.w / 2,600,"hijo_florista",this.player,60,50,false);
+    }
     this.hijoFlorista.play("hijo_florista", true);
     
     if(this._runInfo._props_interactuables[4] === 0){
@@ -66,8 +72,11 @@ export default class Sala32 extends SalaBase {
     });
     this.scene.pause();
     this.player.resetInput();
-    if (this.objetos[objs.OBJECTS.floresHijo])
+    if (this.objetos[objs.OBJECTS.floresHijo]){
+      this.hijoFlorista.int = false;
+      this._runInfo._props_interactuables[11] =1;
       this.objetos[objs.OBJECTS.hijoAyudado] = true;
+    }
   }
 
   interactuarFuente = function(){

@@ -45,6 +45,14 @@ export default class Sala22 extends SalaBase {
     this.scene.pause();
     this.player.resetInput();    
     this.objetos[objs.OBJECTS.gorrosARepartir] = true;
+
+    if (
+      this.objetos[objs.OBJECTS.gorroRepartido1] &&
+      this.objetos[objs.OBJECTS.gorroRepartido2]
+    )
+    this.objetos[objs.OBJECTS.gorro] = true;
+    
+    
   }
   
   interactuarPersonaFrio = function(){

@@ -61,6 +61,7 @@ export default class Sala33 extends SalaBase {
       this.objetos[objs.OBJECTS.floresHijo] = true;
     if (this.objetos[objs.OBJECTS.hijoAyudado]){
       this.objetos[objs.OBJECTS.floresRosas] = true;
+      this.objetos[objs.OBJECTS.floresHijo] = false;
       this.florista.int = false;
       this._runInfo._props_interactuables[5] =1;
     }
