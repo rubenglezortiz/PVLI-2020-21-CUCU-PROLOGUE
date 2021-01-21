@@ -26,7 +26,7 @@
 
      #### 																			    Preview videojuego																														
 
-     ![](C:\Users\ARIALBLAK\Desktop\jueguito\PVLI-2020-21-CUCU-PROLOGUE\resources\myMediaFolder\media\imagenjuego.png)
+     ![](.\resources\myMediaFolder\media\imagenjuego.png)
 
 
 
@@ -67,8 +67,6 @@ Versión 1.2 - 19 de septiembre de 2019
 **2. Menús**
 
 + 2.1 Menú de inicio
-
-+ 2.2 Menú de pausa
 
 + 2.3 Menú de interacción con los muñecos
 
@@ -123,19 +121,9 @@ El objetivo principal del juego será eliminar/salvar a los muñecos escapados m
 
 # 2. Menús
 
-## 2.1 Menú de inicio
 
--   El título del juego.
 
--   Botón de jugar, el cual iniciará automáticamente el juego.
-
-## 2.2 Menú de pausa
-
--   Botón de salir del juego
-
--   Botón de seguir jugando
-
-## 2.3 Menú de interacción con los muñecos
+## 2.1  Menú de combate con los muñecos
 
 Este menú aparece al acercarse a un personaje y pulsar el botón de interacción
 
@@ -143,7 +131,7 @@ Este menú aparece al acercarse a un personaje y pulsar el botón de interacció
 
 -   **Hablar**: Las opciones del menú de combate se cambian por las distintas opciones de diálogo del personaje. P.e: Atacar → Chiste, Hablar → Halago \...
 
--   **Salvarle**: si los PM están a cero, al darle se acaba la pelea y perdonas al muñeco , salvándolo. Si no están a 0, aparece el minijuego y el jugador pierde su turno.
+-   **Piedad**: si los PP están a 100, al darle se acaba la pelea y perdonas al muñeco , salvándolo. Si no están a 100, aparece el minijuego y el jugador pierde su turno.
 
 Al acabar de interaccionar con el muñeco (haberle matado o salvado) se cierra el menú. El jugador se encontrará donde interactuó con el muñeco, solo que este ya no estará ahí.
 
@@ -153,21 +141,15 @@ Al acabar de interaccionar con el muñeco (haberle matado o salvado) se cierra e
 
 #  
 
-# 3. Configuración, interfaz y controles
-
-## 3.1 Configuración
-
-Las posibilidades que tendrá el usuario a la hora de configurar el videojuego serán dos botones, uno para quitar el sonido y otro para quitar la música.
-
-Aparecen siempre en la zona superior derecha de la pantalla.
+# 3. Configuración y controles
 
 ## 3.2 Interfaz y control
 
-No hay interfaz fuera de combate.
+- No hay interfaz fuera de combate.
+  - Al acercarse a un prop interactuable aparece una “E” para indicar que se puede pulsar esa tecla.
 
-Interfaz dentro de combate:
-
-Vida del personaje y vida del enemigo en la esquina superior izquierda y derecha respectivamente.
+- Interfaz dentro de combate:
+  - Vida del personaje la esquina superior izquierda.
 
 # 4. Jugabilidad
 
@@ -175,19 +157,19 @@ Vida del personaje y vida del enemigo en la esquina superior izquierda y derecha
 
 El juego se estructura de la siguiente forma:
 
-![](C:\Users\ARIALBLAK\Desktop\jueguito\PVLI-2020-21-CUCU-PROLOGUE\resources\myMediaFolder\media\uml.png)
+![](.\resources\myMediaFolder\media\uml.png)
 
 ## 4.1 Mecánica 
 
 ### 4.1.1 Movimiento e interacción
 
-El jugador se podrá mover en todas las direcciones de los ejes X Y con las teclas WASD para moverse en dirección norte, este,sur y oeste respectivamente, y la combinación de esas direcciones, completando un movimiento 8D. Por otra parte, con la tecla "E" podrá interactuar con el escenario, ya sea con objetos o personas.
+El jugador se podrá mover en todas las direcciones de los ejes X Y con las teclas WASD para moverse en dirección norte, sur, este y oeste respectivamente, y la combinación de esas direcciones, completando un movimiento 8D. Por otra parte, con la tecla “E” podrá interactuar con el escenario, ya sea con objetos o personas.
 
 ### 4.1.2 Enfrentamiento contra enemigos
 
-El jugador tendrá una barra de vida durante los combates. Tendrá X puntos de vida. Si llegan a 0, Pigmalión muere y reaparece en un punto de guardado.
+El jugador tendrá 10 puntos de vida. En pantalla habrá un texto indicándole los PV restantes. Si llegan a 0, Pigmalión muere y reaparece en un punto de guardado. Los muñecos tendrán 100 puntos de vida.
 
-Los muñecos también tendrán una barra de vida visible para el jugador. Al igual que con Pigmalión, si llega a 0 morirán. Al empezar un combate la vida del muñeco está siempre al máximo. Cuando acaba un combate, Pigmalión regenera parte de su vida (un 20% del total).
+Al igual que con Pigmalión, si llegan a 0 morirán. Al empezar un combate la vida del muñeco está siempre al máximo. 
 
 El muñeco además tendrá unos **Puntos De Persuasión** que subirán si Pigmalión selecciona las opciones adecuadas al hablar y bajarán cuando pase lo contrario. Estos puntos no serán visibles para el jugador.
 
@@ -197,25 +179,27 @@ La primera fase del combate consta de una toma de decisiones, nombradas en el pu
 
 **FASE 1**
 
+La segunda fase empieza cada vez que elegimos una opción en la fase uno.
+
+En ella el jugador maneja al personaje principal y tendrá que esquivar los ataques del enemigo, perdiendo puntos de vida en caso de no conseguirlo.
+
+Si el muñeco está por debajo de la mitad de la vida, esta fase se dificultará de distintas formas dependiendo del muñeco(más proyectiles, más rápidos, etc).
+
+Tras esquivar todos los ataques, volveremos a la primera fase del enfrentamiento y tendremos que tomar nuevas decisiones. Los minijuegos están explicados en cada personaje.
+
+
+
+**FASE 2**
+
 **Atacar:** Cuando elijamos esta acción, aparecerá un minijuego con el que se establecerá la cantidad de daño a infligir. Aparecerá un rectángulo horizontal con dos barras verticales que se moverán desde las esquinas hasta el centro a diferente velocidad. El jugador, presionando la tecla "Espacio", parará las barras. Cuanto más cerca estén, más daño se hará.
 
 ![Combate](./resources/myMediaFolder/media/image24.png)
 
-**Hablar:** El jugador tendrá diferentes opciones para hablar con los muñecos, en función de qué puzzles haya resuelto a lo largo del mapa, podrá elegir más opciones. Las opciones serán beneficiosas o perjudiciales. Si el jugador elige una opción mala, la segunda fase más complicada en el siguiente turno, si elige una buena, subirán los Puntos de Persuasión, una medida invisible al jugador, que cuando llegue al máximo, el combate acabará salvando al muñeco. También hay opciones que no acarrean ningún efecto.
+**Hablar:**  El jugador tendrá diferentes opciones para hablar con los muñecos, en función de qué puzzles haya resuelto a lo largo del mapa, podrá elegir más opciones. Las opciones serán beneficiosas o perjudiciales. Si elige una buena, subirán los Puntos de Persuasión, una medida invisible al jugador, que cuando llegue al máximo, el jugador podrá acabar el combate salvando al muñeco. También hay opciones que no acarrean ningún efecto.
 
-**Salvar:** Cuando los puntos de persuasión lleguen a podrás salvar al muñeco dándole a esta opción. Se acabará el combate al instante. Si se selecciona esta opción sin haber llegado a los puntos de persuasión necesarios, el jugador perderá el turno y se pasará a la fase 2.
+**Piedad:** Cuando los puntos de persuasión lleguen a 100 podrás salvar al muñeco dándole a esta opción. Se acabará el combate al instante. 
 
-**FASE 2**
 
-La segunda fase empieza cada vez que elegimos una opción en la fase uno.
-
-En ella el jugador maneja al personaje principal y tendrá que esquivar los ataques del enemigo, perdiendo puntos de vida en caso de no conseguirlo. Cuando ésto último suceda, el jugador pierde vida y se vuelve invulnerable por 2 segundos, parpadeando.
-
-Si el muñeco está por debajo de la mitad de la vida, esta fase se dificultará de distintas formas dependiendo del muñeco(más proyectiles, más rápidos, etc).
-
-Si el jugador selecciona una mala opción en la opción "**Hablar**" de la fase uno, el muñeco se enfada y sus ataques harán el doble de daño en la fase dos de ese turno, lo cual se mostrará con un cambio de tono en el sprite de los ataques(el turno siguiente el daño volverá a la normalidad).
-
-Tras esquivar todos los ataques, volveremos a la primera fase del enfrentamiento y tendremos que tomar nuevas decisiones. Los minijuegos están explicados en cada personaje.
 
 ### 4.1.3 Objetos
 
@@ -225,7 +209,7 @@ Se obtendrán al completar los puzzles (o parte de ellos) a lo largo del mapa y 
 
 ### 4.2.1 Dinámica puzzles
 
-En función de la toma de decisiones a la hora de hablar con los NPCs del mundo, se pueden obtener unos objetos u otros que servirán para facilitar la opción pacifista del juego, y que en función de la moralidad de la decisión que se seleccione se obtiene un objeto u otro, con distinto significado para el muñeco en el que se use.
+Se pueden obtener unos objetos u otros que servirán para facilitar la opción pacifista del juego mediante la exploración del escenario y con la interacción con los personajes que nos iremos encontrando.
 
 ### 4.2.2 Dinámica muñecos
 
@@ -277,7 +261,7 @@ El mapa será un mundo abierto, marcado por tres diferentes zonas, más una zona
 
 Cosas comunes a todos los personajes:
 
--   Minijuego. El minijuego cambiará de fase cuando la salud del muñeco baja del 50%. Al elegir una opción de chat calificada como mala, en el siguiente minijuego el muñeco infligirá el doble de daño.
+-   Minijuego. El minijuego cambiará de fase cuando la salud del muñeco baja del 50%.
 
 -   Objetos. En las opciones de chat, se mostrarán solo las opciones desbloqueadas (esto va principalmente por los muñecos con los que se pueden desbloquear distintos objetos).
 
@@ -285,7 +269,8 @@ Cosas comunes a todos los personajes:
 
 Dependiendo del personaje, además, se podrá abrir un submenú de cosas que ofrecer que el jugador puede obtener a través de quests de cada personaje
 
-## Juan
+## CUCU
+
 ![Cucu](./resources/myMediaFolder/media/image17.png)
 
 ### DESCRIPCIÓN:
@@ -320,12 +305,6 @@ Matar:
 
 -Pigmalión. pensando(Al principio Juan se reía por cualquier tontería, no se cuanto tiempo llevo sin verle sonreír).
 
-**Caja de Juan**
-
--Mala: Reírse de él
-
--Pigmalión. pensando En el teatro siempre estábamos riéndonos de él, fuimos demasiado crueles
-
 **NPC calle**
 
 -Buena: Animarle
@@ -334,7 +313,7 @@ Matar:
 
 **NPC calle**
 
-\- Info muñecos humanos: hay una madre con el carrito de su bebe. Al hablar con ella sale un diálogo que dice que dice que su bebe no paraba de llorar hasta que vino una persona muy rara y lo calmó jugando con él, diciéndole CUCU. Al preguntarle por esa persona le dice que volvió por donde vino.
+\- Info muñecos humanos: hay un carrito de bebe. Al interactuar con él sale un diálogo que explica quey cucu calmó al bebe. Al preguntarle por esa persona le dice que volvió por donde vino.
 
 CONVERSACIONES
 
@@ -360,10 +339,6 @@ Una vez seleccionada esta opción Pigmalión dice al azar uno de estos:
 
 1\. -Pigmalión: ¿Sabes cómo se queda un mago después de comer? Cucu: ...Pigmalión: Magordito
 
-2\. - Pigmalión: ¿Cómo se despiden los químicos? -Cucu: ... -Pigmalión: Ácido un placer.
-
-3\. - Pigmalión: ¿Sabes qué le dice un .gif a un .jpg? -Cucu: ... -Pigmalión: ¡Anímate hombre!
-
 \- **(Mala): Reírse de él**
 
 -   JAJAJAJAJAJA CUCU(riéndose de él)
@@ -377,18 +352,6 @@ Una vez seleccionada esta opción Pigmalión dice al azar uno de estos:
 -   Aunque los demás se rían de ti, yo sé que eres especial
 
 -   CUCU :3
-
-2\.
-
--   La farsa no puede funcionar sin ti, eres parte de la familia
-
--   CUCU:3
-
-3\.
-
--   Puedo enseñarte a hablar, pero tendrás que confiar en mí
-
--   CUCU:3
 
 **- (Indiferente): Dato**
 
@@ -415,7 +378,7 @@ Una vez seleccionada esta opción Pigmalión dice al azar uno de estos:
 ------------------------------- ------------ -------------- ---------- ------------
 **TOTAL**                       **Chiste**   **Animarle**   **Dato**   **Reírse**
 
-     100    +10     +15     +0   -5
+    100             +10     +15      +0    -5
 
 **MINIJUEGO (Descripción de la mecánica del muñeco):**
 
@@ -425,9 +388,7 @@ El minijuego se parece a este jefe del cuphead, sustituyendo los HA por CU que v
 
 El jugador puede moverse libremente por la sala, pero si entra a la zona en la que está el muñeco, pierde vida. La zona del muñeco tiene CuCus flotando y que no salen de ella, cuando el muñeco vaya a tirar un cucu, aparece un CuCU diminuto en esta zona, que se va haciendo grande hasta alcanzar su tamaño, y en ese momento se lanza.
 
-El muñeco le lanzará proyectiles, los cuales se verán como "CU CU",
-
-al ser lo único que puede decir el muñeco. Si estos impactan en el jugador, éste pierde vida y su personaje se vuelve invulnerable por 2 segundos, parpadeando, mientras que si impactan contra el muro de la izquierda, desaparecen. Al principio los cucus salen juntos, como en la siguiente imagen:
+El muñeco le lanzará proyectiles, los cuales se verán como "CU CU", al ser lo único que puede decir el muñeco. Al principio los cucus salen juntos, como en la siguiente imagen:
 
 ![Combate](./resources/myMediaFolder/media/image9.png)
 
@@ -435,35 +396,17 @@ Pero según se va avanzando en el minijuego puede lanzarlos sin que los dos CUs 
 
 ![Combate](./resources/myMediaFolder/media/image19.png)
 
-Si se opta por atacar al muñeco, en vez de intentar hablar y hacerle entrar en razón, al bajarle la mitad de la vida, aparecen uno nuevo CUCUs, que son como los primeros, uno detrás de otro, pero estos al llegar a la pared, en vez de desaparecer, rebotan y vuelven con el muñeco. Para diferenciar estos CUCUs de los demás, tendrán una fuente distinta (la que usa el muñeco cuando está enfadado) y serán más lentos.
 
-Cuando se hayan aguantado x segundos en el minijuego, desaparece todo lo que tiene que ver con él, y se vuelve al menú de interacción.
-
-Opción mala: x2 Daño Juan : CUCU!
 
 **ZONA de CUCU**
 
 ![Mapa](./resources/myMediaFolder/media/image12.png)
 
-![img](./resources/myMediaFolder/media/image16.png)
 
-Esta zona va a estar diferenciada de las demás porque las calles van a estar decoradas de fiesta, como esta:
 
-Las banderillas colgando van a ser los elementos más representativos, además de algunos NPCs vestidos de San Isidro.
+1-Calle normal, un par de mesas con y un bebe (mirar info de CUCU).
 
-1- Va a haber unas indicaciones:
-
--   Hacia arriba: Plaza Mayor (este cartel el grande para atraer la atención del jugador y que así vaya para arriba al principio)
-
--   Hacia abajo: Rastro
-
--   Izquierda: Calle normal, gente comiendo
-
-Acordarse de lo de poner la canción de la plaza mayor pero que suene bajo y por arriba.
-
-2- Calle normal, un par de mesas con gente comiendo a un lado y al otro una madre con su bebe (mirar info de CUCU).
-
-3- Plaza Mayor: (Al entrar empieza a sonar la canción Madrid, Madrid, MAdrid de Placido Domingo https://www.youtube.com/watch?v=KWNZ_w3c3ls&ab_channel=Nisusline)Aquí está la estatua para reconocerla y al lado un par de NPC vestido de chulapos y chulapas dando circulos (bailando). Además hay otros NPC mirando, al preguntarles dicen que vieron a una persona muy rara(vestido como un payaso) que estuvo un rato mirando y cogió la calle que va al rastro. (mirar info)![img](./resources/myMediaFolder/media/image1.png)
+2-Plaza Mayor: (Al entrar empieza a sonar la canción Madrid, Madrid, MAdrid de Placido Domingo https://www.youtube.com/watch?v=KWNZ_w3c3ls&ab_channel=Nisusline)Aquí está la estatua para reconocerla y al lado un par de NPC vestido de chulapos y chulapas dando circulos (bailando). Además hay otros NPC mirando, al preguntarles dicen que vieron a una persona muy rara(vestido como un payaso) que estuvo un rato mirando y cogió la calle que va al rastro. (mirar info)![img](./resources/myMediaFolder/media/image1.png)
 
 4- Calle normal, conexión con la zona azul.
 
@@ -471,13 +414,7 @@ Acordarse de lo de poner la canción de la plaza mayor pero que suene bajo y por
 
 6- Conexión con zona Morada, es el rastro. Hay un par de puestos.
 
-Cartel con anuncio que dice que hacia el oeste hay
-
-una función de títeres.
-
-7- Sala de cucu. hay una pequeña carpa con
-
-dos títeres, uno de ellos es igual que cucu
+7- Sala de cucu. hay una pequeña carpa con dos títeres, uno de ellos es igual que cucu
 
 ##  Pomponina
 
@@ -520,10 +457,6 @@ dos títeres, uno de ellos es igual que cucu
 -   **CAJA DE BOMBONES (PUZZLE) (DESBLOQUEA OPCIÓN CHAT)**
 
     -   **PIGMALIÓN PENSANDO**: Podría darle estos bombones a Pomponina.
-
--   **RAMO DE ROSAS MALO(PUZZLE) (DESBLOQUEA OPCIÓN CHAT)**
-
-    -   **PIGMALIÓN PENSANDO**: A Pomponina siempre le han gustado las rosas.
 
 -   **RAMO DE ROSAS (PUZZLE) (DESBLOQUEA OPCIÓN CHAT)**
 
@@ -642,12 +575,13 @@ Se mostrarán las tres opciones desbloqueables además de un botón para ofrecer
 
  TABLA DE PUNTOS DE PERSUASIÓN                                                                        
 ------------------------------- ---------------------- -------------- ------------- ---------------- -------------
-**TOTAL**                       **Ramo rosas rosas**   **Bombones**   **Abanico**   **Ramo Rosas**   **Halagar**
+**TOTAL**        **Ramo rosas rosas**   **Bombones**   **Abanico**   **Ramo Rosas**   **Halagar**
     
-     100         +40             +30        +30      +20       +12
-**-**                         **Ordenar**            **Amenazar**   **Collar**    **Ramo malo** 
 
-         0        -5     -20      -30              
+     100         +40             +30        +30      +20       +12
+**-**          **Ordenar**            **Amenazar**   **Collar**   
+
+         0              -5         -20                  
 
 
 
@@ -681,25 +615,23 @@ La zona de Pomponina va a estar ambientada en la alta sociedad burguesa de la ci
 
 1.Si vamos a casa de Pomponina, nos encontraremos con un cajón con el que si intentamos interactuar descubriremos que está cerrado con llave.
 
-2.Al ir a la plaza con fuente, se podrá apreciar un brillo leve en la fuente. Al interactuar con él obtendremos la llave.
+2.Al ir a la plaza con fuente al interactuar con ella obtendremos la llave.
 
 3.Al abrir el cajón, encontraremos un abanico roto. Pigmalión pensará que se podría arreglar.
 
-4.Si vamos al anticuario,el encargado nos dará la opción de repararlo o de comprar un collar. Como Pigmalión no lleva mucho dinero encima, solo podrá elegir una opción. Dependiendo de lo que elija, recibirá un objeto u otro. El collar lo podrá comprar desde el principio sin necesidad de haber encontrado nada.
+4.Si vamos al anticuario,el encargado nos dará la opción de comprar uno nuevo. Si hablamos con el anticuario sin tener el abanico roto, Pigmalión comprará un collar.
 
 **-Ramo de rosas malo, ramo de rosas y ramo de rosas rosas**
 
 1\. Al llegar a la floristería, nos encontraremos con un dependiente que ha perdido la llave de la trastienda. Pedirá a Pigmalión que si la ve que le avise.
 
-2\. De todos los floreros que hay en la tienda, uno de ellos estará vacío. Al interactuar con él, obtendremos la llave de la trastienda.
+2\. Cerca habrá un florero vacío. Al interactuar con él, obtendremos la llave de la trastienda.
 
-3\. Aquí Pigmalión deberá decidir si dársela sin más o pedirle un ramo de rosas a cambio. El dependiente le dirá a Pigmalión que no se puede permitir darle un ramo de rosas porque si se entera el jefe le echará. Si Pigmalión insiste en que quiere el ramo, el dependiente accederá y le dará un ramo de rosas malo, aunque el que sea malo no se le indicará ni a Pigmalión ni al jugador.
-
-Si Pigmalión decide dársela gratis, ya sea en la primera o en la segunda oportunidad, el encargado se lo agradecerá y ya que es tan amable, le pedirá que le lleve un ramo de rosas a su hijo, el cual tiene una cita en la fuente y se le ha olvidado.
+3\. Al darle la llave, el encargado le regalará un ramo de rosas que se le había olvidado a su hijo.
 
 4\. A partir de este momento Pigmalión tiene dos opciones: entregarle el ramo al hijo o dárselo a Pomponina. Si decide ir a la fuente y dárselo al hijo, tendrá una conversación con él.
 
-5\. Tras esto, si vuelve a la floristería, el dependiente estará tan encantado con Pigmalión que decidirá darle el ramo de rosas rosas, el cual pagará él de su bolsillo por toda la ayuda que le ha dado Pigmalión.
+5\. Tras esto, si vuelve a la floristería, el dependiente estará tan encantado con Pigmalión que decidirá regalarle un ramo de rosas rosas.
 
 **-Caja de bombones**
 
@@ -707,70 +639,16 @@ Si Pigmalión decide dársela gratis, ya sea en la primera o en la segunda oport
 
 2.  Deberemos ir a esas zonas e interactuar con los personajes que encontraremos. Al darles sus pedidos a todos, podremos volver a la tienda.
 
-3.  Al llegar, la anciana nos lo agradecerá. Pigmalión le preguntará por Pomponina y veremos un flashback.
-
-**(Está Pomponina frente al mostrador en el interior de la tienda. La anciana está al otro lado)**
-
-**POMPONINA:** Hola. Quería una caja de bombones. ¿Cuánto es?
-
-**ANCIANA:** *(Tiene expresión triste y alicaída, habla en un tono apagado-Pone la caja encima del mostrador)* Toma cielo, te la puedes quedar.
-
-**POMPONINA:** ¿Me los das así sin más? Normalmente los hombres me hacen tributos por mi belleza para tratar de conquistarme, pero ¿por qué me los darías tú?
-
-**ANCIANA:** *(Suelta una pequeña risa)* ¡Qué aires, señorita! En fin, el caso es que ya nadie viene a mi tienda, y me temo que tendré que cerrar el negocio, qué remedio\...
-
-**POMPONINA:** ¿Y por qué ha dejado de venir la gente? ¡Todo parece riquísimo!
-
-**ANCIANA:** El mundo avanza, y supongo que ya nadie quiere los dulces de una vieja como yo. Todo es culpa de esas dichosas máquinas, que todo lo que producen es más barato y mejor que lo tradicional, o al menos eso piensan algunos. Tú todavía eres joven, pero yo he vivido mucho. El tiempo no se detiene y algunas nos quedamos estancadas en él.
-
-**POMPONINA:** ¿Y no hay nadie que pueda ayudar?
-
-**ANCIANA:** Mi marido me ayudaba mucho, era la mayor alegría de mi mundo. Pero desgraciadamente murió hace ya tres años.
-
-**POMPONINA:** ¡Pues búscate otro!
-
-**ANCIANA:** *(Se ríe)* Qué inocente eres, chiquilla. Me recuerdas a mi de joven, cuando era guapa y estaba llena de energía, igual que tú. *(Pausa, suspira)* Es imposible que encuentre a alguien que me quiera, ya estoy demasiado vieja. *(Fija su mirada en la suya, las cejas caídas (cansancio/tristeza)* Permíteme darte un consejo: disfruta mientras puedas de tu juventud. Cuando pasan los años, la gente se olvida de tí, ya dejas de interesar a los demás, y si quieres sobrevivir debes dejar atrás los deseos de libertad y de ilusión en los que has creído.
-
-**POMPONINA:** *(El semblante de Pomponina se torna consternado)*
-
-**ANCIANA:** *(Con un tono alegre)* Ay pero no te pongas así, perdona si te he asustado. Solo intentaba ayudarte, pero he acabado con mis desvaríos, como siempre\...
-
-**POMPONINA:** ¡Es que me parece muy triste que todo acabe así! ¿Cómo algo tan bonito como es este mundo puede tornarse en algo tan frío y solitario? Es demasiado cruel, ¡tienes que ponerle un bonito final a esta triste historia!
-
-**ANCIANA:** No te preocupes por mí. Haz como los demás y déjame con mis problemas, ya me las arreglaré, de verdad.
-
-**POMPONINA:** *(Mirada triste y pensativa - Después se le ilumina el rostro)* Pues yo todavía tengo esperanza en que todo puede ir a mejor para tí. Pero me tienes que prometer que vas a seguir con la tienda una semana más al menos.
-
-**ANCIANA:** *(La mira con ternura)* Si de verdad te hace tanta ilusión, está bien. Lo haré por tí.
-
-**POMPONINA:** *(Llena de alegría)* ¡Genial! Pues para que la cosa empiece bien quería 5 cajas de bombones. *(Saca todo el dinero que llevaba)*
-
-**ANCIANA:** *(Se le contagia la ilusión de Pomponina, responde alegre)* ¡Pero son muchas cajas para ti sola!
-
-**POMPONINA:** ¡Te aseguro que no! ¡Me encantan los bombones! *(Dice riéndose)*
-
-**ANCIANA:** *(Sigue alegre)* Está bien. ¡Pues que los disfrutes mucho! ¡Y muchas gracias por todo!
-
-**Fuera flashback**
-
-**ANCIANA:** Y así fue como conocí a la chica que buscas.
-
-**ANCIANA:** *(Sonríe con ternura)* Desde ese día empezó a venir mucha gente. Todos decían que la chica más hermosa del mundo les había hablado de un sitio fantástico y que tenían que probarlo. Además, les había dado una muestra proveniente del lugar la cual les encantó.
-
-**ANCIANA:** Me da pena pensar que al final no pudiese probarlos. Con la de gente que ha venido, estoy segura de que les dió casi todos los bombones. *(Hace una pausa)* ¿Podrías hacerme un favor? Cuando te la encuentres, dale esta caja de bombones. Y dale las gracias de mi parte.
-
-**PIGMALIÓN:** Después de haberte devuelto tu negocio entiendo que quieras agradecérselo de alguna forma.
-
-**ANCIANA:** *(sonríe y niega con la cabeza)* No le doy las gracias por eso. Se las doy por devolverme la esperanza.
-
-4.  Tras esto le podremos dar a Pomponina la caja de bombones.
+3.  Al llegar, la anciana nos lo agradecerá. Pigmalión le preguntará por Pomponina y la abuela nos dará información y una caja de bombones para Pomponina.
 
 **MINIJUEGO**
 
 Pomponina lanzará abanico tornados. Éstos se comportarán como simples proyectiles que no avanzarán en línea recta, sino en zig-zag ya que rebotarán en las paredes al chocar contra ellas.
 
-Cuando Pomponina tenga la vida reducida a la mitad, lanzará tres tornados en vez de uno, con la misma mecánica para los tornados de los lados, siendo el del centro un proyectil que avanzará de forma recta.\
+
 ![Combate](./resources/myMediaFolder/media/image14.png)
+
+Cuando Pomponina tenga la vida reducida a la mitad, lanzará tres tornados en vez de uno, con la misma mecánica para los tornados de los lados, siendo el del centro un proyectil que avanzará de forma recta.\
 
 ![Combate](./resources/myMediaFolder/media/image10.png)
 
@@ -804,10 +682,6 @@ Cuando Pomponina tenga la vida reducida a la mitad, lanzará tres tornados en ve
 
     -   **PIGMALIÓN PENSANDO:** Nunca imaginé que un muñeco se podría enamorar de otro.
 
--   **RAMO DE FLORES CON UN PAPEL QUE PONGA "PARA POMPONINA":**
-
-    -   **PIGMALIÓN PENSANDO:** No puedo entender cómo uno de mis muñecos ha podido llegar a sentir una emoción tan humana.
-
 -   **GORRO (PUZZLE) (DESBLOQUEA OPCIÓN CHAT)**
 
     -   **PIGMALIÓN PENSANDO:** Nunca le he regalado nada, espero que con el gorro le quite importancia a su peluca.
@@ -816,13 +690,12 @@ Cuando Pomponina tenga la vida reducida a la mitad, lanzará tres tornados en ve
 
     -   **PIGMALIÓN PENSANDO:** Seguro que agradecerá recibir un ukelele. Lástima que el suyo lo hayan roto.
 
--   **CARTERA: (PUZZLE) (DESBLOQUEA OPCIÓN CHAT)**
+- **CARTERA: (PUZZLE) (DESBLOQUEA OPCIÓN CHAT)**
 
-    -   **PIGMALIÓN PENSANDO:** Tendría que devolvérsela a su dueño. O puedo comprarle algo a Don Lindo. Incluso ofrecersela. A todo el mundo le gusta el dinero.
+  -   **PIGMALIÓN PENSANDO:** Tendría que devolvérsela a su dueño. O puedo comprarle algo a Don Lindo. Incluso ofrecersela. A todo el mundo le gusta el dinero.
 
--   **CORBATA: (PUZZLE) (DESBLOQUEA OPCIÓN CHAT)**
+  
 
-    -   **PIGMALIÓN PENSANDO:** Corbata cutre, perfecta para él.
 
 **OPCIONES DE CHAT**
 
@@ -831,10 +704,6 @@ Cuando Pomponina tenga la vida reducida a la mitad, lanzará tres tornados en ve
     -   **PIGMALIÓN**: Tienes que volver conmigo, las farsas necesitan de tu música.
 
     -   **DON LINDO:** ¿Tan importante es mi música?
-
-    -   **PIGMALIÓN:** Vuelve al teatro y pasamos un rato tocando algún instrumento de los que te gustan.
-
-    -   **DON LINDO:** Quizá no sea mala idea.
 
 -   **(INDIFERENTE): Gritar (desbloqueada)**
 
@@ -848,27 +717,12 @@ Cuando Pomponina tenga la vida reducida a la mitad, lanzará tres tornados en ve
 
     -   **DON LINDO:** ¡Cómo osas!
 
-    -   **PIGMALIÓN:** Ya hay que ser cutre para arrastrarse tanto por Pomponina.
-
-    -   **DON LINDO:** Tú no eres nadie para decir cómo conseguir los encantos de la hermosa Pomponina.
-
-    -   **PIGMALIÓN:** No te mereces a Pomponina, no estás a su altura.
-
-    -   **DON LINDO:** Cállate, apestoso.
-
 -   **(MALA): Persuadir (desbloqueada) Se escoge aleatoriamente una opción. Se puede repetir.**
 
     -   **PIGMALIÓN:** Si no vienes conmigo te quitaré la peluca y te quedarás calvo.
 
     -   **DON LINDO:** Si me voy por mi cuenta podré comprar todas las pelucas que quiera.
 
-    -   **PIGMALIÓN:**: Te aprecio mucho, Don Lindo, siempre fuiste una de mis creaciones más especiales.
-
-    -   **DON LINDO:** Si me quisieses tanto me habrías hecho con pelo, como a los demás.
-
-    -   **PIGMALIÓN:** Ponponina va a venir conmigo, se pondrá muy triste si ve que la has abandonado.
-
-    -   **DON LINDO:** ¡Mentiroso, mentiroso! Pomponina nunca volvería contigo, ella querría escaparse para vivir una vida a mi lado. No te creo.
 
 
 -   **(MUY BUENA) Regalar gorro (desbloquear por puzzle)**
@@ -892,15 +746,19 @@ Cuando Pomponina tenga la vida reducida a la mitad, lanzará tres tornados en ve
 -   **(MALA) Dar cartera (desbloquear por puzzle)**
 
     -   **PIGMALIÓN:** Seguro que aceptas esta cartera con dinero para volver al teatro..
+-   **DON LINDO:** A ver si te das cuenta de que no todo gira en torno al dinero, garrapata sin patas.
+    
 
-    -   **DON LINDO:** A ver si te das cuenta de que no todo gira en torno al dinero, garrapata sin patas.
-
-  TABLA DE PUNTOS DE PERSUASIÓN                                                 
+  
+  
+  
+  ### TABLA DE PUNTOS DE PERSUASIÓN                                                 
+  
   ------------------------------- --------------- --------------- ------------- ------------
   **TOTAL**                       **Ukelele**     **Gorro**       **Musica**    **Gritar**
-        100     +50     +40    +12    0
-  **-**                          **Persuadir**   **Pomponina**   **Corbata**   **Cartera**
-            -5        -10       -20     -30
+        100     					+50           +40            +12           0
+  **-**           **Persuadir**   **Pomponina**     **Cartera**
+                   -5        	     -10      		 -30
 
 **MAPA**
 
@@ -920,17 +778,9 @@ Cuando Pomponina tenga la vida reducida a la mitad, lanzará tres tornados en ve
 
  **Calle vacía.** Una foto de Pomponina y una rotonda, sin más. Zona paupérrima del mapa.
 
- **Don Lindo.**
-
-La zona de Don Lindo estará ambientada en un barrio pobre de Madrid, rozando la máxima pobreza.
-
-En cuanto a estética, predominarán los edificios de ladrillos y las baldosas de las calles (todo esto especificado gráficamente en el otro documento). Se encontrarán numerosos grafitis en paredes.
-
-Las personas, caracterizadas por tener un punto de vista de la vida un tanto distinto a lo normal, pues aprecian cualquier detalle como el de poder comer en familia. Abro paréntesis para decir que la vestimenta se puede resumir a vaqueros y sudaderas o chándals.
-
 **PUZZLES**
 
-**-Gorro, corbata**
+**-Gorro**
 
 1.  Si hablamos con el dependiente de la tienda de ropa, le preguntaremos acerca de Don Lindo. Amablemente nos dirá que en este momento está muy liado, va con el tiempo justo y que no nos puede ayudar, pues tiene que repartir unos gorros, de forma gratuita a los habitantes de la zona.
 
@@ -1008,74 +858,15 @@ NOTA: Si el jugador coge la cartera puede directamente ofrecérsela a Don Lindo,
 
 NOTA: Si el jugador coge primero la cartera en vez de hablar antes con la dependienta, saltará el paso 2 (directamente le dirá gracias y le dará el ukelele)
 
-NOTA: Con el ukelele podemos volver a hablar con el Tabernero y veremos el **flashback** de Don Lindo.
-
-**FLASHBACK**
-
-**TABERNERO:** Buenos días, ¿deseas tomar algo?
-
-**DON LINDO:** Nada que no sea el amor de Pomponina, mi querido amigo.
-
-**TABERNERO:** Bueno, amigo mío. Su caso no es nuevo por aquí.
-
-**DON LINDO:** Imposible, nadie ha pasado por aquí pensando en alguien con tal magnífica belleza.
-
-**TABERNERO:** ¿Y por qué no va a por ella?
-
-**DON LINDO:** ¿Me has visto bien? Me hicieron mal, ni siquiera tengo pelo, me pusieron una peluca en vez de hacerme un pelo decente. Pomponina y yo no estamos a la misma altura.
-
-**TABERNERO:** Le das demasiada importancia al físico. Lo importante está en el interior.
-
-**DON LINDO:** Con ella no es así desgraciadamente.
-
-**TABERNERO:** Todos por aquí tenemos otros problemas, pero podemos quitarles importancia un rato tomando algo. ¿Te pongo una cerveza? Invita la casa.
-
-**DON LINDO:** ¿Por qué tanta amabilidad, si está claro que necesitáis el dinero más que nadie por esta zona?
-
-**TABERNERO:** Cierto es, pero por aquí, a pesar de todo, intentamos ayudarnos siempre que podemos.
-
-**DON LINDO:** Pero, te estás perjudicando.
-
-**TABERNERO:** No lo niego, pero prefiero ver a mis vecinos felices, además, todos por aquí actuamos igual. Hoy por ti, mañana por mí. Aunque no lo voy a negar, a veces las cosas se ponen muy complicadas.
-
-**DON LINDO:** De donde vengo, hemos sido bastante egoístas, lo intenté, pero no puede hacer que mis antiguos amigos cambiaran la mentalidad.
-
-**TABERNERO:** Aquí la vida la vemos de una forma distinta, es así como a pesar de las dificultades, nos intentamos apoyar todo lo posible. Es más, tú encajarías muy bien aquí, se ve que en el fondo, actuarías como nosotros.
-
-**DON LINDO:** Nunca se me ha presentado la oportunidad allí de ayudar con algo, pues los desagradecidos de mis compañeros no se lo merecían. Pero si me lo permites, podría tocar algo con mi ukelele.
-
-**TABERNERO:** Sería maravilloso.
-
-(MÚSICA DE UKELELE)
-
-**TABERNERO:** Eres una buena persona, seguro que esa Pomponina no se ha dado cuenta de lo que puede tener. Amigo mío, debes hacerle saber lo que se está perdiendo contigo.
-
-**DON LINDO:** Eso es, tengo que ir y demostrárselo. Ahora mismo voy. ¿Te importa si te dejo aquí mi ukelele?
-
-**TABERNERO:** Sin problema. Mucho ánimo amigo mío.
-
 **MINIJUEGO**
 
-Don Lindo atacará a Pigmalión lanzando dos notas musicales que rebotarán por las cuatro paredes de la sala. Pigmalión deberá tratar de esquivarlas para pasar de fase, lo cual sucederá después de un tiempo. Mientras rebotan las dos notas, Don Lindo no hará nada más a menos que esté enfadado. ![][19]
+Don Lindo atacará a Pigmalión lanzando dos notas musicales que rebotarán por las cuatro paredes de la sala. Pigmalión deberá tratar de esquivarlas para pasar de fase, lo cual sucederá después de un tiempo. Mientras rebotan las dos notas, Don Lindo no hará nada más a menos que esté enfadado.
 
 Cuando la salud de Don Lindo baje a la mitad, además de las dos notas rebotantes, usará su mal genio para crear explosiones en la zona de pigmalión. La zona que va a explotar se verá como un círculo de un color distinto al del suelo, lo que permitirá al jugador tener tiempo para esquivarlo y que no sea arbitrario. En caso de impacto también le quitarán vida al jugador. Estas explosiones aparecerán durante toda la fase, pero nunca habrá dos explosiones en proceso simultáneamente, si no que se dejará un pequeño espacio de tiempo de dos o tres segundos entre cada una. (Según el tiempo de aviso con lo del círculo habrá que reducirlo más o menos).
--![][20]
 
-Al acabar con el último muñeco:
 
-Llega paloma mensajera del duque diciendo que la obra va a empezar, que vuelva rápido y qué ha hecho con los muñecos.
 
-Pigmalión piensa:
-
--   Pacifista: tengo que llegar rápido para para prepararla, es una pena que no haya encontrado a Urdemalas, me hubiera gustado que actuara)
-
--   Puppetcidal: bueno, tendré que hacer más muñecos.
-
--   Normal: 2 muertos 1 vivo: No tengo ganas de hacer la obra, sin mis muñecos no me veo capaz de hacerla.
-
- 1 muerto 2 vivos: Tengo que llegar rápido para modificar la obra, me pesa no haber sido capaz de convencer a \*Insertar nombre\*
-
-### Agalzapo
+###  Urdemalas
 
  Al acabar con el último muñeco:
 
@@ -1104,42 +895,6 @@ Urdemalas es el último muñeco, y no está en ninguna zona del mapa. Aparece en
 -   Puppetcidal: Al enterarse de que Pigmalión ha matado a todos sus compañeros, decide volver a vengarse.
 
 -   Normal: Urdemalas, al enterarse de que algunos muñecos han muerto, decide huir.
-
-INFORMACIÓN
-
--Pigmalión : ¡Parece que se me han escapado los muñecos!
-
-**Él** seguro que ya ha escapado, pero al resto aún puedo alcanzarlos.
-
--Al matar al primer muñeco: Si \*inserte nombre\* está tan agresivo, no me imagino de lo que **Él** es capaz.
-
--Final de juego neutral:
-
-1- Cuadro de texto donde salga : \*Urdemalas escapó\*
-
-2- Pigmalión : Me alivia pensar que no me he cruzado con **Urdemalas** pero a la vez me atormenta saber que anda por ahí suelto.
-
-**CONVERSACIONES**
-
-\-**Neutral :**
-
-Años más tarde...
-
-\*Escena con Pigmalión en su casa (como en un sueño)\*
-
-\*Suena toc toc toc\*
-
-\*Entra Urdemalas en casa\*
-
-Pigmalion : !
-
-Pigmalion : ¿Cómo has entrado / ¿Que haces aquí?
-
-Urdemalas : Vengo a vengar a mis compañeros
-
- \*Urdemalas pega un tiro con la escopeta, y justo cuando suena el sonido del disparo, Pigmalion se despierta\*
-
-\*Suena toc toc toc de nuevo\*
 
 \- **Salvadora:**
 
