@@ -65,7 +65,7 @@ export default class Sala18Cucu extends SalaBaseCombate {
   }
 
   attack1(){    
-    this.cucuAt = new CucuAttack(this, "cucu_at1", 500, this.player);
+    this.cucuAt = new CucuAttack(this, "cucu_at1",Phaser.Math.Between(0, this.window.h), 500, this.player);
     this.cu.play();
   }
 
