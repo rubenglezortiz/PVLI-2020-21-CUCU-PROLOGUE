@@ -112,7 +112,7 @@ export default class Sala0Urdemalas extends SalaBaseCombate{
       this.nota.play();
     }
     else{
-      this.at = new CucuAttack(this, "cucu_at1", this.player);
+      this.at = new CucuAttack(this, "cucu_at1",Phaser.Math.Between(0, this.window.h), 500, this.player);
       this.cu.play();
     }
   }
@@ -122,7 +122,7 @@ export default class Sala0Urdemalas extends SalaBaseCombate{
     if(attackKind === 0){
       for (let i = 0; i < 2; i++) {
         this.pompAt = new PomponinaAttack(this, this.window.w, this.window.h / 2, "pomponina_at", this.player,i%2);
-        this.tornado.play(this, "cucu_at1",Phaser.Math.Between(0, this.window.h), 500, this.player);
+        this.tornado.play();
       }
     }
     else if(attackKind===1){
