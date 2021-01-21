@@ -179,13 +179,14 @@ export default class Dialogo extends Phaser.Scene {
         "PIGMALIÓN: Ya los he repartido.",
         "DEPENDIENTE: ¡Muchísimas gracias! Supongo que\nantes te referías a Don Lindo, ¿me equivoco?",
         "PIGMALIÓN: En absoluto.",
-        "DEPENDIENTE: Se pasó por aquí de casualidad,\nestuvimos hablando,un buen rato.\nMe comentaba cosas de un teatro y de una mujer por la que está muy enamorado\npor lo visto. Hasta tocó algo con un ukelele.\nSin embargo, nos entretuvimos mucho y ha sido la causa\npor la que voy tan mal de tiempo.\nSin darme cuenta, se me olvidó darle a él un gorro.\n¿Te importaría dárselo de mi parte?\nMe da pena haberme olvidado de dárselo.",
+        "DEPENDIENTE: Se pasó por aquí de casualidad,\nestuvimos hablando,un buen rato.\nMe comentaba cosas de un teatro y de una mujer\npor la que está muy enamorado por lo visto.",
+        "Hasta tocó algo con un ukelele.\nSin embargo, nos entretuvimos mucho y ha sido\nla causa por la que voy tan mal de tiempo.\nSin darme cuenta, se me olvidó darle a él\nun gorro.\n¿Te importaría dárselo de mi parte?\nMe da pena haberme olvidado de dárselo.",
         'HAS RECIBIDO UN "GORRO"',
       ];
     else
       this.dependienteRopa = [
         "PIGMALIÓN: Perdona, ¿has visto por aquí a un\ntipo con traje y corbata, y que además\nparece que lleva una peluca?",
-        "DEPENDIENTE: Me quiere sonar sí, pero ahora\nmismo no lo termino de recordar.\nAdemás, estoy muy liado.Tengo que ordenar toda la tienda y repartir estos gorros.\n¿Te importaría echarme una mano con ellos?\nMientras intentaré pensar en el hombre que me has dicho.",
+        "DEPENDIENTE: Me quiere sonar sí, pero ahora\nmismo no lo termino de recordar.\nAdemás, estoy muy liado. Tengo que ordenar\ntoda la tienda y repartir estos gorros.\n¿Te importaría echarme una mano con ellos?\nMientras intentaré pensar en el hombre que\nme has dicho.",
         "PIGMALIÓN: Está bien, ¿a quién tengo que\ndárselos?",
         "DEPENDIENTE: A cualquier persona que veas que\ntiene frío por la calle,\nse acerca el invierno y, si entre todos\ncolaboramos, haremos que el invierno sea menos\nduro.",
       ];
@@ -638,7 +639,7 @@ export default class Dialogo extends Phaser.Scene {
             posy: this.player.y,
             lives: this.player.lives,
             objs: this.objetos,
-            runInf: this.runInf,
+            runInf: this._runInfo,
           });
           this.scene.pause();
           this.scene.sendToBack();
