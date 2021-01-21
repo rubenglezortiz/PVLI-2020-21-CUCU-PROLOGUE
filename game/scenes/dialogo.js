@@ -175,6 +175,7 @@ export default class Dialogo extends Phaser.Scene {
       this.objetos[objs.OBJECTS.gorroRepartido1] &&
       this.objetos[objs.OBJECTS.gorroRepartido2]
     )
+    {
       this.dependienteRopa = [
         "PIGMALIÓN: Ya los he repartido.",
         "DEPENDIENTE: ¡Muchísimas gracias! Supongo que\nantes te referías a Don Lindo, ¿me equivoco?",
@@ -183,6 +184,8 @@ export default class Dialogo extends Phaser.Scene {
         "Hasta tocó algo con un ukelele.\nSin embargo, nos entretuvimos mucho y ha sido\nla causa por la que voy tan mal de tiempo.\nSin darme cuenta, se me olvidó darle a él\nun gorro.\n¿Te importaría dárselo de mi parte?\nMe da pena haberme olvidado de dárselo.",
         'HAS RECIBIDO UN "GORRO"',
       ];
+      this.objetos[objs.OBJECTS.gorro] = true;
+    }
     else
       this.dependienteRopa = [
         "PIGMALIÓN: Perdona, ¿has visto por aquí a un\ntipo con traje y corbata, y que además\nparece que lleva una peluca?",
@@ -241,12 +244,12 @@ export default class Dialogo extends Phaser.Scene {
       "POMPONINA:  Ohh, son muy bonitas, quizás\npodríamos llegar a entendernos.",
     ];
     this.floresRosasCombate = [
-      "PIGMALIÓN: Pensé que esta sería una buena forma de\n disculparme",
-      "POMPONINA: ¡Son rosas! ¡Son mis favoritas!\n Muchas gracias, Pigmalión.",
+      "PIGMALIÓN: Pensé que esta sería una buena\nforma de disculparme",
+      "POMPONINA: ¡Son rosas! ¡Son mis favoritas!\nMuchas gracias, Pigmalión.",
     ];
     this.collarCombate = [
       "PIGMALIÓN: Te he traído un collar. A las \nchicas os encantan estas cosas, ¿no?",
-      "POMPONINA: ¡No! Te he dicho muchísimas veces \nque no me gustan los collares! Si vas a tener\nun detalle deberías darme algo especial\npara mí, no cualquier baratija que encuentres\npor ahí.",
+      "POMPONINA: ¡No! Te he dicho muchísimas veces \nque no me gustan los collares! Si vas a tener\nun detalle deberías darme algo especial para\nmí, no cualquier baratija que encuentres por\nahí.",
     ];
     this.bombonesCombate = [
       "PIGMALIÓN: Toma. Esto me lo dió una anciana a\nla que ayudaste para que te lo trajese.",
@@ -256,8 +259,8 @@ export default class Dialogo extends Phaser.Scene {
       "PIGMALIÓN: No, de hecho nunca he estado tan \norgulloso de ti como ahora.",
     ];
     this.abanicoCombate = [
-      "PIGMALIÓN: Encontré tu abanico roto. Como le\ntenías tanto cariño  decidí llevarlo\na reparar.",
-      "POMPONINA: ¡Oh, qué detalle! Muchas gracias,\nPigmalión. Parece que te importo más\nnde lo que pensaba.",
+      "PIGMALIÓN: Encontré tu abanico roto. Como le\ntenías tanto cariño decidí llevarlo a\nreparar.",
+      "POMPONINA: ¡Oh, qué detalle! Muchas gracias,\nPigmalión. Parece que te importo más de lo que\npensaba.",
     ];
     this.halagarCombate = [
       "PIGMALIÓN: ¡Cuidado! No debes ponerte bajo el\nsol.",
@@ -286,36 +289,28 @@ export default class Dialogo extends Phaser.Scene {
       this.objetos[objs.OBJECTS.bombonesRepartidos2]
     )
       this.abuela = [
-        "Pigmalión: Ya he repartido las cajas. Tome el dinero.",
-        "Abuela: Muchas gracias por su ayuda, joven.",
-        "Me recuerda usted a la joven que está buscando.",
-        "Me ayudó mucho cuando la conocí.",
-        "Me dijo que se fue a una casa al fondo de\nla calle.",
-        "Si la ve, ¿le dará estos bombones de mi parte?",
+        "Pigmalión: Ya he repartido las cajas. Tome el\ndinero.",
+        "Abuela: Muchas gracias por su ayuda, joven. Me\nrecuerda usted a la joven que está buscando. Me ayudó mucho cuando la conocí. Me dijo que se\nfue a una casa al fondo de\nla calle. Si la ve, ¿le dará estos bombones de\nmi parte?",
         "Pigmalión: Por supuesto. Y gracias por la\ninformación.",
       ];
     else
       this.abuela = [
         "Pigmalión: Buenas tardes.",
         "Abuela: Buenas tardes, caballero. ¿Qué desea?",
-        "Pigmalión: Le quería preguntar si ha visto\n a una joven con el pelo rubio y rizado\ny con un vestido azul.",
-        "Abuela: Hmm a lo mejor.",
-        "Pero antes de decirle lo que sé,",
-        "¿podría ayudarme a repartir estas cajas\nde bombones, por favor?",
+        "Pigmalión: Le quería preguntar si ha visto a\nuna joven con el pelo rubio y con un vestido\nazul.",
+        "Abuela: Hmm a lo mejor. Pero antes de decirle\nlo que sé,¿podría ayudarme a repartir estas\ncajas de bombones, por favor?",
         "Pigmalión: Trato hecho, volveré tras\nrepartirlas.",
         "Abuela: Muchas gracias. Es usted muy amable.",
       ];
 
     if (!this.objetos[objs.OBJECTS.repartoBombones])
       this.cliente = [
-        "Transeúnte: Espero que me traigan mis bombones pronto.",
-        "¡Me muero de hambre!",
+        "Transeúnte: Espero que me traigan mis bombones\npronto. ¡Me muero de hambre!",
       ];
     else
       this.cliente = [
         "Pigmalión: Usted ha pedido estos bombones,\n¿verdad?",
-        "Transeúnte: ¡Al fin! Muchas gracias, caballero.",
-        "Aquí tiene el dinero.",
+        "Transeúnte: ¡Al fin! Muchas gracias, caballero.\nAquí tiene el dinero.",
       ];
 
     if (!this.objetos[objs.OBJECTS.repartoBombones])
@@ -331,8 +326,7 @@ export default class Dialogo extends Phaser.Scene {
       this.encargadoAnticuario = [
         "Señor: Buenas tardes, ¿en qué puedo ayudarle?",
         "Pigmalión: Quería comprar un collar.",
-        "Señor: Muy bien, pero desgraciadamente solo me queda uno.",
-        "¿Le interesa? Por 20 euros es suyo.",
+        "Señor: Muy bien, pero desgraciadamente solo me\nqueda uno. ¿Le interesa? Por 20 euros es suyo.",
         "Pigmalión: Perfecto, pues me lo llevo.",
         "Señor: Muchas gracias, que pase un buen día.",
       ];
@@ -340,25 +334,20 @@ export default class Dialogo extends Phaser.Scene {
       this.encargadoAnticuario = [
         "Señor: Buenas tardes, ¿en qué puedo ayudarle?",
         "Pigmalión: Quería comprar un abanico.",
-        "Señor: Muy bien.¿Qué le parece este de aquí?",
-        "Por 5 euros es suyo.",
+        "Señor: Muy bien.¿Qué le parece este de aquí?\nPor 5 euros es suyo.",
         "Pigmalión: Perfecto, pues me lo llevo.",
         "Señor: Muchas gracias, que pase un buen día.",
       ];
 
     if (!this.objetos[objs.OBJECTS.floresHijo])
       this.hijoFlorista = [
-        "Chaval: ¡Qué nervios!",
-        "Ojalá no se me hubiesen olvidado las flores,",
-        "ya no me da tiempo a ir a por ellas.",
+        "Chaval: ¡Qué nervios!Ojalá no se me hubiesen\nolvidado las flores, ya no me da tiempo a ir a\npor ellas.",
       ];
     else
       this.hijoFlorista = [
-        "Pigmalión: Eres el hijo del florista, ¿verdad?",
-        "Me dijo que esto era tuyo.",
-        "Chaval: ¡Mis flores! ¡Qué bien, tengo una cita y no tenía tiempo de volver.",
-        "Muchísimas gracias.",
-        "Pigmalión: De nada. Oye, ¿has visto a una chica\nrubia con un vestido azul por aquí?",
+        "Pigmalión: Eres el hijo del florista, ¿verdad?\nMe dijo que esto era tuyo.",
+        "Chaval: ¡Mis flores! ¡Qué bien, tengo una cita\ny no tenía tiempo de volver. Muchísimas\ngracias.",
+        "Pigmalión: De nada. Oye, ¿has visto a una\nchica rubia con un vestido azul por aquí?",
         "Chaval: Sí, claro que la conozco.",
         "Gracias a ella me atreví a declararme a la chica\nque me gusta.",
         "Además le gustan mucho las flores, como a mí.",
@@ -370,11 +359,9 @@ export default class Dialogo extends Phaser.Scene {
     if (this.objetos[objs.OBJECTS.hijoAyudado])
       this.florista = [
         "Pigmalión: Le he llevado las flores a tu hijo.",
-        "Florista: ¿De verdad? Te lo agradezco de todo corazón.",
-        "¿Hay algo que pueda hacer para compensarte toda la ayuda?",
-        "Pigmalión: Pues la verdad es que sí. ¿Tienes rosas de color rosa?",
-        "Florista: Sí, son de las que mejor venden.",
-        "¿Quieres un ramo?",
+        "Florista: ¿De verdad? Te lo agradezco de todo\ncorazón. ¿Hay algo que pueda hacer\npara compensarte toda la ayuda?",
+        "Pigmalión: Pues la verdad es que sí. ¿Tienes\nrosas de color rosa?",
+        "Florista: Sí, son de las que mejor venden.\n¿Quieres un ramo?",
         "Pigmalión: Sí, por favor.",
         "Florista: Pues todo tuyo.",
       ];
@@ -382,20 +369,14 @@ export default class Dialogo extends Phaser.Scene {
       this.florista = [
         "Florista: ¿Esas son mis llaves? ¡Sí lo son!",
         "Pigmalión: Aquí las tiene.",
-        "Florista: Muchísimas gracias caballero.",
-        "No tengo mucho que ofrecerle,",
-        "pero estas flores son para usted.",
-        "Eran para una cita de mi hijo, pero se le olvidaron\ny ya no hay nada que hacer.",
+        "Florista: Muchísimas gracias caballero. No\ntengo mucho que ofrecerle, pero estas flores\nson para usted. Eran para una cita de mi hijo,\npero se le olvidaron y ya no hay nada que\nhacer.",
       ];
     else
       this.florista = [
-        "Florista: ¿Dónde diablos estarán?",
-        "El jefe me va a matar como no las encuentre.",
+        "Florista: ¿Dónde diablos estarán? El jefe me\nva a matar como no las encuentre.",
         "Pigmalión: ¿Le ocurre algo?",
-        "Florista: ¡Oh! Buenas tardes, caballero.",
-        "El problema es que he perdido las llaves de la trastienda",
-        "y como no las encuentre para cuando venga el jefe, me despedirá.",
-        "Pigmalión: Vaya, pues si las encuentro se lo diré.",
+        "Florista: ¡Oh! Buenas tardes, caballero. El\nproblema es que he perdido las llaves de la\ntrastienda y como no las encuentre para cuando\nvenga el jefe, me despedirá.",
+        "Pigmalión: Vaya, pues si las encuentro se lo\ndiré.",
         "Florista: Muchas gracias, buen hombre.",
       ];
 
