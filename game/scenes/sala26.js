@@ -19,14 +19,14 @@ export default class Sala26 extends SalaBase {
     super.create();
     this.camino= this.add.image(this.window.w / 2 + 90,this.window.h/ 2,"donlindocamino1")
     this.camino.angle=90;
-    this.fotoPomponina = new Prop (this, 300,300,"fotopomponina",this.player,60,50,true, this.fotoPomponina,this);
+    this.fotoPomponina = new Prop (this, 300,300,"fotopomponina",this.player,60,50,true, this.fotoPompo,this);
   }
 
   update() {
     super.update();
   }
 
-  fotoPomponina = function(){
+  fotoPompo = function(){
     eventsCenter.emit("thisKey", this._nombreSala);
     this.scene.launch("dialogo", {npc:npcs.NPCS.foto, prevKey:cst.SCENES.SALA26,objs:this.objetos});
 
