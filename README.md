@@ -2,7 +2,7 @@
 
 ------
 
-​																	
+- Link a la página del juego: https://rubenglezortiz.github.io/PVLI-2020-21-CUCU-PROLOGUE/																
 
 ## Desarrolladores
 
@@ -18,15 +18,11 @@
 
      
 
-     ​	
 
-     
 
-     
+#### 																			    Preview videojuego																														
 
-     #### 																			    Preview videojuego																														
-
-     ![](./resources/myMediaFolder/media/imagenjuego.png)
+![](./resources/myMediaFolder/media/imagenjuego.png)
 
 
 
@@ -973,6 +969,13 @@ Urdemalas dispara tres proyectiles, uno en linea recta hacia el jugador y otros 
 
 
 
+
+---
+
+ - Plataforma principal de comunicación:
+    - Discord: Haciendo uso principalmente de un servidor para dailys y anotaciones generales / importantes y de chats individuales entre compañeros a la hora de colaborar
+ - Plataforma principal para la gestión: 
+    - Hack & Plan: Haciendo uso de boards para gestionar los sprints y de historias de usuario para organizar nustro trabajo. A la hora de poner puntos a las historias de usuario hemos hecho uso de scrum poker.
 
 # PVLI-2020-21-CUCU's
 
