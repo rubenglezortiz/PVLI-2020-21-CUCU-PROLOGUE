@@ -378,11 +378,12 @@ export default class MenuCombate extends Phaser.Scene {
         });
 
         button.on("pointerdown", (pointer) => {
+          eventsCenter.emit("persuade", this.persuasion);
+            eventsCenter.off("persuade", this.persuasion);
           this.talkOptionsVec.forEach((option) => {
             option.setAlpha(0.5);
             option.disableInteractive();
             eventsCenter.emit("thisKey", this._nombreSala);
-            eventsCenter.emit("persuade", this.persuasion);
             this.buttonVec.forEach((button) => {
               button.setAlpha(0.5);
               button.disableInteractive();
