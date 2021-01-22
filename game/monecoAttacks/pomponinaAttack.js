@@ -19,7 +19,6 @@ export default class PomponinaAttack extends Phaser.GameObjects.Sprite {
     if (this.x < this.width/2+1) this.destroy();    
   }
 
-   //ESTO, TAL CUAL LO TIENE DON LINDO ---> HERENCIA
     setPhysics(){
     this.body.setCollideWorldBounds(true);
     this.body.setBounce(1);
