@@ -26,7 +26,7 @@
 
      #### 																			    Preview videojuego																														
 
-     ![](.\resources\myMediaFolder\media\imagenjuego.png)
+     ![](./resources/myMediaFolder/media/imagenjuego.png)
 
 
 
@@ -157,7 +157,7 @@ Al acabar de interaccionar con el muñeco (haberle matado o salvado) se cierra e
 
 El juego se estructura de la siguiente forma:
 
-![](.\resources\myMediaFolder\media\uml.png)
+![](./resources/myMediaFolder/media/uml.png)
 
 ## 4.1 Mecánica 
 
@@ -750,11 +750,11 @@ Cuando Pomponina tenga la vida reducida a la mitad, lanzará tres tornados en ve
     
 
   
-  
-  
+
+
   ### TABLA DE PUNTOS DE PERSUASIÓN                                                 
-  
-  ------------------------------- --------------- --------------- ------------- ------------
+
+------------------------------- --------------- --------------- ------------- ------------
   **TOTAL**                       **Ukelele**     **Gorro**       **Musica**    **Gritar**
         100     					+50           +40            +12           0
   **-**           **Persuadir**   **Pomponina**     **Cartera**
