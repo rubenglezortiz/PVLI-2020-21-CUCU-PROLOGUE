@@ -74,7 +74,7 @@ export default class Dialogo extends Phaser.Scene {
       "CUCU: CUCU :3",
     ];
     this.matarCucu = [
-      "Pigmalión: Fuistes de mis primeros muñecos, se\nnota lo inferior que eres. Ahora podré\nrehacerte y mejorarte.",
+      "Pigmalión: Fuiste de mis primeros muñecos, se\nnota lo inferior que eres. Ahora podré\nrehacerte y mejorarte.",
       "CUCU: cu cu",
     ];
     //Puzzles
@@ -101,7 +101,7 @@ export default class Dialogo extends Phaser.Scene {
     ];
     //Diálogos combate
     this.musica = [
-      "PIGMALIÓN: Tienes que volver conmigo, las farsas\nnecesitan de tu música.",
+      "PIGMALIÓN: Tienes que volver conmigo, las\nfarsas necesitan de tu música.",
       "DON LINDO: ¿Tan importante es mi música?",
       "PIGMALIÓN: Vuelve al teatro y pasamos un rato\ntocando algún instrumento de los que te gustan.",
       "DON LINDO: Quizá no sea mala idea.",
@@ -139,10 +139,6 @@ export default class Dialogo extends Phaser.Scene {
     this.cartera = [
       "PIGMALIÓN: Seguro que aceptas esta cartera con\ndinero para volver al teatro..",
       "DON LINDO: A ver si te das cuenta de que no\ntodo gira en torno al dinero, garrapata\nsin patas.",
-    ];
-    this.corbata = [
-      "PIGMALIÓN: He comprado una corbata, creo que\nes de tu estilo.",
-      "DON LINDO: Ooh… si te soy sincero… llevaba\ntiempo sin ver algo tan horrible. Sigues sin saber\nnada de nosotros, “tus muñecos”.\nDecepcionante.",
     ];
     //Diálogos final de combate
     this.salvarDonLindo = [
@@ -608,11 +604,6 @@ export default class Dialogo extends Phaser.Scene {
       case npcs.NPCS.cartera:
         if (this.iterator != this.cartera.length)
           this.text.setText(this.cartera[this.iterator]);
-        else this.end();
-        break;
-      case npcs.NPCS.corbata:
-        if (this.iterator != this.corbata.length)
-          this.text.setText(this.corbata[this.iterator]);
         else this.end();
         break;
       //Diálogos final

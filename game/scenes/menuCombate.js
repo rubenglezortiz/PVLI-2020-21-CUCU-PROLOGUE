@@ -123,30 +123,30 @@ export default class MenuCombate extends Phaser.Scene {
       ];
       this.talkOption1.on("pointerdown", (pointer) => { // Chiste
         this.persuasion = 10;
-        eventsCenter.emit("thisKey", this._nombreSala);
+        // eventsCenter.emit("thisKey", this._nombreSala);
         this.scene.launch("dialogo", {npc:npcs.NPCS.chisteCombate,prevKey:cst.SCENES.SALA18CUCU,objs:this.objetos});
-        eventsCenter.emit("persuade", this.persuasion);
+        // eventsCenter.emit("persuade", this.persuasion);
         this.parar();
         });
       this.talkOption2.on("pointerdown", (pointer) => { // Animarle
         this.persuasion = 15;
-        eventsCenter.emit("thisKey", this._nombreSala);
+        // eventsCenter.emit("thisKey", this._nombreSala);
         this.scene.launch("dialogo", {npc:npcs.NPCS.animarleCombate,prevKey:cst.SCENES.SALA18CUCU,objs:this.objetos});
-        eventsCenter.emit("persuade", this.persuasion);
+        // eventsCenter.emit("persuade", this.persuasion);
         this.parar();
       });
       this.talkOption3.on("pointerdown", (pointer) => { // Dato
         this.persuasion = 0;
-        eventsCenter.emit("thisKey", this._nombreSala);
+        // eventsCenter.emit("thisKey", this._nombreSala);
         this.scene.launch("dialogo", {npc:npcs.NPCS.datoCombate,prevKey:cst.SCENES.SALA18CUCU,objs:this.objetos});
-        eventsCenter.emit("persuade", this.persuasion);
+        // eventsCenter.emit("persuade", this.persuasion);
         this.parar();
       });
       this.talkOption4.on("pointerdown", (pointer) => { // Reírse de él
         this.persuasion = -5;
-        eventsCenter.emit("thisKey", this._nombreSala);
+        // eventsCenter.emit("thisKey", this._nombreSala);
         this.scene.launch("dialogo", {npc:npcs.NPCS.reirseCombate,prevKey:cst.SCENES.SALA18CUCU,objs:this.objetos});
-        eventsCenter.emit("persuade", this.persuasion);
+        // eventsCenter.emit("persuade", this.persuasion);
         this.parar();
       });
     }
@@ -168,15 +168,6 @@ export default class MenuCombate extends Phaser.Scene {
         this.talkOption2 = this.add.sprite(550, 500, "gorro_button")
         this.talkOption2.setAlpha(0.5);
       }
-      if (this.objetos[objs.OBJECTS.corbata])
-      {
-      this.talkOption3 = this.add.sprite(850, 500, "corbata_button").setInteractive();
-      }
-      else
-      {
-      this.talkOption3 = this.add.sprite(850, 500, "corbata_button");
-      this.talkOption3.setAlpha(0.5);
-      }
       if (this.objetos[objs.OBJECTS.cartera])
       {
         this.talkOption4 = this.add.sprite(1200, 500, "cartera_button").setInteractive();
@@ -195,7 +186,6 @@ export default class MenuCombate extends Phaser.Scene {
       this.talkOptionsVec = [
         this.talkOption1,
         this.talkOption2,
-        this.talkOption3,
         this.talkOption4,
         this.talkOption5,
         this.talkOption6,
@@ -204,62 +194,54 @@ export default class MenuCombate extends Phaser.Scene {
       ];
       this.talkOption1.on("pointerdown", (pointer) => { // Ukelele
         this.persuasion = 50;
-        eventsCenter.emit("thisKey", this._nombreSala);
+        // eventsCenter.emit("thisKey", this._nombreSala);
         this.scene.launch("dialogo", {npc:npcs.NPCS.ukelele,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
-        eventsCenter.emit("persuade", this.persuasion);
+        // eventsCenter.emit("persuade", this.persuasion);
         this.objetos[objs.OBJECTS.ukelele] = false;
         this.parar();
         });
       this.talkOption2.on("pointerdown", (pointer) => { // Gorro
         this.persuasion = 40;
-        eventsCenter.emit("thisKey", this._nombreSala);
+        // eventsCenter.emit("thisKey", this._nombreSala);
         this.scene.launch("dialogo", {npc:npcs.NPCS.gorro,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
-        eventsCenter.emit("persuade", this.persuasion);
+        // eventsCenter.emit("persuade", this.persuasion);
         this.objetos[objs.OBJECTS.gorro] = false;
-        this.parar();
-      });
-      this.talkOption3.on("pointerdown", (pointer) => { // Corbata
-        this.persuasion = -20;
-        eventsCenter.emit("thisKey", this._nombreSala);
-        this.scene.launch("dialogo", {npc:npcs.NPCS.corbata,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
-        eventsCenter.emit("persuade", this.persuasion);
-        this.objetos[objs.OBJECTS.corbata] = false;
         this.parar();
       });
       this.talkOption4.on("pointerdown", (pointer) => { // Cartera
         this.persuasion = -30;
-        eventsCenter.emit("thisKey", this._nombreSala);
+        // eventsCenter.emit("thisKey", this._nombreSala);
         this.scene.launch("dialogo", {npc:npcs.NPCS.cartera,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
-        eventsCenter.emit("persuade", this.persuasion);
+        // eventsCenter.emit("persuade", this.persuasion);
         this.objetos[objs.OBJECTS.cartera] = false;
         this.parar();
       });
       this.talkOption5.on("pointerdown", (pointer) => { // Música
         this.persuasion = +12;
-        eventsCenter.emit("thisKey", this._nombreSala);
+        // eventsCenter.emit("thisKey", this._nombreSala);
         this.scene.launch("dialogo", {npc:npcs.NPCS.musica,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
-        eventsCenter.emit("persuade", this.persuasion);
+        // eventsCenter.emit("persuade", this.persuasion);
         this.parar();
       });
       this.talkOption6.on("pointerdown", (pointer) => { // Gritar
         this.persuasion = 0;
-        eventsCenter.emit("thisKey", this._nombreSala);
+        // eventsCenter.emit("thisKey", this._nombreSala);
         this.scene.launch("dialogo", {npc:npcs.NPCS.gritar,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
-        eventsCenter.emit("persuade", this.persuasion);
+        // eventsCenter.emit("persuade", this.persuasion);
         this.parar();
       });
       this.talkOption7.on("pointerdown", (pointer) => { // Persuadir
         this.persuasion = -5;
-        eventsCenter.emit("thisKey", this._nombreSala);
+        // eventsCenter.emit("thisKey", this._nombreSala);
         this.scene.launch("dialogo", {npc:npcs.NPCS.donlindo_persuadir,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
-        eventsCenter.emit("persuade", this.persuasion);
+        // eventsCenter.emit("persuade", this.persuasion);
         this.parar();
       });
       this.talkOption8.on("pointerdown", (pointer) => { // Pomponina
         this.persuasion = -10;
-        eventsCenter.emit("thisKey", this._nombreSala);
+        // eventsCenter.emit("thisKey", this._nombreSala);
         this.scene.launch("dialogo", {npc:npcs.NPCS.foto_pomponina,prevKey:cst.SCENES.SALA28DONLINDO,objs:this.objetos});
-        eventsCenter.emit("persuade", this.persuasion);
+        // eventsCenter.emit("persuade", this.persuasion);
         this.parar();
       });
     }
@@ -325,63 +307,63 @@ export default class MenuCombate extends Phaser.Scene {
       ];
       this.talkOption1.on("pointerdown", (pointer) => { // Rosas rosas
         this.persuasion = 40;
-        eventsCenter.emit("thisKey", this._nombreSala);
+        // eventsCenter.emit("thisKey", this._nombreSala);
         this.scene.launch("dialogo", {npc:npcs.NPCS.floresRosasCombate,prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
-        eventsCenter.emit("persuade", this.persuasion);
+        // eventsCenter.emit("persuade", this.persuasion);
         this.objetos[objs.OBJECTS.floresRosas] = false;
         this.parar();
         });
       this.talkOption2.on("pointerdown", (pointer) => { // Bombones
         this.persuasion = 30;
-        eventsCenter.emit("thisKey", this._nombreSala);
+        // eventsCenter.emit("thisKey", this._nombreSala);
         this.scene.launch("dialogo", {npc:npcs.NPCS.bombonesCombate,prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
-        eventsCenter.emit("persuade", this.persuasion);
+        // eventsCenter.emit("persuade", this.persuasion);
         this.objetos[objs.OBJECTS.bombonesPomponina] = false;
         this.parar();
       });
       this.talkOption3.on("pointerdown", (pointer) => { // Abanico
         this.persuasion = 30;
-        eventsCenter.emit("thisKey", this._nombreSala);
+        // eventsCenter.emit("thisKey", this._nombreSala);
         this.scene.launch("dialogo", {npc:npcs.NPCS.abanicoCombate,prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
-        eventsCenter.emit("persuade", this.persuasion);
+        // eventsCenter.emit("persuade", this.persuasion);
         this.objetos[objs.OBJECTS.abanico] = false;
         this.parar();
       });
       this.talkOption4.on("pointerdown", (pointer) => { // Ramo rosas
         this.persuasion = 20;
-        eventsCenter.emit("thisKey", this._nombreSala);
+        // eventsCenter.emit("thisKey", this._nombreSala);
         this.scene.launch("dialogo", {npc:npcs.NPCS.rosasCombate,prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
-        eventsCenter.emit("persuade", this.persuasion);
+        // eventsCenter.emit("persuade", this.persuasion);
         this.objetos[objs.OBJECTS.floresHijo] = false;
         this.parar();
       });
       this.talkOption5.on("pointerdown", (pointer) => { // Collar
         this.persuasion = -20;
-        eventsCenter.emit("thisKey", this._nombreSala);
+        // eventsCenter.emit("thisKey", this._nombreSala);
         this.scene.launch("dialogo", {npc:npcs.NPCS.collarCombate,prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
-        eventsCenter.emit("persuade", this.persuasion);
+        // eventsCenter.emit("persuade", this.persuasion);
         this.objetos[objs.OBJECTS.collar] = false;
         this.parar();
       });
       this.talkOption6.on("pointerdown", (pointer) => { // Ordenar
         this.persuasion = 0;
-        eventsCenter.emit("thisKey", this._nombreSala);
+        // eventsCenter.emit("thisKey", this._nombreSala);
         this.scene.launch("dialogo", {npc:npcs.NPCS.ordenarCombate,prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
-        eventsCenter.emit("persuade", this.persuasion);
+        // eventsCenter.emit("persuade", this.persuasion);
         this.parar();
       });
       this.talkOption7.on("pointerdown", (pointer) => { // Amenazar
         this.persuasion = -5;
-        eventsCenter.emit("thisKey", this._nombreSala);
+        // eventsCenter.emit("thisKey", this._nombreSala);
         this.scene.launch("dialogo", {npc:npcs.NPCS.amenazarCombate,prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
-        eventsCenter.emit("persuade", this.persuasion);
+        // eventsCenter.emit("persuade", this.persuasion);
         this.parar();
       });
       this.talkOption8.on("pointerdown", (pointer) => { // Halagar
         this.persuasion = 12;
-        eventsCenter.emit("thisKey", this._nombreSala);
+        
         this.scene.launch("dialogo", {npc:npcs.NPCS.halagarCombate,prevKey:cst.SCENES.SALA38POMPONINA,objs:this.objetos});
-        eventsCenter.emit("persuade", this.persuasion);
+        
         this.parar();
       });
     }
@@ -399,6 +381,8 @@ export default class MenuCombate extends Phaser.Scene {
           this.talkOptionsVec.forEach((option) => {
             option.setAlpha(0.5);
             option.disableInteractive();
+            eventsCenter.emit("thisKey", this._nombreSala);
+            eventsCenter.emit("persuade", this.persuasion);
             this.buttonVec.forEach((button) => {
               button.setAlpha(0.5);
               button.disableInteractive();
@@ -453,7 +437,6 @@ export default class MenuCombate extends Phaser.Scene {
 
   parar() {
     this.scene.pause();   
-    this.scene.resume(this.prevKey);
     this.scene.sendToBack();
   }
   calcularDaño(){
@@ -462,30 +445,27 @@ export default class MenuCombate extends Phaser.Scene {
       distancia = this.barramovil1.x - this.barramovil2.x;
     else
       distancia = this.barramovil2.x - this.barramovil1.x;
-    switch (distancia)
-    {
-      case distancia < 10:
+    console.log(distancia);
+    if (distancia < 20)
         this.damage = 20;
-        break;
-        case distancia < 20:
+        else if (distancia < 40)
         this.damage = 18;
-        break;
-        case distancia < 30:
+        else if (distancia < 60)
         this.damage = 16;
-        break;
-        case distancia < 40:
+        else if (distancia < 80)
         this.damage = 14;
-        break;
-        case distancia < 50:
+        else if (distancia < 100)
         this.damage = 12;
-        break;
-        case distancia < 60:
+        else if (distancia < 120)
         this.damage = 10;
-        break;
-        default:
-        this.damage = 5;
-        break;
-    }
+        else if (distancia < 140)
+        this.damage = 8;
+        else if (distancia < 160)
+        this.damage = 7;
+        else this.damage = 5;
+    
+    console.log(this.damage);
+  this.scene.resume(this.prevKey);
   eventsCenter.emit("damage",this.damage);
   eventsCenter.off("damage");
   eventsCenter.emit("exit",true);

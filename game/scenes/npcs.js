@@ -54,7 +54,6 @@ NPCS:{
     donlindo_persuadir:"donlindo_persuadir",
     gorro:"gorro",
     ukelele:"ukelele",
-    corbata:"corbata",
     cartera:"cartera",
     // Finales Urdemalas
     urdemalas0:"urdemalas0",

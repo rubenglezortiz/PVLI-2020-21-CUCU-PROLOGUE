@@ -19,7 +19,6 @@ export const objs = {
         cartera: 12,
         gorro: 13,
         ukelele: 14,
-        corbata:15,
         gorroRepartido1:16,
         gorroRepartido2:17,
         gorrosARepartir:18,
