@@ -17,6 +17,8 @@ export default class MenuCombate extends Phaser.Scene {
   }
   create() {
     this.scene.bringToTop();
+    eventsCenter.on("daño", this.calcularDaño, this);
+    eventsCenter.on("exit", this.parar, this);
     this.events.on(Phaser.Scenes.Events.RESUME, () => {
       eventsCenter.on("thisKey", this.prevScene, this);  
       eventsCenter.off("thisKey",this.prevScene,this)    
@@ -440,10 +442,6 @@ export default class MenuCombate extends Phaser.Scene {
       this.parar();
     });
   }
-  update(time, delta) {
-    eventsCenter.on("daño", this.calcularDaño, this);
-    eventsCenter.on("exit", this.parar, this);
-  }
 
   setMercyButton(monecoPP) {
     if (monecoPP >= 100) this.mercy = true;
@@ -464,7 +462,7 @@ export default class MenuCombate extends Phaser.Scene {
       distancia = this.barramovil1.x - this.barramovil2.x;
     else
       distancia = this.barramovil2.x - this.barramovil1.x;
-    switch (true)
+    switch (distancia)
     {
       case distancia < 10:
         this.damage = 20;
@@ -491,5 +489,6 @@ export default class MenuCombate extends Phaser.Scene {
   eventsCenter.emit("damage",this.damage);
   eventsCenter.off("damage");
   eventsCenter.emit("exit",true);
+  eventsCenter.off("exit");
   }
 }

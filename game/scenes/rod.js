@@ -22,7 +22,9 @@ export default class rod extends Phaser.GameObjects.Sprite {
       {
         this.active = false;
         eventsCenter.emit("daño", true);
+        eventsCenter.off("daño");
         eventsCenter.emit("exit", true);
+        eventsCenter.off("exit");
       }
     }
   }
