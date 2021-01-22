@@ -20,11 +20,15 @@ export default class SalaBase extends Phaser.Scene {
 
 
   create() {
+    //tiene todo lo general de las salas, tanto los sprites como los trigger para cambiar de sala
     this.scene.bringToTop();
+    //para qeu se guarde una variable con los datos de la ventana y no se tenga quee star accediendo todo el rato al sys
     this.window = new Object();
     this.window.w = this.sys.game.canvas.width;
     this.window.h = this.sys.game.canvas.height;
     this.add.image(700, 400, "tablones").depth = -1;
+
+    //trigger de cambio de sala
     this.derecha = this.physics.add.sprite(this.window.w,this.window.h/5*3);
     this.izquierda = this.physics.add.sprite(0,this.window.h/5*3);
     this.arriba = this.physics.add.sprite(this.window.w/2,0);
@@ -40,6 +44,7 @@ export default class SalaBase extends Phaser.Scene {
       this.lives,               
     );
 
+    //grupo que contendrá los bordes del mapa para no poder salirse
     this.bounds =  this.physics.add.staticGroup();
 
     this.colliderArriba = this.physics.add.staticSprite(this.window.w/2, this.player.sprite.height - 30);
@@ -60,6 +65,8 @@ export default class SalaBase extends Phaser.Scene {
     
     this.physics.add.collider(this.bounds, this.player);
 
+
+    //si es una sala de combate, para darle claridad a la imagen solo aparece el suelo de tablas de madera
     if(!this._salaCombate){
      
       //su collider va a ocupar el 100% del ancho del sprite y como el sprite ocupa 1400x800, su collider va a estar en -30 para ajustarlo bien, y que no se peuda salir
@@ -75,6 +82,8 @@ export default class SalaBase extends Phaser.Scene {
   update(time, delta) {
 
     //-----CAMBIO SALAS-----
+    //se comprueba si se ha hecho overlap con el trigger
+    //si se tiene que camiar de sala se le pone al player en la posicion deinicio de la siguiente sala y se le pasa como parámetro en la creación de la sala
     if (this._direcciones[0] !== 0 && this.physics.overlap(this.player.sprite, this.izquierda)) {
       
       this.player.x = this.window.w - this.player.sprite.width;
@@ -128,7 +137,7 @@ export default class SalaBase extends Phaser.Scene {
 
   }
 
-
+  //para no llevar todos los sonidos de sala en sala
   acabarSonidos = function(){
     //la que está en el 0 no se quiere borrar ya que es la música de ambiente
     for(let x = 1; x < this.sound.sounds.length; x++){
