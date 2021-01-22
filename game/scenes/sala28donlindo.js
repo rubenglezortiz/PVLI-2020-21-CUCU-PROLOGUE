@@ -46,7 +46,7 @@ export default class Sala28donlindo extends SalaBaseCombate {
   phase1() {
     this.time.delayedCall(750,()=>{this.attack1()})
     this.timer = this.time.addEvent({
-      delay: 7500,
+      delay: 5500,
       callback: () => {
        this.attack1();
        if(this.timer.getRepeatCount()===0) this.startMenu();
@@ -58,7 +58,7 @@ export default class Sala28donlindo extends SalaBaseCombate {
   phase2() {
     this.time.delayedCall(750,()=>{this.attack1()})
     this.timer = this.time.addEvent({
-      delay: 6500,
+      delay: 5500,
       callback: () => {
         this.attack1()
         if(this.timer.getRepeatCount()===0) this.startMenu();
