@@ -3,10 +3,14 @@ export default class Pigmalion extends Phaser.GameObjects.Container {
     super(scene, x, y);
     
     
+
+
     scene.add.existing(this);
     scene.physics.world.enable(this);
     this.sprite = this.scene.physics.add.sprite( 50, -70, 'pigmalion')
+    //el sprite es la imagen y el trigger que lleva el personaje
     this.add(this.sprite)
+    //el collider del body es el que lleva las colisiones de los pies
     this.body.setSize(100,30,true);
    
     

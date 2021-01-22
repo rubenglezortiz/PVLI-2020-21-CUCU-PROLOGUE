@@ -2,7 +2,9 @@ import E from "./e.js"
 export default class Prop extends Phaser.GameObjects.Sprite {
   constructor(scene, x, y, nombreSprite, player, wC, yC, interactive, interFunct, sala) {
     super(scene, x, y, nombreSprite);
+    //anchoPC es el procentaje del total que ocupa el collider de los pies
     this.anchoPC = wC;
+    //es la posición en la que está colocado el collider de los pies, = sería en el centro del sprite, 50% sería en los pies y -50 en la cabeza
     this.posYC = yC;
     scene.add.existing(this);
     scene.physics.world.enable(this);
@@ -19,7 +21,10 @@ export default class Prop extends Phaser.GameObjects.Sprite {
     this.colliderP = this.scene.physics.add.staticSprite(this.x,this.y + (this.height * this.posYC) / 100);
     this.colliderP.setSize((this.width * this.anchoPC) / 100, 20, true);
     this.scene.physics.add.collider(this.colliderP, this.pigmalion);
+   
+    //int es un booleano que indicasi se puede interactuar o no con este prop
     this.int = interactive;
+    //calloFunct es la función que se ejecuta en caso de que se quiera interactuar con el prop
     this.calloFunct = interFunct;
    
     //esto es para el triger en el que sale una E para interactuar

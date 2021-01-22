@@ -12,7 +12,7 @@ export default class Final extends SalaBase {
 
   init(datos) {
     super.init(datos);    
-    this.final="urdemalas"+datos.tipoFinal;
+    this.final="urdemalas"+ datos.tipoFinal;
     console.log(this.final);
     
   }
